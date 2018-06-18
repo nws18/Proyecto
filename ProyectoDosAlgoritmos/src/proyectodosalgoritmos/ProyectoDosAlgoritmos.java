@@ -40,7 +40,8 @@ public class ProyectoDosAlgoritmos {
 
         Login login = new Login();
         login.setVisible(true);
-
+CrudMaintenance crudMaintenance = new CrudMaintenance();
+crudMaintenance.deleteCategory("Refrescos");
     }
 
     

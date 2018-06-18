@@ -529,6 +529,12 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel6.setText("Nombre:");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 39, -1, -1));
+
+        nameTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameTextFieldActionPerformed(evt);
+            }
+        });
         jPanel2.add(nameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 64, 126, -1));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
@@ -549,6 +555,11 @@ public class Maintenance extends javax.swing.JFrame {
 
         addUserButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         addUserButton.setText("Agregar");
+        addUserButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addUserButtonActionPerformed(evt);
+            }
+        });
         jPanel2.add(addUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(101, 298, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
@@ -1437,6 +1448,14 @@ public class Maintenance extends javax.swing.JFrame {
     private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton30ActionPerformed
+
+    private void nameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameTextFieldActionPerformed
+
+    private void addUserButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addUserButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addUserButtonActionPerformed
 
     /**
      * @param args the command line arguments
