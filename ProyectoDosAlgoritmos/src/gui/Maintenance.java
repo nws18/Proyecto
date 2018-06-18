@@ -35,26 +35,26 @@ public class Maintenance extends javax.swing.JFrame {
         jSeparator14 = new javax.swing.JSeparator();
         jSeparator15 = new javax.swing.JSeparator();
         jLabel83 = new javax.swing.JLabel();
-        jTextField27 = new javax.swing.JTextField();
+        nameCategoryTextField = new javax.swing.JTextField();
         jLabel84 = new javax.swing.JLabel();
-        jTextField28 = new javax.swing.JTextField();
+        descriptionCategoryTextField = new javax.swing.JTextField();
         jLabel85 = new javax.swing.JLabel();
-        jTextField29 = new javax.swing.JTextField();
-        jButton21 = new javax.swing.JButton();
+        searchNameCategoryTextField = new javax.swing.JTextField();
+        searchCategoryButton = new javax.swing.JButton();
         jLabel86 = new javax.swing.JLabel();
-        jLabel87 = new javax.swing.JLabel();
+        descriptionCategoryLabel = new javax.swing.JLabel();
         jLabel88 = new javax.swing.JLabel();
-        jTextField30 = new javax.swing.JTextField();
-        jButton22 = new javax.swing.JButton();
+        updateSearchNameCategoryTextField = new javax.swing.JTextField();
+        updateSearchCategoryButton = new javax.swing.JButton();
         jLabel89 = new javax.swing.JLabel();
-        jTextField31 = new javax.swing.JTextField();
+        updateNameCategoryTextField = new javax.swing.JTextField();
         jLabel90 = new javax.swing.JLabel();
-        jTextField32 = new javax.swing.JTextField();
+        updateDescriptionCategoryTextField = new javax.swing.JTextField();
         addCategoryButton = new javax.swing.JButton();
-        jButton24 = new javax.swing.JButton();
+        updateCategoryButton = new javax.swing.JButton();
         jLabel91 = new javax.swing.JLabel();
-        jTextField33 = new javax.swing.JTextField();
-        jButton25 = new javax.swing.JButton();
+        deleteCategoryTextField = new javax.swing.JTextField();
+        deleteCategoryButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -327,8 +327,8 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel85.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel85.setText("Nombre:");
 
-        jButton21.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jButton21.setText("Buscar");
+        searchCategoryButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        searchCategoryButton.setText("Buscar");
 
         jLabel86.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel86.setText("Descripción:");
@@ -336,8 +336,8 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel88.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel88.setText("Nombre:");
 
-        jButton22.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jButton22.setText("Buscar");
+        updateSearchCategoryButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        updateSearchCategoryButton.setText("Buscar");
 
         jLabel89.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel89.setText("Nombre:");
@@ -348,14 +348,14 @@ public class Maintenance extends javax.swing.JFrame {
         addCategoryButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         addCategoryButton.setText("Agregar");
 
-        jButton24.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jButton24.setText("Actualizar");
+        updateCategoryButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        updateCategoryButton.setText("Actualizar");
 
         jLabel91.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel91.setText("Nombre:");
 
-        jButton25.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jButton25.setText("Borrar");
+        deleteCategoryButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        deleteCategoryButton.setText("Borrar");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -377,9 +377,9 @@ public class Maintenance extends javax.swing.JFrame {
                         .addGap(25, 25, 25)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel83)
-                            .addComponent(jTextField27)
+                            .addComponent(nameCategoryTextField)
                             .addComponent(jLabel84)
-                            .addComponent(jTextField28, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)))
+                            .addComponent(descriptionCategoryTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(68, 68, 68)
                         .addComponent(addCategoryButton)))
@@ -391,33 +391,33 @@ public class Maintenance extends javax.swing.JFrame {
                         .addGroup(jPanel6Layout.createSequentialGroup()
                             .addComponent(jLabel85)
                             .addGap(18, 18, 18)
-                            .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jButton21))
+                            .addComponent(searchNameCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(searchCategoryButton))
                     .addComponent(jLabel86)
-                    .addComponent(jLabel87, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(descriptionCategoryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel90)
                             .addComponent(jLabel89)
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addComponent(jLabel88)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE))
+                                .addComponent(updateSearchNameCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(updateNameCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(updateDescriptionCategoryTextField))
+                        .addGap(67, 67, 67))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                                .addComponent(jButton22)
+                                .addComponent(updateSearchCategoryButton)
                                 .addGap(56, 56, 56))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                                .addComponent(jButton24)
+                                .addComponent(updateCategoryButton)
                                 .addGap(69, 69, 69)))))
                 .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -425,10 +425,10 @@ public class Maintenance extends javax.swing.JFrame {
                         .addGap(33, 33, 33)
                         .addComponent(jLabel91)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField33, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(deleteCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(67, 67, 67)
-                        .addComponent(jButton25)))
+                        .addComponent(deleteCategoryButton)))
                 .addGap(56, 56, 56))
         );
         jPanel6Layout.setVerticalGroup(
@@ -445,41 +445,41 @@ public class Maintenance extends javax.swing.JFrame {
                         .addGap(29, 29, 29)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel85)
-                            .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(searchNameCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jButton21)
+                        .addComponent(searchCategoryButton)
                         .addGap(38, 38, 38)
                         .addComponent(jLabel86)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel87, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(descriptionCategoryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel88)
-                            .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(updateSearchNameCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jButton22)
+                        .addComponent(updateSearchCategoryButton)
                         .addGap(11, 11, 11)
                         .addComponent(jLabel89)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(updateNameCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel90)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(updateDescriptionCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton24))
+                        .addComponent(updateCategoryButton))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addComponent(jLabel83)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(nameCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(30, 30, 30)
                                 .addComponent(jLabel84)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(descriptionCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(30, 30, 30)
                                 .addComponent(addCategoryButton))
                             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -490,9 +490,9 @@ public class Maintenance extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel91)
-                            .addComponent(jTextField33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(deleteCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(27, 27, 27)
-                        .addComponent(jButton25)))
+                        .addComponent(deleteCategoryButton)))
                 .addContainerGap(37, Short.MAX_VALUE))
         );
 
@@ -1343,6 +1343,7 @@ public class Maintenance extends javax.swing.JFrame {
         jTabbedPane1.addTab("Productos", jPanel7);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/tuercas.png"))); // NOI18N
         jLabel1.setText("Mantenimientos");
 
         returnAdministratorButton.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
@@ -1365,18 +1366,18 @@ public class Maintenance extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(returnAdministratorButton)
                 .addGap(50, 50, 50))
+            .addComponent(jTabbedPane1)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(390, 390, 390)
+                .addGap(402, 402, 402)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jTabbedPane1)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addGap(21, 21, 21)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(returnAdministratorButton)
@@ -1476,8 +1477,12 @@ public class Maintenance extends javax.swing.JFrame {
     private javax.swing.JButton addCategoryButton;
     private javax.swing.JButton addUserButton;
     private javax.swing.JComboBox<String> comboBoxRole;
+    private javax.swing.JButton deleteCategoryButton;
+    private javax.swing.JTextField deleteCategoryTextField;
     private javax.swing.JButton deleteUserButton;
     private javax.swing.JTextField deleteUserTextField;
+    private javax.swing.JLabel descriptionCategoryLabel;
+    private javax.swing.JTextField descriptionCategoryTextField;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
@@ -1490,10 +1495,6 @@ public class Maintenance extends javax.swing.JFrame {
     private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton22;
-    private javax.swing.JButton jButton24;
-    private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton27;
     private javax.swing.JButton jButton28;
@@ -1630,7 +1631,6 @@ public class Maintenance extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel84;
     private javax.swing.JLabel jLabel85;
     private javax.swing.JLabel jLabel86;
-    private javax.swing.JLabel jLabel87;
     private javax.swing.JLabel jLabel88;
     private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
@@ -1689,14 +1689,7 @@ public class Maintenance extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField24;
     private javax.swing.JTextField jTextField25;
     private javax.swing.JTextField jTextField26;
-    private javax.swing.JTextField jTextField27;
-    private javax.swing.JTextField jTextField28;
-    private javax.swing.JTextField jTextField29;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField30;
-    private javax.swing.JTextField jTextField31;
-    private javax.swing.JTextField jTextField32;
-    private javax.swing.JTextField jTextField33;
     private javax.swing.JTextField jTextField34;
     private javax.swing.JTextField jTextField35;
     private javax.swing.JTextField jTextField36;
@@ -1724,15 +1717,23 @@ public class Maintenance extends javax.swing.JFrame {
     private org.jdesktop.swingx.JXDatePicker jXDatePicker2;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker3;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker4;
+    private javax.swing.JTextField nameCategoryTextField;
     private javax.swing.JTextField nameTextField;
     private javax.swing.JPasswordField passwordTextField;
     private javax.swing.JButton returnAdministratorButton;
     private javax.swing.JLabel roleLabel;
+    private javax.swing.JButton searchCategoryButton;
+    private javax.swing.JTextField searchNameCategoryTextField;
     private javax.swing.JTextField serchName;
     private javax.swing.JButton serchUserButton;
+    private javax.swing.JButton updateCategoryButton;
+    private javax.swing.JTextField updateDescriptionCategoryTextField;
+    private javax.swing.JTextField updateNameCategoryTextField;
     private javax.swing.JTextField updateNameUserTextField;
     private javax.swing.JPasswordField updatePasswordTextField;
     private javax.swing.JComboBox<String> updateRoleUserComboBox;
+    private javax.swing.JButton updateSearchCategoryButton;
+    private javax.swing.JTextField updateSearchNameCategoryTextField;
     private javax.swing.JButton updateSearchUserButton;
     private javax.swing.JButton updateUserButton;
     private javax.swing.JTextField updateUserNameTextField;

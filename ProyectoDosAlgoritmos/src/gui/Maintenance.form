@@ -58,20 +58,20 @@
                   <Component id="returnAdministratorButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
               </Group>
+              <Component id="jTabbedPane1" alignment="0" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="390" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="402" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
-              <Component id="jTabbedPane1" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="jTabbedPane1" min="-2" pref="385" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="returnAdministratorButton" min="-2" max="-2" attributes="0"/>
@@ -124,9 +124,9 @@
                                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="jLabel83" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField27" max="32767" attributes="0"/>
+                                      <Component id="nameCategoryTextField" max="32767" attributes="0"/>
                                       <Component id="jLabel84" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField28" pref="165" max="32767" attributes="0"/>
+                                      <Component id="descriptionCategoryTextField" pref="165" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -142,12 +142,12 @@
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel85" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jTextField29" min="-2" pref="116" max="-2" attributes="0"/>
+                                      <Component id="searchNameCategoryTextField" min="-2" pref="116" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jButton21" min="-2" max="-2" attributes="0"/>
+                                  <Component id="searchCategoryButton" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jLabel86" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel87" min="-2" pref="153" max="-2" attributes="0"/>
+                              <Component id="descriptionCategoryLabel" min="-2" pref="153" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jSeparator14" min="-2" max="-2" attributes="0"/>
@@ -155,27 +155,27 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jTextField32" min="-2" pref="113" max="-2" attributes="0"/>
                                       <Component id="jLabel90" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel89" min="-2" max="-2" attributes="0"/>
                                       <Group type="102" attributes="0">
                                           <Component id="jLabel88" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jTextField30" min="-2" pref="113" max="-2" attributes="0"/>
+                                          <Component id="updateSearchNameCategoryTextField" min="-2" pref="113" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="jTextField31" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
+                                      <Component id="updateNameCategoryTextField" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
+                                      <Component id="updateDescriptionCategoryTextField" alignment="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="67" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
-                                          <Component id="jButton22" min="-2" max="-2" attributes="0"/>
+                                          <Component id="updateSearchCategoryButton" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
-                                          <Component id="jButton24" min="-2" max="-2" attributes="0"/>
+                                          <Component id="updateCategoryButton" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -187,11 +187,11 @@
                                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                                   <Component id="jLabel91" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jTextField33" min="-2" pref="108" max="-2" attributes="0"/>
+                                  <Component id="deleteCategoryTextField" min="-2" pref="108" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
-                                  <Component id="jButton25" min="-2" max="-2" attributes="0"/>
+                                  <Component id="deleteCategoryButton" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
@@ -213,33 +213,33 @@
                                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel85" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField29" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="searchNameCategoryTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jButton21" min="-2" max="-2" attributes="0"/>
+                                  <Component id="searchCategoryButton" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                                   <Component id="jLabel86" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jLabel87" min="-2" pref="79" max="-2" attributes="0"/>
+                                  <Component id="descriptionCategoryLabel" min="-2" pref="79" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel88" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField30" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="updateSearchNameCategoryTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jButton22" min="-2" max="-2" attributes="0"/>
+                                  <Component id="updateSearchCategoryButton" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                                   <Component id="jLabel89" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jTextField31" min="-2" max="-2" attributes="0"/>
+                                  <Component id="updateNameCategoryTextField" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jLabel90" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jTextField32" min="-2" pref="69" max="-2" attributes="0"/>
+                                  <Component id="updateDescriptionCategoryTextField" min="-2" pref="69" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jButton24" min="-2" max="-2" attributes="0"/>
+                                  <Component id="updateCategoryButton" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -247,11 +247,11 @@
                                       <Group type="102" attributes="0">
                                           <Component id="jLabel83" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jTextField27" min="-2" max="-2" attributes="0"/>
+                                          <Component id="nameCategoryTextField" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                                           <Component id="jLabel84" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jTextField28" min="-2" pref="86" max="-2" attributes="0"/>
+                                          <Component id="descriptionCategoryTextField" min="-2" pref="86" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                                           <Component id="addCategoryButton" min="-2" max="-2" attributes="0"/>
                                       </Group>
@@ -266,10 +266,10 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel91" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField33" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="deleteCategoryTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                  <Component id="jButton25" min="-2" max="-2" attributes="0"/>
+                                  <Component id="deleteCategoryButton" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace pref="37" max="32767" attributes="0"/>
@@ -333,7 +333,7 @@
                     <Property name="text" type="java.lang.String" value="Nombre:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField27">
+                <Component class="javax.swing.JTextField" name="nameCategoryTextField">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel84">
                   <Properties>
@@ -343,7 +343,7 @@
                     <Property name="text" type="java.lang.String" value="Descripci&#xf3;n:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField28">
+                <Component class="javax.swing.JTextField" name="descriptionCategoryTextField">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel85">
                   <Properties>
@@ -353,9 +353,9 @@
                     <Property name="text" type="java.lang.String" value="Nombre:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField29">
+                <Component class="javax.swing.JTextField" name="searchNameCategoryTextField">
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton21">
+                <Component class="javax.swing.JButton" name="searchCategoryButton">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Times New Roman" size="12" style="0"/>
@@ -371,7 +371,7 @@
                     <Property name="text" type="java.lang.String" value="Descripci&#xf3;n:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel87">
+                <Component class="javax.swing.JLabel" name="descriptionCategoryLabel">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel88">
                   <Properties>
@@ -381,9 +381,9 @@
                     <Property name="text" type="java.lang.String" value="Nombre:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField30">
+                <Component class="javax.swing.JTextField" name="updateSearchNameCategoryTextField">
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton22">
+                <Component class="javax.swing.JButton" name="updateSearchCategoryButton">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Times New Roman" size="12" style="0"/>
@@ -399,7 +399,7 @@
                     <Property name="text" type="java.lang.String" value="Nombre:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField31">
+                <Component class="javax.swing.JTextField" name="updateNameCategoryTextField">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel90">
                   <Properties>
@@ -409,7 +409,7 @@
                     <Property name="text" type="java.lang.String" value="Descripci&#xf3;n:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField32">
+                <Component class="javax.swing.JTextField" name="updateDescriptionCategoryTextField">
                 </Component>
                 <Component class="javax.swing.JButton" name="addCategoryButton">
                   <Properties>
@@ -419,7 +419,7 @@
                     <Property name="text" type="java.lang.String" value="Agregar"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton24">
+                <Component class="javax.swing.JButton" name="updateCategoryButton">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Times New Roman" size="12" style="0"/>
@@ -435,9 +435,9 @@
                     <Property name="text" type="java.lang.String" value="Nombre:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField33">
+                <Component class="javax.swing.JTextField" name="deleteCategoryTextField">
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton25">
+                <Component class="javax.swing.JButton" name="deleteCategoryButton">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Times New Roman" size="12" style="0"/>
@@ -3037,6 +3037,9 @@
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="16" style="0"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/icons/tuercas.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Mantenimientos"/>
           </Properties>

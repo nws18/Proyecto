@@ -31,6 +31,7 @@ public class Reports extends javax.swing.JFrame {
         returnAdministratorButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,8 +63,9 @@ public class Reports extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 430, 90));
 
+        returnAdministratorButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         returnAdministratorButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/salir-con-boton-en-esquema.png"))); // NOI18N
-        returnAdministratorButton.setText("Volver");
+        returnAdministratorButton.setText("Salir");
         returnAdministratorButton.setActionCommand("Salir");
         returnAdministratorButton.setBorderPainted(false);
         returnAdministratorButton.setContentAreaFilled(false);
@@ -73,11 +75,16 @@ public class Reports extends javax.swing.JFrame {
                 returnAdministratorButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(returnAdministratorButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 390, -1, -1));
+        jPanel1.add(returnAdministratorButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 390, -1, -1));
 
         jScrollPane2.setViewportView(jList1);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 170, 210));
+
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/tareas.png"))); // NOI18N
+        jLabel2.setText("Reporte de lotes anulados");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -140,6 +147,7 @@ public class Reports extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
