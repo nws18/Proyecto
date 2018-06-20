@@ -1,11 +1,14 @@
 
 package tda;
 
+import Exception.TreeException;
 import administratorFiles.AdministratorFiles;
+import binarytree.LinkedBinaryTree;
 import domain.Batch;
 import domain.Category;
 import domain.Cellar;
 import domain.DistributionOrder;
+import domain.Product;
 import domain.TransportUnit;
 import domain.User;
 import java.io.FileNotFoundException;
@@ -26,7 +29,7 @@ import lab_grafos_algoritmos.GraphException;
 
 public class LoadTda {
     
-    //Producto mayorista árbol binario
+    public static LinkedBinaryTree productsBinaryTree = new LinkedBinaryTree();
     public static Map<String, Category> categoryMap = new HashMap<>();
     public static Map<Integer, Batch> batchMap = new TreeMap<>();
     public static Map<Integer, TransportUnit> transportUnitMap = new LinkedHashMap<>();
@@ -36,7 +39,13 @@ public class LoadTda {
     
     AdministratorFiles administratorFiles = new AdministratorFiles();
     
-    public void tdaProduct() {
+    public void tdaProduct() throws IOException, FileNotFoundException, ClassNotFoundException, TreeException {
+        ArrayList<Product> arrayList = administratorFiles.readProductFile();
+        for (int i = 0; i < arrayList.size(); i++) {
+            Product product = arrayList.get(i);
+            productsBinaryTree.insert(product);            
+        }
+        System.out.println(productsBinaryTree.recorreArbol().toString());
     }
     
     public void tdaCategory() throws IOException, FileNotFoundException, ClassNotFoundException {

@@ -87,13 +87,15 @@ public class CrudMaintenance {
 
     public void deleteCategory(String name) {
         Iterator iterator = categoryMap.keySet().iterator();
-        
-        while (iterator.hasNext()) {
-            String key = (String) iterator.next();
-            if (name.equals(categoryMap.get(key))) {
-               Category nameCategory = categoryMap.get(key);
-               categoryMap.remove(nameCategory);
+        try {
+            while (iterator.hasNext()) {
+                String key = (String) iterator.next();
+                Category category = categoryMap.get(key);
+                if (name.equals(category.getName())) {
+                    categoryMap.remove(key);
+                }
             }
+        } catch (Exception e) {
         }
         System.out.println(categoryMap.toString());
     }
