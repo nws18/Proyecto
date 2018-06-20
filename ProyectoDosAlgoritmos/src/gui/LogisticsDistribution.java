@@ -1,10 +1,10 @@
 
 package gui;
 
-import domain.User;
+import domain.Product;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
-import static tda.LoadTda.userList;
+import static tda.LoadTda.productsBinaryTree;
 
 /**
  * Interfaz módulo Logística de distribución.
@@ -17,18 +17,27 @@ public class LogisticsDistribution extends javax.swing.JFrame {
      */
     public LogisticsDistribution() {
         initComponents();
+//        String lati = "9.8273728";
+//            String longi = "-83.8685373";
+//        String url = "https://www.google.com/maps/@"+lati+","+longi+",19.25z";
+////        String url = "www.google.com";
+//        Browser browser = new Browser();
+//        
+//        BrowserView view = new BrowserView(browser);
+//
+//        jPanel2.setLayout(new BorderLayout());
+//        
+//        jPanel2.add(view,BorderLayout.CENTER);
+        
+//        browser.loadURL(url);
 
-            listProducts.setModel(new javax.swing.AbstractListModel<String>() {
-                String[] strings = {"s"};
-
-                public int getSize() {
-                    return strings.length;
-                }
-
-                public String getElementAt(int i) {
-                    return strings[i];
-                }
-            });
+        DefaultListModel modelo = new DefaultListModel();
+  
+        for (int i = 0; i < productsBinaryTree.recorreArbol().size(); i++) {
+            Product product = (Product) productsBinaryTree.recorreArbol().get(i);
+            modelo.addElement(product.getName().toString());
+        }
+        listProducts.setModel(modelo);
     }
 
     /**
@@ -66,6 +75,11 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/carrito.png"))); // NOI18N
         jLabel1.setText("Productos");
 
+        listProducts.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listProductsValueChanged(evt);
+            }
+        });
         jScrollPane1.setViewportView(listProducts);
 
         jLabel2.setText("***IMAGEN PRODUCTO***");
@@ -245,6 +259,11 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         login.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_returnLoginButtonActionPerformed
+
+    private void listProductsValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listProductsValueChanged
+        
+        String selectedValue = listProducts.getSelectedValue();
+    }//GEN-LAST:event_listProductsValueChanged
 
     /**
      * @param args the command line arguments

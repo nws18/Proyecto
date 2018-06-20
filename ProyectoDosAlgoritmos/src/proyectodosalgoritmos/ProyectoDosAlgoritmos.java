@@ -1,6 +1,7 @@
 
 package proyectodosalgoritmos;
 
+import Exception.TreeException;
 import gui.Login;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -20,28 +21,25 @@ public class ProyectoDosAlgoritmos {
      * Ventana principal login.
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args){
         LoadTda loadTda = new LoadTda();
         
         try {
+            loadTda.tdaProduct();
             loadTda.tdaCategory();
             loadTda.tdaBatch();
             loadTda.tdaTransportUnit();
             loadTda.tdaCellar();
             loadTda.tdaDistributionOrder();
             loadTda.tdaUser();
-        } catch (IOException ex) {
-            Logger.getLogger(ProyectoDosAlgoritmos.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ProyectoDosAlgoritmos.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (GraphException ex) {
+        } catch (IOException | ClassNotFoundException | GraphException | TreeException ex) {
             Logger.getLogger(ProyectoDosAlgoritmos.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         Login login = new Login();
         login.setVisible(true);
-CrudMaintenance crudMaintenance = new CrudMaintenance();
-crudMaintenance.deleteCategory("Refrescos");
+        CrudMaintenance crudMaintenance = new CrudMaintenance();
+        crudMaintenance.deleteCategory("Larga duración");
     }
 
     

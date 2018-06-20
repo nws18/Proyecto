@@ -6,6 +6,7 @@ import domain.Batch;
 import domain.Category;
 import domain.Cellar;
 import domain.DistributionOrder;
+import domain.Product;
 import domain.TransportUnit;
 import domain.User;
 import java.io.IOException;
@@ -16,6 +17,7 @@ import static tda.LoadTda.batchMap;
 import static tda.LoadTda.categoryMap;
 import static tda.LoadTda.cellarGraph;
 import static tda.LoadTda.distributionOrderList;
+import static tda.LoadTda.productsBinaryTree;
 import static tda.LoadTda.transportUnitMap;
 import static tda.LoadTda.userList;
 
@@ -27,7 +29,12 @@ public class LoadFiles {
     
     AdministratorFiles administratorFiles = new AdministratorFiles();
     
-    public void fileProduct() {
+    public void fileProduct() throws IOException {
+        ArrayList<Product> arrayList = new ArrayList<>();
+        for (int i = 0; i < productsBinaryTree.recorreArbol().size() ; i++) {
+            arrayList.add((Product) productsBinaryTree.recorreArbol().get(i));
+        }
+        administratorFiles.writeProductFile(arrayList);
     }
     
     public void fileCategory() throws IOException {
