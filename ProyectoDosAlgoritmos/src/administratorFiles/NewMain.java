@@ -63,11 +63,11 @@ public class NewMain {
         categoryList.add(category3);
         categoryList.add(category4);
         
-        Cellar cellar0 = new Cellar(0, "Paraiso", "latitude", "length", 6, "url");
-        Cellar cellar1 = new Cellar(1, "Cartago", "latitude", "length", 7, "url");
-        Cellar cellar2 = new Cellar(2, "Tres Rios", "latitude", "length", 8, "url");
-        Cellar cellar3 = new Cellar(3, "Lima", "latitude", "length", 9, "url");
-        Cellar cellar4 = new Cellar(4, "Tejar", "latitude", "length", 10, "url");
+        Cellar cellar0 = new Cellar(0, "Caballo Blanco", "9.8465059", "-83.8453388", 6, "url");
+        Cellar cellar1 = new Cellar(1, "Curridabat", "9.9104054", "-84.0261615", 7, "url");
+        Cellar cellar2 = new Cellar(2, "Desamaparados", "9.8962853", "-84.0929378", 8, "url");
+        Cellar cellar3 = new Cellar(3, "Lima", "9.8733467", "-83.9445108", 9, "url");
+        Cellar cellar4 = new Cellar(4, "San Sebastian", "9.8962853", "-84.0929378", 10, "url");
         cellarList.add(cellar0);
         cellarList.add(cellar1);
         cellarList.add(cellar2);
@@ -107,8 +107,8 @@ public class NewMain {
         transportUnitList.add(transportUnit3);
         transportUnitList.add(transportUnit4);
         
-        User user0 = new User(0, "Nikol", "Administrador", "Nicky", "1234");
-        User user1 = new User(1, "Guilberth", "Operador", "Willy", "1234");
+        User user0 = new User(0, "Nicole Fonseca", "Administrador", "nicole98", "1234");
+        User user1 = new User(1, "Wilmer Mata", "Operador", "wilmata24", "1234");
         User user2 = new User(2, "Sergio Siles", "Operador", "sfss1997", "1234");
         User user3 = new User(3, "Elva Surita", "Operador", "EV", "1234");
         User user4 = new User(4, "Allan Brito", "Operador", "Nalla", "1234");
