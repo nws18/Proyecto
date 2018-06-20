@@ -1,11 +1,16 @@
-
 package gui;
+
+import domain.Category;
+import tda.CrudMaintenance;
 
 /**
  * Interfaz mantenimiento de cada entidad.
+ *
  * @author Nicole Fonseca, Wilmer Mata, Sergio Siles
  */
 public class Maintenance extends javax.swing.JFrame {
+
+    CrudMaintenance crudMaintenance = new CrudMaintenance();
 
     /**
      * Creates new form Maintenance
@@ -55,6 +60,8 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel91 = new javax.swing.JLabel();
         deleteCategoryTextField = new javax.swing.JTextField();
         deleteCategoryButton = new javax.swing.JButton();
+        addCategoryLabel = new javax.swing.JLabel();
+        searchCategoryLabel = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -329,6 +336,11 @@ public class Maintenance extends javax.swing.JFrame {
 
         searchCategoryButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         searchCategoryButton.setText("Buscar");
+        searchCategoryButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchCategoryButtonActionPerformed(evt);
+            }
+        });
 
         jLabel86.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel86.setText("Descripción:");
@@ -347,6 +359,11 @@ public class Maintenance extends javax.swing.JFrame {
 
         addCategoryButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         addCategoryButton.setText("Agregar");
+        addCategoryButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addCategoryButtonActionPerformed(evt);
+            }
+        });
 
         updateCategoryButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         updateCategoryButton.setText("Actualizar");
@@ -374,62 +391,73 @@ public class Maintenance extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel83)
-                            .addComponent(nameCategoryTextField)
-                            .addComponent(jLabel84)
-                            .addComponent(descriptionCategoryTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)))
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(25, 25, 25)
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel83)
+                                    .addComponent(nameCategoryTextField)
+                                    .addComponent(jLabel84)
+                                    .addComponent(descriptionCategoryTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(68, 68, 68)
+                                .addComponent(addCategoryButton)))
+                        .addGap(51, 51, 51)
+                        .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addComponent(addCategoryButton)))
-                .addGap(51, 51, 51)
-                .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap()
+                        .addComponent(addCategoryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanel6Layout.createSequentialGroup()
-                            .addComponent(jLabel85)
-                            .addGap(18, 18, 18)
-                            .addComponent(searchNameCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(searchCategoryButton))
-                    .addComponent(jLabel86)
-                    .addComponent(descriptionCategoryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel90)
-                            .addComponent(jLabel89)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(jLabel88)
-                                .addGap(18, 18, 18)
-                                .addComponent(updateSearchNameCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(updateNameCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(updateDescriptionCategoryTextField))
-                        .addGap(67, 67, 67))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                                .addComponent(updateSearchCategoryButton)
-                                .addGap(56, 56, 56))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                                .addComponent(updateCategoryButton)
-                                .addGap(69, 69, 69)))))
-                .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(jLabel91)
+                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel6Layout.createSequentialGroup()
+                                    .addComponent(jLabel85)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(searchNameCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(searchCategoryButton))
+                            .addComponent(jLabel86)
+                            .addComponent(descriptionCategoryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(deleteCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel90)
+                                    .addComponent(jLabel89)
+                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                        .addComponent(jLabel88)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(updateSearchNameCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(updateNameCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(updateDescriptionCategoryTextField))
+                                .addGap(67, 67, 67))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                                        .addComponent(updateSearchCategoryButton)
+                                        .addGap(56, 56, 56))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                                        .addComponent(updateCategoryButton)
+                                        .addGap(69, 69, 69)))))
+                        .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(33, 33, 33)
+                                .addComponent(jLabel91)
+                                .addGap(18, 18, 18)
+                                .addComponent(deleteCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(67, 67, 67)
+                                .addComponent(deleteCategoryButton)))
+                        .addGap(56, 56, 56))
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addComponent(deleteCategoryButton)))
-                .addGap(56, 56, 56))
+                        .addGap(99, 99, 99)
+                        .addComponent(searchCategoryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -442,33 +470,45 @@ public class Maintenance extends javax.swing.JFrame {
                     .addComponent(jLabel82))
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel85)
-                            .addComponent(searchNameCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(searchCategoryButton)
-                        .addGap(38, 38, 38)
-                        .addComponent(jLabel86)
-                        .addGap(18, 18, 18)
-                        .addComponent(descriptionCategoryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel88)
-                            .addComponent(updateSearchNameCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(updateSearchCategoryButton)
-                        .addGap(11, 11, 11)
-                        .addComponent(jLabel89)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(updateNameCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel90)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(updateDescriptionCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(updateCategoryButton))
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel85)
+                                    .addComponent(searchNameCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(searchCategoryButton)
+                                .addGap(38, 38, 38)
+                                .addComponent(jLabel86)
+                                .addGap(18, 18, 18)
+                                .addComponent(descriptionCategoryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(23, 23, 23)
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel88)
+                                    .addComponent(updateSearchNameCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(updateSearchCategoryButton)
+                                .addGap(11, 11, 11)
+                                .addComponent(jLabel89)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(updateNameCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel90)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(updateDescriptionCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(updateCategoryButton))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel91)
+                                    .addComponent(deleteCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(27, 27, 27)
+                                .addComponent(deleteCategoryButton)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(searchCategoryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -485,15 +525,10 @@ public class Maintenance extends javax.swing.JFrame {
                             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jSeparator15, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
                                 .addComponent(jSeparator14)
-                                .addComponent(jSeparator13))))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(jSeparator13)))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel91)
-                            .addComponent(deleteCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(27, 27, 27)
-                        .addComponent(deleteCategoryButton)))
-                .addContainerGap(37, Short.MAX_VALUE))
+                        .addComponent(addCategoryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         jTabbedPane1.addTab("Categorías", jPanel6);
@@ -1457,6 +1492,31 @@ public class Maintenance extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_addUserButtonActionPerformed
 
+    private void addCategoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCategoryButtonActionPerformed
+        if (crudMaintenance.existsCategory(nameCategoryTextField.getText()) == true) {
+            addCategoryLabel.setText("La categoría ya existe.");
+        } else if (nameCategoryTextField.getText().equals("") || descriptionCategoryTextField.equals("")) {
+            addCategoryLabel.setText("Ingrese la información.");
+        } else {
+            crudMaintenance.addCategory(nameCategoryTextField.getText(), descriptionCategoryTextField.getText());
+            addCategoryLabel.setText("Categoría agregada.");
+            nameCategoryTextField.setText("");
+            descriptionCategoryLabel.setText("");
+        }
+    }//GEN-LAST:event_addCategoryButtonActionPerformed
+
+    private void searchCategoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchCategoryButtonActionPerformed
+        try {
+            Category category = crudMaintenance.getCategory(searchNameCategoryTextField.getText());
+            if (searchNameCategoryTextField.getText().equals(category.getName())) {
+                descriptionCategoryLabel.setText(category.getDescription());
+            }
+
+        } catch (Exception e) {
+
+        }
+    }//GEN-LAST:event_searchCategoryButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1494,6 +1554,7 @@ public class Maintenance extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addCategoryButton;
+    private javax.swing.JLabel addCategoryLabel;
     private javax.swing.JButton addUserButton;
     private javax.swing.JComboBox<String> comboBoxRole;
     private javax.swing.JButton deleteCategoryButton;
@@ -1742,6 +1803,7 @@ public class Maintenance extends javax.swing.JFrame {
     private javax.swing.JButton returnAdministratorButton;
     private javax.swing.JLabel roleLabel;
     private javax.swing.JButton searchCategoryButton;
+    private javax.swing.JLabel searchCategoryLabel;
     private javax.swing.JTextField searchNameCategoryTextField;
     private javax.swing.JTextField serchName;
     private javax.swing.JButton serchUserButton;

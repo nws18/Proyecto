@@ -118,83 +118,100 @@
                           <Component id="jLabel82" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jLabel83" min="-2" max="-2" attributes="0"/>
-                                      <Component id="nameCategoryTextField" max="32767" attributes="0"/>
-                                      <Component id="jLabel84" min="-2" max="-2" attributes="0"/>
-                                      <Component id="descriptionCategoryTextField" pref="165" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="jLabel83" min="-2" max="-2" attributes="0"/>
+                                              <Component id="nameCategoryTextField" max="32767" attributes="0"/>
+                                              <Component id="jLabel84" min="-2" max="-2" attributes="0"/>
+                                              <Component id="descriptionCategoryTextField" pref="165" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                                          <Component id="addCategoryButton" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
+                                  <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                                  <Component id="jSeparator13" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
-                                  <Component id="addCategoryButton" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="addCategoryLabel" min="-2" pref="145" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                          <Component id="jSeparator13" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="jLabel85" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="searchNameCategoryTextField" min="-2" pref="116" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="searchCategoryButton" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jLabel86" min="-2" max="-2" attributes="0"/>
-                              <Component id="descriptionCategoryLabel" min="-2" pref="153" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jSeparator14" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel90" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel89" min="-2" max="-2" attributes="0"/>
-                                      <Group type="102" attributes="0">
-                                          <Component id="jLabel88" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="updateSearchNameCategoryTextField" min="-2" pref="113" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="jLabel85" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="searchNameCategoryTextField" min="-2" pref="116" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="searchCategoryButton" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="updateNameCategoryTextField" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
-                                      <Component id="updateDescriptionCategoryTextField" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jLabel86" min="-2" max="-2" attributes="0"/>
+                                      <Component id="descriptionCategoryLabel" min="-2" pref="153" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="updateSearchCategoryButton" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="updateCategoryButton" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <Component id="jSeparator15" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                                  <Component id="jLabel91" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="deleteCategoryTextField" min="-2" pref="108" max="-2" attributes="0"/>
+                                  <Component id="jSeparator14" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel90" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel89" min="-2" max="-2" attributes="0"/>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="jLabel88" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="updateSearchNameCategoryTextField" min="-2" pref="113" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="updateNameCategoryTextField" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
+                                              <Component id="updateDescriptionCategoryTextField" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="1" attributes="0">
+                                                  <Component id="updateSearchCategoryButton" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="1" attributes="0">
+                                                  <Component id="updateCategoryButton" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <Component id="jSeparator15" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                          <Component id="jLabel91" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="deleteCategoryTextField" min="-2" pref="108" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                                          <Component id="deleteCategoryButton" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
-                                  <Component id="deleteCategoryButton" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
+                                  <Component id="searchCategoryLabel" min="-2" pref="106" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -210,36 +227,52 @@
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel85" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="searchNameCategoryTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel85" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="searchNameCategoryTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="searchCategoryButton" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                                          <Component id="jLabel86" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="descriptionCategoryLabel" min="-2" pref="79" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel88" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="updateSearchNameCategoryTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="updateSearchCategoryButton" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                                          <Component id="jLabel89" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="updateNameCategoryTextField" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="jLabel90" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="updateDescriptionCategoryTextField" min="-2" pref="69" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="updateCategoryButton" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel91" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="deleteCategoryTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                          <Component id="deleteCategoryButton" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="searchCategoryButton" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                                  <Component id="jLabel86" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="descriptionCategoryLabel" min="-2" pref="79" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel88" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="updateSearchNameCategoryTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="updateSearchCategoryButton" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                                  <Component id="jLabel89" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="updateNameCategoryTextField" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jLabel90" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="updateDescriptionCategoryTextField" min="-2" pref="69" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="updateCategoryButton" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="searchCategoryLabel" min="-2" pref="22" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -261,18 +294,11 @@
                                           <Component id="jSeparator13" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel91" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="deleteCategoryTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                  <Component id="deleteCategoryButton" min="-2" max="-2" attributes="0"/>
+                                  <Component id="addCategoryLabel" min="-2" pref="19" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="37" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -362,6 +388,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Buscar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="searchCategoryButtonActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel86">
                   <Properties>
@@ -418,6 +447,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Agregar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addCategoryButtonActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="updateCategoryButton">
                   <Properties>
@@ -444,6 +476,10 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Borrar"/>
                   </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="addCategoryLabel">
+                </Component>
+                <Component class="javax.swing.JLabel" name="searchCategoryLabel">
                 </Component>
               </SubComponents>
             </Container>
