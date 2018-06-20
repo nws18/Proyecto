@@ -21,7 +21,7 @@ public class ProyectoDosAlgoritmos {
      * Ventana principal login.
      * @param args the command line arguments
      */
-    public static void main(String[] args){
+    public static void main(String[] args) throws GraphException{
         LoadTda loadTda = new LoadTda();
         
         try {
@@ -35,11 +35,11 @@ public class ProyectoDosAlgoritmos {
         } catch (IOException | ClassNotFoundException | GraphException | TreeException ex) {
             Logger.getLogger(ProyectoDosAlgoritmos.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
+        CrudMaintenance crudMaintenance = new CrudMaintenance();
+        
         Login login = new Login();
         login.setVisible(true);
-        CrudMaintenance crudMaintenance = new CrudMaintenance();
-        crudMaintenance.deleteCategory("Larga duración");
     }
 
     
