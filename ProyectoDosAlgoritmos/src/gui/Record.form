@@ -51,6 +51,8 @@
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
+                          <Component id="chartButton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="returnMaintenanceButton" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
@@ -66,7 +68,7 @@
                               </Group>
                           </Group>
                           <EmptySpace pref="39" max="32767" attributes="0"/>
-                          <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                          <Component id="chartPanel" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
@@ -96,11 +98,14 @@
                           <EmptySpace pref="173" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                          <Component id="chartPanel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Component id="returnMaintenanceButton" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="returnMaintenanceButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="chartButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -149,7 +154,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="jPanel2">
+        <Container class="javax.swing.JPanel" name="chartPanel">
 
           <Layout>
             <DimensionLayout dim="0">
@@ -200,6 +205,14 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Historial de productos"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="chartButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Gr&#xe1;fico"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chartButtonActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
