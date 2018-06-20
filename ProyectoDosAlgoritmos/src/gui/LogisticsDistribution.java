@@ -36,6 +36,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         for (int i = 0; i < productsBinaryTree.recorreArbol().size(); i++) {
             Product product = (Product) productsBinaryTree.recorreArbol().get(i);
             modelo.addElement(product.getName().toString());
+            
         }
         listProducts.setModel(modelo);
     }
