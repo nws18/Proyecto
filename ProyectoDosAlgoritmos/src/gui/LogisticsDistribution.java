@@ -1,9 +1,14 @@
 
 package gui;
 
+import domain.Batch;
+import domain.Cellar;
 import domain.Product;
 import java.util.ArrayList;
+import java.util.Iterator;
 import javax.swing.DefaultListModel;
+import static tda.LoadTda.batchMap;
+import static tda.LoadTda.cellarGraph;
 import static tda.LoadTda.productsBinaryTree;
 
 /**
@@ -17,28 +22,26 @@ public class LogisticsDistribution extends javax.swing.JFrame {
      */
     public LogisticsDistribution() {
         initComponents();
-//        String lati = "9.8273728";
-//            String longi = "-83.8685373";
-//        String url = "https://www.google.com/maps/@"+lati+","+longi+",19.25z";
-////        String url = "www.google.com";
-//        Browser browser = new Browser();
-//        
-//        BrowserView view = new BrowserView(browser);
-//
-//        jPanel2.setLayout(new BorderLayout());
-//        
-//        jPanel2.add(view,BorderLayout.CENTER);
-        
-//        browser.loadURL(url);
+//       
 
-        DefaultListModel modelo = new DefaultListModel();
+//        DefaultListModel modelo = new DefaultListModel();
   
-        for (int i = 0; i < productsBinaryTree.recorreArbol().size(); i++) {
-            Product product = (Product) productsBinaryTree.recorreArbol().get(i);
-            modelo.addElement(product.getName().toString());
-            
+//        for (int i = 0; i < productsBinaryTree.recorreArbol().size(); i++) {
+//            Product product = (Product) productsBinaryTree.recorreArbol().get(i);
+//            modelo.addElement(String.valueOf(product.getName().toString()));
+//            
+//        }
+//        listProducts.setModel(modelo);
+
+        String[] array = new String[batchMap.size()];
+        for (int i = 0; i < cellarGraph.list().size(); i++) {
+            Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
+            array[i]= tempCellar.getName();
         }
-        listProducts.setModel(modelo);
+        jList2.setListData(array);
+
+
+
     }
 
     /**
@@ -110,6 +113,11 @@ public class LogisticsDistribution extends javax.swing.JFrame {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        jList2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jList2MouseClicked(evt);
+            }
         });
         jScrollPane3.setViewportView(jList2);
 
@@ -265,6 +273,22 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         
         String selectedValue = listProducts.getSelectedValue();
     }//GEN-LAST:event_listProductsValueChanged
+
+    private void jList2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList2MouseClicked
+//         String lati = "9.8273728";
+//            String longi = "-83.8685373";
+//        String url = "https://www.google.com/maps/@"+lati+","+longi+",19.25z";
+//      
+//        Browser browser = new Browser();
+//        
+//        BrowserView view = new BrowserView(browser);
+//
+//        jPanel2.setLayout(new BorderLayout());
+//        
+//        jPanel2.add(view,BorderLayout.CENTER);
+//        
+//        browser.loadURL(url);
+    }//GEN-LAST:event_jList2MouseClicked
 
     /**
      * @param args the command line arguments
