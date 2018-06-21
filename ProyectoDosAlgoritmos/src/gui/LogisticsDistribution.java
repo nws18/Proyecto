@@ -232,7 +232,8 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         for (int i = 0; i < tempTree.size(); i++) {
             Product tempProduct = (Product) tempTree.get(i);
             if(tempProduct.getName().equals(listProducts.getSelectedValue())){
-                
+                ImageIcon imageIcon = new ImageIcon(tempProduct.getUrl());
+                jLabel2.setIcon(imageIcon);
             
             }
         }
