@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import static tda.LoadTda.batchMap;
 import static tda.LoadTda.cellarGraph;
+import static tda.LoadTda.tempTree;
 
 /**
  * Interfaz módulo Logística de distribución.
@@ -40,13 +41,20 @@ public class LogisticsDistribution extends javax.swing.JFrame {
 //            
 //        }
 //        listProducts.setModel(modelo);
-        String[] array = new String[batchMap.size()];
+        String[] arrayCellar = new String[batchMap.size()];
         for (int i = 0; i < cellarGraph.list().size(); i++) {
             Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
-            array[i] = tempCellar.getName();
+            arrayCellar[i] = tempCellar.getName();
         }
-        cellarList.setListData(array);
-
+        cellarList.setListData(arrayCellar);
+        
+         String[] arrayProducts = new String[tempTree.size()];
+         for (int i = 0; i < tempTree.size() ; i++) {
+            Product tempProduct = (Product) tempTree.get(i);
+            arrayProducts[i]= tempProduct.getName();
+        }
+        listProducts.setListData(arrayProducts);
+        
     }
 
     /**

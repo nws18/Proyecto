@@ -26,7 +26,8 @@ import tda.CrudMaintenance;
 import static tda.LoadTda.batchMap;
 import static tda.LoadTda.categoryMap;
 import static tda.LoadTda.cellarGraph;
-
+import static tda.LoadTda.tempTree;
+//import static tda.LoadTda.productsBinaryTree;
 import static tda.LoadTda.transportUnitMap;
 import static tda.LoadTda.userList;
 
@@ -527,6 +528,7 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel138 = new javax.swing.JLabel();
         jLabel139 = new javax.swing.JLabel();
         batchCodeComboBox = new javax.swing.JComboBox<>();
+        jLabel36 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         returnAdministratorButton = new javax.swing.JButton();
 
@@ -1684,11 +1686,21 @@ public class Maintenance extends javax.swing.JFrame {
 
         searchImageProductButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         searchImageProductButton.setText("Buscar");
+        searchImageProductButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchImageProductButtonActionPerformed(evt);
+            }
+        });
         jPanel7.add(searchImageProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, 70, -1));
 
         addProductButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         addProductButton.setText("Agregar");
-        jPanel7.add(addProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, -1, -1));
+        addProductButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addProductButtonActionPerformed(evt);
+            }
+        });
+        jPanel7.add(addProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, -1, -1));
 
         jLabel105.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel105.setText("Nombre:");
@@ -1819,6 +1831,7 @@ public class Maintenance extends javax.swing.JFrame {
         jPanel7.add(jLabel139, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, 70, 40));
 
         jPanel7.add(batchCodeComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 110, -1));
+        jPanel7.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 200, 20));
 
         jTabbedPane1.addTab("Productos", jPanel7);
 
@@ -2307,6 +2320,51 @@ public class Maintenance extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_deleteCellarButtonActionPerformed
 
+    private void searchImageProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchImageProductButtonActionPerformed
+       JFileChooser fileChooser = new JFileChooser();
+        FileNameExtensionFilter fileNameExtensionFilter = new FileNameExtensionFilter("JPG, PNG", "jpg", "png");
+        fileChooser.setFileFilter(fileNameExtensionFilter);
+        fileChooser.showOpenDialog(this);
+        File file = fileChooser.getSelectedFile();
+        if (file != null) {
+            String path = file.toString();
+            Path origin = Paths.get(path);
+            Path destiny = Paths.get(origin.getFileName().toString());
+
+            try {
+                Files.copy(origin, destiny, StandardCopyOption.COPY_ATTRIBUTES);
+                imageProductTextField.setText(destiny.toString());
+            } catch (IOException ex) {
+                Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            jLabel36.setText("Debe seleccionar un archivo.");
+        }
+    }//GEN-LAST:event_searchImageProductButtonActionPerformed
+
+    private void addProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addProductButtonActionPerformed
+        for (int i = 0; i < tempTree.size(); i++) {
+            Product product = (Product) tempTree.get(i);
+            if (product.getName().equals(nameProductTextField.getText())&& product.getUnitMeasured().equals(unitMeasuredComboBox.getSelectedItem().toString())) {
+                jLabel36.setText("El producto ya existe.");
+            } else if (nameProductTextField.getText().equals("") || unitValueTextField.equals("") || totalWeightTextField.getText().equals("") 
+                    || descriptionProductTextField.getText().equals("") || priceTextField.getText().equals("") || imageProductTextField.getText().equals("")) {
+                jLabel36.setText("Debe ingresar todos los datos.");
+            } else {
+//                crudMaintenance.addProduct(nameProductTextField.getText(), unitMeasuredComboBox.getSelectedItem().toString(), String.valueOf(unitValueTextField.getText()), String.valueOf(totalWeightTextField.getText()), 
+//                        descriptionProductTextField.getText(), batchCodeComboBox.getSelectedItem().toString(), 
+//                        categoryComboBox.getSelectedItem().toString(), priceTextField.getText(), imageProductTextField.getText());
+                jLabel36.setText("Producto agregada.");
+                nameProductTextField.setText("");
+                unitValueTextField.setText("");
+                totalWeightTextField.setText("");
+                descriptionProductTextField.setText("");
+                priceTextField.setText("");
+                imageProductTextField.setText("");
+            }
+        }
+    }//GEN-LAST:event_addProductButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2466,6 +2524,7 @@ public class Maintenance extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
