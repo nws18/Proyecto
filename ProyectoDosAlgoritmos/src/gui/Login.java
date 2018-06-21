@@ -1,15 +1,14 @@
-
 package gui;
 
 import tda.CrudMaintenance;
 
 /**
  * Interfaz ventana principal login.
+ *
  * @author Nicole Fonseca, Wilmer Mata, Sergio Siles
  */
 public class Login extends javax.swing.JFrame {
 
-    
     /**
      * Creates new form Logi
      */
@@ -33,7 +32,7 @@ public class Login extends javax.swing.JFrame {
         passwordTextField = new javax.swing.JPasswordField();
         enterButton = new javax.swing.JButton();
         messageLabel = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        showPasswordLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
@@ -71,10 +70,13 @@ public class Login extends javax.swing.JFrame {
         messageLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         messageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/pass.png"))); // NOI18N
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        showPasswordLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/pass.png"))); // NOI18N
+        showPasswordLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel3MouseEntered(evt);
+                showPasswordLabelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                showPasswordLabelMouseExited(evt);
             }
         });
 
@@ -93,7 +95,7 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(userNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(showPasswordLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(89, Short.MAX_VALUE)
@@ -119,7 +121,7 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(passwordTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(showPasswordLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(23, 23, 23)))
                 .addGap(13, 13, 13)
                 .addComponent(messageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -147,28 +149,33 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_userNameTextFieldActionPerformed
 
     private void enterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterButtonActionPerformed
+        passwordTextField.setEchoChar((char) 0);
         LogisticsDistribution logisticsDistribution = new LogisticsDistribution();
-        CrudMaintenance crudMaintenance= new CrudMaintenance();
+        CrudMaintenance crudMaintenance = new CrudMaintenance();
         Administrator administrator = new Administrator();
 
         if (crudMaintenance.validateUser(userNameTextField.getText(), passwordTextField.getText())) {
             if (crudMaintenance.validateRole(userNameTextField.getText()) == 1) {
                 logisticsDistribution.setVisible(true);
                 this.setVisible(false);
-            } else if(crudMaintenance.validateRole(userNameTextField.getText()) == 2) {
+            } else if (crudMaintenance.validateRole(userNameTextField.getText()) == 2) {
                 administrator.setVisible(true);
                 this.setVisible(false);
             }
         } else {
             messageLabel.setText("El usuario no se encuentra registrado");
         }
-        
-        
+
+
     }//GEN-LAST:event_enterButtonActionPerformed
 
-    private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel3MouseEntered
+    private void showPasswordLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showPasswordLabelMouseEntered
+        passwordTextField.setEchoChar((char) 0);
+    }//GEN-LAST:event_showPasswordLabelMouseEntered
+
+    private void showPasswordLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showPasswordLabelMouseExited
+        passwordTextField.setEchoChar('*');
+    }//GEN-LAST:event_showPasswordLabelMouseExited
 
     /**
      * @param args the command line arguments
@@ -210,10 +217,10 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton enterButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel messageLabel;
     private javax.swing.JPasswordField passwordTextField;
+    private javax.swing.JLabel showPasswordLabel;
     private javax.swing.JTextField userNameTextField;
     // End of variables declaration//GEN-END:variables
 }
