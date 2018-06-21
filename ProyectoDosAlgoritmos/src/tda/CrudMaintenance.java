@@ -10,6 +10,7 @@ import domain.User;
 import java.util.Date;
 import java.util.Iterator;
 import lab_grafos_algoritmos.GraphException;
+import org.apache.commons.codec.digest.DigestUtils;
 import static tda.LoadTda.batchMap;
 import static tda.LoadTda.categoryMap;
 import static tda.LoadTda.cellarGraph;
@@ -25,14 +26,14 @@ import static tda.LoadTda.userList;
 public class CrudMaintenance {
 
     public Boolean validateUser(String user, String password) {
+        String verifyMD5 = DigestUtils.md5Hex(password);
         for (int i = 0; i < userList.size(); i++) {
             User userAux = userList.get(i);
-            if (userAux.getUser().equals(user)) {
-                if (userAux.getPassword().equals(password)) {
+            if (userAux.getUser().equalsIgnoreCase(user)) {
+                if (userAux.getPassword().equalsIgnoreCase(password)) {
                     return true;
                 }
             }
-
         }
         return false;
     }
