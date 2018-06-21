@@ -46,7 +46,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
             array[i] = tempCellar.getName();
         }
         cellarList.setListData(array);
-
+        
     }
 
     /**
