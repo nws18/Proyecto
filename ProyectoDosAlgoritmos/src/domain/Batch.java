@@ -11,13 +11,13 @@ public class Batch  implements java.io.Serializable{
     
     private int idBatch;
     private String batchCode;
-    private Date packedDate;
+    private String packedDate;
     private Date expirationDate;
 
     public Batch() {
     }
 
-    public Batch(int idBatch, String batchCode, Date packedDate, Date expirationDate) {
+    public Batch(int idBatch, String batchCode, String packedDate, Date expirationDate) {
         this.idBatch = idBatch;
         this.batchCode = batchCode;
         this.packedDate = packedDate;
@@ -55,14 +55,14 @@ public class Batch  implements java.io.Serializable{
     /**
      * @return the packedDate
      */
-    public Date getPackedDate() {
+    public String getPackedDate() {
         return packedDate;
     }
 
     /**
      * @param packedDate the packedDate to set
      */
-    public void setPackedDate(Date packedDate) {
+    public void setPackedDate(String packedDate) {
         this.packedDate = packedDate;
     }
 

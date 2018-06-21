@@ -41,44 +41,44 @@ public class NewMain {
         Date date = new Date();
         Date date2 = new Date(2019, 2, 23, 0, 0, 0);
         
-        Batch batch0 = new Batch(0, "IDRHFU45T45", date, date2);
-        Batch batch1 = new Batch(1, "KJBFH45G54G", date, date2);
-        Batch batch2 = new Batch(2, "EARGE56YHRT", date, date2);
-        Batch batch3 = new Batch(3, "ERGRTERHRHT", date, date2);
-        Batch batch4 = new Batch(4, "DFVKNSKJVNJ", date, date2);
+        Batch batch0 = new Batch(0, "IDRHFU45T45", date+"", date2);
+        Batch batch1 = new Batch(1, "KJBFH45G54G", date+"", date2);
+        Batch batch2 = new Batch(2, "EARGE56YHRT", date+"", date2);
+        Batch batch3 = new Batch(3, "ERGRTERHRHT", date+"", date2);
+        Batch batch4 = new Batch(4, "DFVKNSKJVNJ", date+"", date2);
         batchList.add(batch0);
         batchList.add(batch1);
         batchList.add(batch2);
         batchList.add(batch3);
         batchList.add(batch4);
         
-        Category category0 = new Category(0, "Jardin", "Productos para el hogar");
-        Category category1 = new Category(1, "Cuidado textil", "Productos de limpieza");
-        Category category2 = new Category(2, "Larga duración", "Larga duración");
-        Category category3 = new Category(3, "Refrescos", "Bebidas");
-        Category category4 = new Category(4, "Alcohol", "Bebidas alcoholicas");
+        Category category0 = new Category(0, "Higiene", "Productos para el higiene y ciudado personal");
+        Category category1 = new Category(1, "Hogar", "Productos de limpieza para el hogar");
+        Category category2 = new Category(2, "Larga duración", "Productos enlatados de larga duración");
+        Category category3 = new Category(3, "Bebidas", "Refrescos gaseosos, naturales y bebidas alcoholicas");
+        Category category4 = new Category(4, "Abarrotes", "Arroz, pastas y legumbres");
         categoryList.add(category0);
         categoryList.add(category1);
         categoryList.add(category2);
         categoryList.add(category3);
         categoryList.add(category4);
         
-        Cellar cellar0 = new Cellar(0, "Caballo Blanco", "9.8465059", "-83.8453388", 6, "url");
-        Cellar cellar1 = new Cellar(1, "Curridabat", "9.9104054", "-84.0261615", 7, "url");
-        Cellar cellar2 = new Cellar(2, "Desamaparados", "9.8962853", "-84.0929378", 8, "url");
-        Cellar cellar3 = new Cellar(3, "Lima", "9.8733467", "-83.9445108", 9, "url");
-        Cellar cellar4 = new Cellar(4, "San Sebastian", "9.8962853", "-84.0929378", 10, "url");
+        Cellar cellar0 = new Cellar(0, "Caballo Blanco", "9.8465059", "-83.8453388", 6, "images/grocery/paraiso.jpg");
+        Cellar cellar1 = new Cellar(1, "Curridabat", "9.9104054", "-84.0261615", 7, "images/grocery/san jose.jpg");
+        Cellar cellar2 = new Cellar(2, "Desamaparados", "9.8962853", "-84.0929378", 8, "images/grocery/desamparados.jpg");
+        Cellar cellar3 = new Cellar(3, "Lima", "9.8733467", "-83.9445108", 9, "images/grocery/lima.jpg");
+        Cellar cellar4 = new Cellar(4, "San Sebastian", "9.8962853", "-84.0929378", 10, "images/grocery/liberia.jpg");
         cellarList.add(cellar0);
         cellarList.add(cellar1);
         cellarList.add(cellar2);
         cellarList.add(cellar3);
         cellarList.add(cellar4);
         
-        Product product0 = new Product(0, "Parillas", "Unidades", 20, 1, "Parrillas jardin", 0, 0, 0, "url");
-        Product product1 = new Product(1, "Jabon", "Paquetes", 100, 5, "Jabon en polvo", 1, 1, 0, "");
-        Product product2 = new Product(2, "Sopa", "Cajas", 10, 1, "Alimento en polvo", 2, 2, 0, "");
-        Product product3 = new Product(3, "Gaseosas", "Tarimas", 15, 20, "Refresco gaseoso", 3, 3, 0, "");
-        Product product4 = new Product(4, "Cervezas", "Tarimas", 10, 30, "Bebida alcoholica", 4, 4, 0, "");
+        Product product0 = new Product(0, "Aceite", "Unidades", 20, 1, "Aceite de cocina", 0, 4, 2000, "images/products/aceite.png");
+        Product product1 = new Product(1, "Arroz", "Paquetes", 100, 2, "Arroz, 2kg", 1, 1, 0, "images/products/arroz.png");
+        Product product2 = new Product(2, "Cereal", "Cajas", 10, 1, "Cereal", 2, 2, 0, "images/products/cereal.png");
+        Product product3 = new Product(3, "Gaseosas", "Tarimas", 15, 20, "Refresco gaseoso", 3, 3, 0, "images/products/");
+        Product product4 = new Product(4, "Cervezas", "Tarimas", 10, 30, "Bebida alcoholica", 4, 4, 0, "images/products/");
         productList.add(product0);
         productList.add(product1);
         productList.add(product2);
@@ -96,16 +96,14 @@ public class NewMain {
         distributionOrderList.add(distributionOrder3);
         distributionOrderList.add(distributionOrder4);
         
-        TransportUnit transportUnit0 = new TransportUnit(0, "646644", 10,20, "url");
-        TransportUnit transportUnit1 = new TransportUnit(1, "754532", 20,30, "url");
-        TransportUnit transportUnit2 = new TransportUnit(2, "768923", 5,10, "url");
-        TransportUnit transportUnit3 = new TransportUnit(3, "856326", 10,15, "url");
-        TransportUnit transportUnit4 = new TransportUnit(4, "853467", 15,20, "url");
+        TransportUnit transportUnit0 = new TransportUnit(0, "646644", 10,20, "images/transport/camion1.png");
+        TransportUnit transportUnit1 = new TransportUnit(1, "754532", 20,30, "images/transport/camion2.png");
+        TransportUnit transportUnit2 = new TransportUnit(2, "768923", 5,10, "images/transport/camion3.png");
+        TransportUnit transportUnit3 = new TransportUnit(3, "856326", 10,15, "images/transport/camion4.png");
         transportUnitList.add(transportUnit0);
         transportUnitList.add(transportUnit1);
         transportUnitList.add(transportUnit2);
         transportUnitList.add(transportUnit3);
-        transportUnitList.add(transportUnit4);
         
         User user0 = new User(0, "Nicole Fonseca", "Administrador", "nicole98", "1234");
         User user1 = new User(1, "Wilmer Mata", "Operador", "wilmata24", "1234");

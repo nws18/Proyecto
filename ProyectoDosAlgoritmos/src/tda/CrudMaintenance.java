@@ -54,6 +54,7 @@ public class CrudMaintenance {
     public void addProduct(String name, String unitMeasured, int unitValue, int totalWeight, String description, int idBatch, int idCategory, int price, String url) throws TreeException {
         Product product = new Product(idProduct(), name, unitMeasured, unitValue, totalWeight, description, idBatch, idCategory, price, url);
         productsBinaryTree.insert(product);
+        System.out.println(productsBinaryTree.toString());
     }
     
     private int idProduct(){
@@ -67,6 +68,7 @@ public class CrudMaintenance {
                 productsBinaryTree.delete(product);
             }
         }
+        System.out.println(productsBinaryTree.toString());
     }
 
     public Product getProduct(String name) {
@@ -108,7 +110,7 @@ public class CrudMaintenance {
             oldIdCategory.setIdCategory(newIdCategory);
             oldPrice.setPrice(newPrice);
             oldUrl.setUrl(newUrl);
-
+            System.out.println(productsBinaryTree.toString());
         }
     }
 
@@ -178,12 +180,14 @@ public class CrudMaintenance {
             
             oldName.setName(newName);
             oldDescription.setDescription(newDescription);
+            System.out.println(categoryMap.toString());
         }
     }
 
-    public void addBacth(String batchCode, Date packedDate, Date expirationDate) {
+    public void addBacth(String batchCode, String packedDate, Date expirationDate) {
         Batch batch = new Batch(idBatch(), batchCode, packedDate, expirationDate);
         batchMap.put(idBatch(), batch);
+        System.out.println(batchMap.toString());
     }
     
     private int idBatch() {
@@ -235,7 +239,7 @@ public class CrudMaintenance {
         return false;
     }
 
-    public void updateBacth(String batchCode, String newBatchCode, Date newPackedDate, Date newExpirationDate) {
+    public void updateBacth(String batchCode, String newBatchCode, String newPackedDate, Date newExpirationDate) {
         if(existsBatch(batchCode)) {
             Batch oldBatchCode = getBatch(batchCode);
             Batch oldPackedDate = getBatch(batchCode);
@@ -244,12 +248,14 @@ public class CrudMaintenance {
             oldBatchCode.setBatchCode(newBatchCode);
             oldPackedDate.setPackedDate(newPackedDate);
             oldExpirationDate.setExpirationDate(newExpirationDate);
+            System.out.println(batchMap.toString());
         }
     }
 
     public void addTransportUnit(String plate, int minCapacity, int maxCapacity, String url) {
         TransportUnit transportUnit = new TransportUnit(idTransport(), plate, minCapacity, maxCapacity, url);
         transportUnitMap.put(idTransport(), transportUnit);
+        System.out.println(transportUnitMap.toString());
     }
     
     private int idTransport() {
@@ -312,12 +318,14 @@ public class CrudMaintenance {
             oldMinCapacity.setMinCapacity(newMinCapacity);
             oldMaxCapacuty.setMaxCapacity(newMaxCapacity);
             oldUrl.setUrl(plate);
+            System.out.println(transportUnitMap.toString());
         }
     }
     
     public void addCellar(String name, String latitude, String length, float distance, String url) throws GraphException {
         Cellar cellar = new Cellar(idCellar(), name, latitude, length, distance, url);
         cellarGraph.insertVertx(cellar);
+        System.out.println(cellarGraph.toString());
     }
     
     private int idCellar() {
@@ -331,6 +339,7 @@ public class CrudMaintenance {
                 cellarGraph.deleteVertex(cellar);
             }
         }
+        System.out.println(cellarGraph.toString());
     }
     
     public Cellar getCellar(String name) throws GraphException {
@@ -366,12 +375,14 @@ public class CrudMaintenance {
             oldLenght.setLength(newLength);
             oldDistance.setDistance(newDistance);
             oldUrl.setUrl(url);
+            System.out.println(cellarGraph.toString());
         }
     }
 
     public void addUser(String name, String role, String NameUser, String password) {
-        User user = new User(idUser(), name, role, role, password);
+        User user = new User(idUser(), name, role, NameUser, password);
         userList.add(user);
+        System.out.println(userList.toString());
     }
     
     private int idUser(){
@@ -385,6 +396,7 @@ public class CrudMaintenance {
                 userList.remove(user);
             }
         }
+        System.out.println(userList.toString());
     }
     
     public User getUser(String userName) {
@@ -418,6 +430,7 @@ public class CrudMaintenance {
             oldRole.setRole(newRole);
             oldUserName.setUser(newUserName);
             oldPassword.setPassword(newPassword);
+            System.out.println(userList.toString());
         }
     }
 }
