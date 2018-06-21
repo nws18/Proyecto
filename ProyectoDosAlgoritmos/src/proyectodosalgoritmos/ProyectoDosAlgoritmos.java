@@ -35,9 +35,7 @@ public class ProyectoDosAlgoritmos {
         } catch (IOException | ClassNotFoundException | GraphException | TreeException ex) {
             Logger.getLogger(ProyectoDosAlgoritmos.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        CrudMaintenance crudMaintenance = new CrudMaintenance();
-        
+
         Login login = new Login();
         login.setVisible(true);
     }

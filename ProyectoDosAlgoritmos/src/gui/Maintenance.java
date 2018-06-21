@@ -554,6 +554,7 @@ public class Maintenance extends javax.swing.JFrame {
         jTextField15.setText("jTextField15");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Mantenimiento");
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 153));
 
@@ -1893,7 +1894,7 @@ public class Maintenance extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(returnAdministratorButton)
                 .addGap(50, 50, 50))
-            .addComponent(jTabbedPane1)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1075, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(402, 402, 402)
                 .addComponent(jLabel1)
@@ -1902,26 +1903,23 @@ public class Maintenance extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addContainerGap(32, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(returnAdministratorButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(returnAdministratorButton))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -2047,9 +2045,10 @@ public class Maintenance extends javax.swing.JFrame {
     }//GEN-LAST:event_addUserButtonActionPerformed
 
     private void addCategoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCategoryButtonActionPerformed
+
         if (crudMaintenance.existsCategory(nameCategoryTextField.getText()) == true) {
             addCategoryLabel.setText("La categoría ya existe.");
-        } else if (nameCategoryTextField.getText().equals("") || descriptionCategoryTextField.equals("")) {
+        } else if (nameCategoryTextField.getText().equals("") || descriptionCategoryTextField.getText().equals("")) {
             addCategoryLabel.setText("Ingrese la información.");
         } else {
             crudMaintenance.addCategory(nameCategoryTextField.getText(), descriptionCategoryTextField.getText());
@@ -2080,18 +2079,16 @@ public class Maintenance extends javax.swing.JFrame {
     }//GEN-LAST:event_updateSearchCategoryButtonActionPerformed
 
     private void updateCategoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateCategoryButtonActionPerformed
-        try {
-            if (updateNameCategoryTextField.getText().equals("") || updateDescriptionCategoryTextField.getText().equals("")) {
-                jLabel87.setText("Debe ingresar todos los datos.");         
-            } else {
-               crudMaintenance.updateCategory(updateSearchNameCategoryTextField.getText(), updateNameCategoryTextField.getText(), updateDescriptionCategoryTextField.getText());
-                jLabel87.setText("Información actualizada.");
-                updateSearchNameCategoryTextField.setText("");
-                updateNameCategoryTextField.setText("");
-                updateDescriptionCategoryTextField.setText(""); 
-            }
-        } catch (NullPointerException nullPointerException) {
+        if (updateNameCategoryTextField.getText().equals("") || updateDescriptionCategoryTextField.getText().equals("")) {
             jLabel87.setText("Debe ingresar todos los datos.");
+        } else if (crudMaintenance.existsCategory(updateSearchNameCategoryTextField.getText())){
+            crudMaintenance.updateCategory(updateSearchNameCategoryTextField.getText(), updateNameCategoryTextField.getText(), updateDescriptionCategoryTextField.getText());
+            jLabel87.setText("Información actualizada.");
+            updateSearchNameCategoryTextField.setText("");
+            updateNameCategoryTextField.setText("");
+            updateDescriptionCategoryTextField.setText("");
+        } else {
+            jLabel87.setText("La categoría no se encuentra registrada.");
         }
     }//GEN-LAST:event_updateCategoryButtonActionPerformed
 

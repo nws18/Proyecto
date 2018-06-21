@@ -55,7 +55,6 @@ public class LoadTda {
             Category category = arrayList.get(i);
             categoryMap.put(category.getName(), category);
         }
-        System.out.println(categoryMap.toString());
     }
     
     public void tdaBatch() throws IOException, FileNotFoundException, ClassNotFoundException {
@@ -64,7 +63,6 @@ public class LoadTda {
             Batch batch = arrayList.get(i);
             batchMap.put(batch.getIdBatch(), batch);
         }
-        System.out.println(batchMap.toString());
     }
     
     public void tdaTransportUnit() throws IOException, FileNotFoundException, ClassNotFoundException {
@@ -73,7 +71,6 @@ public class LoadTda {
             TransportUnit transportUnit = arrayList.get(i);
             transportUnitMap.put(transportUnit.getIdTransportUnit(), transportUnit);
         }
-        System.out.println(transportUnitMap.toString());
     }
     
     public void tdaCellar() throws IOException, FileNotFoundException, ClassNotFoundException, GraphException {
@@ -82,7 +79,6 @@ public class LoadTda {
             Cellar cellar = arrayList.get(i);
             cellarGraph.insertVertx(cellar);
         }
-        System.out.println(cellarGraph.toString());
     }
     
     public void tdaDistributionOrder() throws IOException, FileNotFoundException, ClassNotFoundException {
@@ -91,7 +87,6 @@ public class LoadTda {
             DistributionOrder distributionOrder = arrayList.get(i);
             distributionOrderList.add(distributionOrder);
         }
-        System.out.println(distributionOrderList.toString());
     }
     
     public void tdaUser() throws IOException, FileNotFoundException, ClassNotFoundException {
@@ -100,6 +95,5 @@ public class LoadTda {
             User user = arrayList.get(i);
             userList.add(user);
         }
-        System.out.println(userList.toString());
     }
 }

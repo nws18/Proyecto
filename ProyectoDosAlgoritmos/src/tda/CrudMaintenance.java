@@ -31,7 +31,7 @@ public class CrudMaintenance {
         for (int i = 0; i < userList.size(); i++) {
             User userAux = userList.get(i);
             if (userAux.getUser().equalsIgnoreCase(user)) {
-                if (userAux.getPassword().equalsIgnoreCase(password)) {
+                if (userAux.getPassword().equalsIgnoreCase(verifyMD5)) {
                     return true;
                 }
             }
@@ -60,7 +60,8 @@ public class CrudMaintenance {
     }
     
     private int idProduct(){
-        return -1;
+        Product product = (Product) tempTree.get(tempTree.size()-1);
+        return product.getIdProduct()+1;
     }
     
     public void deleteProduct(String name) throws TreeException {
@@ -119,13 +120,16 @@ public class CrudMaintenance {
     public void addCategory(String name, String description) {
         Category category = new Category(idCategory(), name, description);
         categoryMap.put(name, category);
-        System.out.println(categoryMap.toString());
     }
 
-    public int idCategory() {
+    private int idCategory() {
         Iterator iterator = categoryMap.keySet().iterator();
         while (iterator.hasNext()) {
             String key = (String) iterator.next();
+            Category category = categoryMap.get(key);
+            if(category.getIdCategory() == categoryMap.size()-1) {
+                return category.getIdCategory()+1;
+            }
         }
         return -1;
     }
@@ -142,7 +146,6 @@ public class CrudMaintenance {
             }
         } catch (Exception e) {
         }
-        System.out.println(categoryMap.toString());
     }
     
     public Category getCategory(String name) {
@@ -182,7 +185,6 @@ public class CrudMaintenance {
             
             oldName.setName(newName);
             oldDescription.setDescription(newDescription);
-            System.out.println(categoryMap.toString());
         }
     }
 
@@ -193,7 +195,8 @@ public class CrudMaintenance {
     }
     
     private int idBatch() {
-        return -1;
+        Batch batch = batchMap.get(batchMap.size()-1);
+        return batch.getIdBatch()+1;
     }
 
     public void deleteBacth(String batchCode) {
@@ -259,7 +262,8 @@ public class CrudMaintenance {
     }
     
     private int idTransport() {
-        return -1;
+        TransportUnit transportUnit = transportUnitMap.get(transportUnitMap.size()-1);
+        return transportUnit.getIdTransportUnit()+1;
     }
 
     public void deleteTransportUnit(String plate) {
@@ -328,8 +332,9 @@ public class CrudMaintenance {
         System.out.println(cellarGraph.toString());
     }
     
-    private int idCellar() {
-        return -1;
+    private int idCellar() throws GraphException {
+        Cellar cellar = (Cellar) cellarGraph.list().get(cellarGraph.list().size());
+        return cellar.getIdCellar()+1;
     }
 
     public void deleteCellar(String name) throws GraphException {
@@ -380,13 +385,15 @@ public class CrudMaintenance {
     }
 
     public void addUser(String name, String role, String NameUser, String password) {
-        User user = new User(idUser(), name, role, NameUser, password);
+        String verifyMD5 = DigestUtils.md5Hex(password);
+        User user = new User(idUser(), name, role, NameUser, verifyMD5);
         userList.add(user);
         System.out.println(userList.toString());
     }
     
     private int idUser(){
-        return -1;
+        User user = userList.get(userList.size()-1);
+        return user.getIdUser()+1;
     }
 
     public void deleteUser(String userName) {
