@@ -5,6 +5,7 @@ import com.teamdev.jxbrowser.chromium.swing.BrowserView;
 import domain.Batch;
 import domain.Cellar;
 import domain.Product;
+import domain.TableProduct;
 import java.awt.BorderLayout;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -30,10 +31,12 @@ public class LogisticsDistribution extends javax.swing.JFrame {
     /**
      * Creates new form NewJFrame
      */
-    public Browser browser = new Browser();
-
+    private Browser browser = new Browser();
+    private ArrayList<TableProduct> tableList = new ArrayList<>();
+    
     public LogisticsDistribution() {
         initComponents();
+        fillTable();
         loadMap("https://www.google.com/maps/@9.7808897,-84.1564765,8z");
 
 //       
@@ -111,13 +114,13 @@ public class LogisticsDistribution extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Producto", "Monto", "Peso", "Categoría"
+                "Cantidad", "Producto", "Monto", "Peso", "Categoría"
             }
         ));
         jScrollPane2.setViewportView(jTable1);
@@ -269,6 +272,29 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         jPanel3.add(view, BorderLayout.CENTER);
         browser.loadURL(url);
         jPanel3.setVisible(true);
+    }
+    
+    public void fillTable(){
+        for (int i = 0; i < tempTree.size(); i++) {
+            TableProduct tableProduct = new TableProduct();
+            tableProduct.setAmount(0);
+            tableProduct.setProduct("Arroz");
+            tableProduct.setCategory("Congelados");
+            tableProduct.setQuantity(1789);
+            tableProduct.setWeight(65);
+            tableList.add(tableProduct);
+        }
+        String [][] array = new String[tableList.size()][5];
+        for (int i = 0; i < tableList.size(); i++) {
+            array[i][0] = String.valueOf(tableList.get(i).getQuantity());
+            array[i][1]= tableList.get(i).getProduct();
+            array[i][2] = String.valueOf(tableList.get(i).getAmount()) ;
+            array[i][3] = String.valueOf(tableList.get(i).getWeight());
+            array[i][4] = tableList.get(i).getCategory();
+        }
+        
+       jTable1.setModel(new javax.swing.table.DefaultTableModel(array, new String[]{"Cantidad", "Producto", "Monto", "Peso", "Categoria"}));
+        
     }
 
     /**
