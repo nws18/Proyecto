@@ -2222,7 +2222,7 @@ public class Maintenance extends javax.swing.JFrame {
        if(batchCodeLabel.getText().equals("") || expirationDatePicker.getDate().toString().equals("")) {
            jLabel73.setText("Debe ingresar todos los datos");
        } else {
-           crudMaintenance.updateBatch(updateSearchBatchCodeTextField.getText(), batchCodeLabel.getText(), "", expirationDatePicker.getDate());
+           crudMaintenance.updateBatch(updateSearchBatchCodeTextField.getText(), batchCodeLabel.getText(), "");
            jLabel73.setText("Información actualizada");
            updateSearchBatchCodeTextField.setText("");
            batchCodeLabel.setText("");
