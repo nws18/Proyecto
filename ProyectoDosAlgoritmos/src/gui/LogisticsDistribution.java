@@ -6,12 +6,15 @@ import domain.Batch;
 import domain.Cellar;
 import domain.Product;
 import java.awt.BorderLayout;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import static tda.LoadTda.batchMap;
 import static tda.LoadTda.cellarGraph;
-import static tda.LoadTda.productsBinaryTree;
 
 /**
  * Interfaz módulo Logística de distribución.
@@ -23,11 +26,13 @@ public class LogisticsDistribution extends javax.swing.JFrame {
     /**
      * Creates new form NewJFrame
      */
+    public Browser browser = new Browser();
+
     public LogisticsDistribution() {
         initComponents();
-        
-//       
+        loadMap("https://www.google.com/maps/@9.7808897,-84.1564765,8z");
 
+//       
 //        DefaultListModel modelo = new DefaultListModel();
 //        for (int i = 0; i < productsBinaryTree.recorreArbol().size(); i++) {
 //            Product product = (Product) productsBinaryTree.recorreArbol().get(i);
@@ -219,17 +224,6 @@ public class LogisticsDistribution extends javax.swing.JFrame {
 
     private void cellarListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cellarListMouseClicked
 
-//        for (int i = 0; i < cellarGraph.list().size(); i++) {
-//            Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
-//            if (tempCellar.getName().equals(cellarList.getSelectedValue())) {
-//
-//                String url = "https://www.google.com/maps/@" + tempCellar.getLatitude() + "," + tempCellar.getLength() + ",19.25z";
-//                loadMap("www.google.com");
-//                System.out.println("debe cargar el mapa");
-//            }
-//
-//        }
-
     }//GEN-LAST:event_cellarListMouseClicked
 
     private void cellarListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_cellarListValueChanged
@@ -237,15 +231,23 @@ public class LogisticsDistribution extends javax.swing.JFrame {
             Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
             if (tempCellar.getName().equals(cellarList.getSelectedValue())) {
 
-                String url = "https://www.google.com/maps/@" + tempCellar.getLatitude() + "," + tempCellar.getLength() + ",19.25z";
-                loadMap(url);
-                System.out.println("debe cargar el mapa");
+                System.out.println(tempCellar.getLatitude());
+                System.out.println(tempCellar.getLength());
+                //String url="http://maps.google.es/?q=loc:"+tempCellar.getLatitude()+"%20"+tempCellar.getLength();
+                //String url = "https://www.google.com/maps/@"+tempCellar.getLatitude()+","+tempCellar.getLength()+",16z";
+                String url = "https://maps.googleapis.com/maps/api/staticmap?center="
+                        + tempCellar.getLatitude()
+                        + ","
+                        + tempCellar.getLength()
+                        + "&zoom=11&size=612x612&scale=2&maptype=roadmap";
+                browser.loadURL(url);
+
             }
 
         }
     }//GEN-LAST:event_cellarListValueChanged
     public void loadMap(String url) {
-        Browser browser = new Browser();
+
         BrowserView view = new BrowserView(browser);
         jPanel3.setLayout(new BorderLayout());
         jPanel3.add(view, BorderLayout.CENTER);
