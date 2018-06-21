@@ -107,8 +107,6 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         jScrollPane1.setViewportView(listProducts);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 104, 139));
-
-        jLabel2.setText("***IMAGEN PRODUCTO***");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, 142, 81));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -181,8 +179,6 @@ public class LogisticsDistribution extends javax.swing.JFrame {
             }
         });
         jPanel1.add(returnLoginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 580, -1, -1));
-
-        jLabel6.setText("***IMAGEN BODEGA***");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 470, 275, 138));
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
