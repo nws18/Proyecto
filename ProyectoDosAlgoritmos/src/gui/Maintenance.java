@@ -1,7 +1,10 @@
 package gui;
 
 import com.mxrck.autocompleter.TextAutoCompleter;
+import domain.Batch;
 import domain.Category;
+import domain.Cellar;
+import domain.Product;
 import domain.TransportUnit;
 import domain.User;
 import java.io.File;
@@ -20,7 +23,10 @@ import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import lab_grafos_algoritmos.GraphException;
 import tda.CrudMaintenance;
+import static tda.LoadTda.batchMap;
 import static tda.LoadTda.categoryMap;
+import static tda.LoadTda.cellarGraph;
+import static tda.LoadTda.productsBinaryTree;
 import static tda.LoadTda.transportUnitMap;
 import static tda.LoadTda.userList;
 
@@ -55,6 +61,27 @@ public class Maintenance extends javax.swing.JFrame {
         MaxCapacityComboBox.addItem("5");
         MaxCapacityComboBox.addItem("10");
         MaxCapacityComboBox.addItem("30");
+        
+        unitMeasuredComboBox.addItem("Unidad");
+        unitMeasuredComboBox.addItem("Paquete");
+        unitMeasuredComboBox.addItem("Caja");
+        unitMeasuredComboBox.addItem("Tarima");
+        
+        Iterator iteratorBatchMap = batchMap.keySet().iterator();
+        while (iteratorBatchMap.hasNext()) {
+            Integer key = (Integer) iteratorBatchMap.next();
+            Batch batch = batchMap.get(key);
+            batchCodeComboBox.addItem(batch.getBatchCode());
+        }
+        
+        Iterator iteratorCategoryMap = categoryMap.keySet().iterator();
+        while (iteratorCategoryMap.hasNext()) {
+            String key = (String) iteratorCategoryMap.next();
+            Category category = categoryMap.get(key);
+            categoryComboBox.addItem(category.getName());
+        }
+        
+        
     
         //Autocompletar buscar categoría producto 
         TextAutoCompleter textAutoAcompleterSearchCategory = new TextAutoCompleter(searchNameCategoryTextField);
@@ -74,6 +101,15 @@ public class Maintenance extends javax.swing.JFrame {
             textAutoAcompleterUpdateCategory.addItem(category.getName());
         }
         
+        //Autocompletar borrar categoría producto 
+        TextAutoCompleter textAutoAcompleterDeleteCategory = new TextAutoCompleter(deleteCategoryTextField);
+        Iterator iterator3 = categoryMap.keySet().iterator();
+        while (iterator3.hasNext()) {
+            String key = (String) iterator3.next();
+            Category category = categoryMap.get(key);
+            textAutoAcompleterDeleteCategory.addItem(category.getName());
+        }
+        
         //Autocompletar buscar usuario
         TextAutoCompleter textAutoCompleterSearchUser = new TextAutoCompleter(serchName);
         for (int i = 0; i < userList.size(); i++) {
@@ -88,32 +124,108 @@ public class Maintenance extends javax.swing.JFrame {
             textAutoCompleterUpdateUser.addItem(user.getUser());
         }
         
+        //Autocompletar actualizar usuario
+        TextAutoCompleter textAutoCompleterDeleteUser = new TextAutoCompleter(deleteUserTextField);
+        for (int i = 0; i < userList.size(); i++) {
+            User user = userList.get(i);
+            textAutoCompleterDeleteUser.addItem(user.getUser());
+        }
+        
         //Autocompletar buscar unidad transporte
         TextAutoCompleter textAutoAcompleterSearchTransportUnit = new TextAutoCompleter(searchPlateTextField);
-        Iterator iterator3 = transportUnitMap.keySet().iterator();
-        while (iterator3.hasNext()) {
-            int key = (int) iterator3.next();
+        Iterator iterator4 = transportUnitMap.keySet().iterator();
+        while (iterator4.hasNext()) {
+            int key = (int) iterator4.next();
             TransportUnit transportUnit = transportUnitMap.get(key);
             textAutoAcompleterSearchTransportUnit.addItem(transportUnit.getPlate());
         }
         
         //Autocompletar actualizar unidad transporte
         TextAutoCompleter textAutoAcompleterUpdateTransportUnit = new TextAutoCompleter(searchUpdateTransportTextField);
-        Iterator iterator4 = transportUnitMap.keySet().iterator();
-        while (iterator4.hasNext()) {
-            int key = (int) iterator4.next();
+        Iterator iterator5 = transportUnitMap.keySet().iterator();
+        while (iterator5.hasNext()) {
+            int key = (int) iterator5.next();
             TransportUnit transportUnit = transportUnitMap.get(key);
             textAutoAcompleterUpdateTransportUnit.addItem(transportUnit.getPlate());
         }
         
          //Autocompletar borrar unidad transporte
         TextAutoCompleter textAutoAcompleterDeleteTransportUnit = new TextAutoCompleter(deleteTransportTextField);
-        Iterator iterator5 = transportUnitMap.keySet().iterator();
-        while (iterator5.hasNext()) {
-            int key = (int) iterator5.next();
+        Iterator iterator6 = transportUnitMap.keySet().iterator();
+        while (iterator6.hasNext()) {
+            int key = (int) iterator6.next();
             TransportUnit transportUnit = transportUnitMap.get(key);
             textAutoAcompleterDeleteTransportUnit.addItem(transportUnit.getPlate());
         }
+        
+        //Autocompletar buscar lote
+        TextAutoCompleter textAutoAcompleterSearchBatch = new TextAutoCompleter(searchBatchCodeLabel);
+        Iterator iterator7 = batchMap.keySet().iterator();
+        while (iterator7.hasNext()) {
+            Integer key = (Integer) iterator7.next();
+            Batch batch = batchMap.get(key);
+            textAutoAcompleterSearchBatch.addItem(batch.getBatchCode());
+        }
+        
+        //Autocompletar actualizar lote
+        TextAutoCompleter textAutoAcompleterUpdateBatch = new TextAutoCompleter(updateSearchBatchCodeTextField);
+        Iterator iterator8 = batchMap.keySet().iterator();
+        while (iterator8.hasNext()) {
+            Integer key = (Integer) iterator8.next();
+            Batch batch = batchMap.get(key);
+            textAutoAcompleterUpdateBatch.addItem(batch.getBatchCode());
+        }
+        
+        //Autocompletar borrar lote
+        TextAutoCompleter textAutoAcompleterDeleteBatch = new TextAutoCompleter(deleteBatchTextField);
+        Iterator iterator9 = batchMap.keySet().iterator();
+        while (iterator9.hasNext()) {
+            Integer key = (Integer) iterator9.next();
+            Batch batch = batchMap.get(key);
+            textAutoAcompleterDeleteBatch.addItem(batch.getBatchCode());
+        }
+        
+        //Autocompletar buscar bodega
+        TextAutoCompleter textAutoAcompleterSearchCellar = new TextAutoCompleter(searchCellarTextField);
+        for (int i = 0; i < cellarGraph.list().size(); i++) {
+            Cellar cellar = (Cellar) cellarGraph.list().get(i);
+            textAutoAcompleterSearchCellar.addItem(cellar.getName());
+        }
+        
+        //Autocompletar actualizar bodega
+        TextAutoCompleter textAutoAcompleterUpdateCellar = new TextAutoCompleter(updateSearchCellarTextField);
+        for (int i = 0; i < cellarGraph.list().size(); i++) {
+            Cellar cellar = (Cellar) cellarGraph.list().get(i);
+            textAutoAcompleterUpdateCellar.addItem(cellar.getName());
+        }
+        
+        //Autocompletar borrar bodega
+        TextAutoCompleter textAutoAcompleterDeleteCellar = new TextAutoCompleter(deleteCellarTextField);
+        for (int i = 0; i < cellarGraph.list().size(); i++) {
+            Cellar cellar = (Cellar) cellarGraph.list().get(i);
+            textAutoAcompleterDeleteCellar.addItem(cellar.getName());
+        }
+        
+        //Autocompletar buscar producto
+//        TextAutoCompleter textAutoCompleterSearchProduct = new TextAutoCompleter(searchProductTextField);
+//        for (int i = 0; i < productsBinaryTree.recorreArbol().size() ; i++) {
+//            Product product = (Product) productsBinaryTree.recorreArbol().get(i);
+//            textAutoCompleterSearchProduct.addItem(product);
+//        }
+        
+//        //Autocompletar actualizar producto
+//        TextAutoCompleter textAutoCompleterUpdateProduct = new TextAutoCompleter(updateSearchProduct);
+//        for (int i = 0; i < productsBinaryTree.recorreArbol().size() ; i++) {
+//            Product product = (Product) productsBinaryTree.recorreArbol().get(i);
+//            textAutoCompleterUpdateProduct.addItem(product);
+//        }
+        
+//        //Autocompletar borrar producto
+//        TextAutoCompleter textAutoCompleterDeleteProduct = new TextAutoCompleter(deleteProductTextField);
+//        for (int i = 0; i < productsBinaryTree.recorreArbol().size() ; i++) {
+//            Product product = (Product) productsBinaryTree.recorreArbol().get(i);
+//            textAutoCompleterDeleteProduct.addItem(product);
+//        }
     }
 
     /**
@@ -268,27 +380,28 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel68 = new javax.swing.JLabel();
         jXDatePicker2 = new org.jdesktop.swingx.JXDatePicker();
         jLabel69 = new javax.swing.JLabel();
-        jTextField23 = new javax.swing.JTextField();
-        jButton17 = new javax.swing.JButton();
+        searchBatchCodeLabel = new javax.swing.JTextField();
+        searchBatchButton = new javax.swing.JButton();
         jLabel70 = new javax.swing.JLabel();
-        jLabel71 = new javax.swing.JLabel();
+        packedDateLabel = new javax.swing.JLabel();
         jLabel72 = new javax.swing.JLabel();
-        jLabel73 = new javax.swing.JLabel();
+        expirationDateLabel = new javax.swing.JLabel();
         jLabel74 = new javax.swing.JLabel();
-        jTextField24 = new javax.swing.JTextField();
-        jButton18 = new javax.swing.JButton();
+        updateSearchBatchCodeTextField = new javax.swing.JTextField();
+        updateSearchBatchButton = new javax.swing.JButton();
         jLabel75 = new javax.swing.JLabel();
-        jTextField25 = new javax.swing.JTextField();
-        jLabel76 = new javax.swing.JLabel();
-        jXDatePicker3 = new org.jdesktop.swingx.JXDatePicker();
+        batchCodeLabel = new javax.swing.JTextField();
         jLabel77 = new javax.swing.JLabel();
-        jXDatePicker4 = new org.jdesktop.swingx.JXDatePicker();
-        jButton19 = new javax.swing.JButton();
+        expirationDatePicker = new org.jdesktop.swingx.JXDatePicker();
+        updateBatchButton = new javax.swing.JButton();
         jLabel78 = new javax.swing.JLabel();
-        jTextField26 = new javax.swing.JTextField();
-        jButton20 = new javax.swing.JButton();
+        deleteBatchTextField = new javax.swing.JTextField();
+        deleteBatchButton = new javax.swing.JButton();
         addBatchButton = new javax.swing.JButton();
         jLabel67 = new javax.swing.JLabel();
+        jLabel71 = new javax.swing.JLabel();
+        jLabel73 = new javax.swing.JLabel();
+        jLabel76 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
@@ -298,47 +411,51 @@ public class Maintenance extends javax.swing.JFrame {
         jSeparator5 = new javax.swing.JSeparator();
         jSeparator6 = new javax.swing.JSeparator();
         jLabel23 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        cellarNameTextField = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        latitudeCellarTextField = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        LenghtCellarTextField = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        distanceCellarTextField = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        imageCellarTextField = new javax.swing.JTextField();
+        addImageCellarButton = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel28 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        searchCellarTextField = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        latitudeCellarLabel = new javax.swing.JLabel();
+        searchCellarButton = new javax.swing.JButton();
         jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
+        lenghtCellarLabel = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
+        distanceCellarLabel = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
+        imageCellarLabel = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
+        updateSearchCellarTextField = new javax.swing.JTextField();
+        updateSearchCellarButton = new javax.swing.JButton();
         jLabel38 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        updateNameCellarTextField = new javax.swing.JTextField();
         jLabel39 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
+        updateLatitudeCellarTextField = new javax.swing.JTextField();
         jLabel40 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
+        updateLenghtTextField = new javax.swing.JTextField();
         jLabel41 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
+        updateDistanceTextField = new javax.swing.JTextField();
         jLabel42 = new javax.swing.JLabel();
-        jTextField12 = new javax.swing.JTextField();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        updateImageTextField = new javax.swing.JTextField();
+        updateImageCellarButton = new javax.swing.JButton();
+        addCellarButton = new javax.swing.JButton();
+        updateCellarButton = new javax.swing.JButton();
         jLabel43 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
-        jButton9 = new javax.swing.JButton();
+        deleteCellarTextField = new javax.swing.JTextField();
+        deleteCellarButton = new javax.swing.JButton();
+        jLabel146 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel92 = new javax.swing.JLabel();
         jLabel93 = new javax.swing.JLabel();
@@ -348,30 +465,29 @@ public class Maintenance extends javax.swing.JFrame {
         jSeparator17 = new javax.swing.JSeparator();
         jSeparator18 = new javax.swing.JSeparator();
         jLabel96 = new javax.swing.JLabel();
-        jTextField34 = new javax.swing.JTextField();
+        nameProductTextField = new javax.swing.JTextField();
         jLabel97 = new javax.swing.JLabel();
         jLabel98 = new javax.swing.JLabel();
-        jTextField36 = new javax.swing.JTextField();
+        unitValueTextField = new javax.swing.JTextField();
         jLabel99 = new javax.swing.JLabel();
         jLabel100 = new javax.swing.JLabel();
         jLabel101 = new javax.swing.JLabel();
         jLabel102 = new javax.swing.JLabel();
         jLabel103 = new javax.swing.JLabel();
         jLabel104 = new javax.swing.JLabel();
-        jTextField37 = new javax.swing.JTextField();
-        jTextField38 = new javax.swing.JTextField();
-        jTextField39 = new javax.swing.JTextField();
-        jTextField41 = new javax.swing.JTextField();
-        jTextField42 = new javax.swing.JTextField();
-        jButton26 = new javax.swing.JButton();
-        jButton27 = new javax.swing.JButton();
+        totalWeightTextField = new javax.swing.JTextField();
+        descriptionProductTextField = new javax.swing.JTextField();
+        priceTextField = new javax.swing.JTextField();
+        imageProductTextField = new javax.swing.JTextField();
+        searchImageProductButton = new javax.swing.JButton();
+        addProductButton = new javax.swing.JButton();
         jLabel105 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jTextField40 = new javax.swing.JTextField();
+        categoryComboBox = new javax.swing.JComboBox<>();
+        searchProductTextField = new javax.swing.JTextField();
         jButton28 = new javax.swing.JButton();
         jLabel106 = new javax.swing.JLabel();
         jLabel108 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        unitMeasuredComboBox = new javax.swing.JComboBox<>();
         jLabel109 = new javax.swing.JLabel();
         jLabel110 = new javax.swing.JLabel();
         jLabel111 = new javax.swing.JLabel();
@@ -380,7 +496,7 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel117 = new javax.swing.JLabel();
         jLabel119 = new javax.swing.JLabel();
         jLabel121 = new javax.swing.JLabel();
-        jTextField43 = new javax.swing.JTextField();
+        updateSearchProduct = new javax.swing.JTextField();
         jLabel122 = new javax.swing.JLabel();
         jTextField44 = new javax.swing.JTextField();
         jButton29 = new javax.swing.JButton();
@@ -393,7 +509,7 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel129 = new javax.swing.JLabel();
         jLabel130 = new javax.swing.JLabel();
         jLabel131 = new javax.swing.JLabel();
-        jTextField45 = new javax.swing.JTextField();
+        deleteProductTextField = new javax.swing.JTextField();
         jButton30 = new javax.swing.JButton();
         jTextField35 = new javax.swing.JTextField();
         jTextField46 = new javax.swing.JTextField();
@@ -410,6 +526,7 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel137 = new javax.swing.JLabel();
         jLabel138 = new javax.swing.JLabel();
         jLabel139 = new javax.swing.JLabel();
+        batchCodeComboBox = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         returnAdministratorButton = new javax.swing.JButton();
 
@@ -1035,55 +1152,57 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel69.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel69.setText("Código lote:");
 
-        jButton17.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jButton17.setText("Buscar");
-        jButton17.addActionListener(new java.awt.event.ActionListener() {
+        searchBatchButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        searchBatchButton.setText("Buscar");
+        searchBatchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton17ActionPerformed(evt);
+                searchBatchButtonActionPerformed(evt);
             }
         });
 
         jLabel70.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel70.setText("Fecha empacado:");
 
-        jLabel71.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        packedDateLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
 
         jLabel72.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel72.setText("Fecha vencimiento:");
 
-        jLabel73.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        expirationDateLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
 
         jLabel74.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel74.setText("Código lote:");
 
-        jButton18.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jButton18.setText("Buscar");
-        jButton18.addActionListener(new java.awt.event.ActionListener() {
+        updateSearchBatchButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        updateSearchBatchButton.setText("Buscar");
+        updateSearchBatchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton18ActionPerformed(evt);
+                updateSearchBatchButtonActionPerformed(evt);
             }
         });
 
         jLabel75.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel75.setText("Código lote:");
 
-        jLabel76.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel76.setText("Fecha empacado:");
-
         jLabel77.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel77.setText("Fecha vencimiento:");
 
-        jButton19.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jButton19.setText("Actualizar");
+        updateBatchButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        updateBatchButton.setText("Actualizar");
+        updateBatchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateBatchButtonActionPerformed(evt);
+            }
+        });
 
         jLabel78.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel78.setText("Código lote:");
 
-        jButton20.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jButton20.setText("Borrar");
-        jButton20.addActionListener(new java.awt.event.ActionListener() {
+        deleteBatchButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        deleteBatchButton.setText("Borrar");
+        deleteBatchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton20ActionPerformed(evt);
+                deleteBatchButtonActionPerformed(evt);
             }
         });
 
@@ -1127,18 +1246,18 @@ public class Maintenance extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jLabel73, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
-                                        .addComponent(jLabel71, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(expirationDateLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
+                                        .addComponent(packedDateLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel70, javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel72, javax.swing.GroupLayout.Alignment.LEADING))
                                     .addGroup(jPanel5Layout.createSequentialGroup()
                                         .addComponent(jLabel69)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(searchBatchCodeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton17)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                                .addComponent(searchBatchButton)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33))
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -1148,133 +1267,149 @@ public class Maintenance extends javax.swing.JFrame {
                                 .addComponent(addBatchButton))
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel5Layout.createSequentialGroup()
-                            .addGap(102, 102, 102)
-                            .addComponent(jLabel63))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jButton18))
-                        .addGroup(jPanel5Layout.createSequentialGroup()
-                            .addGap(26, 26, 26)
-                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel74)
-                                .addComponent(jLabel75)
-                                .addComponent(jLabel76)
-                                .addComponent(jLabel77))
-                            .addGap(26, 26, 26)
-                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextField24)
-                                .addComponent(jTextField25)
-                                .addComponent(jXDatePicker3, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
-                                .addComponent(jXDatePicker4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(103, 103, 103)
-                        .addComponent(jButton19)))
-                .addGap(47, 47, 47)
-                .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel71, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)))
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(81, 81, 81)
-                                .addComponent(jLabel64))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel78)))
-                        .addGap(96, 96, 96))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel5Layout.createSequentialGroup()
+                                            .addGap(102, 102, 102)
+                                            .addComponent(jLabel63))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(updateSearchBatchButton)))
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addGap(26, 26, 26)
+                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel74)
+                                            .addComponent(jLabel75)
+                                            .addComponent(jLabel77))
+                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                                .addGap(26, 26, 26)
+                                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(updateSearchBatchCodeTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+                                                    .addComponent(batchCodeLabel)))
+                                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                                .addGap(35, 35, 35)
+                                                .addComponent(expirationDatePicker, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGap(38, 38, 38))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                .addComponent(updateBatchButton)
+                                .addGap(131, 131, 131)))
+                        .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(jTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(75, 75, 75))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(jButton20)
-                                .addGap(66, 66, 66))))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                        .addComponent(deleteBatchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(75, 75, 75))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                        .addComponent(deleteBatchButton)
+                                        .addGap(66, 66, 66))))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addGap(81, 81, 81)
+                                        .addComponent(jLabel64))
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel78))
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel76, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addContainerGap())))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(jLabel73, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel63)
-                        .addGap(20, 20, 20)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel74)
-                            .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton18)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel75)
-                            .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(35, 35, 35)
+                        .addGap(21, 21, 21)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel76)
-                            .addComponent(jXDatePicker3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(30, 30, 30)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel77)
-                            .addComponent(jXDatePicker4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton19))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addComponent(jLabel64)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel78)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(deleteBatchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(32, 32, 32)
-                                .addComponent(jButton20)))
-                        .addGap(0, 40, Short.MAX_VALUE)))
-                .addGap(25, 25, 25))
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(deleteBatchButton)
+                                .addGap(13, 13, 13)
+                                .addComponent(jLabel76, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(jPanel5Layout.createSequentialGroup()
+                                    .addComponent(jLabel63)
+                                    .addGap(20, 20, 20)
+                                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(jPanel5Layout.createSequentialGroup()
+                                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(jLabel74)
+                                                .addComponent(updateSearchBatchCodeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(updateSearchBatchButton)
+                                            .addGap(18, 18, 18)
+                                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addComponent(jLabel75)
+                                                .addComponent(batchCodeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGap(46, 46, 46)
+                                            .addComponent(jLabel77))
+                                        .addComponent(expirationDatePicker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(updateBatchButton))
+                                .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                        .addComponent(jLabel73, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel62)
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel62)
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel69)
+                                    .addComponent(searchBatchCodeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(searchBatchButton)
+                                .addGap(32, 32, 32)
+                                .addComponent(jLabel70)
+                                .addGap(18, 18, 18)
+                                .addComponent(packedDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel72)
+                                .addGap(28, 28, 28)
+                                .addComponent(expirationDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel61)
+                                .addGap(20, 20, 20)
+                                .addComponent(jLabel65)
+                                .addGap(18, 18, 18)
+                                .addComponent(codeBatchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel66)
+                                .addGap(18, 18, 18)
+                                .addComponent(jXDatePicker1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel68)
+                                .addGap(18, 18, 18)
+                                .addComponent(jXDatePicker2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28)
+                                .addComponent(addBatchButton))
+                            .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel69)
-                            .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton17)
-                        .addGap(32, 32, 32)
-                        .addComponent(jLabel70)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel71, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel72)
-                        .addGap(28, 28, 28)
-                        .addComponent(jLabel73, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel61)
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel65)
-                        .addGap(18, 18, 18)
-                        .addComponent(codeBatchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel66)
-                        .addGap(18, 18, 18)
-                        .addComponent(jXDatePicker1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel68)
-                        .addGap(18, 18, 18)
-                        .addComponent(jXDatePicker2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addComponent(addBatchButton))
-                    .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel67, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel67, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel71, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
 
@@ -1311,33 +1446,38 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel23.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel23.setText("Nombre:");
         jPanel3.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 28, -1, -1));
-        jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 48, 151, -1));
+        jPanel3.add(cellarNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 48, 151, -1));
 
         jLabel24.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel24.setText("Latitud:");
         jPanel3.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 79, -1, -1));
-        jPanel3.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 104, 151, -1));
+        jPanel3.add(latitudeCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 104, 151, -1));
 
         jLabel25.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel25.setText("Longitud:");
         jPanel3.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
-        jPanel3.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 155, 151, -1));
+        jPanel3.add(LenghtCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 155, 151, -1));
 
         jLabel26.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel26.setText("Distancia:");
         jPanel3.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 186, -1, -1));
-        jPanel3.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 218, 151, -1));
+        jPanel3.add(distanceCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 218, 151, -1));
 
         jLabel27.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel27.setText("Fotografía:");
         jPanel3.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 249, -1, -1));
 
-        jTextField5.setEditable(false);
-        jPanel3.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 275, 62, -1));
+        imageCellarTextField.setEditable(false);
+        jPanel3.add(imageCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 275, 62, -1));
 
-        jButton2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jButton2.setText("Buscar");
-        jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 274, -1, -1));
+        addImageCellarButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        addImageCellarButton.setText("Buscar");
+        addImageCellarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addImageCellarButtonActionPerformed(evt);
+            }
+        });
+        jPanel3.add(addImageCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 274, -1, -1));
 
         jButton3.setText("Agregar");
         jPanel3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 375, -1, -1));
@@ -1345,104 +1485,128 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel28.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel28.setText("Nombre:");
         jPanel3.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 46, -1, -1));
-        jPanel3.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 43, 153, -1));
+        jPanel3.add(searchCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 43, 153, -1));
 
         jLabel29.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel29.setText("Latitud:");
         jPanel3.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 100, -1, -1));
 
-        jLabel30.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jPanel3.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 100, 114, 14));
+        latitudeCellarLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jPanel3.add(latitudeCellarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 100, 114, 14));
 
-        jButton4.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jButton4.setText("Buscar");
-        jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 69, -1, -1));
+        searchCellarButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        searchCellarButton.setText("Buscar");
+        searchCellarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchCellarButtonActionPerformed(evt);
+            }
+        });
+        jPanel3.add(searchCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 69, -1, -1));
 
         jLabel31.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel31.setText("Longitud:");
         jPanel3.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 143, -1, -1));
 
-        jLabel32.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jPanel3.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 138, 114, 19));
+        lenghtCellarLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jPanel3.add(lenghtCellarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 138, 114, 19));
 
         jLabel33.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel33.setText("Distancia:");
         jPanel3.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 186, -1, -1));
 
-        jLabel34.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jPanel3.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 186, 114, 14));
+        distanceCellarLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jPanel3.add(distanceCellarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 186, 114, 14));
 
         jLabel35.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel35.setText("Fotografía:");
         jPanel3.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 230, -1, -1));
-        jPanel3.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(236, 255, 140, 56));
+        jPanel3.add(imageCellarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(236, 255, 140, 56));
 
         jLabel37.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel37.setText("Nombre:");
         jPanel3.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 50, -1, -1));
-        jPanel3.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 42, 149, -1));
+        jPanel3.add(updateSearchCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 42, 149, -1));
 
-        jButton5.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jButton5.setText("Buscar");
-        jPanel3.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(632, 68, -1, -1));
+        updateSearchCellarButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        updateSearchCellarButton.setText("Buscar");
+        updateSearchCellarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateSearchCellarButtonActionPerformed(evt);
+            }
+        });
+        jPanel3.add(updateSearchCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(632, 68, -1, -1));
 
         jLabel38.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel38.setText("Nombre:");
         jPanel3.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 107, -1, -1));
-        jPanel3.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 104, 149, -1));
+        jPanel3.add(updateNameCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 104, 149, -1));
 
         jLabel39.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel39.setText("Latitud:");
         jPanel3.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 145, -1, -1));
-        jPanel3.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 142, 149, -1));
+        jPanel3.add(updateLatitudeCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 142, 149, -1));
 
         jLabel40.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel40.setText("Longitud:");
         jPanel3.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 183, -1, -1));
-        jPanel3.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 180, 149, -1));
+        jPanel3.add(updateLenghtTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 180, 149, -1));
 
         jLabel41.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel41.setText("Distancia:");
         jPanel3.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 221, -1, -1));
-        jPanel3.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 218, 149, -1));
+        jPanel3.add(updateDistanceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 218, 149, -1));
 
         jLabel42.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel42.setText("Fotografía:");
         jPanel3.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 260, -1, -1));
 
-        jTextField12.setEditable(false);
-        jPanel3.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 257, 65, -1));
+        updateImageTextField.setEditable(false);
+        jPanel3.add(updateImageTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 257, 65, -1));
 
-        jButton6.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jButton6.setText("Buscar");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        updateImageCellarButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        updateImageCellarButton.setText("Buscar");
+        updateImageCellarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                updateImageCellarButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(623, 256, -1, -1));
+        jPanel3.add(updateImageCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(623, 256, -1, -1));
 
-        jButton7.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jButton7.setText("Agregar");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        addCellarButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        addCellarButton.setText("Agregar");
+        addCellarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                addCellarButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, -1, -1));
+        jPanel3.add(addCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, -1, -1));
 
-        jButton8.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jButton8.setText("Actualizar");
-        jPanel3.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 300, -1, -1));
+        updateCellarButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        updateCellarButton.setText("Actualizar");
+        updateCellarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateCellarButtonActionPerformed(evt);
+            }
+        });
+        jPanel3.add(updateCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 300, -1, -1));
 
         jLabel43.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel43.setText("Nombre:");
         jPanel3.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 40, -1, -1));
-        jPanel3.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 70, 130, -1));
+        jPanel3.add(deleteCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 70, 130, -1));
 
-        jButton9.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jButton9.setText("Borrar");
-        jPanel3.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 110, -1, -1));
+        deleteCellarButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        deleteCellarButton.setText("Borrar");
+        deleteCellarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteCellarButtonActionPerformed(evt);
+            }
+        });
+        jPanel3.add(deleteCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 110, -1, -1));
+        jPanel3.add(jLabel146, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 180, 20));
+        jPanel3.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 200, 20));
+        jPanel3.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 330, 250, 20));
+        jPanel3.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 160, 180, 30));
 
         jTabbedPane1.addTab("Bodegas", jPanel3);
 
@@ -1477,7 +1641,7 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel96.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel96.setText("Nombre:");
         jPanel7.add(jLabel96, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
-        jPanel7.add(jTextField34, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 114, -1));
+        jPanel7.add(nameProductTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 114, -1));
 
         jLabel97.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel97.setText("Unidad medida:");
@@ -1486,7 +1650,7 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel98.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel98.setText("Valor unidad:");
         jPanel7.add(jLabel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 75, -1));
-        jPanel7.add(jTextField36, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 114, -1));
+        jPanel7.add(unitValueTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 114, -1));
 
         jLabel99.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel99.setText("Peso total:");
@@ -1511,28 +1675,27 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel104.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel104.setText("Fotografía:");
         jPanel7.add(jLabel104, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
-        jPanel7.add(jTextField37, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 114, -1));
-        jPanel7.add(jTextField38, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 114, -1));
-        jPanel7.add(jTextField39, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 114, -1));
-        jPanel7.add(jTextField41, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 114, -1));
+        jPanel7.add(totalWeightTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 114, -1));
+        jPanel7.add(descriptionProductTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 114, -1));
+        jPanel7.add(priceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 114, -1));
 
-        jTextField42.setEditable(false);
-        jPanel7.add(jTextField42, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 50, -1));
+        imageProductTextField.setEditable(false);
+        jPanel7.add(imageProductTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 50, -1));
 
-        jButton26.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jButton26.setText("Buscar");
-        jPanel7.add(jButton26, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, 70, -1));
+        searchImageProductButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        searchImageProductButton.setText("Buscar");
+        jPanel7.add(searchImageProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, 70, -1));
 
-        jButton27.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jButton27.setText("Agregar");
-        jPanel7.add(jButton27, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, -1, -1));
+        addProductButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        addProductButton.setText("Agregar");
+        jPanel7.add(addProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, -1, -1));
 
         jLabel105.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel105.setText("Nombre:");
         jPanel7.add(jLabel105, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, -1, -1));
 
-        jPanel7.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 110, -1));
-        jPanel7.add(jTextField40, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 130, -1));
+        jPanel7.add(categoryComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 110, -1));
+        jPanel7.add(searchProductTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 130, -1));
 
         jButton28.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jButton28.setText("Buscar");
@@ -1546,7 +1709,7 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel108.setText("Valor unidad:");
         jPanel7.add(jLabel108, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, -1, -1));
 
-        jPanel7.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 110, -1));
+        jPanel7.add(unitMeasuredComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 110, -1));
 
         jLabel109.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel109.setText("Peso total:");
@@ -1576,7 +1739,7 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel121.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel121.setText("Nombre:");
         jPanel7.add(jLabel121, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, -1, -1));
-        jPanel7.add(jTextField43, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 40, 120, -1));
+        jPanel7.add(updateSearchProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 40, 120, -1));
 
         jLabel122.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel122.setText("Nuevo nombre:");
@@ -1622,12 +1785,12 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel131.setText("Nombre:");
         jPanel7.add(jLabel131, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 40, -1, -1));
 
-        jTextField45.addActionListener(new java.awt.event.ActionListener() {
+        deleteProductTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField45ActionPerformed(evt);
+                deleteProductTextFieldActionPerformed(evt);
             }
         });
-        jPanel7.add(jTextField45, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 70, 130, -1));
+        jPanel7.add(deleteProductTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 70, 130, -1));
 
         jButton30.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jButton30.setText("Borrar");
@@ -1654,6 +1817,8 @@ public class Maintenance extends javax.swing.JFrame {
         jPanel7.add(jLabel137, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, 100, 10));
         jPanel7.add(jLabel138, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, 100, 20));
         jPanel7.add(jLabel139, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, 70, 40));
+
+        jPanel7.add(batchCodeComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 110, -1));
 
         jTabbedPane1.addTab("Productos", jPanel7);
 
@@ -1721,13 +1886,48 @@ public class Maintenance extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_returnAdministratorButtonActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    private void updateImageCellarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateImageCellarButtonActionPerformed
+        JFileChooser fileChooser = new JFileChooser();
+        FileNameExtensionFilter fileNameExtensionFilter = new FileNameExtensionFilter("JPG, PNG", "jpg", "png");
+        fileChooser.setFileFilter(fileNameExtensionFilter);
+        fileChooser.showOpenDialog(this);
+        File file = fileChooser.getSelectedFile();
+        if (file != null) {
+            String path = file.toString();
+            Path origin = Paths.get(path);
+            Path destiny = Paths.get(origin.getFileName().toString());
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+            try {
+                Files.copy(origin, destiny, StandardCopyOption.COPY_ATTRIBUTES);
+                updateImageTextField.setText(destiny.toString());
+            } catch (IOException ex) {
+                Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            jLabel32.setText("Debe seleccionar un archivo");
+        }
+    }//GEN-LAST:event_updateImageCellarButtonActionPerformed
+
+    private void addCellarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCellarButtonActionPerformed
+        try {
+            if(crudMaintenance.existsCellar(cellarNameTextField.getText())) {
+                jLabel146.setText("La bodega ya se encuentra registrada.");
+            } else if(cellarNameTextField.getText().equals("") || latitudeCellarTextField.getText().equals("") || LenghtCellarTextField.getText().equals("")
+                    || distanceCellarTextField.getText().equals("") || imageCellarTextField.getText().equals("")) {
+                jLabel146.setText("Ingrese todos los datos.");
+            } else {
+                crudMaintenance.addCellar(cellarNameTextField.getText(), latitudeCellarTextField.getText(), LenghtCellarTextField.getText(), Float.valueOf(distanceCellarTextField.getText()), imageCellarTextField.getText());
+                jLabel146.setText("Bodega agregada.");
+                cellarNameTextField.setText("");
+                latitudeCellarTextField.setText("");
+                LenghtCellarTextField.setText("");
+                distanceCellarTextField.setText("");
+                imageCellarTextField.setText("");
+            }
+        } catch (GraphException ex) {
+            Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_addCellarButtonActionPerformed
 
     private void deleteTransportUnitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteTransportUnitButtonActionPerformed
         if(crudMaintenance.existsTransportUnit(deleteTransportTextField.getText())) {
@@ -1738,21 +1938,38 @@ public class Maintenance extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_deleteTransportUnitButtonActionPerformed
 
-    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton17ActionPerformed
+    private void searchBatchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBatchButtonActionPerformed
+       Batch batch = crudMaintenance.getBatch(searchBatchCodeLabel.getText());
+        if(crudMaintenance.existsBatch(searchBatchCodeLabel.getText())) {
+            packedDateLabel.setText(batch.getPackedDate());
+            expirationDateLabel.setText(batch.getExpirationDate().toString());
+        } else {
+            jLabel71.setText("El lote no se encuentra registrado.");
+        }
+    }//GEN-LAST:event_searchBatchButtonActionPerformed
 
-    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton18ActionPerformed
+    private void updateSearchBatchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateSearchBatchButtonActionPerformed
+        if(crudMaintenance.existsBatch(updateSearchBatchCodeTextField.getText())) {
+           Batch bacth = crudMaintenance.getBatch(updateSearchBatchCodeTextField.getText());
+           batchCodeLabel.setText(bacth.getBatchCode());
+           expirationDatePicker.setDate(bacth.getExpirationDate());
+       } else {
+           jLabel73.setText("El lote no se encuentra registrado");
+       }
+    }//GEN-LAST:event_updateSearchBatchButtonActionPerformed
 
-    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton20ActionPerformed
+    private void deleteBatchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBatchButtonActionPerformed
+        if(crudMaintenance.existsBatch(deleteBatchTextField.getText())) {
+            crudMaintenance.deleteBacth(deleteBatchTextField.getText());
+            jLabel76.setText("Lote eliminado");
+        } else {
+            jLabel76.setText("El lote no se encuentra registrado");
+        }
+    }//GEN-LAST:event_deleteBatchButtonActionPerformed
 
-    private void jTextField45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField45ActionPerformed
+    private void deleteProductTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteProductTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField45ActionPerformed
+    }//GEN-LAST:event_deleteProductTextFieldActionPerformed
 
     private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
         // TODO add your handling code here:
@@ -1988,6 +2205,108 @@ public class Maintenance extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_addBatchButtonActionPerformed
 
+    private void updateBatchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBatchButtonActionPerformed
+       if(batchCodeLabel.getText().equals("") || expirationDatePicker.getDate().toString().equals("")) {
+           jLabel73.setText("Debe ingresar todos los datos");
+       } else {
+           crudMaintenance.updateBacth(updateSearchBatchCodeTextField.getText(), batchCodeLabel.getText(), "", expirationDatePicker.getDate());
+           jLabel73.setText("Información actualizada");
+           updateSearchBatchCodeTextField.setText("");
+           batchCodeLabel.setText("");
+       }
+    }//GEN-LAST:event_updateBatchButtonActionPerformed
+
+    private void addImageCellarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addImageCellarButtonActionPerformed
+        JFileChooser fileChooser = new JFileChooser();
+        FileNameExtensionFilter fileNameExtensionFilter = new FileNameExtensionFilter("JPG, PNG", "jpg", "png");
+        fileChooser.setFileFilter(fileNameExtensionFilter);
+        fileChooser.showOpenDialog(this);
+        File file = fileChooser.getSelectedFile();
+        if (file != null) {
+            String path = file.toString();
+            Path origin = Paths.get(path);
+            Path destiny = Paths.get(origin.getFileName().toString());
+
+            try {
+                Files.copy(origin, destiny, StandardCopyOption.COPY_ATTRIBUTES);
+                imageCellarTextField.setText(destiny.toString());
+            } catch (IOException ex) {
+                Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            jLabel146.setText("Debe seleccionar un archivo");
+        }
+    }//GEN-LAST:event_addImageCellarButtonActionPerformed
+
+    private void searchCellarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchCellarButtonActionPerformed
+        try {
+            Cellar cellar = crudMaintenance.getCellar(searchCellarTextField.getText());
+            if (crudMaintenance.existsCellar(searchCellarTextField.getText())) {
+                latitudeCellarLabel.setText(cellar.getLatitude());
+                lenghtCellarLabel.setText(cellar.getLength());
+                distanceCellarLabel.setText(String.valueOf(cellar.getDistance()));
+                ImageIcon imageIcon = new ImageIcon(cellar.getUrl());
+                imageCellarLabel.setIcon((Icon) imageIcon);
+            } else {
+                jLabel30.setText("La bodega no se encuentra registrada.");
+            }
+        } catch (GraphException ex) {
+            Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_searchCellarButtonActionPerformed
+
+    private void updateSearchCellarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateSearchCellarButtonActionPerformed
+        try {
+            if(crudMaintenance.existsCellar(updateSearchCellarTextField.getText())) {
+                Cellar cellar = crudMaintenance.getCellar(updateSearchCellarTextField.getText());
+                updateNameCellarTextField.setText(cellar.getName());
+                updateLatitudeCellarTextField.setText(cellar.getLatitude());
+                updateLenghtTextField.setText(cellar.getLength());
+                updateDistanceTextField.setText(String.valueOf(cellar.getDistance()));
+                updateImageTextField.setText(cellar.getUrl());
+            } else {
+                jLabel32.setText("La bodega no se encuentra registrado");
+            }} catch (GraphException ex) {
+            Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_updateSearchCellarButtonActionPerformed
+
+    private void updateCellarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateCellarButtonActionPerformed
+        try {
+            if (updateNameCellarTextField.getText().equals("") || updateLatitudeCellarTextField.getText().equals("")
+                    || updateLenghtTextField.getText().equals("") || updateDistanceTextField.getText().equals("") || updateImageTextField.getText().equals("")) {
+                jLabel32.setText("Debe ingresar todos los datos");
+            } else {
+
+                crudMaintenance.updateCellar(updateSearchCellarTextField.getText(), updateNameCellarTextField.getText(),
+                        updateLatitudeCellarTextField.getText(), updateLenghtTextField.getText(), Float.valueOf(updateDistanceTextField.getText()),
+                        updateImageTextField.getText());
+                jLabel32.setText("Información actualizada");
+                updateSearchCellarTextField.setText("");
+                updateNameCellarTextField.setText("");
+                updateLatitudeCellarTextField.setText("");
+                updateLenghtTextField.setText("");
+                updateDistanceTextField.setText("");
+                updateImageTextField.setText("");
+            }
+        } catch (GraphException ex) {
+            Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_updateCellarButtonActionPerformed
+
+    private void deleteCellarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteCellarButtonActionPerformed
+        try {
+            if(crudMaintenance.existsCellar(deleteCellarTextField.getText())) {
+                crudMaintenance.deleteCellar(deleteCellarTextField.getText());
+                jLabel34.setText("Bodega eliminada.");
+            } else {
+                jLabel34.setText("La bodega no se encuentra registrada.");
+            }
+        } catch (GraphException ex) {
+            Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_deleteCellarButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2024,45 +2343,51 @@ public class Maintenance extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField LenghtCellarTextField;
     private javax.swing.JComboBox<String> MaxCapacityComboBox;
     private javax.swing.JComboBox<String> MinCapacityComboBox;
     private javax.swing.JButton addBatchButton;
     private javax.swing.JButton addCategoryButton;
     private javax.swing.JLabel addCategoryLabel;
+    private javax.swing.JButton addCellarButton;
+    private javax.swing.JButton addImageCellarButton;
+    private javax.swing.JButton addProductButton;
     private javax.swing.JButton addTransportUnitButton;
     private javax.swing.JButton addUserButton;
+    private javax.swing.JComboBox<String> batchCodeComboBox;
+    private javax.swing.JTextField batchCodeLabel;
     private javax.swing.JLabel capacityTransportUnitLabel;
+    private javax.swing.JComboBox<String> categoryComboBox;
+    private javax.swing.JTextField cellarNameTextField;
     private javax.swing.JTextField codeBatchTextField;
     private javax.swing.JComboBox<String> comboBoxRole;
+    private javax.swing.JButton deleteBatchButton;
+    private javax.swing.JTextField deleteBatchTextField;
     private javax.swing.JButton deleteCategoryButton;
     private javax.swing.JTextField deleteCategoryTextField;
+    private javax.swing.JButton deleteCellarButton;
+    private javax.swing.JTextField deleteCellarTextField;
+    private javax.swing.JTextField deleteProductTextField;
     private javax.swing.JTextField deleteTransportTextField;
     private javax.swing.JButton deleteTransportUnitButton;
     private javax.swing.JButton deleteUserButton;
     private javax.swing.JTextField deleteUserTextField;
     private javax.swing.JLabel descriptionCategoryLabel;
     private javax.swing.JTextField descriptionCategoryTextField;
+    private javax.swing.JTextField descriptionProductTextField;
+    private javax.swing.JLabel distanceCellarLabel;
+    private javax.swing.JTextField distanceCellarTextField;
+    private javax.swing.JLabel expirationDateLabel;
+    private org.jdesktop.swingx.JXDatePicker expirationDatePicker;
+    private javax.swing.JLabel imageCellarLabel;
+    private javax.swing.JTextField imageCellarTextField;
+    private javax.swing.JTextField imageProductTextField;
     private javax.swing.JLabel imageTransportUnit;
     private javax.swing.JTextField imageTransportUnitTextField;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton26;
-    private javax.swing.JButton jButton27;
     private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton30;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JLabel jLabel1;
@@ -2117,6 +2442,7 @@ public class Maintenance extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel143;
     private javax.swing.JLabel jLabel144;
     private javax.swing.JLabel jLabel145;
+    private javax.swing.JLabel jLabel146;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -2140,7 +2466,6 @@ public class Maintenance extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
@@ -2236,74 +2561,73 @@ public class Maintenance extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField23;
-    private javax.swing.JTextField jTextField24;
-    private javax.swing.JTextField jTextField25;
-    private javax.swing.JTextField jTextField26;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField34;
     private javax.swing.JTextField jTextField35;
-    private javax.swing.JTextField jTextField36;
-    private javax.swing.JTextField jTextField37;
-    private javax.swing.JTextField jTextField38;
-    private javax.swing.JTextField jTextField39;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField40;
-    private javax.swing.JTextField jTextField41;
-    private javax.swing.JTextField jTextField42;
-    private javax.swing.JTextField jTextField43;
     private javax.swing.JTextField jTextField44;
-    private javax.swing.JTextField jTextField45;
     private javax.swing.JTextField jTextField46;
     private javax.swing.JTextField jTextField47;
     private javax.swing.JTextField jTextField48;
     private javax.swing.JTextField jTextField49;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField50;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker1;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker2;
-    private org.jdesktop.swingx.JXDatePicker jXDatePicker3;
-    private org.jdesktop.swingx.JXDatePicker jXDatePicker4;
+    private javax.swing.JLabel latitudeCellarLabel;
+    private javax.swing.JTextField latitudeCellarTextField;
+    private javax.swing.JLabel lenghtCellarLabel;
     private javax.swing.JTextField nameCategoryTextField;
+    private javax.swing.JTextField nameProductTextField;
     private javax.swing.JTextField nameTextField;
+    private javax.swing.JLabel packedDateLabel;
     private javax.swing.JPasswordField passwordTextField;
     private javax.swing.JTextField plateTextField;
     private javax.swing.JTextField plateTransportUnitTexField;
+    private javax.swing.JTextField priceTextField;
     private javax.swing.JButton returnAdministratorButton;
     private javax.swing.JLabel roleLabel;
+    private javax.swing.JButton searchBatchButton;
+    private javax.swing.JTextField searchBatchCodeLabel;
     private javax.swing.JButton searchCategoryButton;
     private javax.swing.JLabel searchCategoryLabel;
+    private javax.swing.JButton searchCellarButton;
+    private javax.swing.JTextField searchCellarTextField;
+    private javax.swing.JButton searchImageProductButton;
     private javax.swing.JButton searchImageTransportUnit;
     private javax.swing.JTextField searchNameCategoryTextField;
     private javax.swing.JTextField searchPlateTextField;
+    private javax.swing.JTextField searchProductTextField;
     private javax.swing.JButton searchTransportUnitButton;
     private javax.swing.JTextField searchUpdateTransportTextField;
     private javax.swing.JTextField serchName;
     private javax.swing.JButton serchUserButton;
+    private javax.swing.JTextField totalWeightTextField;
+    private javax.swing.JComboBox<String> unitMeasuredComboBox;
+    private javax.swing.JTextField unitValueTextField;
+    private javax.swing.JButton updateBatchButton;
     private javax.swing.JButton updateCategoryButton;
+    private javax.swing.JButton updateCellarButton;
     private javax.swing.JTextField updateDescriptionCategoryTextField;
+    private javax.swing.JTextField updateDistanceTextField;
+    private javax.swing.JButton updateImageCellarButton;
+    private javax.swing.JTextField updateImageTextField;
     private javax.swing.JTextField updateImageTransport;
     private javax.swing.JButton updateImageTransportUnit;
+    private javax.swing.JTextField updateLatitudeCellarTextField;
+    private javax.swing.JTextField updateLenghtTextField;
     private javax.swing.JComboBox<String> updateMaxCapacityComboBox;
     private javax.swing.JComboBox<String> updateMinCapacityComboBox;
     private javax.swing.JTextField updateNameCategoryTextField;
+    private javax.swing.JTextField updateNameCellarTextField;
     private javax.swing.JTextField updateNameUserTextField;
     private javax.swing.JPasswordField updatePasswordTextField;
     private javax.swing.JComboBox<String> updateRoleUserComboBox;
+    private javax.swing.JButton updateSearchBatchButton;
+    private javax.swing.JTextField updateSearchBatchCodeTextField;
     private javax.swing.JButton updateSearchCategoryButton;
+    private javax.swing.JButton updateSearchCellarButton;
+    private javax.swing.JTextField updateSearchCellarTextField;
     private javax.swing.JTextField updateSearchNameCategoryTextField;
     private javax.swing.JButton updateSearchPlateButton;
+    private javax.swing.JTextField updateSearchProduct;
     private javax.swing.JButton updateSearchUserButton;
     private javax.swing.JButton updateTransportUnitButton;
     private javax.swing.JButton updateUserButton;
