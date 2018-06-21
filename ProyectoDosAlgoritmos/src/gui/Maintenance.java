@@ -69,6 +69,21 @@ public class Maintenance extends javax.swing.JFrame {
         unitMeasuredComboBox.addItem("Caja");
         unitMeasuredComboBox.addItem("Tarima");
         
+        updateUnitMeasuredComboBox.addItem("Unidad");
+        updateUnitMeasuredComboBox.addItem("Paquete");
+        updateUnitMeasuredComboBox.addItem("Caja");
+        updateUnitMeasuredComboBox.addItem("Tarima");
+     
+        updateMinCapacityComboBox.addItem("0");
+        updateMinCapacityComboBox.addItem("1");
+        updateMinCapacityComboBox.addItem("5");
+        updateMinCapacityComboBox.addItem("10");
+        
+        updateMaxCapacityComboBox.addItem("1");
+        updateMaxCapacityComboBox.addItem("5");
+        updateMaxCapacityComboBox.addItem("10");
+        updateMaxCapacityComboBox.addItem("30");
+        
         Iterator iteratorBatchMap = batchMap.keySet().iterator();
         while (iteratorBatchMap.hasNext()) {
             Integer key = (Integer) iteratorBatchMap.next();
@@ -81,10 +96,9 @@ public class Maintenance extends javax.swing.JFrame {
             String key = (String) iteratorCategoryMap.next();
             Category category = categoryMap.get(key);
             categoryComboBox.addItem(category.getName());
+            updateCategoryComboBox.addItem(category.getName());
         }
-        
-        
-    
+ 
         //Autocompletar buscar categoría producto 
         TextAutoCompleter textAutoAcompleterSearchCategory = new TextAutoCompleter(searchNameCategoryTextField);
         Iterator iterator = categoryMap.keySet().iterator();
@@ -491,17 +505,17 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel108 = new javax.swing.JLabel();
         unitMeasuredComboBox = new javax.swing.JComboBox<>();
         jLabel109 = new javax.swing.JLabel();
-        jLabel110 = new javax.swing.JLabel();
+        totalWeightLabel = new javax.swing.JLabel();
         jLabel111 = new javax.swing.JLabel();
         jLabel113 = new javax.swing.JLabel();
         jLabel115 = new javax.swing.JLabel();
         jLabel117 = new javax.swing.JLabel();
         jLabel119 = new javax.swing.JLabel();
         jLabel121 = new javax.swing.JLabel();
-        updateSearchProduct = new javax.swing.JTextField();
+        updateSearchProductTextField = new javax.swing.JTextField();
         jLabel122 = new javax.swing.JLabel();
-        jTextField44 = new javax.swing.JTextField();
-        jButton29 = new javax.swing.JButton();
+        updateNameProductTextField = new javax.swing.JTextField();
+        updateSearchProductButton = new javax.swing.JButton();
         jLabel123 = new javax.swing.JLabel();
         jLabel124 = new javax.swing.JLabel();
         jLabel125 = new javax.swing.JLabel();
@@ -512,24 +526,28 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel130 = new javax.swing.JLabel();
         jLabel131 = new javax.swing.JLabel();
         deleteProductTextField = new javax.swing.JTextField();
-        jButton30 = new javax.swing.JButton();
-        jTextField35 = new javax.swing.JTextField();
-        jTextField46 = new javax.swing.JTextField();
-        jTextField47 = new javax.swing.JTextField();
-        jTextField48 = new javax.swing.JTextField();
-        jTextField49 = new javax.swing.JTextField();
-        jTextField50 = new javax.swing.JTextField();
-        jComboBox5 = new javax.swing.JComboBox<>();
-        jComboBox6 = new javax.swing.JComboBox<>();
+        deleteProductButton = new javax.swing.JButton();
+        updateImageProductTextField = new javax.swing.JTextField();
+        updateUnitValueTextField = new javax.swing.JTextField();
+        updateWeightTextField = new javax.swing.JTextField();
+        updateDescriptionTextField = new javax.swing.JTextField();
+        updatePriceTextField = new javax.swing.JTextField();
+        updateBatchCodeTextField = new javax.swing.JTextField();
+        updateCategoryComboBox = new javax.swing.JComboBox<>();
+        updateUnitMeasuredComboBox = new javax.swing.JComboBox<>();
         unitMeasuredLabel = new javax.swing.JLabel();
         unitValueLabel = new javax.swing.JLabel();
-        jLabel135 = new javax.swing.JLabel();
-        jLabel136 = new javax.swing.JLabel();
-        jLabel137 = new javax.swing.JLabel();
-        jLabel138 = new javax.swing.JLabel();
-        jLabel139 = new javax.swing.JLabel();
+        descriptionLabel = new javax.swing.JLabel();
+        batchLabel = new javax.swing.JLabel();
+        categoryLabel = new javax.swing.JLabel();
+        priceLabel = new javax.swing.JLabel();
+        imageLabel = new javax.swing.JLabel();
         batchCodeComboBox = new javax.swing.JComboBox<>();
         jLabel36 = new javax.swing.JLabel();
+        jLabel110 = new javax.swing.JLabel();
+        jLabel132 = new javax.swing.JLabel();
+        updateImageProductButton = new javax.swing.JButton();
+        jLabel133 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         returnAdministratorButton = new javax.swing.JButton();
 
@@ -1048,9 +1066,9 @@ public class Maintenance extends javax.swing.JFrame {
         jPanel4.add(plateTransportUnitTexField, new org.netbeans.lib.awtextra.AbsoluteConstraints(568, 141, 131, -1));
 
         jLabel58.setText("Capacidad mínima:");
-        jPanel4.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(496, 182, -1, -1));
+        jPanel4.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 180, 90, -1));
 
-        jPanel4.add(updateMinCapacityComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 180, 50, -1));
+        jPanel4.add(updateMinCapacityComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, 40, -1));
 
         jLabel59.setText("Fotografía:");
         jPanel4.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 250, -1, -1));
@@ -1113,9 +1131,9 @@ public class Maintenance extends javax.swing.JFrame {
         jPanel4.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 180, -1, -1));
 
         jLabel143.setText("Capacidad máxima");
-        jPanel4.add(jLabel143, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 210, -1, -1));
+        jPanel4.add(jLabel143, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 210, -1, -1));
 
-        jPanel4.add(updateMaxCapacityComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 210, 50, -1));
+        jPanel4.add(updateMaxCapacityComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 210, 40, -1));
 
         jLabel144.setText("toneladas");
         jPanel4.add(jLabel144, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 210, -1, -1));
@@ -1710,6 +1728,11 @@ public class Maintenance extends javax.swing.JFrame {
 
         searchProductButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         searchProductButton.setText("Buscar");
+        searchProductButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchProductButtonActionPerformed(evt);
+            }
+        });
         jPanel7.add(searchProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, -1, -1));
 
         jLabel106.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
@@ -1725,7 +1748,7 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel109.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel109.setText("Peso total:");
         jPanel7.add(jLabel109, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, -1, -1));
-        jPanel7.add(jLabel110, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 90, 10));
+        jPanel7.add(totalWeightLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 90, 10));
 
         jLabel111.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel111.setText("Descripción:");
@@ -1750,15 +1773,20 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel121.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel121.setText("Nombre:");
         jPanel7.add(jLabel121, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, -1, -1));
-        jPanel7.add(updateSearchProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 40, 120, -1));
+        jPanel7.add(updateSearchProductTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 40, 120, -1));
 
         jLabel122.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel122.setText("Nuevo nombre:");
         jPanel7.add(jLabel122, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, -1, -1));
-        jPanel7.add(jTextField44, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 90, 110, -1));
+        jPanel7.add(updateNameProductTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 90, 110, -1));
 
-        jButton29.setText("Buscar");
-        jPanel7.add(jButton29, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 40, -1, -1));
+        updateSearchProductButton.setText("Buscar");
+        updateSearchProductButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateSearchProductButtonActionPerformed(evt);
+            }
+        });
+        jPanel7.add(updateSearchProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 40, -1, -1));
 
         jLabel123.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel123.setText("Unidad medida:");
@@ -1795,42 +1823,49 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel131.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel131.setText("Nombre:");
         jPanel7.add(jLabel131, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 40, -1, -1));
-
-        deleteProductTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteProductTextFieldActionPerformed(evt);
-            }
-        });
         jPanel7.add(deleteProductTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 70, 130, -1));
 
-        jButton30.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jButton30.setText("Borrar");
-        jButton30.addActionListener(new java.awt.event.ActionListener() {
+        deleteProductButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        deleteProductButton.setText("Borrar");
+        deleteProductButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton30ActionPerformed(evt);
+                deleteProductButtonActionPerformed(evt);
             }
         });
-        jPanel7.add(jButton30, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 100, -1, -1));
-        jPanel7.add(jTextField35, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 270, 80, -1));
-        jPanel7.add(jTextField46, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 160, 110, -1));
-        jPanel7.add(jTextField47, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 200, 110, -1));
-        jPanel7.add(jTextField48, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 240, 110, -1));
-        jPanel7.add(jTextField49, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 130, 80, -1));
-        jPanel7.add(jTextField50, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 280, 110, -1));
+        jPanel7.add(deleteProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 100, -1, -1));
 
-        jPanel7.add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 200, 80, -1));
+        updateImageProductTextField.setEditable(false);
+        jPanel7.add(updateImageProductTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 270, 80, -1));
+        jPanel7.add(updateUnitValueTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 160, 110, -1));
+        jPanel7.add(updateWeightTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 200, 110, -1));
+        jPanel7.add(updateDescriptionTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 240, 110, -1));
+        jPanel7.add(updatePriceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 130, 80, -1));
+        jPanel7.add(updateBatchCodeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 280, 110, -1));
 
-        jPanel7.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 130, 100, -1));
+        jPanel7.add(updateCategoryComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 200, 80, -1));
+
+        jPanel7.add(updateUnitMeasuredComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 130, 100, -1));
         jPanel7.add(unitMeasuredLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 100, 10));
         jPanel7.add(unitValueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 100, 10));
-        jPanel7.add(jLabel135, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, 100, 20));
-        jPanel7.add(jLabel136, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, 100, 20));
-        jPanel7.add(jLabel137, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, 100, 10));
-        jPanel7.add(jLabel138, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, 100, 20));
-        jPanel7.add(jLabel139, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, 70, 40));
+        jPanel7.add(descriptionLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, 100, 20));
+        jPanel7.add(batchLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, 100, 20));
+        jPanel7.add(categoryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, 100, 10));
+        jPanel7.add(priceLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, 100, 20));
+        jPanel7.add(imageLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, 120, 40));
 
         jPanel7.add(batchCodeComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 110, -1));
         jPanel7.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 200, 20));
+        jPanel7.add(jLabel110, new org.netbeans.lib.awtextra.AbsoluteConstraints(206, 330, 130, 20));
+        jPanel7.add(jLabel132, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 320, 240, 20));
+
+        updateImageProductButton.setText("Buscar");
+        updateImageProductButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateImageProductButtonActionPerformed(evt);
+            }
+        });
+        jPanel7.add(updateImageProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 300, -1, -1));
+        jPanel7.add(jLabel133, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 160, 170, 20));
 
         jTabbedPane1.addTab("Productos", jPanel7);
 
@@ -1979,13 +2014,18 @@ public class Maintenance extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_deleteBatchButtonActionPerformed
 
-    private void deleteProductTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteProductTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_deleteProductTextFieldActionPerformed
-
-    private void jButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton30ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton30ActionPerformed
+    private void deleteProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteProductButtonActionPerformed
+        try {
+            if (crudMaintenance.existsProduct(deleteProductTextField.getText())) {
+                crudMaintenance.deleteProduct(deleteProductTextField.getText());
+                jLabel133.setText("Producto eliminado");
+            } else {
+                jLabel133.setText("El producto no se encuentra registrado.");
+            }
+        } catch (TreeException ex) {
+            Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_deleteProductButtonActionPerformed
 
     private void nameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTextFieldActionPerformed
         // TODO add your handling code here:
@@ -2387,6 +2427,93 @@ public class Maintenance extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_addProductButtonActionPerformed
 
+    private void searchProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchProductButtonActionPerformed
+        String batchCode = "";
+        String categoryName = "";
+        Product product = crudMaintenance.getProduct(searchProductTextField.getText());
+            if (crudMaintenance.existsProduct(searchProductTextField.getText())) {
+                unitMeasuredLabel.setText(product.getUnitMeasured());
+                unitValueLabel.setText(String.valueOf(product.getUnitValue()));
+                totalWeightLabel.setText(String.valueOf(product.getTotalWeight()));
+                descriptionLabel.setText(product.getDescription());
+                Iterator iterator = batchMap.keySet().iterator();
+                    while (iterator.hasNext()) {
+                        Integer key = (Integer) iterator.next();
+                        Batch batch = batchMap.get(key);
+                        if(product.getIdBatch() == batch.getIdBatch()) {
+                            batchCode = batch.getBatchCode();
+                        }
+                    }
+                    Iterator iterator2 = categoryMap.keySet().iterator();
+                    while (iterator2.hasNext()) {
+                        String key = (String) iterator2.next();
+                        Category category = categoryMap.get(key);
+                        if(product.getIdCategory() == category.getIdCategory()) {
+                            categoryName = product.getName();
+                        }
+                    }
+                batchLabel.setText(batchCode);
+                categoryLabel.setText(categoryName);
+                ImageIcon imageIcon = new ImageIcon(product.getUrl());
+                imageLabel.setIcon((Icon) imageIcon);
+            } else {
+                jLabel110.setText("El producto no se encuentra registrado.");
+            }
+    }//GEN-LAST:event_searchProductButtonActionPerformed
+
+    private void updateSearchProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateSearchProductButtonActionPerformed
+        int idCategory = 0;
+        if (updateNameProductTextField.getText().equals("") || updatePriceTextField.getText().equals("")
+                    || updateUnitValueTextField.getText().equals("") || updateWeightTextField.getText().equals("") || updateDescriptionTextField.getText().equals("")
+                || updateBatchCodeTextField.getText().equals("") || updateImageProductTextField.getText().equals("")) {
+                jLabel132.setText("Debe ingresar todos los datos");
+            } else {
+            Iterator iterator = categoryMap.keySet().iterator();
+                    while (iterator.hasNext()) {
+                        String key = (String) iterator.next();
+                        Category category = categoryMap.get(key);
+                        if (updateCategoryComboBox.getSelectedItem().toString().equals(category.getName())) {
+                            idCategory = category.getIdCategory();
+                        }
+                    }
+                crudMaintenance.updateProduct(updateSearchProductTextField.getText(), updateNameProductTextField.getText(), 
+                                              updateUnitMeasuredComboBox.getSelectedItem().toString(), Integer.parseInt(updateUnitValueTextField.getText()),
+                                              Integer.parseInt(updateWeightTextField.getText()), updateDescriptionTextField.getText(), idCategory, 
+                                              Integer.parseInt(updatePriceTextField.getText()), updateImageProductTextField.getText());
+                jLabel32.setText("Información actualizada");
+                updateSearchProductTextField.setText("");
+                updateNameProductTextField.setText("");
+                updateUnitValueTextField.setText("");
+                updateWeightTextField.setText("");
+                updateDescriptionTextField.setText("");
+                updateBatchCodeTextField.setText("");
+                updatePriceTextField.setText("");
+                updateImageProductTextField.setText("");
+            }
+    }//GEN-LAST:event_updateSearchProductButtonActionPerformed
+
+    private void updateImageProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateImageProductButtonActionPerformed
+        JFileChooser fileChooser = new JFileChooser();
+        FileNameExtensionFilter fileNameExtensionFilter = new FileNameExtensionFilter("JPG, PNG", "jpg", "png");
+        fileChooser.setFileFilter(fileNameExtensionFilter);
+        fileChooser.showOpenDialog(this);
+        File file = fileChooser.getSelectedFile();
+        if (file != null) {
+            String path = file.toString();
+            Path origin = Paths.get(path);
+            Path destiny = Paths.get(origin.getFileName().toString());
+
+            try {
+                Files.copy(origin, destiny, StandardCopyOption.COPY_ATTRIBUTES);
+                updateImageProductTextField.setText(destiny.toString());
+            } catch (IOException ex) {
+                Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            jLabel132.setText("Debe seleccionar un archivo.");
+        }
+    }//GEN-LAST:event_updateImageProductButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2436,8 +2563,10 @@ public class Maintenance extends javax.swing.JFrame {
     private javax.swing.JButton addUserButton;
     private javax.swing.JComboBox<String> batchCodeComboBox;
     private javax.swing.JTextField batchCodeLabel;
+    private javax.swing.JLabel batchLabel;
     private javax.swing.JLabel capacityTransportUnitLabel;
     private javax.swing.JComboBox<String> categoryComboBox;
+    private javax.swing.JLabel categoryLabel;
     private javax.swing.JTextField cellarNameTextField;
     private javax.swing.JTextField codeBatchTextField;
     private javax.swing.JComboBox<String> comboBoxRole;
@@ -2447,6 +2576,7 @@ public class Maintenance extends javax.swing.JFrame {
     private javax.swing.JTextField deleteCategoryTextField;
     private javax.swing.JButton deleteCellarButton;
     private javax.swing.JTextField deleteCellarTextField;
+    private javax.swing.JButton deleteProductButton;
     private javax.swing.JTextField deleteProductTextField;
     private javax.swing.JTextField deleteTransportTextField;
     private javax.swing.JButton deleteTransportUnitButton;
@@ -2454,6 +2584,7 @@ public class Maintenance extends javax.swing.JFrame {
     private javax.swing.JTextField deleteUserTextField;
     private javax.swing.JLabel descriptionCategoryLabel;
     private javax.swing.JTextField descriptionCategoryTextField;
+    private javax.swing.JLabel descriptionLabel;
     private javax.swing.JTextField descriptionProductTextField;
     private javax.swing.JLabel distanceCellarLabel;
     private javax.swing.JTextField distanceCellarTextField;
@@ -2461,14 +2592,11 @@ public class Maintenance extends javax.swing.JFrame {
     private org.jdesktop.swingx.JXDatePicker expirationDatePicker;
     private javax.swing.JLabel imageCellarLabel;
     private javax.swing.JTextField imageCellarTextField;
+    private javax.swing.JLabel imageLabel;
     private javax.swing.JTextField imageProductTextField;
     private javax.swing.JLabel imageTransportUnit;
     private javax.swing.JTextField imageTransportUnitTextField;
-    private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton30;
-    private javax.swing.JComboBox<String> jComboBox5;
-    private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
@@ -2506,12 +2634,9 @@ public class Maintenance extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel130;
     private javax.swing.JLabel jLabel131;
+    private javax.swing.JLabel jLabel132;
+    private javax.swing.JLabel jLabel133;
     private javax.swing.JLabel jLabel134;
-    private javax.swing.JLabel jLabel135;
-    private javax.swing.JLabel jLabel136;
-    private javax.swing.JLabel jLabel137;
-    private javax.swing.JLabel jLabel138;
-    private javax.swing.JLabel jLabel139;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel140;
     private javax.swing.JLabel jLabel141;
@@ -2640,13 +2765,6 @@ public class Maintenance extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField35;
-    private javax.swing.JTextField jTextField44;
-    private javax.swing.JTextField jTextField46;
-    private javax.swing.JTextField jTextField47;
-    private javax.swing.JTextField jTextField48;
-    private javax.swing.JTextField jTextField49;
-    private javax.swing.JTextField jTextField50;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker1;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker2;
     private javax.swing.JLabel latitudeCellarLabel;
@@ -2659,6 +2777,7 @@ public class Maintenance extends javax.swing.JFrame {
     private javax.swing.JPasswordField passwordTextField;
     private javax.swing.JTextField plateTextField;
     private javax.swing.JTextField plateTransportUnitTexField;
+    private javax.swing.JLabel priceLabel;
     private javax.swing.JTextField priceTextField;
     private javax.swing.JButton returnAdministratorButton;
     private javax.swing.JLabel roleLabel;
@@ -2678,17 +2797,23 @@ public class Maintenance extends javax.swing.JFrame {
     private javax.swing.JTextField searchUpdateTransportTextField;
     private javax.swing.JTextField serchName;
     private javax.swing.JButton serchUserButton;
+    private javax.swing.JLabel totalWeightLabel;
     private javax.swing.JTextField totalWeightTextField;
     private javax.swing.JComboBox<String> unitMeasuredComboBox;
     private javax.swing.JLabel unitMeasuredLabel;
     private javax.swing.JLabel unitValueLabel;
     private javax.swing.JTextField unitValueTextField;
     private javax.swing.JButton updateBatchButton;
+    private javax.swing.JTextField updateBatchCodeTextField;
     private javax.swing.JButton updateCategoryButton;
+    private javax.swing.JComboBox<String> updateCategoryComboBox;
     private javax.swing.JButton updateCellarButton;
     private javax.swing.JTextField updateDescriptionCategoryTextField;
+    private javax.swing.JTextField updateDescriptionTextField;
     private javax.swing.JTextField updateDistanceTextField;
     private javax.swing.JButton updateImageCellarButton;
+    private javax.swing.JButton updateImageProductButton;
+    private javax.swing.JTextField updateImageProductTextField;
     private javax.swing.JTextField updateImageTextField;
     private javax.swing.JTextField updateImageTransport;
     private javax.swing.JButton updateImageTransportUnit;
@@ -2698,8 +2823,10 @@ public class Maintenance extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> updateMinCapacityComboBox;
     private javax.swing.JTextField updateNameCategoryTextField;
     private javax.swing.JTextField updateNameCellarTextField;
+    private javax.swing.JTextField updateNameProductTextField;
     private javax.swing.JTextField updateNameUserTextField;
     private javax.swing.JPasswordField updatePasswordTextField;
+    private javax.swing.JTextField updatePriceTextField;
     private javax.swing.JComboBox<String> updateRoleUserComboBox;
     private javax.swing.JButton updateSearchBatchButton;
     private javax.swing.JTextField updateSearchBatchCodeTextField;
@@ -2708,12 +2835,16 @@ public class Maintenance extends javax.swing.JFrame {
     private javax.swing.JTextField updateSearchCellarTextField;
     private javax.swing.JTextField updateSearchNameCategoryTextField;
     private javax.swing.JButton updateSearchPlateButton;
-    private javax.swing.JTextField updateSearchProduct;
+    private javax.swing.JButton updateSearchProductButton;
+    private javax.swing.JTextField updateSearchProductTextField;
     private javax.swing.JButton updateSearchUserButton;
     private javax.swing.JButton updateTransportUnitButton;
+    private javax.swing.JComboBox<String> updateUnitMeasuredComboBox;
+    private javax.swing.JTextField updateUnitValueTextField;
     private javax.swing.JButton updateUserButton;
     private javax.swing.JTextField updateUserNameTextField;
     private javax.swing.JTextField updateUserTextField;
+    private javax.swing.JTextField updateWeightTextField;
     private javax.swing.JLabel userNameLabel;
     private javax.swing.JTextField userTextField;
     // End of variables declaration//GEN-END:variables
