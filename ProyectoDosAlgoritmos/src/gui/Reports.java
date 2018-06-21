@@ -9,7 +9,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import static tda.LoadTda.cellarGraph;
 import static tda.LoadTda.distributionOrderList;
-import static tda.LoadTda.productsBinaryTree;
+import static tda.LoadTda.tempTree;
+//import static tda.LoadTda.productsBinaryTree;
 
 /**
  * Interfaz reporte de lotes anulados.
@@ -146,16 +147,11 @@ public class Reports extends javax.swing.JFrame {
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
         int idProduct = 0;
-        try {
-            for (int i = 0; i < productsBinaryTree.getSize(); i++) {
-                Product product = (Product) productsBinaryTree.recorreArbol().get(i);
-                if(batchTextField.getText().equals(product.getIdBatch())){
-                    idProduct = product.getIdBatch();
-                }
+        for (int i = 0; i < tempTree.size(); i++) {
+            Product product = (Product) tempTree.get(i);
+            if(batchTextField.getText().equals(product.getIdBatch())){
+                idProduct = product.getIdBatch();
             }
-            
-        } catch (TreeException ex) {
-            Logger.getLogger(Reports.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         for (int i = 0; i < distributionOrderList.size(); i++) {

@@ -26,7 +26,7 @@ import tda.CrudMaintenance;
 import static tda.LoadTda.batchMap;
 import static tda.LoadTda.categoryMap;
 import static tda.LoadTda.cellarGraph;
-import static tda.LoadTda.productsBinaryTree;
+
 import static tda.LoadTda.transportUnitMap;
 import static tda.LoadTda.userList;
 
