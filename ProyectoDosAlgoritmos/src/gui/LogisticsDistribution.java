@@ -3,6 +3,7 @@ package gui;
 import com.teamdev.jxbrowser.chromium.Browser;
 import com.teamdev.jxbrowser.chromium.swing.BrowserView;
 import domain.Batch;
+import domain.Category;
 import domain.Cellar;
 import domain.Product;
 import domain.TableProduct;
@@ -18,6 +19,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.plaf.IconUIResource;
 import static tda.LoadTda.batchMap;
+import static tda.LoadTda.categoryMap;
 import static tda.LoadTda.cellarGraph;
 import static tda.LoadTda.tempTree;
 
@@ -33,7 +35,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
      */
     private Browser browser = new Browser();
     private ArrayList<TableProduct> tableList = new ArrayList<>();
-    
+
     public LogisticsDistribution() {
         initComponents();
         fillTable();
@@ -53,14 +55,14 @@ public class LogisticsDistribution extends javax.swing.JFrame {
             arrayCellar[i] = tempCellar.getName();
         }
         cellarList.setListData(arrayCellar);
-        
-         String[] arrayProducts = new String[tempTree.size()];
-         for (int i = 0; i < tempTree.size() ; i++) {
+
+        String[] arrayProducts = new String[tempTree.size()];
+        for (int i = 0; i < tempTree.size(); i++) {
             Product tempProduct = (Product) tempTree.get(i);
-            arrayProducts[i]= tempProduct.getName();
+            arrayProducts[i] = tempProduct.getName();
         }
         listProducts.setListData(arrayProducts);
-        
+
     }
 
     /**
@@ -102,6 +104,11 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
 
         listProducts.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        listProducts.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                listProductsMousePressed(evt);
+            }
+        });
         listProducts.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
                 listProductsValueChanged(evt);
@@ -228,19 +235,11 @@ public class LogisticsDistribution extends javax.swing.JFrame {
     }//GEN-LAST:event_returnLoginButtonActionPerformed
 
     private void listProductsValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listProductsValueChanged
-        for (int i = 0; i < tempTree.size(); i++) {
-            Product tempProduct = (Product) tempTree.get(i);
-            if(tempProduct.getName().equals(listProducts.getSelectedValue())){
-                ImageIcon imageIcon = new ImageIcon(tempProduct.getUrl());
-                jLabel2.setIcon(imageIcon);
-            
-            }
-        }
-        
+
     }//GEN-LAST:event_listProductsValueChanged
 
     private void cellarListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cellarListMouseClicked
-       
+
     }//GEN-LAST:event_cellarListMouseClicked
 
     private void cellarListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_cellarListValueChanged
@@ -265,6 +264,32 @@ public class LogisticsDistribution extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_cellarListValueChanged
+
+    private void listProductsMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listProductsMousePressed
+        TableProduct tableProduct = new TableProduct();
+        for (int i = 0; i < tempTree.size(); i++) {
+            Product tempProduct = (Product) tempTree.get(i);
+            if (tempProduct.getName().equals(listProducts.getSelectedValue())) {
+                ImageIcon imageIcon = new ImageIcon(tempProduct.getUrl());
+                jLabel2.setIcon(imageIcon);
+
+                tableProduct.setAmount(tempProduct.getPrice());
+                tableProduct.setProduct(tempProduct.getName());
+                Iterator iterator = categoryMap.keySet().iterator();
+                while (iterator.hasNext()) {
+                    String key = (String) iterator.next();
+                    Category category = categoryMap.get(key);
+                    if (category.getIdCategory() == tempProduct.getIdCategory()) {
+                        tableProduct.setCategory(category.getName());
+                    }
+                }
+                tableProduct.setQuantity(1);
+                tableProduct.setWeight(tempProduct.getTotalWeight());
+            }
+        }
+        tableList.add(tableProduct);
+        fillTable();
+    }//GEN-LAST:event_listProductsMousePressed
     public void loadMap(String url) {
 
         BrowserView view = new BrowserView(browser);
@@ -273,28 +298,17 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         browser.loadURL(url);
         jPanel3.setVisible(true);
     }
-    
-    public void fillTable(){
-        for (int i = 0; i < tempTree.size(); i++) {
-            TableProduct tableProduct = new TableProduct();
-            tableProduct.setAmount(0);
-            tableProduct.setProduct("Arroz");
-            tableProduct.setCategory("Congelados");
-            tableProduct.setQuantity(1789);
-            tableProduct.setWeight(65);
-            tableList.add(tableProduct);
-        }
-        String [][] array = new String[tableList.size()][5];
+
+    public void fillTable() {
+        String[][] array = new String[tableList.size()][5];
         for (int i = 0; i < tableList.size(); i++) {
             array[i][0] = String.valueOf(tableList.get(i).getQuantity());
-            array[i][1]= tableList.get(i).getProduct();
-            array[i][2] = String.valueOf(tableList.get(i).getAmount()) ;
+            array[i][1] = tableList.get(i).getProduct();
+            array[i][2] = String.valueOf(tableList.get(i).getAmount());
             array[i][3] = String.valueOf(tableList.get(i).getWeight());
             array[i][4] = tableList.get(i).getCategory();
         }
-        
-       jTable1.setModel(new javax.swing.table.DefaultTableModel(array, new String[]{"Cantidad", "Producto", "Monto", "Peso", "Categoria"}));
-        
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(array, new String[]{"Cantidad", "Producto", "Monto", "Peso", "Categoria"}));
     }
 
     /**

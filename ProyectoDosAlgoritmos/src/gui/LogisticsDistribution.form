@@ -82,6 +82,7 @@
                 </Property>
               </Properties>
               <Events>
+                <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="listProductsMousePressed"/>
                 <EventHandler event="valueChanged" listener="javax.swing.event.ListSelectionListener" parameters="javax.swing.event.ListSelectionEvent" handler="listProductsValueChanged"/>
               </Events>
               <AuxValues>

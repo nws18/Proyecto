@@ -2,6 +2,7 @@
 package binarytree;
 
 import Exception.TreeException;
+import domain.Product;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -13,7 +14,7 @@ import java.util.Random;
 public class LinkedBinaryTree implements BinaryTreeInterface{
     
     private BinaryNode root;
-    private ArrayList arrayList = new ArrayList<>();
+    private ArrayList<Product> arrayList = new ArrayList<>();
     
     public LinkedBinaryTree() {
         this.root = null;
@@ -270,30 +271,31 @@ public class LinkedBinaryTree implements BinaryTreeInterface{
         return arrayList;
     }
     
-    public ArrayList recorreArbol(){ 
-        recorreArbol(root);
-        return arrayList;
-    }        
-    private Object recorreArbol(BinaryNode node  ) {
-        
-
-        if(node!= null) {
-           
-            
-            Object object1  = node.element;
-            Object object2 = recorreArbol(node.left);
-            Object object3 = recorreArbol(node.right);
-            if(node != null){
-                arrayList.add(object1);
-            }
-            if(node.left!=null){
-                arrayList.add(object2);
-            }
-            if(node.right!=null){
-                arrayList.add(object3);
-            }
-        }
-        
-        return node.element;
-    }
+//    public ArrayList recorreArbol(){ 
+//        recorreArbol(root);
+//        return arrayList;
+//    }        
+//    private String recorreArbol(BinaryNode node  ) {
+//        String temp = "";
+//
+//        if(node!= null) {
+//           
+//            
+//            temp += postOrder(node.left);
+//            temp += postOrder(node.right);
+//            temp += node.element; 
+//            
+////            if(node != null){
+////                arrayList.add(node.element);
+////            }
+////            if(node.left!=null){
+////                arrayList.add(node.left.element);
+////            }
+////            if(node.right!=null){
+////                arrayList.add(node.right.element);
+////            }
+////        }
+//        
+//        return temp;
+//    }
 }
