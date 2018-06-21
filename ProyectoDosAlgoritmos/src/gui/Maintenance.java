@@ -1,5 +1,6 @@
 package gui;
 
+import Exception.TreeException;
 import com.mxrck.autocompleter.TextAutoCompleter;
 import domain.Batch;
 import domain.Category;
@@ -485,7 +486,7 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel105 = new javax.swing.JLabel();
         categoryComboBox = new javax.swing.JComboBox<>();
         searchProductTextField = new javax.swing.JTextField();
-        jButton28 = new javax.swing.JButton();
+        searchProductButton = new javax.swing.JButton();
         jLabel106 = new javax.swing.JLabel();
         jLabel108 = new javax.swing.JLabel();
         unitMeasuredComboBox = new javax.swing.JComboBox<>();
@@ -520,8 +521,8 @@ public class Maintenance extends javax.swing.JFrame {
         jTextField50 = new javax.swing.JTextField();
         jComboBox5 = new javax.swing.JComboBox<>();
         jComboBox6 = new javax.swing.JComboBox<>();
-        jLabel132 = new javax.swing.JLabel();
-        jLabel133 = new javax.swing.JLabel();
+        unitMeasuredLabel = new javax.swing.JLabel();
+        unitValueLabel = new javax.swing.JLabel();
         jLabel135 = new javax.swing.JLabel();
         jLabel136 = new javax.swing.JLabel();
         jLabel137 = new javax.swing.JLabel();
@@ -1282,9 +1283,7 @@ public class Maintenance extends javax.swing.JFrame {
                                         .addGroup(jPanel5Layout.createSequentialGroup()
                                             .addGap(102, 102, 102)
                                             .addComponent(jLabel63))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(updateSearchBatchButton)))
+                                        .addComponent(updateSearchBatchButton, javax.swing.GroupLayout.Alignment.TRAILING))
                                     .addGroup(jPanel5Layout.createSequentialGroup()
                                         .addGap(26, 26, 26)
                                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1709,9 +1708,9 @@ public class Maintenance extends javax.swing.JFrame {
         jPanel7.add(categoryComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 110, -1));
         jPanel7.add(searchProductTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 130, -1));
 
-        jButton28.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jButton28.setText("Buscar");
-        jPanel7.add(jButton28, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, -1, -1));
+        searchProductButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        searchProductButton.setText("Buscar");
+        jPanel7.add(searchProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, -1, -1));
 
         jLabel106.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel106.setText("Unidad medida:");
@@ -1822,8 +1821,8 @@ public class Maintenance extends javax.swing.JFrame {
         jPanel7.add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 200, 80, -1));
 
         jPanel7.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 130, 100, -1));
-        jPanel7.add(jLabel132, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 100, 10));
-        jPanel7.add(jLabel133, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 100, 10));
+        jPanel7.add(unitMeasuredLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 100, 10));
+        jPanel7.add(unitValueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 100, 10));
         jPanel7.add(jLabel135, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, 100, 20));
         jPanel7.add(jLabel136, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, 100, 20));
         jPanel7.add(jLabel137, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, 100, 10));
@@ -2222,7 +2221,7 @@ public class Maintenance extends javax.swing.JFrame {
        if(batchCodeLabel.getText().equals("") || expirationDatePicker.getDate().toString().equals("")) {
            jLabel73.setText("Debe ingresar todos los datos");
        } else {
-           crudMaintenance.updateBatch(updateSearchBatchCodeTextField.getText(), batchCodeLabel.getText(), "");
+           crudMaintenance.updateBatch(updateSearchBatchCodeTextField.getText(), batchCodeLabel.getText(), expirationDatePicker.getDate().toString());
            jLabel73.setText("Información actualizada");
            updateSearchBatchCodeTextField.setText("");
            batchCodeLabel.setText("");
@@ -2343,25 +2342,48 @@ public class Maintenance extends javax.swing.JFrame {
     }//GEN-LAST:event_searchImageProductButtonActionPerformed
 
     private void addProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addProductButtonActionPerformed
-        for (int i = 0; i < tempTree.size(); i++) {
-            Product product = (Product) tempTree.get(i);
-            if (product.getName().equals(nameProductTextField.getText())&& product.getUnitMeasured().equals(unitMeasuredComboBox.getSelectedItem().toString())) {
-                jLabel36.setText("El producto ya existe.");
-            } else if (nameProductTextField.getText().equals("") || unitValueTextField.equals("") || totalWeightTextField.getText().equals("") 
-                    || descriptionProductTextField.getText().equals("") || priceTextField.getText().equals("") || imageProductTextField.getText().equals("")) {
-                jLabel36.setText("Debe ingresar todos los datos.");
-            } else {
-//                crudMaintenance.addProduct(nameProductTextField.getText(), unitMeasuredComboBox.getSelectedItem().toString(), String.valueOf(unitValueTextField.getText()), String.valueOf(totalWeightTextField.getText()), 
-//                        descriptionProductTextField.getText(), batchCodeComboBox.getSelectedItem().toString(), 
-//                        categoryComboBox.getSelectedItem().toString(), priceTextField.getText(), imageProductTextField.getText());
-                jLabel36.setText("Producto agregada.");
-                nameProductTextField.setText("");
-                unitValueTextField.setText("");
-                totalWeightTextField.setText("");
-                descriptionProductTextField.setText("");
-                priceTextField.setText("");
-                imageProductTextField.setText("");
+        int idBatch = 0;
+        int idCategory = 0;
+        try {
+            for (int i = 0; i < tempTree.size(); i++) {
+                Product product = (Product) tempTree.get(i);
+                if (product.getName().equals(nameProductTextField.getText()) && product.getUnitMeasured().equals(unitMeasuredComboBox.getSelectedItem().toString())) {
+                    jLabel36.setText("El producto ya existe.");
+                } else if (nameProductTextField.getText().equals("") || unitValueTextField.equals("") || totalWeightTextField.getText().equals("")
+                        || descriptionProductTextField.getText().equals("") || priceTextField.getText().equals("") || imageProductTextField.getText().equals("")) {
+                    jLabel36.setText("Debe ingresar todos los datos.");
+                } else {
+                    Iterator iterator = batchMap.keySet().iterator();
+                    while (iterator.hasNext()) {
+                        Integer key = (Integer) iterator.next();
+                        Batch batch = batchMap.get(key);
+                        if (batchCodeComboBox.getSelectedItem().toString().equals(batch.getBatchCode())) {
+                            idBatch = batch.getIdBatch();
+                        }
+                    }
+                    Iterator iterator2 = categoryMap.keySet().iterator();
+                    while (iterator2.hasNext()) {
+                        String key = (String) iterator2.next();
+                        Category category = categoryMap.get(key);
+                        if (categoryComboBox.getSelectedItem().toString().equals(category.getName())) {
+                            idCategory = category.getIdCategory();
+                        }
+                    }
+                    crudMaintenance.addProduct(nameProductTextField.getText(), unitMeasuredComboBox.getSelectedItem().toString(),
+                                               Integer.parseInt(unitValueTextField.getText()),Integer.parseInt(totalWeightTextField.getText()), 
+                                               descriptionProductTextField.getText(), idBatch, idCategory, Integer.parseInt(priceTextField.getText()), 
+                                               imageProductTextField.getText());
+                    jLabel36.setText("Producto agregado.");
+                    nameProductTextField.setText("");
+                    unitValueTextField.setText("");
+                    totalWeightTextField.setText("");
+                    descriptionProductTextField.setText("");
+                    priceTextField.setText("");
+                    imageProductTextField.setText("");
+                }
             }
+        } catch (TreeException ex) {
+            Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_addProductButtonActionPerformed
 
@@ -2442,7 +2464,6 @@ public class Maintenance extends javax.swing.JFrame {
     private javax.swing.JTextField imageProductTextField;
     private javax.swing.JLabel imageTransportUnit;
     private javax.swing.JTextField imageTransportUnitTextField;
-    private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton30;
@@ -2485,8 +2506,6 @@ public class Maintenance extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel130;
     private javax.swing.JLabel jLabel131;
-    private javax.swing.JLabel jLabel132;
-    private javax.swing.JLabel jLabel133;
     private javax.swing.JLabel jLabel134;
     private javax.swing.JLabel jLabel135;
     private javax.swing.JLabel jLabel136;
@@ -2653,6 +2672,7 @@ public class Maintenance extends javax.swing.JFrame {
     private javax.swing.JButton searchImageTransportUnit;
     private javax.swing.JTextField searchNameCategoryTextField;
     private javax.swing.JTextField searchPlateTextField;
+    private javax.swing.JButton searchProductButton;
     private javax.swing.JTextField searchProductTextField;
     private javax.swing.JButton searchTransportUnitButton;
     private javax.swing.JTextField searchUpdateTransportTextField;
@@ -2660,6 +2680,8 @@ public class Maintenance extends javax.swing.JFrame {
     private javax.swing.JButton serchUserButton;
     private javax.swing.JTextField totalWeightTextField;
     private javax.swing.JComboBox<String> unitMeasuredComboBox;
+    private javax.swing.JLabel unitMeasuredLabel;
+    private javax.swing.JLabel unitValueLabel;
     private javax.swing.JTextField unitValueTextField;
     private javax.swing.JButton updateBatchButton;
     private javax.swing.JButton updateCategoryButton;
