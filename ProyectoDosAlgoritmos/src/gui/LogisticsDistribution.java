@@ -13,6 +13,9 @@ import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.plaf.IconUIResource;
 import static tda.LoadTda.batchMap;
 import static tda.LoadTda.cellarGraph;
 import static tda.LoadTda.tempTree;
@@ -226,12 +229,18 @@ public class LogisticsDistribution extends javax.swing.JFrame {
     }//GEN-LAST:event_returnLoginButtonActionPerformed
 
     private void listProductsValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listProductsValueChanged
-
-        String selectedValue = listProducts.getSelectedValue();
+        for (int i = 0; i < tempTree.size(); i++) {
+            Product tempProduct = (Product) tempTree.get(i);
+            if(tempProduct.getName().equals(listProducts.getSelectedValue())){
+                
+            
+            }
+        }
+        
     }//GEN-LAST:event_listProductsValueChanged
 
     private void cellarListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cellarListMouseClicked
-
+       
     }//GEN-LAST:event_cellarListMouseClicked
 
     private void cellarListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_cellarListValueChanged
@@ -249,6 +258,8 @@ public class LogisticsDistribution extends javax.swing.JFrame {
                         + tempCellar.getLength()
                         + "&zoom=11&size=612x612&scale=2&maptype=roadmap";
                 browser.loadURL(url);
+                ImageIcon imageIcon = new ImageIcon(tempCellar.getUrl());
+                jLabel6.setIcon(imageIcon);
 
             }
 
