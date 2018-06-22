@@ -2,13 +2,27 @@
 package gui;
 
 import chartGenerator.BarChart3D;
+import domain.Batch;
+import domain.Category;
+import domain.Cellar;
+import domain.DistributionOrder;
+import domain.Product;
+import domain.TableAdministrator;
+import domain.User;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.RowFilter;
 import javax.swing.table.TableRowSorter;
+import static tda.LoadTda.batchMap;
+import static tda.LoadTda.categoryMap;
+import static tda.LoadTda.cellarGraph;
+import static tda.LoadTda.distributionOrderList;
+import static tda.LoadTda.userList;
 
 /**
  * Interfaz Historial de pedidos y gráficos.
@@ -19,6 +33,7 @@ public class Record extends javax.swing.JFrame {
     TableRowSorter tableRowSorterCategory;
     TableRowSorter tableRowSorterBatch;
     TableRowSorter tableRowSorterUser;
+    private ArrayList<TableAdministrator> tableList = new ArrayList<>();
     /**
      * Creates new form Record
      */
@@ -34,17 +49,58 @@ public class Record extends javax.swing.JFrame {
     }
     
     private void fillTable() {
-        table.setModel(new javax.swing.table.DefaultTableModel(
-    new Object [][] {
-        {null, null, "a", "a", "d"},
-        {null, null, "b", "a", "d"},
-        {null, null, "c", "b", "s"},
-        {null, null, "d", "z", "e"}
-    },
-    new String [] {
-        "Productos", "Bodega", "Categoría", "Lote", "Operador"
-    }
-));
+        for (int i = 0; i < distributionOrderList.size(); i++) {
+            DistributionOrder distributionOrder = distributionOrderList.get(i);
+            for (int j = 0; j < distributionOrder.getProductList().size(); j++) {
+                Product product = distributionOrder.getProductList().get(j);
+                TableAdministrator tableAdministrator = new TableAdministrator();
+                tableAdministrator.setProductName(product.getName());
+                
+                for (int k = 0; k < cellarGraph.list().size(); k++) {
+                    Cellar cellar = (Cellar) cellarGraph.list().get(k);
+                    if(cellar.getIdCellar() == distributionOrder.getIdDestinyCellar()) {
+                        tableAdministrator.setCellarName(cellar.getName());
+                    }
+                }
+                
+                Iterator iterator = categoryMap.keySet().iterator();
+                while (iterator.hasNext()) {
+                    String key = (String) iterator.next();
+                    Category category = categoryMap.get(key);
+                    if(category.getIdCategory() == product.getIdCategory()) {
+                        tableAdministrator.setCategoryName(category.getName());
+                    }
+                }
+                
+                Iterator iterator2 = batchMap.keySet().iterator();
+                while (iterator2.hasNext()) {
+                    Integer key = (Integer) iterator2.next();
+                    Batch batch = batchMap.get(key);
+                    if(batch.getIdBatch() == product.getIdBatch()) {
+                        tableAdministrator.setBatchCode(batch.getBatchCode());
+                    }
+                }
+          
+                for (int a = 0; a < userList.size(); a++) {
+                    User user = userList.get(a);
+                    if(user.getIdUser() == distributionOrder.getIdOperator()) {
+                        tableAdministrator.setOperatorName(user.getName());
+                    }
+                }
+
+                tableList.add(tableAdministrator);
+            }
+        }
+        
+       String[][] array = new String[tableList.size()][5];
+        for (int i = 0; i < tableList.size(); i++) {
+            array[i][0] = tableList.get(i).getProductName();
+            array[i][1] = tableList.get(i).getCellarName();
+            array[i][2] = tableList.get(i).getCategoryName();
+            array[i][3] = tableList.get(i).getBatchCode();
+            array[i][4] = tableList.get(i).getOperatorName();
+        }
+        table.setModel(new javax.swing.table.DefaultTableModel(array, new String[]{"Productos", "Bodega", "Categoría", "Lote", "Operador"}));
     }
 
     /**
