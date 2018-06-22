@@ -266,30 +266,62 @@ public class LogisticsDistribution extends javax.swing.JFrame {
     }//GEN-LAST:event_cellarListValueChanged
 
     private void listProductsMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listProductsMousePressed
+        boolean exist = false;
         TableProduct tableProduct = new TableProduct();
-        for (int i = 0; i < tempTree.size(); i++) {
-            Product tempProduct = (Product) tempTree.get(i);
-            if (tempProduct.getName().equals(listProducts.getSelectedValue())) {
-                ImageIcon imageIcon = new ImageIcon(tempProduct.getUrl());
-                jLabel2.setIcon(imageIcon);
-
-                tableProduct.setAmount(tempProduct.getPrice());
-                tableProduct.setProduct(tempProduct.getName());
-                Iterator iterator = categoryMap.keySet().iterator();
-                while (iterator.hasNext()) {
-                    String key = (String) iterator.next();
-                    Category category = categoryMap.get(key);
-                    if (category.getIdCategory() == tempProduct.getIdCategory()) {
-                        tableProduct.setCategory(category.getName());
-                    }
-                }
-                tableProduct.setQuantity(1);
-                tableProduct.setWeight(tempProduct.getTotalWeight());
+        for (int i = 0; i < tableList.size(); i++) {
+            if (listProducts.getSelectedValue().equals(tableList.get(i).getProduct())) {
+                tableList.get(i).setQuantity(tableList.get(i).getQuantity() + 1);
+                tableList.get(i).setAmount(tableList.get(i).getAmount() + getValue(listProducts.getSelectedValue()));
+                tableList.get(i).setWeight(tableList.get(i).getWeight() + getWeight(listProducts.getSelectedValue()));
+                exist = true;
             }
         }
-        tableList.add(tableProduct);
+        if (!exist) {
+            for (int i = 0; i < tempTree.size(); i++) {
+                Product tempProduct = (Product) tempTree.get(i);
+                if (tempProduct.getName().equals(listProducts.getSelectedValue())) {
+                    ImageIcon imageIcon = new ImageIcon(tempProduct.getUrl());
+                    jLabel2.setIcon(imageIcon);
+
+                    tableProduct.setAmount(tempProduct.getPrice());
+                    tableProduct.setProduct(tempProduct.getName());
+                    Iterator iterator = categoryMap.keySet().iterator();
+
+                    while (iterator.hasNext()) {
+                        String key = (String) iterator.next();
+                        Category category = categoryMap.get(key);
+                        if (category.getIdCategory() == tempProduct.getIdCategory()) {
+                            tableProduct.setCategory(category.getName());
+                        }
+                    }
+                    tableProduct.setQuantity(1);
+                    tableProduct.setWeight(tempProduct.getTotalWeight());
+                }
+            }
+            tableList.add(tableProduct);
+        }
         fillTable();
     }//GEN-LAST:event_listProductsMousePressed
+    private int getValue(String name) {
+        for (int i = 0; i < tempTree.size(); i++) {
+            Product tempProduct = (Product) tempTree.get(i);
+            if (tempProduct.getName().equals(name)) {
+                return tempProduct.getPrice();
+            }
+        }
+        return 0;
+    }
+
+    private int getWeight(String name) {
+        for (int i = 0; i < tempTree.size(); i++) {
+            Product tempProduct = (Product) tempTree.get(i);
+            if (tempProduct.getName().equals(name)) {
+                return tempProduct.getTotalWeight();
+            }
+        }
+        return 0;
+    }
+
     public void loadMap(String url) {
 
         BrowserView view = new BrowserView(browser);

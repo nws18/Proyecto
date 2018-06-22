@@ -16,6 +16,7 @@ public class TableProduct {
     private int amount;
     private int weight;
     private String category;
+   
 
     @Override
     public String toString() {
