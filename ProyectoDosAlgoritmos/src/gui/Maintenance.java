@@ -14,10 +14,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.util.converter.LocalDateTimeStringConverter;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -47,6 +49,7 @@ public class Maintenance extends javax.swing.JFrame {
     public Maintenance() {
         initComponents();
         descriptionCategoryTextField.setLineWrap(true);
+
         //Información ComboBox
         comboBoxRole.addItem("Administrador");
         comboBoxRole.addItem("Operador");
@@ -352,7 +355,6 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel65 = new javax.swing.JLabel();
         codeBatchTextField = new javax.swing.JTextField();
         jLabel66 = new javax.swing.JLabel();
-        jXDatePicker1 = new org.jdesktop.swingx.JXDatePicker();
         jLabel68 = new javax.swing.JLabel();
         jXDatePicker2 = new org.jdesktop.swingx.JXDatePicker();
         jLabel69 = new javax.swing.JLabel();
@@ -378,6 +380,7 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel71 = new javax.swing.JLabel();
         jLabel73 = new javax.swing.JLabel();
         jLabel76 = new javax.swing.JLabel();
+        jXDatePicker1 = new org.jdesktop.swingx.JXDatePicker();
         jPanel3 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
@@ -972,8 +975,8 @@ public class Maintenance extends javax.swing.JFrame {
                                     .addComponent(jLabel65)
                                     .addComponent(codeBatchTextField)
                                     .addComponent(jLabel66)
-                                    .addComponent(jXDatePicker1, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
-                                    .addComponent(jXDatePicker2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .addComponent(jXDatePicker2, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
+                                    .addComponent(jXDatePicker1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addGap(33, 33, 33)
                         .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1869,7 +1872,7 @@ public class Maintenance extends javax.swing.JFrame {
        jLabel71.setText("");
         Batch batch = crudMaintenance.getBatch(searchBatchCodeLabel.getText());
         if(crudMaintenance.existsBatch(searchBatchCodeLabel.getText())) {
-            packedDateLabel.setText(batch.getPackedDate());
+            packedDateLabel.setText(batch.getPackedDate().toString());
             expirationDateLabel.setText(batch.getExpirationDate().toString());
         } else {
             jLabel71.setText("El lote no se encuentra registrado.");
@@ -2130,16 +2133,15 @@ public class Maintenance extends javax.swing.JFrame {
 
     private void addBatchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBatchButtonActionPerformed
         try {
-        if (crudMaintenance.existsBatch(codeBatchTextField.getText())) {
-            jLabel67.setText("El lote ya se encuentra registrado.");
-        } else if (codeBatchTextField.getText().equals("") || jXDatePicker1.getDate().toString().equals("") || jXDatePicker2.getDate().toString().equals("")) {
-            jLabel67.setText("Ingrese todos los datos.");
-        } else {
-            Date date = new Date();
-            crudMaintenance.addBacth(codeBatchTextField.getText(), jXDatePicker1.getDate()+" "+date.getHours()+ ":" +date.getMinutes(), jXDatePicker2.getDate());
-            jLabel67.setText("Lote agregado");
-            codeBatchTextField.setText("");
-        }
+            if (crudMaintenance.existsBatch(codeBatchTextField.getText())) {
+                jLabel67.setText("El lote ya se encuentra registrado.");
+            } else if (codeBatchTextField.getText().equals("") || jXDatePicker2.getDate().toString().equals("")) {
+                jLabel67.setText("Ingrese todos los datos.");
+            } else {
+                crudMaintenance.addBacth(codeBatchTextField.getText(), jXDatePicker1.getDate() , jXDatePicker2.getDate());
+                jLabel67.setText("Lote agregado");
+                codeBatchTextField.setText("");
+            }
         } catch (NullPointerException nullPointerException) {
             jLabel67.setText("Debe ingresar todos los datos.");
         }
@@ -2150,7 +2152,7 @@ public class Maintenance extends javax.swing.JFrame {
         if(batchCodeLabel.getText().equals("") || expirationDatePicker.getDate().toString().equals("")) {
            jLabel73.setText("Debe ingresar todos los datos");
        } else if(crudMaintenance.existsBatch(updateSearchBatchCodeTextField.getText())){
-           crudMaintenance.updateBatch(updateSearchBatchCodeTextField.getText(), batchCodeLabel.getText(), expirationDatePicker.getDate().toString());
+           crudMaintenance.updateBatch(updateSearchBatchCodeTextField.getText(), batchCodeLabel.getText(), expirationDatePicker.getDate());
            jLabel73.setText("Información actualizada");
            updateSearchBatchCodeTextField.setText("");
            batchCodeLabel.setText("");

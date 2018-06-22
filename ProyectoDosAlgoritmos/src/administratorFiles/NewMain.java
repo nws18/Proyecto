@@ -33,7 +33,7 @@ public class NewMain {
 //
         AdministratorFiles administratorFiles = new AdministratorFiles();
 //
-//        ArrayList<Batch> batchList = new ArrayList();
+        ArrayList<Batch> batchList = new ArrayList();
 //        ArrayList<Category> categoryList = new ArrayList();
 //        ArrayList<Cellar> cellarList = new ArrayList();
 //        ArrayList<DistributionOrder> distributionOrderList = new ArrayList();
@@ -41,19 +41,19 @@ public class NewMain {
 //        ArrayList<TransportUnit> transportUnitList = new ArrayList();
 //        ArrayList<User> UserList = new ArrayList();
 //
-//        Date date = new Date();
-//        Date date2 = new Date(2019, 2, 23, 0, 0, 0);
-//
-//        Batch batch0 = new Batch(0, "IDRHFU45T45", date + "", date2);
-//        Batch batch1 = new Batch(1, "KJBFH45G54G", date + "", date2);
-//        Batch batch2 = new Batch(2, "EARGE56YHRT", date + "", date2);
-//        Batch batch3 = new Batch(3, "ERGRTERHRHT", date + "", date2);
-//        Batch batch4 = new Batch(4, "DFVKNSKJVNJ", date + "", date2);
-//        batchList.add(batch0);
-//        batchList.add(batch1);
-//        batchList.add(batch2);
-//        batchList.add(batch3);
-//        batchList.add(batch4);
+        Date date = new Date();
+        Date date2 = new Date(2019, 2, 23, 0, 0, 0);
+
+        Batch batch0 = new Batch(0, "IDRHFU45T45", date, date2);
+        Batch batch1 = new Batch(1, "KJBFH45G54G", date, date2);
+        Batch batch2 = new Batch(2, "EARGE56YHRT", date, date2);
+        Batch batch3 = new Batch(3, "ERGRTERHRHT", date, date2);
+        Batch batch4 = new Batch(4, "DFVKNSKJVNJ", date, date2);
+        batchList.add(batch0);
+        batchList.add(batch1);
+        batchList.add(batch2);
+        batchList.add(batch3);
+        batchList.add(batch4);
 //
 //        Category category0 = new Category(0, "Higiene", "Productos para el higiene y ciudado personal");
 //        Category category1 = new Category(1, "Hogar", "Productos de limpieza para el hogar");
@@ -121,11 +121,11 @@ public class NewMain {
 //        UserList.add(user3);
 //        UserList.add(user4);
 //
-//        administratorFiles.writeBatchFile(batchList);
+        administratorFiles.writeBatchFile(batchList);
 //        administratorFiles.writeCategoryFile(categoryList);
 //        administratorFiles.writeCellarFile(cellarList);
 //        administratorFiles.writeDistributionOrderFile(distributionOrderList);
-        administratorFiles.writeProductFile(productList);
+//        administratorFiles.writeProductFile(productList);
 //        administratorFiles.writeTransportUnitFile(transportUnitList);
 //        administratorFiles.writeUserFile(UserList);
 
