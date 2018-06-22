@@ -1,10 +1,12 @@
 package gui;
 
+import com.oracle.jrockit.jfr.Producer;
 import com.teamdev.jxbrowser.chromium.Browser;
 import com.teamdev.jxbrowser.chromium.swing.BrowserView;
 import domain.Batch;
 import domain.Category;
 import domain.Cellar;
+import domain.DistributionOrder;
 import domain.Product;
 import domain.TableProduct;
 import java.awt.BorderLayout;
@@ -21,6 +23,7 @@ import javax.swing.plaf.IconUIResource;
 import static tda.LoadTda.batchMap;
 import static tda.LoadTda.categoryMap;
 import static tda.LoadTda.cellarGraph;
+import static tda.LoadTda.distributionOrderList;
 import static tda.LoadTda.tempTree;
 
 /**
@@ -29,7 +32,7 @@ import static tda.LoadTda.tempTree;
  * @author Nicole Fonseca, Wilmer Mata, Sergio Siles
  */
 public class LogisticsDistribution extends javax.swing.JFrame {
-
+  static int userId = -1;
     /**
      * Creates new form NewJFrame
      */
@@ -87,7 +90,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         cellarList = new javax.swing.JList<>();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        confirmButton = new javax.swing.JButton();
         returnLoginButton = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -165,18 +168,18 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         jLabel5.setText("Ubicación");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 70, -1, -1));
 
-        jButton1.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/compra-confirmada.png"))); // NOI18N
-        jButton1.setText("Confirmar");
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        confirmButton.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
+        confirmButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/compra-confirmada.png"))); // NOI18N
+        confirmButton.setText("Confirmar");
+        confirmButton.setBorderPainted(false);
+        confirmButton.setContentAreaFilled(false);
+        confirmButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        confirmButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                confirmButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 580, -1, -1));
+        jPanel1.add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 580, -1, -1));
 
         returnLoginButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/salir-con-boton-en-esquema.png"))); // NOI18N
         returnLoginButton.setText("Salir");
@@ -224,9 +227,61 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
+     
+        DistributionOrder distributionOrder = new DistributionOrder();
+        distributionOrder.setProductList(getProducts());
+        distributionOrder.setIdDistributionOrder(distributionOrderList.size());
+        distributionOrder.setTotalAmount(Double.parseDouble(String.valueOf(getTotalAmount())));
+        distributionOrder.setWeightTotal(Float.parseFloat(String.valueOf(getTotalWeight())));
+        distributionOrder.setIdDestinyCellar(getCellarId());
+        distributionOrder.setIdOperator(userId);
+        distributionOrder.setIdOriginCellar(0);
+        distributionOrderList.add(distributionOrder);
+        System.out.println(distributionOrder.toString());
+    }//GEN-LAST:event_confirmButtonActionPerformed
+    private int getTotalAmount() {
+        int total = 0;
+        for (int i = 0; i < tableList.size(); i++) {
+            total += tableList.get(i).getAmount();
+        }
+        return total;
+    }
+    
+     private int getTotalWeight() {
+        int totalWeight = 0;
+        for (int i = 0; i < tableList.size(); i++) {
+            totalWeight += tableList.get(i).getWeight();
+        }
+        return totalWeight;
+    }
+     
+     private int getCellarId(){
+         for (int i = 0; i < cellarGraph.list().size(); i++) {
+            Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
+             if (tempCellar.getName().equals(cellarList.getSelectedValue())) {
+                 return  tempCellar.getIdCellar();
+             }
+         }
+         return -1;
+     }
+     
+    
+    private ArrayList getProducts() {
+        ArrayList<Product> arrayListProducts = new ArrayList<>();
+        for (int i = 0; i < tableList.size(); i++) {
+
+            TableProduct tempTableProduct = tableList.get(i);
+            for (int j = 0; j < tempTree.size(); j++) {
+                Product tempProduct = (Product) tempTree.get(i);
+                if (tempProduct.getName().equals(tempTableProduct.getProduct())) {
+                    arrayListProducts.add(tempProduct);
+                }
+            }
+        }
+        return arrayListProducts;
+    }
+
 
     private void returnLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnLoginButtonActionPerformed
         Login login = new Login();
@@ -383,7 +438,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList<String> cellarList;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton confirmButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

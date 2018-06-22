@@ -1,6 +1,9 @@
 package gui;
 
+import domain.User;
+import static gui.LogisticsDistribution.userId;
 import tda.CrudMaintenance;
+import static tda.LoadTda.userList;
 
 /**
  * Interfaz ventana principal login.
@@ -158,6 +161,12 @@ public class Login extends javax.swing.JFrame {
             if (crudMaintenance.validateRole(userNameTextField.getText()) == 1) {
                 logisticsDistribution.setVisible(true);
                 this.setVisible(false);
+                for (int i = 0; i < userList.size(); i++) {
+                    User user = userList.get(i);
+                    if (user.getUser().equals(userNameTextField.getText())) {
+                        userId = user.getIdUser();
+                    }
+                }
             } else if (crudMaintenance.validateRole(userNameTextField.getText()) == 2) {
                 administrator.setVisible(true);
                 this.setVisible(false);
