@@ -1,7 +1,6 @@
 
 package gui;
 
-import Exception.TreeException;
 import com.mxrck.autocompleter.TextAutoCompleter;
 import domain.Batch;
 import domain.Cellar;
@@ -10,10 +9,10 @@ import domain.Product;
 import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import lab_grafos_algoritmos.GraphException;
 import static tda.LoadTda.batchMap;
 import static tda.LoadTda.cellarGraph;
 import static tda.LoadTda.distributionOrderList;
-import static tda.LoadTda.tempTree;
 //import static tda.LoadTda.productsBinaryTree;
 
 /**
@@ -38,18 +37,32 @@ public class Reports extends javax.swing.JFrame {
     }
     
     public void fillTable() {
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][]{
-                    {null, null, null, null, null, null},
-                    {null, null, null, null, null, null},
-                    {null, null, null, null, null, null},
-                    {null, null, null, null, null, null}
-                },
-                new String[]{
-                    "Nombre", "Unidad medida", "Valor unidad", "Peso total", "Categoría", "Precio"
-                }
-        ));
+      
  
+    }
+    
+    public void fillList() throws GraphException {
+        int idBatch = 0;
+        for (int i = 0; i < distributionOrderList.size(); i++) {
+            DistributionOrder distributionOrder = distributionOrderList.get(i);
+            for (int j = 0; j < distributionOrder.getProductList().size(); j++) {
+                Product product = distributionOrder.getProductList().get(j);
+                String cellar = getCellarName();
+            }
+        }
+    }
+    
+    public String getCellarName() throws GraphException {
+        for (int i = 0; i < distributionOrderList.size(); i++) {
+            DistributionOrder distributionOrder = distributionOrderList.get(i);
+            for (int j = 0; j < cellarGraph.list().size(); j++) {
+                Cellar cellar = (Cellar) cellarGraph.list().get(j);
+                if(distributionOrder.getIdDestinyCellar() == cellar.getIdCellar()) {
+                    return cellar.getName();
+                }
+            }
+        }
+        return null;
     }
 
     /**
@@ -166,28 +179,11 @@ public class Reports extends javax.swing.JFrame {
     }//GEN-LAST:event_returnAdministratorButtonActionPerformed
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
-        int idProduct = 0;
-        for (int i = 0; i < tempTree.size(); i++) {
-            Product product = (Product) tempTree.get(i);
-            if(batchTextField.getText().equals(product.getIdBatch())){
-                idProduct = product.getIdBatch();
-            }
-        }
-        
-        for (int i = 0; i < distributionOrderList.size(); i++) {
-            DistributionOrder distributionOrder = distributionOrderList.get(i);
-            for (int j = 0; j < distributionOrder.getProductList().size(); j++) {
-                if (distributionOrder.getProductList().get(j).getIdBatch() == idProduct) {
-                    String[] array = new String[cellarGraph.list().size()];
-                    for (int k = 0; k < cellarGraph.list().size(); k++) {
-                        Cellar tempCellar = (Cellar) cellarGraph.list().get(k);
-                        if(distributionOrder.getIdDestinyCellar() == tempCellar.getIdCellar()) {
-                        array[k] = tempCellar.getName();
-                        }
-                    cellarList.setListData(array);
-                    }
-                }
-            }
+        try {
+            fillList();
+
+        } catch (GraphException ex) {
+            Logger.getLogger(Reports.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_searchButtonActionPerformed
 
