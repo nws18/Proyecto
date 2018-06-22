@@ -25,6 +25,12 @@ import static tda.LoadTda.categoryMap;
 import static tda.LoadTda.cellarGraph;
 import static tda.LoadTda.distributionOrderList;
 import static tda.LoadTda.tempTree;
+import java.awt.BorderLayout;
+import java.awt.Container;
+import javax.swing.BorderFactory;
+import javax.swing.JFrame;
+import javax.swing.JProgressBar;
+import javax.swing.border.Border;
 
 /**
  * Interfaz módulo Logística de distribución.
@@ -43,7 +49,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         initComponents();
         fillTable();
         loadMap("https://www.google.com/maps/@9.7808897,-84.1564765,8z");
-
+        progressBar();
 //       
 //        DefaultListModel modelo = new DefaultListModel();
 //        for (int i = 0; i < productsBinaryTree.recorreArbol().size(); i++) {
@@ -84,7 +90,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jProgressBar1 = new javax.swing.JProgressBar();
+        progressBar = new javax.swing.JProgressBar();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -136,7 +142,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTable1);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, 88));
-        jPanel1.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 400, 285, 32));
+        jPanel1.add(progressBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 400, 285, 32));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/furgoneta-de-reparto.png"))); // NOI18N
@@ -281,6 +287,23 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         }
         return arrayListProducts;
     }
+    
+   private void progressBar() {
+////       JFrame f = new JFrame("JProgressBar Sample");
+////    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+////    Container content = f.getContentPane();
+//    JProgressBar progressBar = new JProgressBar();
+//    progressBar.setValue(25);
+//    progressBar.setStringPainted(true);
+//    Border border = BorderFactory.createTitledBorder("Reading...");
+//    progressBar.setBorder(border);
+////    content.add(progressBar, BorderLayout.NORTH);
+////    f.setSize(300, 100);
+////    f.setVisible(true);
+//       
+
+
+   }
 
 
     private void returnLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnLoginButtonActionPerformed
@@ -447,13 +470,13 @@ public class LogisticsDistribution extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;
     private javax.swing.JList<String> listProducts;
+    private javax.swing.JProgressBar progressBar;
     private javax.swing.JButton returnLoginButton;
     // End of variables declaration//GEN-END:variables
 }
