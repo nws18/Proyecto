@@ -2,11 +2,15 @@
 package gui;
 
 import Exception.TreeException;
+import com.mxrck.autocompleter.TextAutoCompleter;
+import domain.Batch;
 import domain.Cellar;
 import domain.DistributionOrder;
 import domain.Product;
+import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import static tda.LoadTda.batchMap;
 import static tda.LoadTda.cellarGraph;
 import static tda.LoadTda.distributionOrderList;
 import static tda.LoadTda.tempTree;
@@ -23,6 +27,14 @@ public class Reports extends javax.swing.JFrame {
      */
     public Reports() {
         initComponents();
+        //Autocompletar buscar lote
+        TextAutoCompleter textAutoAcompleterSearchBatch = new TextAutoCompleter(batchTextField);
+        Iterator iterator = batchMap.keySet().iterator();
+        while (iterator.hasNext()) {
+            Integer key = (Integer) iterator.next();
+            Batch batch = batchMap.get(key);
+            textAutoAcompleterSearchBatch.addItem(batch.getBatchCode());
+        }
     }
     
     public void fillTable() {
@@ -37,6 +49,7 @@ public class Reports extends javax.swing.JFrame {
                     "Nombre", "Unidad medida", "Valor unidad", "Peso total", "Categoría", "Precio"
                 }
         ));
+ 
     }
 
     /**
@@ -59,6 +72,7 @@ public class Reports extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         searchButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Reporte de lotes anulados");
@@ -84,7 +98,7 @@ public class Reports extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 570, 190));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 570, 190));
 
         returnAdministratorButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         returnAdministratorButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/salir-con-boton-en-esquema.png"))); // NOI18N
@@ -101,9 +115,9 @@ public class Reports extends javax.swing.JFrame {
 
         jScrollPane2.setViewportView(cellarList);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 170, 210));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 230, 210));
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/tareas.png"))); // NOI18N
         jLabel2.setText("Reporte de lotes anulados");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, -1, -1));
@@ -113,6 +127,7 @@ public class Reports extends javax.swing.JFrame {
         searchButton.setText("Buscar");
         searchButton.setBorderPainted(false);
         searchButton.setContentAreaFilled(false);
+        searchButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         searchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchButtonActionPerformed(evt);
@@ -121,8 +136,14 @@ public class Reports extends javax.swing.JFrame {
         jPanel1.add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 100, -1));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/almacen.png"))); // NOI18N
         jLabel3.setText("Lista de bodegas");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/carrito.png"))); // NOI18N
+        jLabel4.setText("Productos");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -211,6 +232,7 @@ public class Reports extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

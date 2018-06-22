@@ -46,7 +46,7 @@ public class Maintenance extends javax.swing.JFrame {
      */
     public Maintenance() {
         initComponents();
-        
+        descriptionCategoryTextField.setLineWrap(true);
         //Información ComboBox
         comboBoxRole.addItem("Administrador");
         comboBoxRole.addItem("Operador");
@@ -267,7 +267,6 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel83 = new javax.swing.JLabel();
         nameCategoryTextField = new javax.swing.JTextField();
         jLabel84 = new javax.swing.JLabel();
-        descriptionCategoryTextField = new javax.swing.JTextField();
         jLabel85 = new javax.swing.JLabel();
         searchNameCategoryTextField = new javax.swing.JTextField();
         searchCategoryButton = new javax.swing.JButton();
@@ -279,7 +278,6 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel89 = new javax.swing.JLabel();
         updateNameCategoryTextField = new javax.swing.JTextField();
         jLabel90 = new javax.swing.JLabel();
-        updateDescriptionCategoryTextField = new javax.swing.JTextField();
         addCategoryButton = new javax.swing.JButton();
         updateCategoryButton = new javax.swing.JButton();
         jLabel91 = new javax.swing.JLabel();
@@ -290,6 +288,10 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel87 = new javax.swing.JLabel();
         jLabel107 = new javax.swing.JLabel();
         jLabel112 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        updateDescriptionCategoryTextField = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        descriptionCategoryTextField = new javax.swing.JTextArea();
         jPanel4 = new javax.swing.JPanel();
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
@@ -563,33 +565,46 @@ public class Maintenance extends javax.swing.JFrame {
         jTabbedPane1.setBackground(new java.awt.Color(153, 204, 153));
 
         jPanel6.setBackground(new java.awt.Color(153, 204, 153));
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel79.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel79.setText("Agregar");
+        jPanel6.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 20, -1, -1));
 
         jLabel80.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel80.setText("Buscar");
+        jPanel6.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 20, -1, -1));
 
         jLabel81.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel81.setText("Actualizar");
+        jPanel6.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(555, 20, -1, -1));
 
         jLabel82.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel82.setText("Borrar");
+        jPanel6.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(972, 20, -1, -1));
 
         jSeparator13.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel6.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(241, 40, -1, 258));
 
         jSeparator14.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel6.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(479, 40, -1, 258));
 
         jSeparator15.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel6.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(857, 40, -1, 258));
 
         jLabel83.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel83.setText("Nombre:");
+        jPanel6.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 52, -1, -1));
+        jPanel6.add(nameCategoryTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 165, -1));
 
         jLabel84.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel84.setText("Descripción:");
+        jPanel6.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
 
         jLabel85.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel85.setText("Nombre:");
+        jPanel6.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 66, -1, -1));
+        jPanel6.add(searchNameCategoryTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(345, 63, 116, -1));
 
         searchCategoryButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         searchCategoryButton.setText("Buscar");
@@ -598,12 +613,17 @@ public class Maintenance extends javax.swing.JFrame {
                 searchCategoryButtonActionPerformed(evt);
             }
         });
+        jPanel6.add(searchCategoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(396, 101, -1, -1));
 
         jLabel86.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel86.setText("Descripción:");
+        jPanel6.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 162, -1, -1));
+        jPanel6.add(descriptionCategoryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 194, 222, 79));
 
         jLabel88.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel88.setText("Nombre:");
+        jPanel6.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 60, -1, -1));
+        jPanel6.add(updateSearchNameCategoryTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 57, 113, -1));
 
         updateSearchCategoryButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         updateSearchCategoryButton.setText("Buscar");
@@ -612,12 +632,16 @@ public class Maintenance extends javax.swing.JFrame {
                 updateSearchCategoryButtonActionPerformed(evt);
             }
         });
+        jPanel6.add(updateSearchCategoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(736, 95, -1, -1));
 
         jLabel89.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel89.setText("Nombre:");
+        jPanel6.add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 129, -1, -1));
+        jPanel6.add(updateNameCategoryTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 154, 113, -1));
 
         jLabel90.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel90.setText("Descripción:");
+        jPanel6.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 192, -1, -1));
 
         addCategoryButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         addCategoryButton.setText("Agregar");
@@ -626,6 +650,7 @@ public class Maintenance extends javax.swing.JFrame {
                 addCategoryButtonActionPerformed(evt);
             }
         });
+        jPanel6.add(addCategoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
 
         updateCategoryButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         updateCategoryButton.setText("Actualizar");
@@ -634,9 +659,12 @@ public class Maintenance extends javax.swing.JFrame {
                 updateCategoryButtonActionPerformed(evt);
             }
         });
+        jPanel6.add(updateCategoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 320, -1, -1));
 
         jLabel91.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel91.setText("Nombre:");
+        jPanel6.add(jLabel91, new org.netbeans.lib.awtextra.AbsoluteConstraints(892, 55, -1, -1));
+        jPanel6.add(deleteCategoryTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(952, 52, 108, -1));
 
         deleteCategoryButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         deleteCategoryButton.setText("Borrar");
@@ -645,188 +673,24 @@ public class Maintenance extends javax.swing.JFrame {
                 deleteCategoryButtonActionPerformed(evt);
             }
         });
+        jPanel6.add(deleteCategoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(926, 99, -1, -1));
+        jPanel6.add(addCategoryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 180, 19));
+        jPanel6.add(searchCategoryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(545, 335, 106, 22));
+        jPanel6.add(jLabel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 350, 253, 26));
+        jPanel6.add(jLabel107, new org.netbeans.lib.awtextra.AbsoluteConstraints(252, 316, 287, 19));
+        jPanel6.add(jLabel112, new org.netbeans.lib.awtextra.AbsoluteConstraints(862, 157, 244, 26));
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(117, 117, 117)
-                .addComponent(jLabel79)
-                .addGap(180, 180, 180)
-                .addComponent(jLabel80)
-                .addGap(188, 188, 188)
-                .addComponent(jLabel81)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel82)
-                .addGap(113, 113, 113))
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(25, 25, 25)
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel83)
-                                    .addComponent(nameCategoryTextField)
-                                    .addComponent(jLabel84)
-                                    .addComponent(descriptionCategoryTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(68, 68, 68)
-                                .addComponent(addCategoryButton)))
-                        .addGap(51, 51, 51)
-                        .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(38, 38, 38)
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(jPanel6Layout.createSequentialGroup()
-                                            .addComponent(jLabel85)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(searchNameCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(searchCategoryButton))
-                                    .addComponent(jLabel86)))
-                            .addComponent(descriptionCategoryLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(53, 53, 53))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(addCategoryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel107, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(14, 14, 14)
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel90)
-                                    .addComponent(jLabel89)
-                                    .addGroup(jPanel6Layout.createSequentialGroup()
-                                        .addComponent(jLabel88)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(updateSearchNameCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(updateNameCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(updateDescriptionCategoryTextField))
-                                .addGap(67, 67, 67))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                                        .addComponent(updateSearchCategoryButton)
-                                        .addGap(56, 56, 56))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                                        .addComponent(updateCategoryButton)
-                                        .addGap(69, 69, 69))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                                        .addComponent(jLabel87, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(24, 24, 24)))))
-                        .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(searchCategoryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(67, 67, 67)
-                                .addComponent(deleteCategoryButton))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(33, 33, 33)
-                                .addComponent(jLabel91)
-                                .addGap(18, 18, 18)
-                                .addComponent(deleteCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(56, 56, 56))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel112, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel79)
-                    .addComponent(jLabel80)
-                    .addComponent(jLabel81)
-                    .addComponent(jLabel82))
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel6Layout.createSequentialGroup()
-                                        .addComponent(jLabel83)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(nameCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(30, 30, 30)
-                                        .addComponent(jLabel84)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(descriptionCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(30, 30, 30)
-                                        .addComponent(addCategoryButton))
-                                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jSeparator15, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
-                                        .addComponent(jSeparator14)
-                                        .addComponent(jSeparator13))))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(29, 29, 29)
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel85)
-                                    .addComponent(searchNameCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addComponent(searchCategoryButton)
-                                .addGap(38, 38, 38)
-                                .addComponent(jLabel86)
-                                .addGap(18, 18, 18)
-                                .addComponent(descriptionCategoryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(addCategoryLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)
-                            .addComponent(jLabel107, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(23, 23, 23)
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel88)
-                                    .addComponent(updateSearchNameCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addComponent(updateSearchCategoryButton)
-                                .addGap(11, 11, 11)
-                                .addComponent(jLabel89)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(updateNameCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel90)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(updateDescriptionCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(updateCategoryButton))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel91)
-                                    .addComponent(deleteCategoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(27, 27, 27)
-                                .addComponent(deleteCategoryButton)
-                                .addGap(35, 35, 35)
-                                .addComponent(jLabel112, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(searchCategoryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel87, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(28, 28, 28))))
-        );
+        updateDescriptionCategoryTextField.setColumns(20);
+        updateDescriptionCategoryTextField.setRows(5);
+        jScrollPane1.setViewportView(updateDescriptionCategoryTextField);
+
+        jPanel6.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 220, 190, 100));
+
+        descriptionCategoryTextField.setColumns(20);
+        descriptionCategoryTextField.setRows(5);
+        jScrollPane2.setViewportView(descriptionCategoryTextField);
+
+        jPanel6.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 180, 110));
 
         jTabbedPane1.addTab("Categorías", jPanel6);
 
@@ -1144,7 +1008,7 @@ public class Maintenance extends javax.swing.JFrame {
                                 .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel71, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)))
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1239,7 +1103,7 @@ public class Maintenance extends javax.swing.JFrame {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(updateBatchButton))
                                 .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                         .addComponent(jLabel73, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
@@ -1707,7 +1571,7 @@ public class Maintenance extends javax.swing.JFrame {
         jPanel7.add(imageLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, 120, 40));
 
         jPanel7.add(batchCodeComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 110, -1));
-        jPanel7.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 200, 20));
+        jPanel7.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 250, 40));
         jPanel7.add(jLabel110, new org.netbeans.lib.awtextra.AbsoluteConstraints(206, 330, 130, 20));
         jPanel7.add(jLabel132, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 310, 240, 20));
 
@@ -1905,27 +1769,26 @@ public class Maintenance extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(returnAdministratorButton)
-                .addGap(50, 50, 50))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(402, 402, 402)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(returnAdministratorButton)
+                .addGap(34, 34, 34))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 20, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addContainerGap(23, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(returnAdministratorButton, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(returnAdministratorButton))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -2092,7 +1955,8 @@ public class Maintenance extends javax.swing.JFrame {
         if(crudMaintenance.existsCategory(updateSearchNameCategoryTextField.getText())) {
             Category category = crudMaintenance.getCategory(updateSearchNameCategoryTextField.getText());
             updateNameCategoryTextField.setText(category.getName());
-            updateDescriptionCategoryTextField.setText(category.getDescription());
+            updateDescriptionCategoryTextField.setLineWrap(true);
+            updateDescriptionCategoryTextField.setText(category.getDescription());     
         } else {
             jLabel87.setText("La categoría no se encuentra registrada.");
         }
@@ -2453,6 +2317,8 @@ public class Maintenance extends javax.swing.JFrame {
             }
         } catch (TreeException ex) {
             Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NumberFormatException numberFormatException) {
+            jLabel36.setText("<html><p>Valor de unidad, peso y precio debe ser un valor entero.</html></p>");
         }
     }//GEN-LAST:event_addProductButtonActionPerformed
 
@@ -2647,7 +2513,7 @@ public class Maintenance extends javax.swing.JFrame {
     private javax.swing.JButton deleteUserButton;
     private javax.swing.JTextField deleteUserTextField;
     private javax.swing.JLabel descriptionCategoryLabel;
-    private javax.swing.JTextField descriptionCategoryTextField;
+    private javax.swing.JTextArea descriptionCategoryTextField;
     private javax.swing.JLabel descriptionLabel;
     private javax.swing.JTextField descriptionProductTextField;
     private javax.swing.JLabel distanceCellarLabel;
@@ -2810,6 +2676,8 @@ public class Maintenance extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
@@ -2873,7 +2741,7 @@ public class Maintenance extends javax.swing.JFrame {
     private javax.swing.JButton updateCategoryButton;
     private javax.swing.JComboBox<String> updateCategoryComboBox;
     private javax.swing.JButton updateCellarButton;
-    private javax.swing.JTextField updateDescriptionCategoryTextField;
+    private javax.swing.JTextArea updateDescriptionCategoryTextField;
     private javax.swing.JTextField updateDescriptionTextField;
     private javax.swing.JTextField updateDistanceTextField;
     private javax.swing.JButton updateImageCellarButton;
