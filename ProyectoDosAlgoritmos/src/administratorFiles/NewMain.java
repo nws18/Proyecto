@@ -31,13 +31,13 @@ public class NewMain {
      */
     public static void main(String[] args) throws IOException, FileNotFoundException, ClassNotFoundException, TreeException {
 //
-//        AdministratorFiles administratorFiles = new AdministratorFiles();
+        AdministratorFiles administratorFiles = new AdministratorFiles();
 //
 //        ArrayList<Batch> batchList = new ArrayList();
 //        ArrayList<Category> categoryList = new ArrayList();
 //        ArrayList<Cellar> cellarList = new ArrayList();
 //        ArrayList<DistributionOrder> distributionOrderList = new ArrayList();
-//        ArrayList<Product> productList = new ArrayList();
+        ArrayList<Product> productList = new ArrayList();
 //        ArrayList<TransportUnit> transportUnitList = new ArrayList();
 //        ArrayList<User> UserList = new ArrayList();
 //
@@ -78,15 +78,15 @@ public class NewMain {
 //        cellarList.add(cellar4);
 
         Product product0 = new Product(0, "Aceite", "Unidades", 20, 1, "Aceite de cocina", 0, 4, 2000, "images/products/aceite.png");
-        Product product1 = new Product(1, "Arroz", "Paquetes", 100, 2, "Arroz, 2kg", 1, 1, 0, "images/products/arroz.png");
-        Product product2 = new Product(2, "Cereal", "Cajas", 10, 1, "Cereal", 2, 2, 0, "images/products/cereal.png");
-        Product product3 = new Product(3, "Gaseosas", "Tarimas", 15, 20, "Refresco gaseoso", 3, 3, 0, "images/products/");
-        Product product4 = new Product(4, "Cervezas", "Tarimas", 10, 30, "Bebida alcoholica", 4, 4, 0, "images/products/");
-//        productList.add(product0);
-//        productList.add(product1);
-//        productList.add(product2);
-//        productList.add(product3);
-//        productList.add(product4);
+        Product product1 = new Product(1, "Arroz", "Paquetes", 100, 2, "Arroz, 2kg", 1, 1, 12500, "images/products/arroz.png");
+        Product product2 = new Product(2, "Cereal", "Cajas", 10, 1, "Cereal", 2, 2, 10500, "images/products/cereal.png");
+        Product product3 = new Product(3, "Gaseosas", "Tarimas", 15, 20, "Refresco gaseoso", 3, 3, 25500, "images/products/");
+        Product product4 = new Product(4, "Cervezas", "Tarimas", 10, 30, "Bebida alcoholica", 4, 4, 40500, "images/products/");
+        productList.add(product0);
+        productList.add(product1);
+        productList.add(product2);
+        productList.add(product3);
+        productList.add(product4);
 //
 //        DistributionOrder distributionOrder0 = new DistributionOrder(0, 0, 1, 100000, 5000, productList, 0);
 //        DistributionOrder distributionOrder1 = new DistributionOrder(1, 1, 2, 200000, 10000, productList, 1);
@@ -125,7 +125,7 @@ public class NewMain {
 //        administratorFiles.writeCategoryFile(categoryList);
 //        administratorFiles.writeCellarFile(cellarList);
 //        administratorFiles.writeDistributionOrderFile(distributionOrderList);
-//        administratorFiles.writeProductFile(productList);
+        administratorFiles.writeProductFile(productList);
 //        administratorFiles.writeTransportUnitFile(transportUnitList);
 //        administratorFiles.writeUserFile(UserList);
 
