@@ -14,7 +14,7 @@ import java.util.Random;
 public class LinkedBinaryTree implements BinaryTreeInterface{
     
     private BinaryNode root;
-    private ArrayList<Product> arrayList = new ArrayList<>();
+    
     
     public LinkedBinaryTree() {
         this.root = null;
@@ -272,6 +272,7 @@ public class LinkedBinaryTree implements BinaryTreeInterface{
     }
     
     public ArrayList recorreArbol(){ 
+        ArrayList<Product> arrayList = new ArrayList<>();
         recorreArbol(root,arrayList);
         return arrayList;
     }        

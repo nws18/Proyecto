@@ -138,13 +138,15 @@ public class NewMain {
         linkedBinaryTree.insert(product3);
         linkedBinaryTree.insert(product4);
         
-//        ArrayList<Product> tempArray = linkedBinaryTree.recorreArbol();
-//        
-//        for (int i = 0; i < tempArray.size(); i++) {
-//            Product tempProduct = tempArray.get(i);
-//            System.out.println(tempProduct.toString());
-//            
-//        }
+        ArrayList<Product> tempArray = linkedBinaryTree.recorreArbol();
+        
+        for (int i = 0; i < tempArray.size(); i++) {
+            Product tempProduct = tempArray.get(i);
+            System.out.println(tempProduct.toString());
+            
+        }
+        
+        
         
         
     }
