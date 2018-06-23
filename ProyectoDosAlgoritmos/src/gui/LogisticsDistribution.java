@@ -4,34 +4,21 @@ import LinkedBinaryTree.TreeException;
 import com.oracle.jrockit.jfr.Producer;
 import com.teamdev.jxbrowser.chromium.Browser;
 import com.teamdev.jxbrowser.chromium.swing.BrowserView;
-import domain.Batch;
 import domain.Category;
 import domain.Cellar;
 import domain.DistributionOrder;
 import domain.Product;
 import domain.TableProduct;
-import java.awt.BorderLayout;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.DefaultListModel;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.plaf.IconUIResource;
 import static tda.LoadTda.batchMap;
 import static tda.LoadTda.categoryMap;
 import static tda.LoadTda.cellarGraph;
 import static tda.LoadTda.distributionOrderList;
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Container;
-import javax.swing.BorderFactory;
-import javax.swing.JFrame;
-import javax.swing.JProgressBar;
-import javax.swing.border.Border;
 import static tda.LoadTda.productsBinaryTree;
 
 /**
@@ -259,6 +246,8 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         } catch (TreeException ex) {
             Logger.getLogger(LogisticsDistribution.class.getName()).log(Level.SEVERE, null, ex);
         }
+//        ConfirmOrder confirmOrder = new ConfirmOrder();
+//        confirmOrder.setVisible(true);
     }//GEN-LAST:event_confirmButtonActionPerformed
     private int getTotalAmount() {
         int total = 0;

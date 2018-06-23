@@ -119,18 +119,6 @@ public class Reports extends javax.swing.JFrame {
         }
         this.cellarList.setListData(cellarList);
     }
-    
-    private String getCellarName(int idCellar) {
-        for (int k = 0; k < cellarGraph.list().size(); k++) {
-            Cellar cellar = (Cellar) cellarGraph.list().get(k);
-            if (cellar.getIdCellar() == idCellar) {
-               return  cellar.getName();
-            }
-        }
-        return null;
-    }
-    
-  
 
     /**
      * This method is called from within the constructor to initialize the form.
