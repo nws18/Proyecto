@@ -15,8 +15,7 @@ import org.apache.commons.codec.digest.DigestUtils;
 import static tda.LoadTda.batchMap;
 import static tda.LoadTda.categoryMap;
 import static tda.LoadTda.cellarGraph;
-import static tda.LoadTda.tempTree;
-//import static tda.LoadTda.productsBinaryTree;
+import static tda.LoadTda.productsBinaryTree;
 import static tda.LoadTda.transportUnitMap;
 import static tda.LoadTda.userList;
 
@@ -56,28 +55,28 @@ public class CrudMaintenance {
 
     public void addProduct(String name, String unitMeasured, int unitValue, int totalWeight, String description, int idBatch, int idCategory, int price, String url) throws TreeException {
         Product product = new Product(idProduct(), name, unitMeasured, unitValue, totalWeight, description, idBatch, idCategory, price, url);
-        tempTree.add(product);
-        System.out.println(tempTree.toString());
+        productsBinaryTree.insert(product);
+        System.out.println(productsBinaryTree.toString());
     }
     
-    private int idProduct(){
-        Product product = (Product) tempTree.get(tempTree.size()-1);
+    private int idProduct() throws TreeException{
+        Product product = (Product) productsBinaryTree.recorreArbol().get(productsBinaryTree.getSize()-1);
         return product.getIdProduct()+1;
     }
     
     public void deleteProduct(String name) throws TreeException {
-        for (int i = 0; i < tempTree.size(); i++) {
-            Product product = (Product) tempTree.get(i);
+        for (int i = 0; i < productsBinaryTree.getSize(); i++) {
+            Product product = (Product) productsBinaryTree.recorreArbol().get(i);
             if(product.getName().equals(name)) {
-                tempTree.remove(product);
+                productsBinaryTree.delete(product);
             }
         }
-        System.out.println(tempTree.toString());
+        System.out.println(productsBinaryTree.toString());
     }
 
-    public Product getProduct(String name) {
-        for (int i = 0; i < tempTree.size(); i++) {
-            Product product = (Product) tempTree.get(i);
+    public Product getProduct(String name) throws TreeException {
+        for (int i = 0; i < productsBinaryTree.getSize(); i++) {
+            Product product = (Product) productsBinaryTree.recorreArbol().get(i);
             if (product.getName().equalsIgnoreCase(name)) {
                 return product;
             }
@@ -85,9 +84,9 @@ public class CrudMaintenance {
         return null;
     }
 
-    public Boolean existsProduct(String name) {
-        for (int i = 0; i < tempTree.size(); i++) {
-            Product product = (Product) tempTree.get(i);
+    public Boolean existsProduct(String name) throws TreeException {
+        for (int i = 0; i < productsBinaryTree.getSize(); i++) {
+            Product product = (Product) productsBinaryTree.recorreArbol().get(i);
             if (name.equalsIgnoreCase(product.getName())) {
                 return true;
             }
@@ -95,7 +94,7 @@ public class CrudMaintenance {
         return false;
     }
 
-    public void updateProduct(String name, String newName,String newUnitMeasured, int newUnitValue, int newTotalWeight, String newDescription, int newIdCategory, int newPrice, String newUrl) {
+    public void updateProduct(String name, String newName,String newUnitMeasured, int newUnitValue, int newTotalWeight, String newDescription, int newIdCategory, int newPrice, String newUrl) throws TreeException {
         if(existsProduct(name)) {
             Product oldName = getProduct(name);
             Product oldUnitMeasured = getProduct(name);
@@ -114,7 +113,7 @@ public class CrudMaintenance {
             oldIdCategory.setIdCategory(newIdCategory);
             oldPrice.setPrice(newPrice);
             oldUrl.setUrl(newUrl);
-            System.out.println(tempTree.toString());
+            System.out.println(productsBinaryTree.toString());
         }
     }
 

@@ -1,5 +1,6 @@
 package gui;
 
+import LinkedBinaryTree.TreeException;
 import com.oracle.jrockit.jfr.Producer;
 import com.teamdev.jxbrowser.chromium.Browser;
 import com.teamdev.jxbrowser.chromium.swing.BrowserView;
@@ -24,13 +25,13 @@ import static tda.LoadTda.batchMap;
 import static tda.LoadTda.categoryMap;
 import static tda.LoadTda.cellarGraph;
 import static tda.LoadTda.distributionOrderList;
-import static tda.LoadTda.tempTree;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JProgressBar;
 import javax.swing.border.Border;
+import static tda.LoadTda.productsBinaryTree;
 
 /**
  * Interfaz módulo Logística de distribución.
@@ -45,7 +46,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
     private Browser browser = new Browser();
     private ArrayList<TableProduct> tableList = new ArrayList<>();
 
-    public LogisticsDistribution() {
+    public LogisticsDistribution() throws TreeException {
         initComponents();
         fillTable();
         loadMap("https://www.google.com/maps/@9.7808897,-84.1564765,8z");
@@ -65,9 +66,9 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         }
         cellarList.setListData(arrayCellar);
 
-        String[] arrayProducts = new String[tempTree.size()];
-        for (int i = 0; i < tempTree.size(); i++) {
-            Product tempProduct = (Product) tempTree.get(i);
+        String[] arrayProducts = new String[productsBinaryTree.getSize()];
+        for (int i = 0; i < productsBinaryTree.getSize(); i++) {
+            Product tempProduct = (Product) productsBinaryTree.recorreArbol().get(i);
             arrayProducts[i] = tempProduct.getName();
         }
         listProducts.setListData(arrayProducts);
@@ -235,16 +236,20 @@ public class LogisticsDistribution extends javax.swing.JFrame {
 
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
      
-        DistributionOrder distributionOrder = new DistributionOrder();
-        distributionOrder.setProductList(getProducts());
-        distributionOrder.setIdDistributionOrder(distributionOrderList.size());
-        distributionOrder.setTotalAmount(Double.parseDouble(String.valueOf(getTotalAmount())));
-        distributionOrder.setWeightTotal(Float.parseFloat(String.valueOf(getTotalWeight())));
-        distributionOrder.setIdDestinyCellar(getCellarId());
-        distributionOrder.setIdOperator(userId);
-        distributionOrder.setIdOriginCellar(0);
-        distributionOrderList.add(distributionOrder);
-        System.out.println(distributionOrder.toString());
+      try {
+          DistributionOrder distributionOrder = new DistributionOrder();
+          distributionOrder.setProductList(getProducts());
+          distributionOrder.setIdDistributionOrder(distributionOrderList.size());
+          distributionOrder.setTotalAmount(Double.parseDouble(String.valueOf(getTotalAmount())));
+          distributionOrder.setWeightTotal(Float.parseFloat(String.valueOf(getTotalWeight())));
+          distributionOrder.setIdDestinyCellar(getCellarId());
+          distributionOrder.setIdOperator(userId);
+          distributionOrder.setIdOriginCellar(0);
+          distributionOrderList.add(distributionOrder);
+          System.out.println(distributionOrder.toString());
+      } catch (TreeException ex) {
+          Logger.getLogger(LogisticsDistribution.class.getName()).log(Level.SEVERE, null, ex);
+      }
     }//GEN-LAST:event_confirmButtonActionPerformed
     private int getTotalAmount() {
         int total = 0;
@@ -273,13 +278,13 @@ public class LogisticsDistribution extends javax.swing.JFrame {
      }
      
     
-    private ArrayList getProducts() {
+    private ArrayList getProducts() throws TreeException {
         ArrayList<Product> arrayListProducts = new ArrayList<>();
         for (int i = 0; i < tableList.size(); i++) {
 
             TableProduct tempTableProduct = tableList.get(i);
-            for (int j = 0; j < tempTree.size(); j++) {
-                Product tempProduct = (Product) tempTree.get(i);
+            for (int j = 0; j < productsBinaryTree.getSize(); j++) {
+                Product tempProduct = (Product) productsBinaryTree.recorreArbol().get(i);
                 if (tempProduct.getName().equals(tempTableProduct.getProduct())) {
                     arrayListProducts.add(tempProduct);
                 }
@@ -348,41 +353,49 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         TableProduct tableProduct = new TableProduct();
         for (int i = 0; i < tableList.size(); i++) {
             if (listProducts.getSelectedValue().equals(tableList.get(i).getProduct())) {
-                tableList.get(i).setQuantity(tableList.get(i).getQuantity() + 1);
-                tableList.get(i).setAmount(tableList.get(i).getAmount() + getValue(listProducts.getSelectedValue()));
-                tableList.get(i).setWeight(tableList.get(i).getWeight() + getWeight(listProducts.getSelectedValue()));
-                exist = true;
+                try {
+                    tableList.get(i).setQuantity(tableList.get(i).getQuantity() + 1);
+                    tableList.get(i).setAmount(tableList.get(i).getAmount() + getValue(listProducts.getSelectedValue()));
+                    tableList.get(i).setWeight(tableList.get(i).getWeight() + getWeight(listProducts.getSelectedValue()));
+                    exist = true;
+                } catch (TreeException ex) {
+                    Logger.getLogger(LogisticsDistribution.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         }
         if (!exist) {
-            for (int i = 0; i < tempTree.size(); i++) {
-                Product tempProduct = (Product) tempTree.get(i);
-                if (tempProduct.getName().equals(listProducts.getSelectedValue())) {
-                    ImageIcon imageIcon = new ImageIcon(tempProduct.getUrl());
-                    jLabel2.setIcon(imageIcon);
-
-                    tableProduct.setAmount(tempProduct.getPrice());
-                    tableProduct.setProduct(tempProduct.getName());
-                    Iterator iterator = categoryMap.keySet().iterator();
-
-                    while (iterator.hasNext()) {
-                        String key = (String) iterator.next();
-                        Category category = categoryMap.get(key);
-                        if (category.getIdCategory() == tempProduct.getIdCategory()) {
-                            tableProduct.setCategory(category.getName());
+            try {
+                for (int i = 0; i < productsBinaryTree.getSize(); i++) {
+                    Product tempProduct = (Product) productsBinaryTree.recorreArbol().get(i);
+                    if (tempProduct.getName().equals(listProducts.getSelectedValue())) {
+                        ImageIcon imageIcon = new ImageIcon(tempProduct.getUrl());
+                        jLabel2.setIcon(imageIcon);
+                        
+                        tableProduct.setAmount(tempProduct.getPrice());
+                        tableProduct.setProduct(tempProduct.getName());
+                        Iterator iterator = categoryMap.keySet().iterator();
+                        
+                        while (iterator.hasNext()) {
+                            String key = (String) iterator.next();
+                            Category category = categoryMap.get(key);
+                            if (category.getIdCategory() == tempProduct.getIdCategory()) {
+                                tableProduct.setCategory(category.getName());
+                            }
                         }
+                        tableProduct.setQuantity(1);
+                        tableProduct.setWeight(tempProduct.getTotalWeight());
                     }
-                    tableProduct.setQuantity(1);
-                    tableProduct.setWeight(tempProduct.getTotalWeight());
                 }
+            } catch (TreeException ex) {
+                Logger.getLogger(LogisticsDistribution.class.getName()).log(Level.SEVERE, null, ex);
             }
             tableList.add(tableProduct);
         }
         fillTable();
     }//GEN-LAST:event_listProductsMousePressed
-    private int getValue(String name) {
-        for (int i = 0; i < tempTree.size(); i++) {
-            Product tempProduct = (Product) tempTree.get(i);
+    private int getValue(String name) throws TreeException {
+        for (int i = 0; i < productsBinaryTree.getSize(); i++) {
+            Product tempProduct = (Product) productsBinaryTree.recorreArbol().get(i);
             if (tempProduct.getName().equals(name)) {
                 return tempProduct.getPrice();
             }
@@ -390,9 +403,9 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         return 0;
     }
 
-    private int getWeight(String name) {
-        for (int i = 0; i < tempTree.size(); i++) {
-            Product tempProduct = (Product) tempTree.get(i);
+    private int getWeight(String name) throws TreeException {
+        for (int i = 0; i < productsBinaryTree.getSize(); i++) {
+            Product tempProduct = (Product) productsBinaryTree.recorreArbol().get(i);
             if (tempProduct.getName().equals(name)) {
                 return tempProduct.getTotalWeight();
             }
@@ -454,7 +467,11 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LogisticsDistribution().setVisible(true);
+                try {
+                    new LogisticsDistribution().setVisible(true);
+                } catch (TreeException ex) {
+                    Logger.getLogger(LogisticsDistribution.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

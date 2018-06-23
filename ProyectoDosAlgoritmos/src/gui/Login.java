@@ -1,7 +1,10 @@
 package gui;
 
+import LinkedBinaryTree.TreeException;
 import domain.User;
 import static gui.LogisticsDistribution.userId;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import tda.CrudMaintenance;
 import static tda.LoadTda.userList;
 
@@ -152,27 +155,31 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_userNameTextFieldActionPerformed
 
     private void enterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterButtonActionPerformed
-        passwordTextField.setEchoChar((char) 0);
-        LogisticsDistribution logisticsDistribution = new LogisticsDistribution();
-        CrudMaintenance crudMaintenance = new CrudMaintenance();
-        Administrator administrator = new Administrator();
-
-        if (crudMaintenance.validateUser(userNameTextField.getText(), passwordTextField.getText())) {
-            if (crudMaintenance.validateRole(userNameTextField.getText()) == 1) {
-                logisticsDistribution.setVisible(true);
-                this.setVisible(false);
-                for (int i = 0; i < userList.size(); i++) {
-                    User user = userList.get(i);
-                    if (user.getUser().equals(userNameTextField.getText())) {
-                        userId = user.getIdUser();
+        try {
+            passwordTextField.setEchoChar((char) 0);
+            LogisticsDistribution logisticsDistribution = new LogisticsDistribution();
+            CrudMaintenance crudMaintenance = new CrudMaintenance();
+            Administrator administrator = new Administrator();
+            
+            if (crudMaintenance.validateUser(userNameTextField.getText(), passwordTextField.getText())) {
+                if (crudMaintenance.validateRole(userNameTextField.getText()) == 1) {
+                    logisticsDistribution.setVisible(true);
+                    this.setVisible(false);
+                    for (int i = 0; i < userList.size(); i++) {
+                        User user = userList.get(i);
+                        if (user.getUser().equals(userNameTextField.getText())) {
+                            userId = user.getIdUser();
+                        }
                     }
+                } else if (crudMaintenance.validateRole(userNameTextField.getText()) == 2) {
+                    administrator.setVisible(true);
+                    this.setVisible(false);
                 }
-            } else if (crudMaintenance.validateRole(userNameTextField.getText()) == 2) {
-                administrator.setVisible(true);
-                this.setVisible(false);
+            } else {
+                messageLabel.setText("El usuario no se encuentra registrado");
             }
-        } else {
-            messageLabel.setText("El usuario no se encuentra registrado");
+        } catch (TreeException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
 
 

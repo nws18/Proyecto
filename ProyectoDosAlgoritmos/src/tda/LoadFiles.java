@@ -1,6 +1,7 @@
 
 package tda;
 
+import LinkedBinaryTree.TreeException;
 import administratorFiles.AdministratorFiles;
 import domain.Batch;
 import domain.Category;
@@ -17,7 +18,7 @@ import static tda.LoadTda.batchMap;
 import static tda.LoadTda.categoryMap;
 import static tda.LoadTda.cellarGraph;
 import static tda.LoadTda.distributionOrderList;
-import static tda.LoadTda.tempTree;
+import static tda.LoadTda.productsBinaryTree;
 import static tda.LoadTda.transportUnitMap;
 import static tda.LoadTda.userList;
 
@@ -29,10 +30,10 @@ public class LoadFiles {
     
     AdministratorFiles administratorFiles = new AdministratorFiles();
     
-    public void fileProduct() throws IOException {
+    public void fileProduct() throws IOException, TreeException {
         ArrayList<Product> arrayList = new ArrayList<>();
-        for (int i = 0; i < tempTree.size() ; i++) {
-            arrayList.add((Product)tempTree.get(i));
+        for (int i = 0; i < productsBinaryTree.getSize() ; i++) {
+            arrayList.add((Product)productsBinaryTree.recorreArbol().get(i));
         }
         administratorFiles.writeProductFile(arrayList);
     }

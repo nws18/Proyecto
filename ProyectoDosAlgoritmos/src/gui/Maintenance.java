@@ -30,8 +30,7 @@ import tda.CrudMaintenance;
 import static tda.LoadTda.batchMap;
 import static tda.LoadTda.categoryMap;
 import static tda.LoadTda.cellarGraph;
-import static tda.LoadTda.tempTree;
-//import static tda.LoadTda.productsBinaryTree;
+import static tda.LoadTda.productsBinaryTree;
 import static tda.LoadTda.transportUnitMap;
 import static tda.LoadTda.userList;
 
@@ -1901,6 +1900,7 @@ public class Maintenance extends javax.swing.JFrame {
 
     private void deleteProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteProductButtonActionPerformed
         
+        try {
             if (crudMaintenance.existsProduct(deleteProductTextField.getText())) {
                 try {
                     crudMaintenance.deleteProduct(deleteProductTextField.getText());
@@ -1911,6 +1911,9 @@ public class Maintenance extends javax.swing.JFrame {
             } else {
                 jLabel133.setText("El producto no se encuentra registrado.");
             }
+        } catch (TreeException ex) {
+            Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
+        }
        
     }//GEN-LAST:event_deleteProductButtonActionPerformed
 
@@ -2283,8 +2286,8 @@ public class Maintenance extends javax.swing.JFrame {
         int idBatch = 0;
         int idCategory = 0;
         try {
-            for (int i = 0; i < tempTree.size(); i++) {
-                Product product = (Product) tempTree.get(i);
+            for (int i = 0; i < productsBinaryTree.getSize(); i++) {
+                Product product = (Product) productsBinaryTree.recorreArbol().get(i);
                 if (product.getName().equals(nameProductTextField.getText()) && product.getUnitMeasured().equals(unitMeasuredComboBox.getSelectedItem().toString())) {
                     jLabel36.setText("El producto ya existe.");
                 } else if (nameProductTextField.getText().equals("") || unitValueTextField.equals("") || totalWeightTextField.getText().equals("")
@@ -2327,34 +2330,37 @@ public class Maintenance extends javax.swing.JFrame {
        
         } catch (NumberFormatException numberFormatException) {
             jLabel36.setText("<html><p>Valor de unidad, peso y precio debe ser un valor entero.</html></p>");
+        } catch (TreeException ex) {
+            Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_addProductButtonActionPerformed
 
     private void searchProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchProductButtonActionPerformed
-        String batchCode = "";
-        String categoryName = "";
-        Product product = crudMaintenance.getProduct(searchProductTextField.getText());
+        try {
+            String batchCode = "";
+            String categoryName = "";
+            Product product = crudMaintenance.getProduct(searchProductTextField.getText());
             if (crudMaintenance.existsProduct(searchProductTextField.getText())) {
                 unitMeasuredLabel.setText(product.getUnitMeasured());
                 unitValueLabel.setText(String.valueOf(product.getUnitValue()));
                 totalWeightLabel.setText(String.valueOf(product.getTotalWeight()));
                 descriptionLabel.setText(product.getDescription());
                 Iterator iterator = batchMap.keySet().iterator();
-                    while (iterator.hasNext()) {
-                        Integer key = (Integer) iterator.next();
-                        Batch batch = batchMap.get(key);
-                        if(product.getIdBatch() == batch.getIdBatch()) {
-                            batchCode = batch.getBatchCode();
-                        }
+                while (iterator.hasNext()) {
+                    Integer key = (Integer) iterator.next();
+                    Batch batch = batchMap.get(key);
+                    if(product.getIdBatch() == batch.getIdBatch()) {
+                        batchCode = batch.getBatchCode();
                     }
-                    Iterator iterator2 = categoryMap.keySet().iterator();
-                    while (iterator2.hasNext()) {
-                        String key = (String) iterator2.next();
-                        Category category = categoryMap.get(key);
-                        if(product.getIdCategory() == category.getIdCategory()) {
-                            categoryName = product.getName();
-                        }
+                }
+                Iterator iterator2 = categoryMap.keySet().iterator();
+                while (iterator2.hasNext()) {
+                    String key = (String) iterator2.next();
+                    Category category = categoryMap.get(key);
+                    if(product.getIdCategory() == category.getIdCategory()) {
+                        categoryName = product.getName();
                     }
+                }
                 batchLabel.setText(batchCode);
                 categoryLabel.setText(categoryName);
                 ImageIcon imageIcon = new ImageIcon(product.getUrl());
@@ -2362,40 +2368,47 @@ public class Maintenance extends javax.swing.JFrame {
             } else {
                 jLabel110.setText("El producto no se encuentra registrado.");
             }
+        } catch (TreeException ex) {
+            Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_searchProductButtonActionPerformed
 
     private void updateSearchProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateSearchProductButtonActionPerformed
-        String batchCode = "";
-        String nameCategory = "";
-        if (crudMaintenance.existsProduct(updateSearchProductTextField.getText())) {
-            Product product = crudMaintenance.getProduct(updateSearchProductTextField.getText());
-            updateNameProductTextField.setText(product.getName());
-            updateUnitMeasuredComboBox.setSelectedItem(product.getUnitMeasured());
-            updateUnitValueTextField.setText(String.valueOf(product.getUnitValue()));
-            updateWeightTextField.setText(String.valueOf(product.getTotalWeight()));
-            updateDescriptionTextField.setText(product.getDescription());
-            Iterator iterator = batchMap.keySet().iterator();
-            while (iterator.hasNext()) {
-                Integer key = (Integer) iterator.next();
-                Batch batch = batchMap.get(key);
-                if (product.getIdBatch() == batch.getIdBatch()) {
-                    batchCode = batch.getBatchCode();
+        try {
+            String batchCode = "";
+            String nameCategory = "";
+            if (crudMaintenance.existsProduct(updateSearchProductTextField.getText())) {
+                Product product = crudMaintenance.getProduct(updateSearchProductTextField.getText());
+                updateNameProductTextField.setText(product.getName());
+                updateUnitMeasuredComboBox.setSelectedItem(product.getUnitMeasured());
+                updateUnitValueTextField.setText(String.valueOf(product.getUnitValue()));
+                updateWeightTextField.setText(String.valueOf(product.getTotalWeight()));
+                updateDescriptionTextField.setText(product.getDescription());
+                Iterator iterator = batchMap.keySet().iterator();
+                while (iterator.hasNext()) {
+                    Integer key = (Integer) iterator.next();
+                    Batch batch = batchMap.get(key);
+                    if (product.getIdBatch() == batch.getIdBatch()) {
+                        batchCode = batch.getBatchCode();
+                    }
                 }
-            }
-            Iterator iterator2 = categoryMap.keySet().iterator();
-            while (iterator2.hasNext()) {
-                String key = (String) iterator2.next();
-                Category category = categoryMap.get(key);
-                if (product.getIdCategory() == category.getIdCategory()) {
-                    nameCategory = category.getName();
+                Iterator iterator2 = categoryMap.keySet().iterator();
+                while (iterator2.hasNext()) {
+                    String key = (String) iterator2.next();
+                    Category category = categoryMap.get(key);
+                    if (product.getIdCategory() == category.getIdCategory()) {
+                        nameCategory = category.getName();
+                    }
                 }
+                updateBatchCodeTextField.setText(batchCode);
+                updatePriceTextField.setText(String.valueOf(product.getPrice()));
+                updateCategoryComboBox.setSelectedItem(nameCategory);
+                updateImageProductTextField.setText(product.getUrl());
+            } else {
+                jLabel32.setText("La bodega no se encuentra registrado");
             }
-            updateBatchCodeTextField.setText(batchCode);
-            updatePriceTextField.setText(String.valueOf(product.getPrice()));
-            updateCategoryComboBox.setSelectedItem(nameCategory);
-            updateImageProductTextField.setText(product.getUrl());
-        } else {
-            jLabel32.setText("La bodega no se encuentra registrado");
+        } catch (TreeException ex) {
+            Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_updateSearchProductButtonActionPerformed
 
@@ -2428,18 +2441,19 @@ public class Maintenance extends javax.swing.JFrame {
                 || updateBatchCodeTextField.getText().equals("") || updateImageProductTextField.getText().equals("")) {
                 jLabel132.setText("Debe ingresar todos los datos");
             } else {
-            Iterator iterator = categoryMap.keySet().iterator();
-                    while (iterator.hasNext()) {
-                        String key = (String) iterator.next();
-                        Category category = categoryMap.get(key);
-                        if (updateCategoryComboBox.getSelectedItem().toString().equals(category.getName())) {
-                            idCategory = category.getIdCategory();
-                        }
+            try {
+                Iterator iterator = categoryMap.keySet().iterator();
+                while (iterator.hasNext()) {
+                    String key = (String) iterator.next();
+                    Category category = categoryMap.get(key);
+                    if (updateCategoryComboBox.getSelectedItem().toString().equals(category.getName())) {
+                        idCategory = category.getIdCategory();
                     }
-                crudMaintenance.updateProduct(updateSearchProductTextField.getText(), updateNameProductTextField.getText(), 
-                                              updateUnitMeasuredComboBox.getSelectedItem().toString(), Integer.parseInt(updateUnitValueTextField.getText()),
-                                              Integer.parseInt(updateWeightTextField.getText()), updateDescriptionTextField.getText(), idCategory, 
-                                              Integer.parseInt(updatePriceTextField.getText()), updateImageProductTextField.getText());
+                }
+                crudMaintenance.updateProduct(updateSearchProductTextField.getText(), updateNameProductTextField.getText(),
+                        updateUnitMeasuredComboBox.getSelectedItem().toString(), Integer.parseInt(updateUnitValueTextField.getText()),
+                        Integer.parseInt(updateWeightTextField.getText()), updateDescriptionTextField.getText(), idCategory,
+                        Integer.parseInt(updatePriceTextField.getText()), updateImageProductTextField.getText());
                 jLabel32.setText("Información actualizada");
                 updateSearchProductTextField.setText("");
                 updateNameProductTextField.setText("");
@@ -2449,6 +2463,9 @@ public class Maintenance extends javax.swing.JFrame {
                 updateBatchCodeTextField.setText("");
                 updatePriceTextField.setText("");
                 updateImageProductTextField.setText("");
+            } catch (TreeException ex) {
+                Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
+            }
             }
     }//GEN-LAST:event_updateProductButtonActionPerformed
 
