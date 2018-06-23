@@ -42,15 +42,12 @@ public class NewMain {
         ArrayList<Product> productList = new ArrayList();
 //        ArrayList<TransportUnit> transportUnitList = new ArrayList();
 //        ArrayList<User> UserList = new ArrayList();
-//
-        Date date = new Date();
-        Date date2 = new Date(2019, 2, 23, 0, 0, 0);
 
-        Batch batch0 = new Batch(0, "IDRHFU45T45", "", "");
-        Batch batch1 = new Batch(1, "KJBFH45G54G", "", "");
-        Batch batch2 = new Batch(2, "EARGE56YHRT", "", "");
-        Batch batch3 = new Batch(3, "ERGRTERHRHT", "", "");
-        Batch batch4 = new Batch(4, "DFVKNSKJVNJ", "", "");
+        Batch batch0 = new Batch(0, "IDRHFU45T45", "01-01-2018 12:30", "13-03-2018");
+        Batch batch1 = new Batch(1, "KJBFH45G54G", "08-02-2018 10:25", "01-04-2018");
+        Batch batch2 = new Batch(2, "EARGE56YHRT", "05-03-2018 11:45", "23-05-2018");
+        Batch batch3 = new Batch(3, "ERGRTERHRHT", "22-04-2018 9:10", "15-06-2018");
+        Batch batch4 = new Batch(4, "DFVKNSKJVNJ", "28-05-2018 8:01", "18-10-2018");
         batchList.add(batch0);
         batchList.add(batch1);
         batchList.add(batch2);
@@ -126,7 +123,7 @@ public class NewMain {
         administratorFiles.writeBatchFile(batchList);
 //        administratorFiles.writeCategoryFile(categoryList);
 //        administratorFiles.writeCellarFile(cellarList);
-        administratorFiles.writeDistributionOrderFile(distributionOrderList);
+//        administratorFiles.writeDistributionOrderFile(distributionOrderList);
 //        administratorFiles.writeProductFile(productList);
 //        administratorFiles.writeTransportUnitFile(transportUnitList);
 //        administratorFiles.writeUserFile(UserList);
@@ -137,14 +134,14 @@ public class NewMain {
         linkedBinaryTree.insert(product2);
         linkedBinaryTree.insert(product3);
         linkedBinaryTree.insert(product4);
-        
-        ArrayList<Product> tempArray = linkedBinaryTree.recorreArbol();
-        
-        for (int i = 0; i < tempArray.size(); i++) {
-            Product tempProduct = tempArray.get(i);
-            System.out.println(tempProduct.toString());
-            
-        }
+//        
+//        ArrayList<Product> tempArray = linkedBinaryTree.recorreArbol();
+//        
+//        for (int i = 0; i < tempArray.size(); i++) {
+//            Product tempProduct = tempArray.get(i);
+//            System.out.println(tempProduct.toString());
+//            
+//        }
         
         
         

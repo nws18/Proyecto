@@ -20,6 +20,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.logging.Level;
@@ -2148,8 +2149,11 @@ public class Maintenance extends javax.swing.JFrame {
                 
                 DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
                 String packedDate = dateFormat.format(jXDatePicker1.getDate());
+                Calendar calendar = Calendar.getInstance();
+                int hour = calendar.get(Calendar.HOUR);
+                int minutes = calendar.get(Calendar.MINUTE);
                 String expirationDate = dateFormat.format(jXDatePicker2.getDate());
-                crudMaintenance.addBacth(codeBatchTextField.getText(), packedDate , expirationDate);
+                crudMaintenance.addBacth(codeBatchTextField.getText(), packedDate + " " +hour + ":" + minutes, expirationDate);
                 jLabel67.setText("Lote agregado");
                 codeBatchTextField.setText("");
             }
@@ -2314,10 +2318,17 @@ public class Maintenance extends javax.swing.JFrame {
                             idCategory = category.getIdCategory();
                         }
                     }
-                    crudMaintenance.addProduct(nameProductTextField.getText(), unitMeasuredComboBox.getSelectedItem().toString(),
-                            Integer.parseInt(unitValueTextField.getText()), Integer.parseInt(totalWeightTextField.getText()),
-                            descriptionProductTextField.getText(), idBatch, idCategory, Integer.parseInt(priceTextField.getText()),
-                            imageProductTextField.getText());
+                    try {
+                        crudMaintenance.addProduct(nameProductTextField.getText(), unitMeasuredComboBox.getSelectedItem().toString(),
+                                Integer.parseInt(unitValueTextField.getText()), 
+                                Integer.parseInt(totalWeightTextField.getText()),
+                                descriptionProductTextField.getText(), idBatch, idCategory, Integer.parseInt(priceTextField.getText()),
+                                imageProductTextField.getText());
+                    } catch (TreeException ex) {
+                        Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (NumberFormatException numberFormatException) {
+                        jLabel36.setText("<html><p>Valor de unidad, peso y precio debe ser un valor entero.</html></p>");
+                    }
                     jLabel36.setText("Producto agregado.");
                     nameProductTextField.setText("");
                     unitValueTextField.setText("");
@@ -2327,12 +2338,10 @@ public class Maintenance extends javax.swing.JFrame {
                     imageProductTextField.setText("");
                 }
             }
-
-        } catch (NumberFormatException numberFormatException) {
-            jLabel36.setText("<html><p>Valor de unidad, peso y precio debe ser un valor entero.</html></p>");
         } catch (TreeException ex) {
             Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
         }
+
     }//GEN-LAST:event_addProductButtonActionPerformed
 
     private void searchProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchProductButtonActionPerformed

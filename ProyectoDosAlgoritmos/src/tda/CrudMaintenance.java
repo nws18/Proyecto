@@ -8,7 +8,6 @@ import domain.Cellar;
 import domain.Product;
 import domain.TransportUnit;
 import domain.User;
-import java.util.Date;
 import java.util.Iterator;
 import lab_grafos_algoritmos.GraphException;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -60,8 +59,14 @@ public class CrudMaintenance {
     }
     
     private int idProduct() throws TreeException{
-        Product product = (Product) productsBinaryTree.recorreArbol().get(productsBinaryTree.getSize()-1);
-        return product.getIdProduct()+1;
+        int j = 0;
+        for (int i = 0; i < productsBinaryTree.getSize(); i++) {
+            Product product = (Product) productsBinaryTree.recorreArbol().get(i);
+            if(product.getIdProduct() >  j) {
+                j = product.getIdProduct();
+            } 
+        }
+        return j+1;
     }
     
     public void deleteProduct(String name) throws TreeException {
@@ -71,7 +76,6 @@ public class CrudMaintenance {
                 productsBinaryTree.delete(product);
             }
         }
-        System.out.println(productsBinaryTree.toString());
     }
 
     public Product getProduct(String name) throws TreeException {
@@ -113,7 +117,6 @@ public class CrudMaintenance {
             oldIdCategory.setIdCategory(newIdCategory);
             oldPrice.setPrice(newPrice);
             oldUrl.setUrl(newUrl);
-            System.out.println(productsBinaryTree.toString());
         }
     }
 

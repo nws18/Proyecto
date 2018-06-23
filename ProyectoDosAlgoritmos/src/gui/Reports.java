@@ -7,7 +7,11 @@ import domain.Category;
 import domain.Cellar;
 import domain.DistributionOrder;
 import domain.Product;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,9 +38,18 @@ public class Reports extends javax.swing.JFrame {
         TextAutoCompleter textAutoAcompleterSearchBatch = new TextAutoCompleter(batchTextField);
         Iterator iterator = batchMap.keySet().iterator();
         while (iterator.hasNext()) {
-            Integer key = (Integer) iterator.next();
-            Batch batch = batchMap.get(key);
-            textAutoAcompleterSearchBatch.addItem(batch.getBatchCode());
+            try {
+                Integer key = (Integer) iterator.next();
+                Batch batch = batchMap.get(key);
+                Date date = new Date();
+                DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+                Date expirationDate = dateFormat.parse(batch.getExpirationDate());
+                if (expirationDate.after(date)) {
+                    textAutoAcompleterSearchBatch.addItem(batch.getBatchCode());
+                }
+            } catch (ParseException ex) {
+                Logger.getLogger(Reports.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
     
