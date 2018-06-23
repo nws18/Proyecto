@@ -98,7 +98,7 @@ public class CrudMaintenance {
         return false;
     }
 
-    public void updateProduct(String name, String newName,String newUnitMeasured, int newUnitValue, int newTotalWeight, String newDescription, int newIdCategory, int newPrice, String newUrl) throws TreeException {
+    public void updateProduct(String name, String newName,String newUnitMeasured, int newUnitValue, int newTotalWeight, String newDescription, int newIdCategory, int newPrice, String newUrl, int newIdBatch) throws TreeException {
         if(existsProduct(name)) {
             Product oldName = getProduct(name);
             Product oldUnitMeasured = getProduct(name);
@@ -108,6 +108,7 @@ public class CrudMaintenance {
             Product oldIdCategory = getProduct(name);
             Product oldPrice = getProduct(name);
             Product oldUrl = getProduct(name);
+            Product oldBatch = getProduct(name);
             
             oldName.setName(newName);
             oldUnitMeasured.setUnitMeasured(newUnitMeasured);
@@ -117,6 +118,7 @@ public class CrudMaintenance {
             oldIdCategory.setIdCategory(newIdCategory);
             oldPrice.setPrice(newPrice);
             oldUrl.setUrl(newUrl);
+            oldBatch.setIdBatch(newIdBatch);
         }
     }
 

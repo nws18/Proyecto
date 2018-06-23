@@ -2481,6 +2481,7 @@ public class Maintenance extends javax.swing.JFrame {
 
     private void updateProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateProductButtonActionPerformed
         int idCategory = 0;
+        int idBatch = 0;
         if (updateNameProductTextField.getText().equals("") || updatePriceTextField.getText().equals("")
                     || updateUnitValueTextField.getText().equals("") || updateWeightTextField.getText().equals("") || updateDescriptionTextField.getText().equals("")
                     || updateImageProductTextField.getText().equals("")) {
@@ -2495,10 +2496,19 @@ public class Maintenance extends javax.swing.JFrame {
                         idCategory = category.getIdCategory();
                     }
                 }
+                
+                Iterator iterator1 = batchMap.keySet().iterator();
+                while (iterator1.hasNext()) {
+                    Integer key = (Integer) iterator1.next();
+                    Batch batch = batchMap.get(key);
+                    if(updateBatchCodeProduct.getSelectedItem().toString().equals(batch.getBatchCode())) {
+                        idBatch = batch.getIdBatch();
+                    }
+                }
                 crudMaintenance.updateProduct(updateSearchProductTextField.getText(), updateNameProductTextField.getText(),
                         updateUnitMeasuredComboBox.getSelectedItem().toString(), Integer.parseInt(updateUnitValueTextField.getText()),
                         Integer.parseInt(updateWeightTextField.getText()), updateDescriptionTextField.getText(), idCategory,
-                        Integer.parseInt(updatePriceTextField.getText()), updateImageProductTextField.getText());
+                        Integer.parseInt(updatePriceTextField.getText()), updateImageProductTextField.getText(), idBatch);
                 jLabel32.setText("Información actualizada");
                 updateSearchProductTextField.setText("");
                 updateNameProductTextField.setText("");

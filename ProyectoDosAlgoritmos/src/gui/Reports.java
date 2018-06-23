@@ -44,7 +44,7 @@ public class Reports extends javax.swing.JFrame {
                 Date date = new Date();
                 DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
                 Date expirationDate = dateFormat.parse(batch.getExpirationDate());
-                if (expirationDate.after(date)) {
+                if (expirationDate.before(date)) {
                     textAutoAcompleterSearchBatch.addItem(batch.getBatchCode());
                 }
             } catch (ParseException ex) {
@@ -108,7 +108,7 @@ public class Reports extends javax.swing.JFrame {
             for (int j = 0; j < cellarGraph.list().size(); j++) {
                 Cellar cellar = (Cellar) cellarGraph.list().get(j);
                 if (distributionOrder.getIdDestinyCellar() == cellar.getIdCellar()) {
-                    arrayList.add(cellar.getName());
+                    arrayList.add(cellar.getName() +" " + distributionOrder.getOrderDate());
                 }
             }
             
