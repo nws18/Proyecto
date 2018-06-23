@@ -1,6 +1,10 @@
 
 package gui;
 
+import LinkedBinaryTree.TreeException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  * Interfaz módulo administrador.
  * @author Nicole Fonseca, Wilmer Mata, Sergio Siles
@@ -145,9 +149,13 @@ public class Administrator extends javax.swing.JFrame {
     }//GEN-LAST:event_reportsButtonActionPerformed
 
     private void maintenanceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_maintenanceButtonActionPerformed
-        Maintenance maintenance = new Maintenance();
-        maintenance.setVisible(true);
-        this.setVisible(false);
+        try {
+            Maintenance maintenance = new Maintenance();
+            maintenance.setVisible(true);
+            this.setVisible(false);
+        } catch (TreeException ex) {
+            Logger.getLogger(Administrator.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_maintenanceButtonActionPerformed
 
     private void recordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recordButtonActionPerformed

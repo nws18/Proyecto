@@ -188,7 +188,7 @@ public class CrudMaintenance {
         }
     }
 
-    public void addBacth(String batchCode, Date packedDate, Date expirationDate) {
+    public void addBacth(String batchCode, String packedDate, String expirationDate) {
         Batch batch = new Batch(idBatch(), batchCode, packedDate, expirationDate);
         batchMap.put(idBatch(), batch);
         System.out.println(batchMap.toString());
@@ -244,7 +244,7 @@ public class CrudMaintenance {
         return false;
     }
 
-    public void updateBatch(String batchCode, String newBatchCode, Date newExpirationDate) {
+    public void updateBatch(String batchCode, String newBatchCode, String newExpirationDate) {
         if(existsBatch(batchCode)) {
             Batch oldBatchCode = getBatch(batchCode);
             Batch oldExpirationDate = getBatch(batchCode);

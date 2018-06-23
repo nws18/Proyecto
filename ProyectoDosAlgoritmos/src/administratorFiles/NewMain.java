@@ -46,11 +46,11 @@ public class NewMain {
         Date date = new Date();
         Date date2 = new Date(2019, 2, 23, 0, 0, 0);
 
-        Batch batch0 = new Batch(0, "IDRHFU45T45", date, date2);
-        Batch batch1 = new Batch(1, "KJBFH45G54G", date, date2);
-        Batch batch2 = new Batch(2, "EARGE56YHRT", date, date2);
-        Batch batch3 = new Batch(3, "ERGRTERHRHT", date, date2);
-        Batch batch4 = new Batch(4, "DFVKNSKJVNJ", date, date2);
+        Batch batch0 = new Batch(0, "IDRHFU45T45", "", "");
+        Batch batch1 = new Batch(1, "KJBFH45G54G", "", "");
+        Batch batch2 = new Batch(2, "EARGE56YHRT", "", "");
+        Batch batch3 = new Batch(3, "ERGRTERHRHT", "", "");
+        Batch batch4 = new Batch(4, "DFVKNSKJVNJ", "", "");
         batchList.add(batch0);
         batchList.add(batch1);
         batchList.add(batch2);
