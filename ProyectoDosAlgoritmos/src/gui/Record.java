@@ -99,6 +99,7 @@ public class Record extends javax.swing.JFrame {
             array[i][2] = tableList.get(i).getCategoryName();
             array[i][3] = tableList.get(i).getBatchCode();
             array[i][4] = tableList.get(i).getOperatorName();
+            
         }
         table.setModel(new javax.swing.table.DefaultTableModel(array, new String[]{"Productos", "Bodega", "Categoría", "Lote", "Operador"}));
     }

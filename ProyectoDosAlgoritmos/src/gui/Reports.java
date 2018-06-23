@@ -3,14 +3,17 @@ package gui;
 
 import com.mxrck.autocompleter.TextAutoCompleter;
 import domain.Batch;
+import domain.Category;
 import domain.Cellar;
 import domain.DistributionOrder;
 import domain.Product;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import lab_grafos_algoritmos.GraphException;
 import static tda.LoadTda.batchMap;
+import static tda.LoadTda.categoryMap;
 import static tda.LoadTda.cellarGraph;
 import static tda.LoadTda.distributionOrderList;
 //import static tda.LoadTda.productsBinaryTree;
@@ -21,6 +24,7 @@ import static tda.LoadTda.distributionOrderList;
  */
 public class Reports extends javax.swing.JFrame {
 
+    private ArrayList<Product> productList = new ArrayList<>();
     /**
      * Creates new form Reports
      */
@@ -37,33 +41,83 @@ public class Reports extends javax.swing.JFrame {
     }
     
     public void fillTable() {
-      
- 
-    }
-    
-    public void fillList() throws GraphException {
-        int idBatch = 0;
         for (int i = 0; i < distributionOrderList.size(); i++) {
             DistributionOrder distributionOrder = distributionOrderList.get(i);
             for (int j = 0; j < distributionOrder.getProductList().size(); j++) {
-                Product product = distributionOrder.getProductList().get(j);
-                String cellar = getCellarName();
+                Product tempProduct = (Product) distributionOrder.getProductList().get(i);
+                if (batchTextField.getText().equals(getBatchCode(tempProduct.getIdBatch()))) {
+                    productList.add(tempProduct);
+                }
             }
         }
+        
+        String[][] array = new String[productList.size()][6];
+        for (int i = 0; i < productList.size(); i++) {
+            array[i][0] = productList.get(i).getName();
+            array[i][1] = productList.get(i).getUnitMeasured();
+            array[i][2] = String.valueOf(productList.get(i).getUnitValue());
+            array[i][3] = String.valueOf(productList.get(i).getTotalWeight());
+            array[i][4] = String.valueOf(getCategoryName(productList.get(i).getIdCategory()));
+            array[i][5] = String.valueOf(productList.get(i).getPrice());
+        }
+        table.setModel(new javax.swing.table.DefaultTableModel(array, new String[]{"Nombre", "Unidad medida", "Valor unidad", "Peso total", "Categoría", "Precio"}));
+ 
     }
-    
-    public String getCellarName() throws GraphException {
-        for (int i = 0; i < distributionOrderList.size(); i++) {
-            DistributionOrder distributionOrder = distributionOrderList.get(i);
-            for (int j = 0; j < cellarGraph.list().size(); j++) {
-                Cellar cellar = (Cellar) cellarGraph.list().get(j);
-                if(distributionOrder.getIdDestinyCellar() == cellar.getIdCellar()) {
-                    return cellar.getName();
-                }
+  
+    private String getCategoryName(int idCategory) {
+        Iterator iterator = categoryMap.keySet().iterator();
+        while (iterator.hasNext()) {
+            String key = (String) iterator.next();
+            Category category = categoryMap.get(key);
+            if (category.getIdCategory() == idCategory) {
+                return category.getName();
             }
         }
         return null;
     }
+    
+    private String getBatchCode(int idBatch) {
+        Iterator iterator = batchMap.keySet().iterator();
+        while (iterator.hasNext()) {
+            Integer key = (Integer) iterator.next();
+            Batch batch = batchMap.get(key);
+            if(idBatch == batch.getIdBatch()) {
+                return batch.getBatchCode();
+            }
+        }
+        return null;
+    }
+    
+    public void fillList() throws GraphException {
+        ArrayList arrayList = new ArrayList();
+        for (int i = 0; i < distributionOrderList.size(); i++) {
+            DistributionOrder distributionOrder = distributionOrderList.get(i);
+            for (int j = 0; j < cellarGraph.list().size(); j++) {
+                Cellar cellar = (Cellar) cellarGraph.list().get(j);
+                if (distributionOrder.getIdDestinyCellar() == cellar.getIdCellar()) {
+                    arrayList.add(cellar.getName());
+                }
+            }
+            
+        }
+        String[] cellarList = new String[arrayList.size()];
+        for (int i = 0; i < cellarList.length; i++) {
+            cellarList[i] = (String) arrayList.get(i);
+        }
+        this.cellarList.setListData(cellarList);
+    }
+    
+    private String getCellarName(int idCellar) {
+        for (int k = 0; k < cellarGraph.list().size(); k++) {
+            Cellar cellar = (Cellar) cellarGraph.list().get(k);
+            if (cellar.getIdCellar() == idCellar) {
+               return  cellar.getName();
+            }
+        }
+        return null;
+    }
+    
+  
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -78,7 +132,7 @@ public class Reports extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         batchTextField = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        table = new javax.swing.JTable();
         returnAdministratorButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         cellarList = new javax.swing.JList<>();
@@ -98,7 +152,7 @@ public class Reports extends javax.swing.JFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
         jPanel1.add(batchTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 120, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -109,7 +163,7 @@ public class Reports extends javax.swing.JFrame {
                 "Nombre", "Unidad medida", "Valor unidad", "Peso total", "Categoría", "Precio"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(table);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 570, 190));
 
@@ -179,9 +233,10 @@ public class Reports extends javax.swing.JFrame {
     }//GEN-LAST:event_returnAdministratorButtonActionPerformed
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
+        productList.clear();
+        fillTable();
         try {
             fillList();
-
         } catch (GraphException ex) {
             Logger.getLogger(Reports.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -232,8 +287,8 @@ public class Reports extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JButton returnAdministratorButton;
     private javax.swing.JButton searchButton;
+    private javax.swing.JTable table;
     // End of variables declaration//GEN-END:variables
 }

@@ -36,7 +36,7 @@ public class NewMain {
         ArrayList<Batch> batchList = new ArrayList();
 //        ArrayList<Category> categoryList = new ArrayList();
 //        ArrayList<Cellar> cellarList = new ArrayList();
-//        ArrayList<DistributionOrder> distributionOrderList = new ArrayList();
+        ArrayList<DistributionOrder> distributionOrderList = new ArrayList();
         ArrayList<Product> productList = new ArrayList();
 //        ArrayList<TransportUnit> transportUnitList = new ArrayList();
 //        ArrayList<User> UserList = new ArrayList();
@@ -88,16 +88,16 @@ public class NewMain {
         productList.add(product3);
         productList.add(product4);
 //
-//        DistributionOrder distributionOrder0 = new DistributionOrder(0, 0, 1, 100000, 5000, productList, 0);
-//        DistributionOrder distributionOrder1 = new DistributionOrder(1, 1, 2, 200000, 10000, productList, 1);
-//        DistributionOrder distributionOrder2 = new DistributionOrder(2, 2, 3, 300000, 60000, productList, 2);
-//        DistributionOrder distributionOrder3 = new DistributionOrder(3, 3, 4, 400000, 70000, productList, 3);
-//        DistributionOrder distributionOrder4 = new DistributionOrder(4, 4, 0, 500000, 90000, productList, 4);
-//        distributionOrderList.add(distributionOrder0);
-//        distributionOrderList.add(distributionOrder1);
-//        distributionOrderList.add(distributionOrder2);
-//        distributionOrderList.add(distributionOrder3);
-//        distributionOrderList.add(distributionOrder4);
+        DistributionOrder distributionOrder0 = new DistributionOrder(0, 0, 1, 100000, 5000, productList, 0);
+        DistributionOrder distributionOrder1 = new DistributionOrder(1, 1, 2, 200000, 10000, productList, 1);
+        DistributionOrder distributionOrder2 = new DistributionOrder(2, 2, 3, 300000, 60000, productList, 2);
+        DistributionOrder distributionOrder3 = new DistributionOrder(3, 3, 4, 400000, 70000, productList, 3);
+        DistributionOrder distributionOrder4 = new DistributionOrder(4, 4, 0, 500000, 90000, productList, 4);
+        distributionOrderList.add(distributionOrder0);
+        distributionOrderList.add(distributionOrder1);
+        distributionOrderList.add(distributionOrder2);
+        distributionOrderList.add(distributionOrder3);
+        distributionOrderList.add(distributionOrder4);
 //
 //        TransportUnit transportUnit0 = new TransportUnit(0, "646644", 10, 20, "images/transport/camion1.png");
 //        TransportUnit transportUnit1 = new TransportUnit(1, "754532", 20, 30, "images/transport/camion2.png");
@@ -124,7 +124,7 @@ public class NewMain {
         administratorFiles.writeBatchFile(batchList);
 //        administratorFiles.writeCategoryFile(categoryList);
 //        administratorFiles.writeCellarFile(cellarList);
-//        administratorFiles.writeDistributionOrderFile(distributionOrderList);
+        administratorFiles.writeDistributionOrderFile(distributionOrderList);
 //        administratorFiles.writeProductFile(productList);
 //        administratorFiles.writeTransportUnitFile(transportUnitList);
 //        administratorFiles.writeUserFile(UserList);
