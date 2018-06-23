@@ -385,14 +385,15 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         }
         int total = 0;
         for (int i = 0; i < tableList.size(); i++) {
-              TableProduct tempTableProduct = new TableProduct();
+              TableProduct tempTableProduct = tableList.get(i);
               total += tempTableProduct.getWeight();
         }
-        double totalDouble = total + 0.0;
+        
+        double totalDouble = (double) total;
         double hundred = 100.0;
         double maxWeight = 30000.0;
-        double progress = total/maxWeight * hundred;
-        System.out.println(totalDouble + " " + hundred + " " + maxWeight + " " + progress);
+        double progress = ((total/maxWeight) * hundred);
+       
         progressBar.setValue((int) progress);
         fillTable();
     }//GEN-LAST:event_listProductsMousePressed
