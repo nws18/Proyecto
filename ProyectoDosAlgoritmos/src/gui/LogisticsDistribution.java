@@ -39,7 +39,8 @@ import static tda.LoadTda.productsBinaryTree;
  * @author Nicole Fonseca, Wilmer Mata, Sergio Siles
  */
 public class LogisticsDistribution extends javax.swing.JFrame {
-  static int userId = -1;
+
+    static int userId = -1;
     /**
      * Creates new form NewJFrame
      */
@@ -50,7 +51,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         initComponents();
         fillTable();
         loadMap("https://www.google.com/maps/@9.7808897,-84.1564765,8z");
-        progressBar();
+//        progressBar();
 //       
 //        DefaultListModel modelo = new DefaultListModel();
 //        for (int i = 0; i < productsBinaryTree.recorreArbol().size(); i++) {
@@ -235,21 +236,21 @@ public class LogisticsDistribution extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
-     
-      try {
-          DistributionOrder distributionOrder = new DistributionOrder();
-          distributionOrder.setProductList(getProducts());
-          distributionOrder.setIdDistributionOrder(distributionOrderList.size());
-          distributionOrder.setTotalAmount(Double.parseDouble(String.valueOf(getTotalAmount())));
-          distributionOrder.setWeightTotal(Float.parseFloat(String.valueOf(getTotalWeight())));
-          distributionOrder.setIdDestinyCellar(getCellarId());
-          distributionOrder.setIdOperator(userId);
-          distributionOrder.setIdOriginCellar(0);
-          distributionOrderList.add(distributionOrder);
-          System.out.println(distributionOrder.toString());
-      } catch (TreeException ex) {
-          Logger.getLogger(LogisticsDistribution.class.getName()).log(Level.SEVERE, null, ex);
-      }
+
+        try {
+            DistributionOrder distributionOrder = new DistributionOrder();
+            distributionOrder.setProductList(getProducts());
+            distributionOrder.setIdDistributionOrder(distributionOrderList.size());
+            distributionOrder.setTotalAmount(Double.parseDouble(String.valueOf(getTotalAmount())));
+            distributionOrder.setWeightTotal(Float.parseFloat(String.valueOf(getTotalWeight())));
+            distributionOrder.setIdDestinyCellar(getCellarId());
+            distributionOrder.setIdOperator(userId);
+            distributionOrder.setIdOriginCellar(0);
+            distributionOrderList.add(distributionOrder);
+            System.out.println(distributionOrder.toString());
+        } catch (TreeException ex) {
+            Logger.getLogger(LogisticsDistribution.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_confirmButtonActionPerformed
     private int getTotalAmount() {
         int total = 0;
@@ -258,26 +259,25 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         }
         return total;
     }
-    
-     private int getTotalWeight() {
+
+    private int getTotalWeight() {
         int totalWeight = 0;
         for (int i = 0; i < tableList.size(); i++) {
             totalWeight += tableList.get(i).getWeight();
         }
         return totalWeight;
     }
-     
-     private int getCellarId(){
-         for (int i = 0; i < cellarGraph.list().size(); i++) {
+
+    private int getCellarId() {
+        for (int i = 0; i < cellarGraph.list().size(); i++) {
             Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
-             if (tempCellar.getName().equals(cellarList.getSelectedValue())) {
-                 return  tempCellar.getIdCellar();
-             }
-         }
-         return -1;
-     }
-     
-    
+            if (tempCellar.getName().equals(cellarList.getSelectedValue())) {
+                return tempCellar.getIdCellar();
+            }
+        }
+        return -1;
+    }
+
     private ArrayList getProducts() throws TreeException {
         ArrayList<Product> arrayListProducts = new ArrayList<>();
         for (int i = 0; i < tableList.size(); i++) {
@@ -292,23 +292,15 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         }
         return arrayListProducts;
     }
-    
-   private void progressBar() {
-////       JFrame f = new JFrame("JProgressBar Sample");
-////    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-////    Container content = f.getContentPane();
-//    JProgressBar progressBar = new JProgressBar();
-//    progressBar.setValue(25);
-//    progressBar.setStringPainted(true);
-//    Border border = BorderFactory.createTitledBorder("Reading...");
-//    progressBar.setBorder(border);
-////    content.add(progressBar, BorderLayout.NORTH);
-////    f.setSize(300, 100);
-////    f.setVisible(true);
-//       
 
-
-   }
+//    private void progressBar() {
+//        double a = 5000.0;
+//        double b = 30000.0;
+//        double c = 100.0;
+//        double result = (a / b) * c;
+//        progressBar.setValue((int) result);
+//
+//    }
 
 
     private void returnLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnLoginButtonActionPerformed
@@ -370,11 +362,11 @@ public class LogisticsDistribution extends javax.swing.JFrame {
                     if (tempProduct.getName().equals(listProducts.getSelectedValue())) {
                         ImageIcon imageIcon = new ImageIcon(tempProduct.getUrl());
                         jLabel2.setIcon(imageIcon);
-                        
+
                         tableProduct.setAmount(tempProduct.getPrice());
                         tableProduct.setProduct(tempProduct.getName());
                         Iterator iterator = categoryMap.keySet().iterator();
-                        
+
                         while (iterator.hasNext()) {
                             String key = (String) iterator.next();
                             Category category = categoryMap.get(key);
@@ -391,6 +383,17 @@ public class LogisticsDistribution extends javax.swing.JFrame {
             }
             tableList.add(tableProduct);
         }
+        int total = 0;
+        for (int i = 0; i < tableList.size(); i++) {
+              TableProduct tempTableProduct = new TableProduct();
+              total += tempTableProduct.getWeight();
+        }
+        double totalDouble = total + 0.0;
+        double hundred = 100.0;
+        double maxWeight = 30000.0;
+        double progress = total/maxWeight * hundred;
+        System.out.println(totalDouble + " " + hundred + " " + maxWeight + " " + progress);
+        progressBar.setValue((int) progress);
         fillTable();
     }//GEN-LAST:event_listProductsMousePressed
     private int getValue(String name) throws TreeException {
