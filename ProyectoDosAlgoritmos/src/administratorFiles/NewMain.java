@@ -5,8 +5,10 @@
  */
 package administratorFiles;
 
-import Exception.TreeException;
-import binarytree.LinkedBinaryTree;
+
+
+import LinkedBinaryTree.LinkedBinaryTree;
+import LinkedBinaryTree.TreeException;
 import domain.Batch;
 import domain.Category;
 import domain.Cellar;
