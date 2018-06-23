@@ -53,6 +53,10 @@ public class Maintenance extends javax.swing.JFrame {
      */
     public Maintenance() throws TreeException {
         initComponents();
+        Date date = new Date();
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        String packedDate = dateFormat.format(date);
+        jLabel136.setText(packedDate);
         descriptionCategoryTextField.setLineWrap(true);
 
         //Información ComboBox
@@ -386,7 +390,7 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel71 = new javax.swing.JLabel();
         jLabel73 = new javax.swing.JLabel();
         jLabel76 = new javax.swing.JLabel();
-        jXDatePicker1 = new org.jdesktop.swingx.JXDatePicker();
+        jLabel136 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
@@ -976,13 +980,14 @@ public class Maintenance extends javax.swing.JFrame {
                                 .addComponent(jLabel61))
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGap(25, 25, 25)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel68)
-                                    .addComponent(jLabel65)
-                                    .addComponent(codeBatchTextField)
-                                    .addComponent(jLabel66)
-                                    .addComponent(jXDatePicker2, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
-                                    .addComponent(jXDatePicker1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel136, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel68)
+                                        .addComponent(jLabel65)
+                                        .addComponent(codeBatchTextField)
+                                        .addComponent(jLabel66)
+                                        .addComponent(jXDatePicker2, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)))))
                         .addGap(33, 33, 33)
                         .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1142,9 +1147,9 @@ public class Maintenance extends javax.swing.JFrame {
                                 .addComponent(codeBatchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel66)
-                                .addGap(18, 18, 18)
-                                .addComponent(jXDatePicker1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addGap(26, 26, 26)
+                                .addComponent(jLabel136, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel68)
                                 .addGap(18, 18, 18)
                                 .addComponent(jXDatePicker2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2146,19 +2151,23 @@ public class Maintenance extends javax.swing.JFrame {
             } else if (codeBatchTextField.getText().equals("") || jXDatePicker2.getDate().toString().equals("")) {
                 jLabel67.setText("Ingrese todos los datos.");
             } else {
-                
                 DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-                String packedDate = dateFormat.format(jXDatePicker1.getDate());
                 Calendar calendar = Calendar.getInstance();
-                int hour = calendar.get(Calendar.HOUR);
+                int hour = calendar.get(Calendar.HOUR_OF_DAY);
                 int minutes = calendar.get(Calendar.MINUTE);
                 String expirationDate = dateFormat.format(jXDatePicker2.getDate());
-                crudMaintenance.addBacth(codeBatchTextField.getText(), packedDate + " " +hour + ":" + minutes, expirationDate);
-                jLabel67.setText("Lote agregado");
-                codeBatchTextField.setText("");
+                if(dateFormat.parse(expirationDate).before(dateFormat.parse(jLabel136.getText()))) {
+                    jLabel67.setText("La fecha de expiración es incorrecta.");
+                } else {
+                    crudMaintenance.addBacth(codeBatchTextField.getText(), jLabel136.getText() + " " + hour + ":" + minutes, expirationDate);
+                    jLabel67.setText("Lote agregado");
+                    codeBatchTextField.setText("");
+                }
             }
         } catch (NullPointerException nullPointerException) {
             jLabel67.setText("Debe ingresar todos los datos.");
+        } catch (ParseException ex) {
+            Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
         } 
     }//GEN-LAST:event_addBatchButtonActionPerformed
 
@@ -2606,6 +2615,7 @@ public class Maintenance extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel133;
     private javax.swing.JLabel jLabel134;
     private javax.swing.JLabel jLabel135;
+    private javax.swing.JLabel jLabel136;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel140;
     private javax.swing.JLabel jLabel141;
@@ -2736,7 +2746,6 @@ public class Maintenance extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField15;
-    private org.jdesktop.swingx.JXDatePicker jXDatePicker1;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker2;
     private javax.swing.JLabel latitudeCellarLabel;
     private javax.swing.JTextField latitudeCellarTextField;

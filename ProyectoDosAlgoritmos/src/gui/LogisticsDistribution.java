@@ -306,7 +306,17 @@ public class LogisticsDistribution extends javax.swing.JFrame {
     }//GEN-LAST:event_returnLoginButtonActionPerformed
 
     private void listProductsValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listProductsValueChanged
-
+        try {
+            for (int i = 0; i < productsBinaryTree.getSize(); i++) {
+                Product tempProduct = (Product) productsBinaryTree.recorreArbol().get(i);
+                if (tempProduct.getName().equals(listProducts.getSelectedValue())) {
+                    ImageIcon imageIcon = new ImageIcon(tempProduct.getUrl());
+                    jLabel2.setIcon(imageIcon);
+                }
+            }
+        } catch (TreeException ex) {
+            Logger.getLogger(LogisticsDistribution.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_listProductsValueChanged
 
     private void cellarListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cellarListMouseClicked
@@ -356,9 +366,6 @@ public class LogisticsDistribution extends javax.swing.JFrame {
                 for (int i = 0; i < productsBinaryTree.getSize(); i++) {
                     Product tempProduct = (Product) productsBinaryTree.recorreArbol().get(i);
                     if (tempProduct.getName().equals(listProducts.getSelectedValue())) {
-                        ImageIcon imageIcon = new ImageIcon(tempProduct.getUrl());
-                        jLabel2.setIcon(imageIcon);
-
                         tableProduct.setAmount(tempProduct.getPrice());
                         tableProduct.setProduct(tempProduct.getName());
                         Iterator iterator = categoryMap.keySet().iterator();

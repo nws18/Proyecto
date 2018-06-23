@@ -1045,13 +1045,15 @@
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="jLabel68" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel65" min="-2" max="-2" attributes="0"/>
-                                              <Component id="codeBatchTextField" max="32767" attributes="0"/>
-                                              <Component id="jLabel66" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jXDatePicker2" alignment="0" pref="153" max="32767" attributes="0"/>
-                                              <Component id="jXDatePicker1" max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel136" min="-2" pref="153" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="jLabel68" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel65" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="codeBatchTextField" max="32767" attributes="0"/>
+                                                  <Component id="jLabel66" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jXDatePicker2" alignment="0" pref="153" max="32767" attributes="0"/>
+                                              </Group>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -1265,9 +1267,9 @@
                                           <Component id="codeBatchTextField" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="jLabel66" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                          <Component id="jXDatePicker1" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                          <Component id="jLabel136" min="-2" pref="21" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Component id="jLabel68" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="jXDatePicker2" min="-2" max="-2" attributes="0"/>
@@ -1512,7 +1514,7 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel76">
                 </Component>
-                <Component class="org.jdesktop.swingx.JXDatePicker" name="jXDatePicker1">
+                <Component class="javax.swing.JLabel" name="jLabel136">
                 </Component>
               </SubComponents>
             </Container>

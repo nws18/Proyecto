@@ -3,12 +3,10 @@ package proyectodosalgoritmos;
 
 import LinkedBinaryTree.TreeException;
 import gui.Login;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import lab_grafos_algoritmos.GraphException;
-import tda.CrudMaintenance;
 import tda.LoadTda;
 
 /**
@@ -30,7 +28,7 @@ public class ProyectoDosAlgoritmos {
             loadTda.tdaBatch();
             loadTda.tdaTransportUnit();
             loadTda.tdaCellar();
-            loadTda.tdaDistributionOrder();
+//            loadTda.tdaDistributionOrder();
             loadTda.tdaUser();
         } catch (IOException | ClassNotFoundException | GraphException | TreeException ex) {
             Logger.getLogger(ProyectoDosAlgoritmos.class.getName()).log(Level.SEVERE, null, ex);

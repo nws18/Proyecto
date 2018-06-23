@@ -36,6 +36,7 @@ public class Administrator extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Administrador");
+        setLocation(new java.awt.Point(300, 150));
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 153));
 
