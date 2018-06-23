@@ -2,6 +2,7 @@
 package domain;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.LinkedList;
 
 /**
@@ -17,122 +18,89 @@ public class DistributionOrder  implements java.io.Serializable{
     private float weightTotal;
     private ArrayList<Product> productList;
     private int idOperator;
+    private String orderDate;
 
-    public DistributionOrder() {
+    @Override
+    public String toString() {
+        return "DistributionOrder{" + "idDistributionOrder=" + idDistributionOrder + ", idOriginCellar=" + idOriginCellar + ", idDestinyCellar=" + idDestinyCellar + ", totalAmount=" + totalAmount + ", weightTotal=" + weightTotal + ", productList=" + productList + ", idOperator=" + idOperator + ", orderDate=" + orderDate + '}';
     }
 
-    public DistributionOrder(int idDistributionOrder, int idOriginCellar, int idDestinyCellar, double totalAmount, float weightTotal, ArrayList<Product> productList, int idOperator) {
-        this.idDistributionOrder = idDistributionOrder;
-        this.idOriginCellar = idOriginCellar;
-        this.idDestinyCellar = idDestinyCellar;
-        this.totalAmount = totalAmount;
-        this.weightTotal = weightTotal;
-        this.productList = productList;
-        this.idOperator = idOperator;
-    }
-
-    /**
-     * @return the idDistributionOrder
-     */
     public int getIdDistributionOrder() {
         return idDistributionOrder;
     }
 
-    /**
-     * @param idDistributionOrder the idDistributionOrder to set
-     */
     public void setIdDistributionOrder(int idDistributionOrder) {
         this.idDistributionOrder = idDistributionOrder;
     }
 
-    /**
-     * @return the idOriginCellar
-     */
     public int getIdOriginCellar() {
         return idOriginCellar;
     }
 
-    /**
-     * @param idOriginCellar the idOriginCellar to set
-     */
     public void setIdOriginCellar(int idOriginCellar) {
         this.idOriginCellar = idOriginCellar;
     }
 
-    /**
-     * @return the idDestinyCellar
-     */
     public int getIdDestinyCellar() {
         return idDestinyCellar;
     }
 
-    /**
-     * @param idDestinyCellar the idDestinyCellar to set
-     */
     public void setIdDestinyCellar(int idDestinyCellar) {
         this.idDestinyCellar = idDestinyCellar;
     }
 
-    /**
-     * @return the totalAmount
-     */
     public double getTotalAmount() {
         return totalAmount;
     }
 
-    /**
-     * @param totalAmount the totalAmount to set
-     */
     public void setTotalAmount(double totalAmount) {
         this.totalAmount = totalAmount;
     }
 
-    /**
-     * @return the weightTotal
-     */
     public float getWeightTotal() {
         return weightTotal;
     }
 
-    /**
-     * @param weightTotal the weightTotal to set
-     */
     public void setWeightTotal(float weightTotal) {
         this.weightTotal = weightTotal;
     }
 
-    /**
-     * @return the productList
-     */
     public ArrayList<Product> getProductList() {
         return productList;
     }
 
-    /**
-     * @param productList the productList to set
-     */
     public void setProductList(ArrayList<Product> productList) {
         this.productList = productList;
     }
 
-    /**
-     * @return the idOperator
-     */
     public int getIdOperator() {
         return idOperator;
     }
 
-    /**
-     * @param idOperator the idOperator to set
-     */
     public void setIdOperator(int idOperator) {
         this.idOperator = idOperator;
     }
 
-    @Override
-    public String toString() {
-        return "DistributionOrder{" + "idDistributionOrder=" + idDistributionOrder + ", idOriginCellar=" + idOriginCellar + ", idDestinyCellar=" + idDestinyCellar + ", totalAmount=" + totalAmount + ", weightTotal=" + weightTotal + ", productList=" + productList + ", idOperator=" + idOperator + '}';
+    public String getOrderDate() {
+        return orderDate;
     }
-    
-    
+
+    public void setOrderDate(String orderDate) {
+        this.orderDate = orderDate;
+    }
+
+    public DistributionOrder(int idDistributionOrder, int idOriginCellar, int idDestinyCellar, double totalAmount, float weightTotal, ArrayList<Product> productList, int idOperator, String orderDate) {
+        this.idDistributionOrder = idDistributionOrder;
+        this.idOriginCellar = idOriginCellar;
+        this.idDestinyCellar = idDestinyCellar;
+        this.totalAmount = totalAmount;
+        this.weightTotal = weightTotal;
+        this.productList = productList;
+        this.idOperator = idOperator;
+        this.orderDate = orderDate;
+    }
+
+    public DistributionOrder() {
+    }
+
 }

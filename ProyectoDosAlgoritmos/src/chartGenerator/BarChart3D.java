@@ -24,7 +24,7 @@ import org.jfree.data.category.DefaultCategoryDataset;
  */
 public class BarChart3D {
      public void BarChart(JPanel jpanel) throws IOException{
-        final String fait = "FAIT";              
+      final String fait = "FAIT";              
       final String audi = "AUDI";              
       final String ford = "FORD";              
       final String speed = "Speed";              
@@ -53,9 +53,9 @@ public class BarChart3D {
       dataset.addValue( 6.0 , ford , safety );                 
       
       JFreeChart barChart = ChartFactory.createBarChart3D(
-         "Car Usage Statistics",             
-         "Category",             
-         "Score",             
+         "Venta por bodega de los últimos tres meses.",             
+         "Meses",             
+         "Ventas",             
          dataset,            
          PlotOrientation.VERTICAL,             
          true, true, false);
@@ -69,6 +69,49 @@ public class BarChart3D {
 //      int height = 480; /* Height of the image */                              
 ////      File barChart3D = new File( "barChart3D.jpeg" );                            
 //      ChartUtilities.saveChartAsJPEG( barChart3D, barChart, width, height);
+    }
+     public String getMonthName(int monthNumber) {
+        String month = "";
+        switch (monthNumber) {
+
+            case 1:
+                month = "enero";
+                break;
+            case 2:
+                month = "febrero";
+                break;
+            case 3:
+                month = "marzo";
+                break;
+            case 4:
+                month = "abril";
+                break;
+            case 5:
+                month = "mayo";
+                break;
+            case 6:
+                month = "junio";
+                break;
+            case 7:
+                month = "julio";
+                break;
+            case 8:
+                month = "agosto";
+                break;
+            case 9:
+                month = "septiembre";
+                break;
+            case 10:
+                month = "octubre";
+                break;
+            case 11:
+                month = "noviembre";
+                break;
+            case 12:
+                month = "diciembre";
+                break;
+        }
+        return month;
     }
     
 }

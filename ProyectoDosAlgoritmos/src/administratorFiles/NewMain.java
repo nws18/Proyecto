@@ -43,16 +43,16 @@ public class NewMain {
 //        ArrayList<TransportUnit> transportUnitList = new ArrayList();
 //        ArrayList<User> UserList = new ArrayList();
 
-        Batch batch0 = new Batch(0, "IDRHFU45T45", "01-01-2018 12:30", "13-03-2018");
-        Batch batch1 = new Batch(1, "KJBFH45G54G", "08-02-2018 10:25", "01-04-2018");
-        Batch batch2 = new Batch(2, "EARGE56YHRT", "05-03-2018 11:45", "23-05-2018");
-        Batch batch3 = new Batch(3, "ERGRTERHRHT", "22-04-2018 9:10", "15-06-2018");
-        Batch batch4 = new Batch(4, "DFVKNSKJVNJ", "28-05-2018 8:01", "18-10-2018");
-        batchList.add(batch0);
-        batchList.add(batch1);
-        batchList.add(batch2);
-        batchList.add(batch3);
-        batchList.add(batch4);
+//        Batch batch0 = new Batch(0, "IDRHFU45T45", "01-01-2018 12:30", "13-03-2018");
+//        Batch batch1 = new Batch(1, "KJBFH45G54G", "08-02-2018 10:25", "01-04-2018");
+//        Batch batch2 = new Batch(2, "EARGE56YHRT", "05-03-2018 11:45", "23-05-2018");
+//        Batch batch3 = new Batch(3, "ERGRTERHRHT", "22-04-2018 9:10", "15-06-2018");
+//        Batch batch4 = new Batch(4, "DFVKNSKJVNJ", "28-05-2018 8:01", "18-10-2018");
+//        batchList.add(batch0);
+//        batchList.add(batch1);
+//        batchList.add(batch2);
+//        batchList.add(batch3);
+//        batchList.add(batch4);
 //
 //        Category category0 = new Category(0, "Higiene", "Productos para el higiene y ciudado personal");
 //        Category category1 = new Category(1, "Hogar", "Productos de limpieza para el hogar");
@@ -76,22 +76,22 @@ public class NewMain {
 //        cellarList.add(cellar3);
 //        cellarList.add(cellar4);
 
-        Product product0 = new Product(0, "Aceite", "Unidades", 20, 1, "Aceite de cocina", 0, 4, 2000, "images/products/aceite.png");
-        Product product1 = new Product(1, "Arroz", "Paquetes", 100, 2, "Arroz, 2kg", 1, 1, 12500, "images/products/arroz.png");
-        Product product2 = new Product(2, "Cereal", "Cajas", 10, 1, "Cereal", 2, 2, 10500, "images/products/cereal.png");
-        Product product3 = new Product(3, "Gaseosas", "Tarimas", 15, 20, "Refresco gaseoso", 3, 3, 25500, "images/products/");
-        Product product4 = new Product(4, "Cervezas", "Tarimas", 10, 30, "Bebida alcoholica", 4, 4, 40500, "images/products/");
-        productList.add(product0);
-        productList.add(product1);
-        productList.add(product2);
-        productList.add(product3);
-        productList.add(product4);
+//        Product product0 = new Product(0, "Aceite", "Unidades", 20, 1, "Aceite de cocina", 0, 4, 2000, "images/products/aceite.png");
+//        Product product1 = new Product(1, "Arroz", "Paquetes", 100, 2, "Arroz, 2kg", 1, 1, 12500, "images/products/arroz.png");
+//        Product product2 = new Product(2, "Cereal", "Cajas", 10, 1, "Cereal", 2, 2, 10500, "images/products/cereal.png");
+//        Product product3 = new Product(3, "Gaseosas", "Tarimas", 15, 20, "Refresco gaseoso", 3, 3, 25500, "images/products/");
+//        Product product4 = new Product(4, "Cervezas", "Tarimas", 10, 30, "Bebida alcoholica", 4, 4, 40500, "images/products/");
+//        productList.add(product0);
+//        productList.add(product1);
+//        productList.add(product2);
+//        productList.add(product3);
+//        productList.add(product4);
 //
-        DistributionOrder distributionOrder0 = new DistributionOrder(0, 0, 1, 100000, 5000, productList, 0);
-        DistributionOrder distributionOrder1 = new DistributionOrder(1, 1, 2, 200000, 10000, productList, 1);
-        DistributionOrder distributionOrder2 = new DistributionOrder(2, 2, 3, 300000, 60000, productList, 2);
-        DistributionOrder distributionOrder3 = new DistributionOrder(3, 3, 4, 400000, 70000, productList, 3);
-        DistributionOrder distributionOrder4 = new DistributionOrder(4, 4, 0, 500000, 90000, productList, 4);
+        DistributionOrder distributionOrder0 = new DistributionOrder(0, 0, 1, 100000, 5000, productList, 0, "12-12-2017");
+        DistributionOrder distributionOrder1 = new DistributionOrder(1, 1, 2, 200000, 10000, productList, 1, "05-01-2018");
+        DistributionOrder distributionOrder2 = new DistributionOrder(2, 2, 3, 300000, 60000, productList, 2,  "11-05-2018");
+        DistributionOrder distributionOrder3 = new DistributionOrder(3, 3, 4, 400000, 70000, productList, 3,  "22-02-2018");
+        DistributionOrder distributionOrder4 = new DistributionOrder(4, 4, 0, 500000, 90000, productList, 4, "26-03-2018");
         distributionOrderList.add(distributionOrder0);
         distributionOrderList.add(distributionOrder1);
         distributionOrderList.add(distributionOrder2);
@@ -129,12 +129,12 @@ public class NewMain {
 //        administratorFiles.writeUserFile(UserList);
 
         LinkedBinaryTree linkedBinaryTree = new LinkedBinaryTree();
-        linkedBinaryTree.insert(product0);
-        linkedBinaryTree.insert(product1);
-        linkedBinaryTree.insert(product2);
-        linkedBinaryTree.insert(product3);
-        linkedBinaryTree.insert(product4);
-//        
+//        linkedBinaryTree.insert(product0);
+//        linkedBinaryTree.insert(product1);
+//        linkedBinaryTree.insert(product2);
+//        linkedBinaryTree.insert(product3);
+//        linkedBinaryTree.insert(product4);
+////        
 //        ArrayList<Product> tempArray = linkedBinaryTree.recorreArbol();
 //        
 //        for (int i = 0; i < tempArray.size(); i++) {
