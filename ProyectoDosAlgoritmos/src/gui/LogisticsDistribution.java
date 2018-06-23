@@ -26,6 +26,7 @@ import static tda.LoadTda.categoryMap;
 import static tda.LoadTda.cellarGraph;
 import static tda.LoadTda.distributionOrderList;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Container;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
@@ -103,6 +104,8 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jPanel3 = new javax.swing.JPanel();
+        labelTruck = new javax.swing.JLabel();
+        nameTruck = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -128,7 +131,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         jScrollPane1.setViewportView(listProducts);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 104, 139));
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, 142, 81));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 142, 81));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -144,10 +147,10 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTable1);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, 88));
-        jPanel1.add(progressBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 400, 285, 32));
+        jPanel1.add(progressBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, 340, 32));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/furgoneta-de-reparto.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/logistica.png"))); // NOI18N
         jLabel3.setText("Logística de distribución");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 20, -1, -1));
 
@@ -220,6 +223,11 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 110, 686, 439));
+        jPanel1.add(labelTruck, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, 80, 70));
+
+        nameTruck.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+        nameTruck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/truck.png"))); // NOI18N
+        jPanel1.add(nameTruck, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, 190, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -301,7 +309,6 @@ public class LogisticsDistribution extends javax.swing.JFrame {
 //        progressBar.setValue((int) result);
 //
 //    }
-
 
     private void returnLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnLoginButtonActionPerformed
         Login login = new Login();
@@ -385,16 +392,47 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         }
         int total = 0;
         for (int i = 0; i < tableList.size(); i++) {
-              TableProduct tempTableProduct = tableList.get(i);
-              total += tempTableProduct.getWeight();
+            TableProduct tempTableProduct = tableList.get(i);
+            total += tempTableProduct.getWeight();
         }
-        
-        double totalDouble = (double) total;
-        double hundred = 100.0;
-        double maxWeight = 30000.0;
-        double progress = ((total/maxWeight) * hundred);
-       
+        double progress = 0;
+        if (total < 1000) {
+            ImageIcon imageIcon = new ImageIcon("images/transport/small.png");
+            labelTruck.setIcon(imageIcon);
+            nameTruck.setText("Capacidad: 1 tonelada");
+            double totalDouble = (double) total;
+            double hundred = 100.0;
+            double maxWeight = 1000.0;
+            progress = ((total / maxWeight) * hundred);
+        } else if (total >= 1000 && total < 5000) {
+             ImageIcon imageIcon = new ImageIcon("images/transport/medium.png");
+            labelTruck.setIcon(imageIcon);
+            nameTruck.setText("Capacidad: 5 toneladas");
+            double totalDouble = (double) total;
+            double hundred = 100.0;
+            double maxWeight = 5000.0;
+            progress = ((total / maxWeight) * hundred);
+        } else if (total >= 5000 && total < 10000) {
+             ImageIcon imageIcon = new ImageIcon("images/transport/big.png");
+            labelTruck.setIcon(imageIcon);
+            nameTruck.setText("Capacidad: 10 toneladas");
+            double totalDouble = (double) total;
+            double hundred = 100.0;
+            double maxWeight = 10000.0;
+            progress = ((total / maxWeight) * hundred);
+        } else if (total >= 10000 && total <= 30000) {
+            ImageIcon imageIcon = new ImageIcon("images/transport/giant.png");
+            labelTruck.setIcon(imageIcon);
+            nameTruck.setText("Capacidad: 30 toneladas");
+            double totalDouble = (double) total;
+            double hundred = 100.0;
+            double maxWeight = 30000.0;
+            progress = ((total / maxWeight) * hundred);
+
+        }
+
         progressBar.setValue((int) progress);
+        progressBar.setStringPainted(true);
         fillTable();
     }//GEN-LAST:event_listProductsMousePressed
     private int getValue(String name) throws TreeException {
@@ -496,7 +534,9 @@ public class LogisticsDistribution extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JLabel labelTruck;
     private javax.swing.JList<String> listProducts;
+    private javax.swing.JLabel nameTruck;
     private javax.swing.JProgressBar progressBar;
     private javax.swing.JButton returnLoginButton;
     // End of variables declaration//GEN-END:variables
