@@ -1077,7 +1077,8 @@ public class Maintenance extends javax.swing.JFrame {
                                         .addContainerGap())))))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(55, 55, 55)
-                        .addComponent(jLabel73, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jLabel73, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -1117,8 +1118,8 @@ public class Maintenance extends javax.swing.JFrame {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(updateBatchButton))
                                 .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                        .addComponent(jLabel73, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel73, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1158,7 +1159,7 @@ public class Maintenance extends javax.swing.JFrame {
                             .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel67, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel67, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
                             .addComponent(jLabel71, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
@@ -1832,6 +1833,9 @@ public class Maintenance extends javax.swing.JFrame {
             Path destiny = Paths.get(origin.getFileName().toString());
 
             try {
+                if (Files.exists(destiny)) {
+                    updateImageTextField.setText(destiny.toString());
+                }
                 Files.copy(origin, destiny, StandardCopyOption.COPY_ATTRIBUTES);
                 updateImageTextField.setText(destiny.toString());
             } catch (IOException ex) {
@@ -2071,10 +2075,13 @@ public class Maintenance extends javax.swing.JFrame {
             String path = file.toString();
             Path origin = Paths.get(path);
             Path destiny = Paths.get(origin.getFileName().toString());
-
             try {
-                Files.copy(origin, destiny, StandardCopyOption.COPY_ATTRIBUTES);
-                imageTransportUnitTextField.setText(destiny.toString());
+                if (Files.exists(destiny)) {
+                    imageTransportUnitTextField.setText(destiny.toString());
+                } else {
+                    Files.copy(origin, destiny, StandardCopyOption.COPY_ATTRIBUTES);
+                    imageTransportUnitTextField.setText(destiny.toString());
+                }
             } catch (IOException ex) {
                 Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -2109,6 +2116,9 @@ public class Maintenance extends javax.swing.JFrame {
             Path destiny = Paths.get(origin.getFileName().toString());
 
             try {
+                if (Files.exists(destiny)) {
+                    updateImageTransport.setText(destiny.toString());
+                }
                 Files.copy(origin, destiny, StandardCopyOption.COPY_ATTRIBUTES);
                 updateImageTransport.setText(destiny.toString());
             } catch (IOException ex) {
@@ -2176,16 +2186,23 @@ public class Maintenance extends javax.swing.JFrame {
         if(batchCodeLabel.getText().equals("") || expirationDatePicker.getDate().toString().equals("")) {
            jLabel73.setText("Debe ingresar todos los datos");
        } else if(crudMaintenance.existsBatch(updateSearchBatchCodeTextField.getText())){
+           Batch batch = crudMaintenance.getBatch(updateSearchBatchCodeTextField.getText());
             DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
             String expirationDate = dateFormat.format(expirationDatePicker.getDate());
-           crudMaintenance.updateBatch(updateSearchBatchCodeTextField.getText(), batchCodeLabel.getText(), expirationDate);
-           jLabel73.setText("Información actualizada");
-           updateSearchBatchCodeTextField.setText("");
-           batchCodeLabel.setText("");
+            if(dateFormat.parse(expirationDate).before(dateFormat.parse(batch.getPackedDate()))) {
+                jLabel73.setText("<html><p>Fecha de vencimiento incorrecta, la fecha de empaque es: " + batch.getPackedDate()+"</html></p>");
+            } else {
+                crudMaintenance.updateBatch(updateSearchBatchCodeTextField.getText(), batchCodeLabel.getText(), expirationDate);
+                jLabel73.setText("Información actualizada");
+                updateSearchBatchCodeTextField.setText("");
+                batchCodeLabel.setText("");
+            }
        }
        } catch(NullPointerException nullPointerException) {
            jLabel73.setText("Debe ingresar todos los datos.");
-       }
+       } catch (ParseException ex) {
+            Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_updateBatchButtonActionPerformed
 
     private void addImageCellarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addImageCellarButtonActionPerformed
@@ -2200,6 +2217,9 @@ public class Maintenance extends javax.swing.JFrame {
             Path destiny = Paths.get(origin.getFileName().toString());
 
             try {
+                if (Files.exists(destiny)) {
+                    imageCellarTextField.setText(destiny.toString());
+                }
                 Files.copy(origin, destiny, StandardCopyOption.COPY_ATTRIBUTES);
                 imageCellarTextField.setText(destiny.toString());
             } catch (IOException ex) {
@@ -2292,6 +2312,9 @@ public class Maintenance extends javax.swing.JFrame {
             Path destiny = Paths.get(origin.getFileName().toString());
 
             try {
+                if (Files.exists(destiny)) {
+                    imageProductTextField.setText(destiny.toString());
+                }
                 Files.copy(origin, destiny, StandardCopyOption.COPY_ATTRIBUTES);
                 imageProductTextField.setText(destiny.toString());
             } catch (IOException ex) {
@@ -2443,6 +2466,9 @@ public class Maintenance extends javax.swing.JFrame {
             Path destiny = Paths.get(origin.getFileName().toString());
 
             try {
+                if (Files.exists(destiny)) {
+                    updateImageProductTextField.setText(destiny.toString());
+                }
                 Files.copy(origin, destiny, StandardCopyOption.COPY_ATTRIBUTES);
                 updateImageProductTextField.setText(destiny.toString());
             } catch (IOException ex) {

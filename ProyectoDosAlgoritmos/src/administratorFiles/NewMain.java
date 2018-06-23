@@ -37,7 +37,7 @@ public class NewMain {
 //
         ArrayList<Batch> batchList = new ArrayList();
 //        ArrayList<Category> categoryList = new ArrayList();
-//        ArrayList<Cellar> cellarList = new ArrayList();
+        ArrayList<Cellar> cellarList = new ArrayList();
         ArrayList<DistributionOrder> distributionOrderList = new ArrayList();
         ArrayList<Product> productList = new ArrayList();
 //        ArrayList<TransportUnit> transportUnitList = new ArrayList();
@@ -120,10 +120,10 @@ public class NewMain {
 //        UserList.add(user3);
 //        UserList.add(user4);
 //
-        administratorFiles.writeBatchFile(batchList);
+//        administratorFiles.writeBatchFile(batchList);
 //        administratorFiles.writeCategoryFile(categoryList);
 //        administratorFiles.writeCellarFile(cellarList);
-//        administratorFiles.writeDistributionOrderFile(distributionOrderList);
+        administratorFiles.writeDistributionOrderFile(distributionOrderList);
 //        administratorFiles.writeProductFile(productList);
 //        administratorFiles.writeTransportUnitFile(transportUnitList);
 //        administratorFiles.writeUserFile(UserList);

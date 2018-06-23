@@ -28,7 +28,7 @@ public class ProyectoDosAlgoritmos {
             loadTda.tdaBatch();
             loadTda.tdaTransportUnit();
             loadTda.tdaCellar();
-//            loadTda.tdaDistributionOrder();
+            loadTda.tdaDistributionOrder();
             loadTda.tdaUser();
         } catch (IOException | ClassNotFoundException | GraphException | TreeException ex) {
             Logger.getLogger(ProyectoDosAlgoritmos.class.getName()).log(Level.SEVERE, null, ex);

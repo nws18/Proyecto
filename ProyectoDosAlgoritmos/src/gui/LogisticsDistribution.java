@@ -19,6 +19,9 @@ import static tda.LoadTda.categoryMap;
 import static tda.LoadTda.cellarGraph;
 import static tda.LoadTda.distributionOrderList;
 import java.awt.BorderLayout;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import static tda.LoadTda.productsBinaryTree;
 
 /**
@@ -48,7 +51,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
 //            
 //        }
 //        listProducts.setModel(modelo);
-        String[] arrayCellar = new String[batchMap.size()];
+        String[] arrayCellar = new String[cellarGraph.list().size()];
         for (int i = 0; i < cellarGraph.list().size(); i++) {
             Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
             arrayCellar[i] = tempCellar.getName();
@@ -231,7 +234,9 @@ public class LogisticsDistribution extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
-
+        Date date = new Date();
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        String orderDate = dateFormat.format(date);
         try {
             DistributionOrder distributionOrder = new DistributionOrder();
             distributionOrder.setProductList(getProducts());
@@ -241,6 +246,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
             distributionOrder.setIdDestinyCellar(getCellarId());
             distributionOrder.setIdOperator(userId);
             distributionOrder.setIdOriginCellar(0);
+            distributionOrder.setOrderDate(orderDate);
             distributionOrderList.add(distributionOrder);
             System.out.println(distributionOrder.toString());
         } catch (TreeException ex) {
