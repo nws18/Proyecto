@@ -1,7 +1,7 @@
 
-package binarytree;
+package LinkedBinaryTree;
 
-import Exception.TreeException;
+import LinkedBinaryTree.TreeException;
 
 /**
  *

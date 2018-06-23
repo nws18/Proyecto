@@ -1,5 +1,5 @@
 
-package binarytree;
+package LinkedBinaryTree;
 
 /**
  *

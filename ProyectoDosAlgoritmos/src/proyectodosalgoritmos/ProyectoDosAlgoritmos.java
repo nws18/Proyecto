@@ -1,7 +1,7 @@
 
 package proyectodosalgoritmos;
 
-import Exception.TreeException;
+import LinkedBinaryTree.TreeException;
 import gui.Login;
 import java.io.FileNotFoundException;
 import java.io.IOException;

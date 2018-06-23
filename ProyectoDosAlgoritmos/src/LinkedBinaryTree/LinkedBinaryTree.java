@@ -1,7 +1,7 @@
 
-package binarytree;
+package LinkedBinaryTree;
 
-import Exception.TreeException;
+import LinkedBinaryTree.TreeException;
 import domain.Product;
 import java.util.ArrayList;
 import java.util.Random;
@@ -271,31 +271,22 @@ public class LinkedBinaryTree implements BinaryTreeInterface{
         return arrayList;
     }
     
-//    public ArrayList recorreArbol(){ 
-//        recorreArbol(root);
-//        return arrayList;
-//    }        
-//    private String recorreArbol(BinaryNode node  ) {
-//        String temp = "";
-//
-//        if(node!= null) {
-//           
-//            
-//            temp += postOrder(node.left);
-//            temp += postOrder(node.right);
-//            temp += node.element; 
-//            
-////            if(node != null){
-////                arrayList.add(node.element);
-////            }
-////            if(node.left!=null){
-////                arrayList.add(node.left.element);
-////            }
-////            if(node.right!=null){
-////                arrayList.add(node.right.element);
-////            }
-////        }
-//        
-//        return temp;
-//    }
+    public ArrayList recorreArbol(){ 
+        recorreArbol(root,arrayList);
+        return arrayList;
+    }        
+    private void recorreArbol(BinaryNode node,ArrayList arrayList) {
+       
+
+        if(node!= null) {
+           
+           arrayList.add(node.element);
+           recorreArbol(node.left,arrayList);
+           recorreArbol(node.right,arrayList);
+           
+           
+            
+            
+        }
+    }
 }

@@ -1,6 +1,7 @@
 package gui;
 
-import Exception.TreeException;
+
+import LinkedBinaryTree.TreeException;
 import com.mxrck.autocompleter.TextAutoCompleter;
 import domain.Batch;
 import domain.Category;
@@ -1899,16 +1900,18 @@ public class Maintenance extends javax.swing.JFrame {
     }//GEN-LAST:event_deleteBatchButtonActionPerformed
 
     private void deleteProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteProductButtonActionPerformed
-        try {
+        
             if (crudMaintenance.existsProduct(deleteProductTextField.getText())) {
-                crudMaintenance.deleteProduct(deleteProductTextField.getText());
-                jLabel133.setText("Producto eliminado");
+                try {
+                    crudMaintenance.deleteProduct(deleteProductTextField.getText());
+                    jLabel133.setText("Producto eliminado");
+                } catch (TreeException ex) {
+                    Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
+                }
             } else {
                 jLabel133.setText("El producto no se encuentra registrado.");
             }
-        } catch (TreeException ex) {
-            Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       
     }//GEN-LAST:event_deleteProductButtonActionPerformed
 
     private void nameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTextFieldActionPerformed
@@ -2304,10 +2307,14 @@ public class Maintenance extends javax.swing.JFrame {
                             idCategory = category.getIdCategory();
                         }
                     }
-                    crudMaintenance.addProduct(nameProductTextField.getText(), unitMeasuredComboBox.getSelectedItem().toString(),
-                                               Integer.parseInt(unitValueTextField.getText()),Integer.parseInt(totalWeightTextField.getText()), 
-                                               descriptionProductTextField.getText(), idBatch, idCategory, Integer.parseInt(priceTextField.getText()), 
-                                               imageProductTextField.getText());
+                    try {
+                        crudMaintenance.addProduct(nameProductTextField.getText(), unitMeasuredComboBox.getSelectedItem().toString(),
+                                Integer.parseInt(unitValueTextField.getText()),Integer.parseInt(totalWeightTextField.getText()),
+                                descriptionProductTextField.getText(), idBatch, idCategory, Integer.parseInt(priceTextField.getText()),
+                                imageProductTextField.getText());
+                    } catch (TreeException ex) {
+                        Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                     jLabel36.setText("Producto agregado.");
                     nameProductTextField.setText("");
                     unitValueTextField.setText("");
@@ -2317,8 +2324,7 @@ public class Maintenance extends javax.swing.JFrame {
                     imageProductTextField.setText("");
                 }
             }
-        } catch (TreeException ex) {
-            Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
+       
         } catch (NumberFormatException numberFormatException) {
             jLabel36.setText("<html><p>Valor de unidad, peso y precio debe ser un valor entero.</html></p>");
         }

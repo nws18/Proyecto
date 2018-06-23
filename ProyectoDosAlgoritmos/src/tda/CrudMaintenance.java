@@ -1,6 +1,7 @@
 package tda;
 
-import Exception.TreeException;
+
+import LinkedBinaryTree.TreeException;
 import domain.Batch;
 import domain.Category;
 import domain.Cellar;
