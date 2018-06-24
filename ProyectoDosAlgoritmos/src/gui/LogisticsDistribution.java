@@ -9,6 +9,7 @@ import domain.Cellar;
 import domain.DistributionOrder;
 import domain.Product;
 import domain.TableProduct;
+//import static gui.ConfirmOrder.booleanConfirmOrder;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.logging.Level;
@@ -31,6 +32,7 @@ import static tda.LoadTda.productsBinaryTree;
  */
 public class LogisticsDistribution extends javax.swing.JFrame {
 
+    public static boolean confirm = false;
     static int userId = -1;
     /**
      * Creates new form NewJFrame
@@ -42,6 +44,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         initComponents();
         fillTable();
         loadMap("https://www.google.com/maps/@9.7808897,-84.1564765,8z");
+
 //        progressBar();
 //       
 //        DefaultListModel modelo = new DefaultListModel();
@@ -120,7 +123,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(listProducts);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 104, 139));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 110, 140, 150));
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 142, 81));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -162,7 +165,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(cellarList);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 480, 115, 138));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, 140, 138));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/mapas-y-banderas.png"))); // NOI18N
@@ -234,27 +237,30 @@ public class LogisticsDistribution extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
-        Date date = new Date();
-        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-        String orderDate = dateFormat.format(date);
-        try {
-            DistributionOrder distributionOrder = new DistributionOrder();
-            distributionOrder.setProductList(getProducts());
-            distributionOrder.setIdDistributionOrder(distributionOrderList.size());
-            distributionOrder.setTotalAmount(Double.parseDouble(String.valueOf(getTotalAmount())));
-            distributionOrder.setWeightTotal(Float.parseFloat(String.valueOf(getTotalWeight())));
-            distributionOrder.setIdDestinyCellar(getCellarId());
-            distributionOrder.setIdOperator(userId);
-            distributionOrder.setIdOriginCellar(0);
-            distributionOrder.setOrderDate(orderDate);
-            distributionOrderList.add(distributionOrder);
-            System.out.println(distributionOrderList.toString());
-        } catch (TreeException ex) {
-            Logger.getLogger(LogisticsDistribution.class.getName()).log(Level.SEVERE, null, ex);
+        ConfirmOrder confirmOrder = new ConfirmOrder();
+        confirmOrder.setVisible(true);
+        if (confirmOrder.booleanConfirmOrder()) {
+            Date date = new Date();
+            DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+            String orderDate = dateFormat.format(date);
+            try {
+                DistributionOrder distributionOrder = new DistributionOrder();
+                distributionOrder.setProductList(getProducts());
+                distributionOrder.setIdDistributionOrder(distributionOrderList.size());
+                distributionOrder.setTotalAmount(Double.parseDouble(String.valueOf(getTotalAmount())));
+                distributionOrder.setWeightTotal(Float.parseFloat(String.valueOf(getTotalWeight())));
+                distributionOrder.setIdDestinyCellar(getCellarId());
+                distributionOrder.setIdOperator(userId);
+                distributionOrder.setIdOriginCellar(0);
+                distributionOrder.setOrderDate(orderDate);
+                distributionOrderList.add(distributionOrder);
+                System.out.println(distributionOrderList.toString());
+            } catch (TreeException ex) {
+                Logger.getLogger(LogisticsDistribution.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
-//        ConfirmOrder confirmOrder = new ConfirmOrder();
-//        confirmOrder.setVisible(true);
     }//GEN-LAST:event_confirmButtonActionPerformed
+
     private int getTotalAmount() {
         int total = 0;
         for (int i = 0; i < tableList.size(); i++) {
@@ -295,15 +301,6 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         }
         return arrayListProducts;
     }
-
-//    private void progressBar() {
-//        double a = 5000.0;
-//        double b = 30000.0;
-//        double c = 100.0;
-//        double result = (a / b) * c;
-//        progressBar.setValue((int) result);
-//
-//    }
 
     private void returnLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnLoginButtonActionPerformed
         Login login = new Login();
@@ -407,7 +404,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
             double maxWeight = 1000.0;
             progress = ((total / maxWeight) * hundred);
         } else if (total >= 1000 && total < 5000) {
-             ImageIcon imageIcon = new ImageIcon("images/transport/medium.png");
+            ImageIcon imageIcon = new ImageIcon("images/transport/medium.png");
             labelTruck.setIcon(imageIcon);
             nameTruck.setText("Capacidad: 5 toneladas");
             double totalDouble = (double) total;
@@ -415,7 +412,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
             double maxWeight = 5000.0;
             progress = ((total / maxWeight) * hundred);
         } else if (total >= 5000 && total < 10000) {
-             ImageIcon imageIcon = new ImageIcon("images/transport/big.png");
+            ImageIcon imageIcon = new ImageIcon("images/transport/big.png");
             labelTruck.setIcon(imageIcon);
             nameTruck.setText("Capacidad: 10 toneladas");
             double totalDouble = (double) total;

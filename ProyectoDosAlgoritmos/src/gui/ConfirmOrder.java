@@ -6,6 +6,7 @@
 package gui;
 
 import LinkedBinaryTree.TreeException;
+import static gui.LogisticsDistribution.confirm;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -14,6 +15,8 @@ import java.util.logging.Logger;
  * @author Nicole
  */
 public class ConfirmOrder extends javax.swing.JFrame {
+   
+
 
     /**
      * Creates new form ConfirmOrder
@@ -124,17 +127,20 @@ public class ConfirmOrder extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void confirmOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmOrderButtonActionPerformed
-       
+      confirm = true;
+        this.setVisible(false);
     }//GEN-LAST:event_confirmOrderButtonActionPerformed
 
     private void continueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continueButtonActionPerformed
-        try {
-            LogisticsDistribution logisticsDistribution = new LogisticsDistribution();
-            logisticsDistribution.setVisible(true);
-        } catch (TreeException ex) {
-            Logger.getLogger(ConfirmOrder.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        confirm = false;
+        this.setVisible(false);
     }//GEN-LAST:event_continueButtonActionPerformed
+   public boolean booleanConfirmOrder() {
+        if (confirm == true) {
+            return true;
+        }
+            return false;
+    }
 
     /**
      * @param args the command line arguments
