@@ -12,6 +12,9 @@ import domain.User;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.logging.Level;
@@ -34,10 +37,8 @@ public class Record extends javax.swing.JFrame {
     TableRowSorter tableRowSorterBatch;
     TableRowSorter tableRowSorterUser;
     private ArrayList<TableAdministrator> tableList = new ArrayList<>();
-    /**
-     * Creates new form Record
-     */
-    public Record() {
+    
+    public Record() throws ParseException {
         initComponents();
          BarChart3D barChart3D = new BarChart3D();
         try {
@@ -45,23 +46,29 @@ public class Record extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(Record.class.getName()).log(Level.SEVERE, null, ex);
         }
-        fillTable();
     }
     
-    private void fillTable() {
+    /**
+     * Llena la tabla de productos entregados según un rango de fechas.
+     * @throws ParseException 
+     */
+    private void fillTable() throws ParseException {
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         for (int i = 0; i < distributionOrderList.size(); i++) {
             DistributionOrder distributionOrder = distributionOrderList.get(i);
-            for (int j = 0; j < distributionOrder.getProductList().size(); j++) {
-                Product product = distributionOrder.getProductList().get(j);
-                TableAdministrator tableAdministrator = new TableAdministrator();
-                tableAdministrator.setProductName(product.getName());
-                
-                for (int k = 0; k < cellarGraph.list().size(); k++) {
-                    Cellar cellar = (Cellar) cellarGraph.list().get(k);
-                    if(cellar.getIdCellar() == distributionOrder.getIdDestinyCellar()) {
-                        tableAdministrator.setCellarName(cellar.getName());
+            if (dateFormat.parse(distributionOrder.getOrderDate()).after(jXDatePicker1.getDate())
+                    && dateFormat.parse(distributionOrder.getOrderDate()).before(jXDatePicker2.getDate())) {
+                for (int j = 0; j < distributionOrder.getProductList().size(); j++) {
+                    Product product = distributionOrder.getProductList().get(j);
+                    TableAdministrator tableAdministrator = new TableAdministrator();
+                    tableAdministrator.setProductName(product.getName());
+
+                    for (int k = 0; k < cellarGraph.list().size(); k++) {
+                        Cellar cellar = (Cellar) cellarGraph.list().get(k);
+                        if (cellar.getIdCellar() == distributionOrder.getIdDestinyCellar()) {
+                            tableAdministrator.setCellarName(cellar.getName());
+                        }
                     }
-                }
                 
                 Iterator iterator = categoryMap.keySet().iterator();
                 while (iterator.hasNext()) {
@@ -77,18 +84,19 @@ public class Record extends javax.swing.JFrame {
                     Integer key = (Integer) iterator2.next();
                     Batch batch = batchMap.get(key);
                     if(batch.getIdBatch() == product.getIdBatch()) {
-                        tableAdministrator.setBatchCode(batch.getBatchCode());
+                            tableAdministrator.setBatchCode(batch.getBatchCode());
+                        }
                     }
-                }
-          
-                for (int a = 0; a < userList.size(); a++) {
-                    User user = userList.get(a);
-                    if(user.getIdUser() == distributionOrder.getIdOperator()) {
-                        tableAdministrator.setOperatorName(user.getName());
-                    }
-                }
 
-                tableList.add(tableAdministrator);
+                    for (int a = 0; a < userList.size(); a++) {
+                        User user = userList.get(a);
+                        if (user.getIdUser() == distributionOrder.getIdOperator()) {
+                            tableAdministrator.setOperatorName(user.getName());
+                        }
+                    }
+
+                    tableList.add(tableAdministrator);
+                }
             }
         }
         
@@ -126,11 +134,18 @@ public class Record extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jXDatePicker1 = new org.jdesktop.swingx.JXDatePicker();
+        jXDatePicker2 = new org.jdesktop.swingx.JXDatePicker();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        searchButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Historial de productos");
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 153));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -145,6 +160,8 @@ public class Record extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(table);
 
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 521, 233));
+
         javax.swing.GroupLayout chartPanelLayout = new javax.swing.GroupLayout(chartPanel);
         chartPanel.setLayout(chartPanelLayout);
         chartPanelLayout.setHorizontalGroup(
@@ -155,6 +172,8 @@ public class Record extends javax.swing.JFrame {
             chartPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 374, Short.MAX_VALUE)
         );
+
+        jPanel1.add(chartPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(633, 80, -1, -1));
 
         returnMaintenanceButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         returnMaintenanceButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/salir-con-boton-en-esquema.png"))); // NOI18N
@@ -167,115 +186,83 @@ public class Record extends javax.swing.JFrame {
                 returnMaintenanceButtonActionPerformed(evt);
             }
         });
+        jPanel1.add(returnMaintenanceButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 500, -1, -1));
 
         categoryTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 categoryTextFieldKeyTyped(evt);
             }
         });
+        jPanel1.add(categoryTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, 72, -1));
 
         batchTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 batchTextFieldKeyTyped(evt);
             }
         });
+        jPanel1.add(batchTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 65, -1));
 
         userTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 userTextFieldKeyTyped(evt);
             }
         });
+        jPanel1.add(userTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, 78, -1));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/crecimiento.png"))); // NOI18N
         jLabel1.setText("Historial de productos");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(633, 37, 246, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/lupa-para-buscar.png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/lupa-para-buscar.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/lupa-para-buscar.png"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 180, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/tareas.png"))); // NOI18N
         jLabel5.setText("Lista de productos entregados");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 25, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(returnMaintenanceButton)
-                .addGap(348, 348, 348))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(249, 249, 249)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(categoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(batchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(userTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(193, 193, 193)
-                        .addComponent(jLabel5))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 521, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(chartPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(214, 214, 214))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(chartPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(85, 85, 85)
-                        .addComponent(jLabel5)
-                        .addGap(39, 39, 39)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel2)
-                                .addComponent(categoryTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(batchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4)
-                            .addComponent(userTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41)))
-                .addComponent(returnMaintenanceButton)
-                .addContainerGap(48, Short.MAX_VALUE))
-        );
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
+        jLabel6.setText("Rango de fechas");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, -1));
+        jPanel1.add(jXDatePicker1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 140, -1));
+        jPanel1.add(jXDatePicker2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 140, -1));
+
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel7.setText("De:");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel8.setText("a:");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, -1, -1));
+
+        searchButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        searchButton.setText("Buscar");
+        searchButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                searchButtonMouseClicked(evt);
+            }
+        });
+        jPanel1.add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1321, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
         );
 
         pack();
@@ -320,6 +307,15 @@ public class Record extends javax.swing.JFrame {
         table.setRowSorter(tableRowSorterUser);
     }//GEN-LAST:event_userTextFieldKeyTyped
 
+    private void searchButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchButtonMouseClicked
+        tableList.clear();
+        try {
+            fillTable();
+        } catch (ParseException ex) {
+            Logger.getLogger(Record.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_searchButtonMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -350,7 +346,11 @@ public class Record extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Record().setVisible(true);
+                try {
+                    new Record().setVisible(true);
+                } catch (ParseException ex) {
+                    Logger.getLogger(Record.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
@@ -364,9 +364,15 @@ public class Record extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private org.jdesktop.swingx.JXDatePicker jXDatePicker1;
+    private org.jdesktop.swingx.JXDatePicker jXDatePicker2;
     private javax.swing.JButton returnMaintenanceButton;
+    private javax.swing.JButton searchButton;
     private javax.swing.JTable table;
     private javax.swing.JTextField userTextField;
     // End of variables declaration//GEN-END:variables

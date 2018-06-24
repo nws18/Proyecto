@@ -29,11 +29,10 @@ import static tda.LoadTda.distributionOrderList;
 public class Reports extends javax.swing.JFrame {
 
     private ArrayList<Product> productList = new ArrayList<>();
-    /**
-     * Creates new form Reports
-     */
+    
     public Reports() {
         initComponents();
+        
         //Autocompletar buscar lote
         TextAutoCompleter textAutoAcompleterSearchBatch = new TextAutoCompleter(batchTextField);
         Iterator iterator = batchMap.keySet().iterator();
@@ -53,6 +52,9 @@ public class Reports extends javax.swing.JFrame {
         }
     }
     
+    /**
+     * Llena la tabla con productos según el código de lote buscado.
+     */
     public void fillTable() {
         for (int i = 0; i < distributionOrderList.size(); i++) {
             DistributionOrder distributionOrder = distributionOrderList.get(i);
@@ -77,6 +79,11 @@ public class Reports extends javax.swing.JFrame {
  
     }
   
+    /**
+     * Recibe el id de una categoría y devuelve su nombre para mostrarlo en la tabla.
+     * @param idCategory
+     * @return String
+     */
     private String getCategoryName(int idCategory) {
         Iterator iterator = categoryMap.keySet().iterator();
         while (iterator.hasNext()) {
@@ -89,6 +96,11 @@ public class Reports extends javax.swing.JFrame {
         return null;
     }
     
+    /**
+     * Recibe el id de un código de lote y devuelve su nombre para mostrarlo en la tabla.
+     * @param idBatch
+     * @return 
+     */
     private String getBatchCode(int idBatch) {
         Iterator iterator = batchMap.keySet().iterator();
         while (iterator.hasNext()) {
@@ -101,6 +113,11 @@ public class Reports extends javax.swing.JFrame {
         return null;
     }
     
+    /**
+     * Llena la lista con las bodegas que cuentan con el producto según
+     * el código de lote ingresado.
+     * @throws GraphException 
+     */
     public void fillList() throws GraphException {
         ArrayList arrayList = new ArrayList();
         for (int i = 0; i < distributionOrderList.size(); i++) {

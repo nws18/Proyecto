@@ -2,6 +2,7 @@
 package gui;
 
 import LinkedBinaryTree.TreeException;
+import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -160,9 +161,13 @@ public class Administrator extends javax.swing.JFrame {
     }//GEN-LAST:event_maintenanceButtonActionPerformed
 
     private void recordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recordButtonActionPerformed
-        Record record = new Record();
-        record.setVisible(true);
-        this.setVisible(false);
+        try {
+            Record record = new Record();
+            record.setVisible(true);
+            this.setVisible(false);
+        } catch (ParseException ex) {
+            Logger.getLogger(Administrator.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_recordButtonActionPerformed
 
     private void returnLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnLoginButtonActionPerformed

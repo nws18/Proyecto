@@ -18,14 +18,11 @@ import java.nio.file.StandardCopyOption;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.util.converter.LocalDateTimeStringConverter;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -41,22 +38,21 @@ import static tda.LoadTda.userList;
 
 /**
  * Interfaz mantenimiento de cada entidad.
- *
  * @author Nicole Fonseca, Wilmer Mata, Sergio Siles
  */
 public class Maintenance extends javax.swing.JFrame {
 
     CrudMaintenance crudMaintenance = new CrudMaintenance();
 
-    /**
-     * Creates new form Maintenance
-     */
     public Maintenance() throws TreeException {
         initComponents();
+        
+        //Obtener fecha actual
         Date date = new Date();
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         String packedDate = dateFormat.format(date);
         jLabel136.setText(packedDate);
+        
         descriptionCategoryTextField.setLineWrap(true);
 
         //Información ComboBox
@@ -2405,6 +2401,7 @@ public class Maintenance extends javax.swing.JFrame {
                 }
                 batchLabel.setText(batchCode);
                 categoryLabel.setText(categoryName);
+                priceLabel.setText(String.valueOf(product.getPrice()));
                 ImageIcon imageIcon = new ImageIcon(product.getUrl());
                 imageLabel.setIcon((Icon) imageIcon);
             } else {

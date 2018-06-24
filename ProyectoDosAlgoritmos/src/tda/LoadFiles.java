@@ -30,6 +30,11 @@ public class LoadFiles {
     
     AdministratorFiles administratorFiles = new AdministratorFiles();
     
+    /**
+     * Carga la información de productos desde las estructuras de datos hasta los archivos.
+     * @throws IOException
+     * @throws TreeException 
+     */
     public void fileProduct() throws IOException, TreeException {
         ArrayList<Product> arrayList = new ArrayList<>();
         for (int i = 0; i < productsBinaryTree.getSize() ; i++) {
@@ -38,6 +43,10 @@ public class LoadFiles {
         administratorFiles.writeProductFile(arrayList);
     }
     
+    /**
+     * Carga la información de categorías desde las estructuras de datos hasta los archivos.
+     * @throws IOException 
+     */
     public void fileCategory() throws IOException {
         ArrayList<Category> arrayList = new ArrayList<>();
         Iterator iterator = categoryMap.keySet().iterator();
@@ -48,6 +57,10 @@ public class LoadFiles {
         administratorFiles.writeCategoryFile(arrayList);
     }
     
+    /**
+     * Carga la información de código de lote desde las estructuras de datos hasta los archivos.
+     * @throws IOException 
+     */
     public void fileBatch() throws IOException {
         ArrayList<Batch> arrayList = new ArrayList<>();
         Iterator iterator = batchMap.keySet().iterator();
@@ -58,6 +71,10 @@ public class LoadFiles {
         administratorFiles.writeBatchFile(arrayList);
     }
     
+    /**
+     * Carga la información de unidad de transporte desde las estructuras de datos hasta los archivos.
+     * @throws IOException 
+     */
     public void fileTransportUnit() throws IOException {
         ArrayList<TransportUnit> arrayList = new ArrayList<>();
         Iterator iterator = transportUnitMap.keySet().iterator();
@@ -68,6 +85,11 @@ public class LoadFiles {
         administratorFiles.writeTransportUnitFile(arrayList);
     }
     
+    /**
+     * Carga la información de Bodegas desde las estructuras de datos hasta los archivos.
+     * @throws GraphException
+     * @throws IOException 
+     */
     public void fileCellar() throws GraphException, IOException {
         ArrayList<Cellar> arrayList = new ArrayList<>();
         for (int i = 0; i < cellarGraph.list().size(); i++) {
@@ -76,6 +98,10 @@ public class LoadFiles {
         administratorFiles.writeCellarFile(arrayList);
     }
     
+    /**
+     * Carga la información de orden de distribución desde las estructuras de datos hasta los archivos.
+     * @throws IOException 
+     */
       public void fileDistributionOrder() throws IOException {
           ArrayList<DistributionOrder> arrayList = new ArrayList<>();
           for (int i = 0; i < distributionOrderList.size(); i++) {
@@ -85,6 +111,10 @@ public class LoadFiles {
           administratorFiles.writeDistributionOrderFile(arrayList);
       }
       
+      /**
+       * Carga la información de usuarios desde las estructuras de datos hasta los archivos.
+       * @throws IOException 
+       */
       public void fileUser() throws IOException {
           ArrayList<User> arrayList = new ArrayList<>();
           for (int i = 0; i < userList.size(); i++) {
