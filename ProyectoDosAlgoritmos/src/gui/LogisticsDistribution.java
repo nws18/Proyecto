@@ -38,22 +38,17 @@ public class LogisticsDistribution extends javax.swing.JFrame {
      * Creates new form NewJFrame
      */
     private Browser browser = new Browser();
+    private BrowserView view = new BrowserView(browser);
     private ArrayList<TableProduct> tableList = new ArrayList<>();
 
     public LogisticsDistribution() throws TreeException {
         initComponents();
-        fillTable();
-        loadMap("https://www.google.com/maps/@9.7808897,-84.1564765,8z");
+        jPanel3.setLayout(new BorderLayout());
+        jPanel3.add(view, BorderLayout.CENTER);
+        browser.loadURL("maps.google.es");
+        
 
-//        progressBar();
-//       
-//        DefaultListModel modelo = new DefaultListModel();
-//        for (int i = 0; i < productsBinaryTree.recorreArbol().size(); i++) {
-//            Product product = (Product) productsBinaryTree.recorreArbol().get(i);
-//            modelo.addElement(String.valueOf(product.getName().toString()));
-//            
-//        }
-//        listProducts.setModel(modelo);
+//        
         String[] arrayCellar = new String[cellarGraph.list().size()];
         for (int i = 0; i < cellarGraph.list().size(); i++) {
             Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
@@ -99,6 +94,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         labelTruck = new javax.swing.JLabel();
         nameTruck = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -156,6 +152,9 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         cellarList.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cellarListMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                cellarListMousePressed(evt);
             }
         });
         cellarList.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
@@ -221,6 +220,9 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         nameTruck.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
         nameTruck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/truck.png"))); // NOI18N
         jPanel1.add(nameTruck, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, 190, 30));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Webp.net-gifmaker (1).gif"))); // NOI18N
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 0, 170, 110));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -327,26 +329,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
     }//GEN-LAST:event_cellarListMouseClicked
 
     private void cellarListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_cellarListValueChanged
-        for (int i = 0; i < cellarGraph.list().size(); i++) {
-            Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
-            if (tempCellar.getName().equals(cellarList.getSelectedValue())) {
-
-                System.out.println(tempCellar.getLatitude());
-                System.out.println(tempCellar.getLength());
-                //String url="http://maps.google.es/?q=loc:"+tempCellar.getLatitude()+"%20"+tempCellar.getLength();
-                //String url = "https://www.google.com/maps/@"+tempCellar.getLatitude()+","+tempCellar.getLength()+",16z";
-                String url = "https://maps.googleapis.com/maps/api/staticmap?center="
-                        + tempCellar.getLatitude()
-                        + ","
-                        + tempCellar.getLength()
-                        + "&zoom=11&size=612x612&scale=2&maptype=roadmap";
-                browser.loadURL(url);
-                ImageIcon imageIcon = new ImageIcon(tempCellar.getUrl());
-                jLabel6.setIcon(imageIcon);
-
-            }
-
-        }
+        
     }//GEN-LAST:event_cellarListValueChanged
 
     private void listProductsMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listProductsMousePressed
@@ -434,6 +417,24 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         progressBar.setStringPainted(true);
         fillTable();
     }//GEN-LAST:event_listProductsMousePressed
+
+    private void cellarListMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cellarListMousePressed
+        // TODO add your handling code here:
+        ArrayList<String> array = new ArrayList();
+        for (int i = 0; i < cellarGraph.list().size(); i++) {
+            Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
+            if (tempCellar.getName().equals(cellarList.getSelectedValue())) {
+                ImageIcon imageIcon = new ImageIcon(tempCellar.getUrl());
+                jLabel6.setIcon(imageIcon);
+                array.removeAll(array);
+                array.add(0, "http:/" + "" + "/maps.google.es/?q=loc:");
+                array.add(1, tempCellar.getLatitude());
+                array.add(2, "%20");
+                array.add(3, tempCellar.getLength());
+                browser.loadURL((array.get(0) + array.get(1) + array.get(2) + array.get(3)));
+            }
+        }
+    }//GEN-LAST:event_cellarListMousePressed
     private int getValue(String name) throws TreeException {
         for (int i = 0; i < productsBinaryTree.getSize(); i++) {
             Product tempProduct = (Product) productsBinaryTree.recorreArbol().get(i);
@@ -454,14 +455,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         return 0;
     }
 
-    public void loadMap(String url) {
-
-        BrowserView view = new BrowserView(browser);
-        jPanel3.setLayout(new BorderLayout());
-        jPanel3.add(view, BorderLayout.CENTER);
-        browser.loadURL(url);
-        jPanel3.setVisible(true);
-    }
+    
 
     public void fillTable() {
         String[][] array = new String[tableList.size()][5];
@@ -526,6 +520,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
