@@ -41,11 +41,11 @@ public class Administrator extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 153));
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/administrador-con-tuercas.png"))); // NOI18N
         jLabel1.setText("Administrador");
 
-        reportsButton.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
+        reportsButton.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         reportsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/tareas.png"))); // NOI18N
         reportsButton.setText("Reporte de lotes anulados");
         reportsButton.setBorderPainted(false);
@@ -57,7 +57,7 @@ public class Administrator extends javax.swing.JFrame {
             }
         });
 
-        maintenanceButton.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
+        maintenanceButton.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         maintenanceButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/tuercas.png"))); // NOI18N
         maintenanceButton.setText("Mantenimiento");
         maintenanceButton.setBorderPainted(false);
@@ -69,7 +69,7 @@ public class Administrator extends javax.swing.JFrame {
             }
         });
 
-        recordButton.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
+        recordButton.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         recordButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/crecimiento.png"))); // NOI18N
         recordButton.setText("Historial");
         recordButton.setBorderPainted(false);
@@ -81,7 +81,7 @@ public class Administrator extends javax.swing.JFrame {
             }
         });
 
-        returnLoginButton.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
+        returnLoginButton.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         returnLoginButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/salir-con-boton-en-esquema.png"))); // NOI18N
         returnLoginButton.setText("Salir");
         returnLoginButton.setBorderPainted(false);
@@ -109,7 +109,7 @@ public class Administrator extends javax.swing.JFrame {
                         .addComponent(maintenanceButton)
                         .addGap(41, 41, 41)
                         .addComponent(recordButton)))
-                .addContainerGap(95, Short.MAX_VALUE))
+                .addContainerGap(77, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(returnLoginButton)

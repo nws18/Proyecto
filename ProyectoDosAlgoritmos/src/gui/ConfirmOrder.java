@@ -46,16 +46,16 @@ public class ConfirmOrder extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 153));
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/signo-de-interrogacion.png"))); // NOI18N
         jLabel1.setText("Confirmación Orden");
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Espacio disponible en la unidad de transporte");
 
-        continueButton.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
+        continueButton.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         continueButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/carrito.png"))); // NOI18N
         continueButton.setText("Continuar Compra");
         continueButton.setBorderPainted(false);
@@ -67,7 +67,7 @@ public class ConfirmOrder extends javax.swing.JFrame {
             }
         });
 
-        confirmOrderButton.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
+        confirmOrderButton.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         confirmOrderButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/compra-confirmada.png"))); // NOI18N
         confirmOrderButton.setText("Confirmar Orden");
         confirmOrderButton.setBorderPainted(false);
@@ -96,7 +96,7 @@ public class ConfirmOrder extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(63, 63, 63)
                         .addComponent(jLabel2)))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -101,7 +101,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(153, 204, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/carrito.png"))); // NOI18N
         jLabel1.setText("Productos");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
@@ -138,12 +138,12 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, 88));
         jPanel1.add(progressBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, 340, 32));
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/logistica.png"))); // NOI18N
         jLabel3.setText("Logística de distribución");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 20, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/almacen.png"))); // NOI18N
         jLabel4.setText("Bodegas");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, -1, -1));
@@ -166,12 +166,12 @@ public class LogisticsDistribution extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, 140, 138));
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/mapas-y-banderas.png"))); // NOI18N
         jLabel5.setText("Ubicación");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 70, -1, -1));
 
-        confirmButton.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
+        confirmButton.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         confirmButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/compra-confirmada.png"))); // NOI18N
         confirmButton.setText("Confirmar");
         confirmButton.setBorderPainted(false);
@@ -432,6 +432,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
                 array.add(2, "%20");
                 array.add(3, tempCellar.getLength());
                 browser.loadURL((array.get(0) + array.get(1) + array.get(2) + array.get(3)));
+                System.out.println((array.get(0) + array.get(1) + array.get(2) + array.get(3)));
             }
         }
     }//GEN-LAST:event_cellarListMousePressed

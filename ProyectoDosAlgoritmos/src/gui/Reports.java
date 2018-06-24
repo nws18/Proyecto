@@ -170,11 +170,14 @@ public class Reports extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(153, 204, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel1.setText("Ingrese código de lote");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
+
+        batchTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel1.add(batchTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 120, -1));
 
+        table.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -190,7 +193,7 @@ public class Reports extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 570, 190));
 
-        returnAdministratorButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        returnAdministratorButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         returnAdministratorButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/salir-con-boton-en-esquema.png"))); // NOI18N
         returnAdministratorButton.setText("Salir");
         returnAdministratorButton.setBorderPainted(false);
@@ -203,16 +206,17 @@ public class Reports extends javax.swing.JFrame {
         });
         jPanel1.add(returnAdministratorButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 390, -1, -1));
 
+        cellarList.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jScrollPane2.setViewportView(cellarList);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 230, 210));
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/tareas.png"))); // NOI18N
         jLabel2.setText("Reporte de lotes anulados");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, -1, -1));
 
-        searchButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        searchButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         searchButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/lupa-para-buscar.png"))); // NOI18N
         searchButton.setText("Buscar");
         searchButton.setBorderPainted(false);
@@ -225,12 +229,12 @@ public class Reports extends javax.swing.JFrame {
         });
         jPanel1.add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 100, -1));
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/almacen.png"))); // NOI18N
         jLabel3.setText("Lista de bodegas");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/carrito.png"))); // NOI18N
         jLabel4.setText("Productos");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, -1, -1));

@@ -387,60 +387,6 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel73 = new javax.swing.JLabel();
         jLabel76 = new javax.swing.JLabel();
         jLabel136 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jSeparator4 = new javax.swing.JSeparator();
-        jSeparator5 = new javax.swing.JSeparator();
-        jSeparator6 = new javax.swing.JSeparator();
-        jLabel23 = new javax.swing.JLabel();
-        cellarNameTextField = new javax.swing.JTextField();
-        jLabel24 = new javax.swing.JLabel();
-        latitudeCellarTextField = new javax.swing.JTextField();
-        jLabel25 = new javax.swing.JLabel();
-        LenghtCellarTextField = new javax.swing.JTextField();
-        jLabel26 = new javax.swing.JLabel();
-        distanceCellarTextField = new javax.swing.JTextField();
-        jLabel27 = new javax.swing.JLabel();
-        imageCellarTextField = new javax.swing.JTextField();
-        addImageCellarButton = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jLabel28 = new javax.swing.JLabel();
-        searchCellarTextField = new javax.swing.JTextField();
-        jLabel29 = new javax.swing.JLabel();
-        latitudeCellarLabel = new javax.swing.JLabel();
-        searchCellarButton = new javax.swing.JButton();
-        jLabel31 = new javax.swing.JLabel();
-        lenghtCellarLabel = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        distanceCellarLabel = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
-        imageCellarLabel = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
-        updateSearchCellarTextField = new javax.swing.JTextField();
-        updateSearchCellarButton = new javax.swing.JButton();
-        jLabel38 = new javax.swing.JLabel();
-        updateNameCellarTextField = new javax.swing.JTextField();
-        jLabel39 = new javax.swing.JLabel();
-        updateLatitudeCellarTextField = new javax.swing.JTextField();
-        jLabel40 = new javax.swing.JLabel();
-        updateLenghtTextField = new javax.swing.JTextField();
-        jLabel41 = new javax.swing.JLabel();
-        updateDistanceTextField = new javax.swing.JTextField();
-        jLabel42 = new javax.swing.JLabel();
-        updateImageTextField = new javax.swing.JTextField();
-        updateImageCellarButton = new javax.swing.JButton();
-        addCellarButton = new javax.swing.JButton();
-        updateCellarButton = new javax.swing.JButton();
-        jLabel43 = new javax.swing.JLabel();
-        deleteCellarTextField = new javax.swing.JTextField();
-        deleteCellarButton = new javax.swing.JButton();
-        jLabel146 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel92 = new javax.swing.JLabel();
         jLabel93 = new javax.swing.JLabel();
@@ -561,6 +507,60 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel118 = new javax.swing.JLabel();
         jLabel116 = new javax.swing.JLabel();
         jLabel120 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator6 = new javax.swing.JSeparator();
+        jLabel23 = new javax.swing.JLabel();
+        cellarNameTextField = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        latitudeCellarTextField = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        LenghtCellarTextField = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        distanceCellarTextField = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        imageCellarTextField = new javax.swing.JTextField();
+        addImageCellarButton = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jLabel28 = new javax.swing.JLabel();
+        searchCellarTextField = new javax.swing.JTextField();
+        jLabel29 = new javax.swing.JLabel();
+        latitudeCellarLabel = new javax.swing.JLabel();
+        searchCellarButton = new javax.swing.JButton();
+        jLabel31 = new javax.swing.JLabel();
+        lenghtCellarLabel = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        distanceCellarLabel = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        imageCellarLabel = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        updateSearchCellarTextField = new javax.swing.JTextField();
+        updateSearchCellarButton = new javax.swing.JButton();
+        jLabel38 = new javax.swing.JLabel();
+        updateNameCellarTextField = new javax.swing.JTextField();
+        jLabel39 = new javax.swing.JLabel();
+        updateLatitudeCellarTextField = new javax.swing.JTextField();
+        jLabel40 = new javax.swing.JLabel();
+        updateLenghtTextField = new javax.swing.JTextField();
+        jLabel41 = new javax.swing.JLabel();
+        updateDistanceTextField = new javax.swing.JTextField();
+        jLabel42 = new javax.swing.JLabel();
+        updateImageTextField = new javax.swing.JTextField();
+        updateImageCellarButton = new javax.swing.JButton();
+        addCellarButton = new javax.swing.JButton();
+        updateCellarButton = new javax.swing.JButton();
+        jLabel43 = new javax.swing.JLabel();
+        deleteCellarTextField = new javax.swing.JTextField();
+        deleteCellarButton = new javax.swing.JButton();
+        jLabel146 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         returnAdministratorButton = new javax.swing.JButton();
 
@@ -576,15 +576,15 @@ public class Maintenance extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(153, 204, 153));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel79.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel79.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel79.setText("Agregar");
         jPanel6.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 20, -1, -1));
 
-        jLabel80.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel80.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel80.setText("Buscar");
         jPanel6.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 20, -1, -1));
 
-        jLabel81.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel81.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel81.setText("Actualizar");
         jPanel6.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(555, 20, -1, -1));
 
@@ -601,21 +601,25 @@ public class Maintenance extends javax.swing.JFrame {
         jSeparator15.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel6.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(857, 40, -1, 258));
 
-        jLabel83.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel83.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel83.setText("Nombre:");
         jPanel6.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 52, -1, -1));
+
+        nameCategoryTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel6.add(nameCategoryTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 165, -1));
 
-        jLabel84.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel84.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel84.setText("Descripción:");
         jPanel6.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
 
-        jLabel85.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel85.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel85.setText("Nombre:");
         jPanel6.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 66, -1, -1));
+
+        searchNameCategoryTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel6.add(searchNameCategoryTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(345, 63, 116, -1));
 
-        searchCategoryButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        searchCategoryButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         searchCategoryButton.setText("Buscar");
         searchCategoryButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -624,17 +628,21 @@ public class Maintenance extends javax.swing.JFrame {
         });
         jPanel6.add(searchCategoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(396, 101, -1, -1));
 
-        jLabel86.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel86.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel86.setText("Descripción:");
         jPanel6.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 162, -1, -1));
+
+        descriptionCategoryLabel.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jPanel6.add(descriptionCategoryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 194, 222, 79));
 
-        jLabel88.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel88.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel88.setText("Nombre:");
         jPanel6.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 60, -1, -1));
+
+        updateSearchNameCategoryTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel6.add(updateSearchNameCategoryTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 57, 113, -1));
 
-        updateSearchCategoryButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        updateSearchCategoryButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         updateSearchCategoryButton.setText("Buscar");
         updateSearchCategoryButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -643,16 +651,18 @@ public class Maintenance extends javax.swing.JFrame {
         });
         jPanel6.add(updateSearchCategoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(736, 95, -1, -1));
 
-        jLabel89.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel89.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel89.setText("Nombre:");
         jPanel6.add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 129, -1, -1));
+
+        updateNameCategoryTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel6.add(updateNameCategoryTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 154, 113, -1));
 
-        jLabel90.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel90.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel90.setText("Descripción:");
         jPanel6.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 192, -1, -1));
 
-        addCategoryButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        addCategoryButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         addCategoryButton.setText("Agregar");
         addCategoryButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -661,7 +671,7 @@ public class Maintenance extends javax.swing.JFrame {
         });
         jPanel6.add(addCategoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
 
-        updateCategoryButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        updateCategoryButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         updateCategoryButton.setText("Actualizar");
         updateCategoryButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -670,12 +680,14 @@ public class Maintenance extends javax.swing.JFrame {
         });
         jPanel6.add(updateCategoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 320, -1, -1));
 
-        jLabel91.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel91.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel91.setText("Nombre:");
         jPanel6.add(jLabel91, new org.netbeans.lib.awtextra.AbsoluteConstraints(892, 55, -1, -1));
+
+        deleteCategoryTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel6.add(deleteCategoryTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(952, 52, 108, -1));
 
-        deleteCategoryButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        deleteCategoryButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         deleteCategoryButton.setText("Borrar");
         deleteCategoryButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -690,12 +702,14 @@ public class Maintenance extends javax.swing.JFrame {
         jPanel6.add(jLabel112, new org.netbeans.lib.awtextra.AbsoluteConstraints(862, 157, 244, 26));
 
         updateDescriptionCategoryTextField.setColumns(20);
+        updateDescriptionCategoryTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         updateDescriptionCategoryTextField.setRows(5);
         jScrollPane1.setViewportView(updateDescriptionCategoryTextField);
 
         jPanel6.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 220, 190, 100));
 
         descriptionCategoryTextField.setColumns(20);
+        descriptionCategoryTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         descriptionCategoryTextField.setRows(5);
         jScrollPane2.setViewportView(descriptionCategoryTextField);
 
@@ -706,19 +720,19 @@ public class Maintenance extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(153, 204, 153));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel44.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel44.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel44.setText("Agregar");
         jPanel4.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 24, -1, -1));
 
-        jLabel45.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel45.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel45.setText("Buscar");
         jPanel4.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 24, -1, -1));
 
-        jLabel46.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel46.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel46.setText("Actualizar");
         jPanel4.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 24, -1, -1));
 
-        jLabel47.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel47.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel47.setText("Borrar");
         jPanel4.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(795, 24, -1, -1));
 
@@ -731,21 +745,29 @@ public class Maintenance extends javax.swing.JFrame {
         jSeparator9.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel4.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(717, 24, -1, 253));
 
+        jLabel48.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel48.setText("Placa:");
         jPanel4.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 62, -1, -1));
+
+        plateTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel4.add(plateTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 87, 172, -1));
 
+        jLabel49.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel49.setText("Capacidad mínima:");
         jPanel4.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 125, -1, -1));
 
+        MinCapacityComboBox.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jPanel4.add(MinCapacityComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 50, -1));
 
+        jLabel50.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel50.setText("Fotografía:");
         jPanel4.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
 
         imageTransportUnitTextField.setEditable(false);
+        imageTransportUnitTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel4.add(imageTransportUnitTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 72, -1));
 
+        searchImageTransportUnit.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         searchImageTransportUnit.setText("Buscar");
         searchImageTransportUnit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -754,6 +776,7 @@ public class Maintenance extends javax.swing.JFrame {
         });
         jPanel4.add(searchImageTransportUnit, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, -1, -1));
 
+        addTransportUnitButton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         addTransportUnitButton.setText("Agregar");
         addTransportUnitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -762,22 +785,33 @@ public class Maintenance extends javax.swing.JFrame {
         });
         jPanel4.add(addTransportUnitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
 
+        jLabel51.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel51.setText("Placa:");
         jPanel4.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 59, -1, -1));
+
+        searchPlateTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel4.add(searchPlateTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 56, 129, -1));
 
+        jLabel52.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel52.setText("Capacidad:");
         jPanel4.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, -1, -1));
+
+        capacityTransportUnitLabel.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jPanel4.add(capacityTransportUnitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 118, 14));
 
+        jLabel54.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel54.setText("Fotografía:");
         jPanel4.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, -1, -1));
         jPanel4.add(imageTransportUnit, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, 110, 80));
 
+        jLabel56.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel56.setText("Placa:");
         jPanel4.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 59, -1, -1));
+
+        searchUpdateTransportTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel4.add(searchUpdateTransportTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 56, 132, -1));
 
+        updateSearchPlateButton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         updateSearchPlateButton.setText("Buscar");
         updateSearchPlateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -786,19 +820,26 @@ public class Maintenance extends javax.swing.JFrame {
         });
         jPanel4.add(updateSearchPlateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(634, 87, -1, -1));
 
+        jLabel57.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel57.setText("Placa:");
         jPanel4.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(496, 144, -1, -1));
+
+        plateTransportUnitTexField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel4.add(plateTransportUnitTexField, new org.netbeans.lib.awtextra.AbsoluteConstraints(568, 141, 131, -1));
 
+        jLabel58.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel58.setText("Capacidad mínima:");
         jPanel4.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 180, 90, -1));
 
+        updateMinCapacityComboBox.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jPanel4.add(updateMinCapacityComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, 40, -1));
 
+        jLabel59.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel59.setText("Fotografía:");
         jPanel4.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 250, -1, -1));
 
         updateImageTransport.setEditable(false);
+        updateImageTransport.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel4.add(updateImageTransport, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 270, 73, -1));
 
         updateImageTransportUnit.setText("Buscar");
@@ -817,8 +858,11 @@ public class Maintenance extends javax.swing.JFrame {
         });
         jPanel4.add(updateTransportUnitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 300, -1, -1));
 
+        jLabel60.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel60.setText("Placa:");
         jPanel4.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(737, 57, -1, -1));
+
+        deleteTransportTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel4.add(deleteTransportTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(737, 89, 150, -1));
 
         deleteTransportUnitButton.setText("Borrar");
@@ -838,28 +882,34 @@ public class Maintenance extends javax.swing.JFrame {
         jPanel4.add(searchTransportUnitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, -1, -1));
         jPanel4.add(jLabel134, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 210, 20));
 
+        jLabel140.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel140.setText("Capacidad máxima:");
         jPanel4.add(jLabel140, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
+        MaxCapacityComboBox.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jPanel4.add(MaxCapacityComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 50, 20));
 
-        jLabel141.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
+        jLabel141.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel141.setText("toneladas");
         jPanel4.add(jLabel141, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 154, 70, 20));
 
-        jLabel142.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
+        jLabel142.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel142.setText("toneladas");
         jPanel4.add(jLabel142, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 80, -1));
         jPanel4.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 330, 220, 20));
 
+        jLabel55.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel55.setText("toneladas");
         jPanel4.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 180, -1, -1));
 
+        jLabel143.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel143.setText("Capacidad máxima");
         jPanel4.add(jLabel143, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 210, -1, -1));
 
+        updateMaxCapacityComboBox.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jPanel4.add(updateMaxCapacityComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 210, 40, -1));
 
+        jLabel144.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel144.setText("toneladas");
         jPanel4.add(jLabel144, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 210, -1, -1));
         jPanel4.add(jLabel145, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 170, 260, 20));
@@ -869,16 +919,16 @@ public class Maintenance extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(153, 204, 153));
 
-        jLabel61.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel61.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel61.setText("Agregar");
 
-        jLabel62.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel62.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel62.setText("Buscar");
 
-        jLabel63.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel63.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel63.setText("Actualizar");
 
-        jLabel64.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel64.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel64.setText("Borrar");
 
         jSeparator10.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -887,19 +937,23 @@ public class Maintenance extends javax.swing.JFrame {
 
         jSeparator12.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        jLabel65.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel65.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel65.setText("Código lote:");
 
-        jLabel66.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        codeBatchTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+
+        jLabel66.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel66.setText("Fecha empacado:");
 
-        jLabel68.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel68.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel68.setText("Fecha vencimiento:");
 
-        jLabel69.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel69.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel69.setText("Código lote:");
 
-        searchBatchButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        searchBatchCodeLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+
+        searchBatchButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         searchBatchButton.setText("Buscar");
         searchBatchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -907,20 +961,22 @@ public class Maintenance extends javax.swing.JFrame {
             }
         });
 
-        jLabel70.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel70.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel70.setText("Fecha empacado:");
 
-        packedDateLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        packedDateLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
-        jLabel72.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel72.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel72.setText("Fecha vencimiento:");
 
-        expirationDateLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        expirationDateLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
-        jLabel74.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel74.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel74.setText("Código lote:");
 
-        updateSearchBatchButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        updateSearchBatchCodeTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+
+        updateSearchBatchButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         updateSearchBatchButton.setText("Buscar");
         updateSearchBatchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -928,13 +984,15 @@ public class Maintenance extends javax.swing.JFrame {
             }
         });
 
-        jLabel75.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel75.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel75.setText("Código lote:");
 
-        jLabel77.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        batchCodeLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+
+        jLabel77.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel77.setText("Fecha vencimiento:");
 
-        updateBatchButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        updateBatchButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         updateBatchButton.setText("Actualizar");
         updateBatchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -942,10 +1000,12 @@ public class Maintenance extends javax.swing.JFrame {
             }
         });
 
-        jLabel78.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel78.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel78.setText("Código lote:");
 
-        deleteBatchButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        deleteBatchTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+
+        deleteBatchButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         deleteBatchButton.setText("Borrar");
         deleteBatchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -953,7 +1013,7 @@ public class Maintenance extends javax.swing.JFrame {
             }
         });
 
-        addBatchButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        addBatchButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         addBatchButton.setText("Agregar");
         addBatchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1018,7 +1078,7 @@ public class Maintenance extends javax.swing.JFrame {
                                 .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel71, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)))
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1155,216 +1215,21 @@ public class Maintenance extends javax.swing.JFrame {
                             .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel67, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                            .addComponent(jLabel67, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
                             .addComponent(jLabel71, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
 
         jTabbedPane1.addTab("Lotes", jPanel5);
 
-        jPanel3.setBackground(new java.awt.Color(153, 204, 153));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel19.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel19.setText("Agregar");
-        jPanel3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 22, -1, -1));
-
-        jLabel20.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel20.setText("Buscar");
-        jPanel3.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, -1, -1));
-
-        jLabel21.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel21.setText("Actualizar");
-        jPanel3.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, -1, -1));
-
-        jLabel22.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel22.setText("Borrar");
-        jPanel3.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 10, -1, -1));
-
-        jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel3.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 22, -1, 280));
-
-        jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel3.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(447, 22, -1, 280));
-
-        jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel3.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 20, -1, 280));
-
-        jLabel23.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel23.setText("Nombre:");
-        jPanel3.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 28, -1, -1));
-        jPanel3.add(cellarNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 48, 151, -1));
-
-        jLabel24.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel24.setText("Latitud:");
-        jPanel3.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 79, -1, -1));
-        jPanel3.add(latitudeCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 104, 151, -1));
-
-        jLabel25.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel25.setText("Longitud:");
-        jPanel3.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
-        jPanel3.add(LenghtCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 155, 151, -1));
-
-        jLabel26.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel26.setText("Distancia:");
-        jPanel3.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 186, -1, -1));
-        jPanel3.add(distanceCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 218, 151, -1));
-
-        jLabel27.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel27.setText("Fotografía:");
-        jPanel3.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 249, -1, -1));
-
-        imageCellarTextField.setEditable(false);
-        jPanel3.add(imageCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 275, 62, -1));
-
-        addImageCellarButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        addImageCellarButton.setText("Buscar");
-        addImageCellarButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addImageCellarButtonActionPerformed(evt);
-            }
-        });
-        jPanel3.add(addImageCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 274, -1, -1));
-
-        jButton3.setText("Agregar");
-        jPanel3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 375, -1, -1));
-
-        jLabel28.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel28.setText("Nombre:");
-        jPanel3.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 46, -1, -1));
-        jPanel3.add(searchCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 43, 153, -1));
-
-        jLabel29.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel29.setText("Latitud:");
-        jPanel3.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 100, -1, -1));
-
-        latitudeCellarLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jPanel3.add(latitudeCellarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 100, 114, 14));
-
-        searchCellarButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        searchCellarButton.setText("Buscar");
-        searchCellarButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchCellarButtonActionPerformed(evt);
-            }
-        });
-        jPanel3.add(searchCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 69, -1, -1));
-
-        jLabel31.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel31.setText("Longitud:");
-        jPanel3.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 143, -1, -1));
-
-        lenghtCellarLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jPanel3.add(lenghtCellarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 138, 114, 19));
-
-        jLabel33.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel33.setText("Distancia:");
-        jPanel3.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 186, -1, -1));
-
-        distanceCellarLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jPanel3.add(distanceCellarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 186, 114, 14));
-
-        jLabel35.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel35.setText("Fotografía:");
-        jPanel3.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 230, -1, -1));
-        jPanel3.add(imageCellarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(236, 255, 140, 56));
-
-        jLabel37.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel37.setText("Nombre:");
-        jPanel3.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 50, -1, -1));
-        jPanel3.add(updateSearchCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 42, 149, -1));
-
-        updateSearchCellarButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        updateSearchCellarButton.setText("Buscar");
-        updateSearchCellarButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateSearchCellarButtonActionPerformed(evt);
-            }
-        });
-        jPanel3.add(updateSearchCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(632, 68, -1, -1));
-
-        jLabel38.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel38.setText("Nombre:");
-        jPanel3.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 107, -1, -1));
-        jPanel3.add(updateNameCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 104, 149, -1));
-
-        jLabel39.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel39.setText("Latitud:");
-        jPanel3.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 145, -1, -1));
-        jPanel3.add(updateLatitudeCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 142, 149, -1));
-
-        jLabel40.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel40.setText("Longitud:");
-        jPanel3.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 183, -1, -1));
-        jPanel3.add(updateLenghtTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 180, 149, -1));
-
-        jLabel41.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel41.setText("Distancia:");
-        jPanel3.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 221, -1, -1));
-        jPanel3.add(updateDistanceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 218, 149, -1));
-
-        jLabel42.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel42.setText("Fotografía:");
-        jPanel3.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 260, -1, -1));
-
-        updateImageTextField.setEditable(false);
-        jPanel3.add(updateImageTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 257, 65, -1));
-
-        updateImageCellarButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        updateImageCellarButton.setText("Buscar");
-        updateImageCellarButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateImageCellarButtonActionPerformed(evt);
-            }
-        });
-        jPanel3.add(updateImageCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(623, 256, -1, -1));
-
-        addCellarButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        addCellarButton.setText("Agregar");
-        addCellarButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addCellarButtonActionPerformed(evt);
-            }
-        });
-        jPanel3.add(addCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, -1, -1));
-
-        updateCellarButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        updateCellarButton.setText("Actualizar");
-        updateCellarButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateCellarButtonActionPerformed(evt);
-            }
-        });
-        jPanel3.add(updateCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 300, -1, -1));
-
-        jLabel43.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel43.setText("Nombre:");
-        jPanel3.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 40, -1, -1));
-        jPanel3.add(deleteCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 70, 130, -1));
-
-        deleteCellarButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        deleteCellarButton.setText("Borrar");
-        deleteCellarButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteCellarButtonActionPerformed(evt);
-            }
-        });
-        jPanel3.add(deleteCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 110, -1, -1));
-        jPanel3.add(jLabel146, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 180, 20));
-        jPanel3.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 200, 20));
-        jPanel3.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 330, 250, 20));
-        jPanel3.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 160, 270, 30));
-
-        jTabbedPane1.addTab("Bodegas", jPanel3);
-
         jPanel7.setBackground(new java.awt.Color(153, 204, 153));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel92.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel92.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel92.setText("Agregar");
         jPanel7.add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, -1, -1));
 
-        jLabel93.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel93.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel93.setText("Buscar");
         jPanel7.add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, -1, -1));
 
@@ -1372,7 +1237,7 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel94.setText("Actualizar");
         jPanel7.add(jLabel94, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 10, -1, -1));
 
-        jLabel95.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel95.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel95.setText("Borrar");
         jPanel7.add(jLabel95, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 10, -1, -1));
 
@@ -1385,51 +1250,62 @@ public class Maintenance extends javax.swing.JFrame {
         jSeparator18.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel7.add(jSeparator18, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 30, 11, 267));
 
-        jLabel96.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel96.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel96.setText("Nombre:");
         jPanel7.add(jLabel96, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
+
+        nameProductTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel7.add(nameProductTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 114, -1));
 
-        jLabel97.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel97.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel97.setText("Unidad medida:");
         jPanel7.add(jLabel97, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 88, -1));
 
-        jLabel98.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel98.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel98.setText("Valor unidad:");
         jPanel7.add(jLabel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 75, -1));
+
+        unitValueTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel7.add(unitValueTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 114, -1));
 
-        jLabel99.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel99.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel99.setText("Peso total:");
         jPanel7.add(jLabel99, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
 
-        jLabel100.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel100.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel100.setText("Descripción:");
         jPanel7.add(jLabel100, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
 
-        jLabel101.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel101.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel101.setText("Lote:");
         jPanel7.add(jLabel101, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
-        jLabel102.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel102.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel102.setText("Categoría:");
         jPanel7.add(jLabel102, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
 
-        jLabel103.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel103.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel103.setText("Precio:");
         jPanel7.add(jLabel103, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
 
-        jLabel104.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel104.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel104.setText("Fotografía:");
         jPanel7.add(jLabel104, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, -1));
+
+        totalWeightTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel7.add(totalWeightTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 114, -1));
+
+        descriptionProductTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel7.add(descriptionProductTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 114, -1));
+
+        priceTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel7.add(priceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 114, -1));
 
         imageProductTextField.setEditable(false);
+        imageProductTextField.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         jPanel7.add(imageProductTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 50, -1));
 
-        searchImageProductButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        searchImageProductButton.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         searchImageProductButton.setText("Buscar");
         searchImageProductButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1438,7 +1314,7 @@ public class Maintenance extends javax.swing.JFrame {
         });
         jPanel7.add(searchImageProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, 70, -1));
 
-        addProductButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        addProductButton.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         addProductButton.setText("Agregar");
         addProductButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1447,14 +1323,17 @@ public class Maintenance extends javax.swing.JFrame {
         });
         jPanel7.add(addProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, -1, -1));
 
-        jLabel105.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel105.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel105.setText("Nombre:");
         jPanel7.add(jLabel105, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, -1, -1));
 
+        categoryComboBox.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         jPanel7.add(categoryComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 110, -1));
+
+        searchProductTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel7.add(searchProductTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 130, -1));
 
-        searchProductButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        searchProductButton.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         searchProductButton.setText("Buscar");
         searchProductButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1463,51 +1342,57 @@ public class Maintenance extends javax.swing.JFrame {
         });
         jPanel7.add(searchProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, -1, -1));
 
-        jLabel106.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel106.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel106.setText("Unidad medida:");
         jPanel7.add(jLabel106, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, -1, -1));
 
-        jLabel108.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel108.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel108.setText("Valor unidad:");
         jPanel7.add(jLabel108, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, -1, -1));
 
+        unitMeasuredComboBox.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         jPanel7.add(unitMeasuredComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 110, -1));
 
-        jLabel109.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel109.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel109.setText("Peso total:");
         jPanel7.add(jLabel109, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, -1, -1));
         jPanel7.add(totalWeightLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 90, 10));
 
-        jLabel111.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel111.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel111.setText("Descripción:");
         jPanel7.add(jLabel111, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, -1, -1));
 
-        jLabel113.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel113.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel113.setText("Lote:");
         jPanel7.add(jLabel113, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, -1, -1));
 
-        jLabel115.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel115.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel115.setText("Categoría:");
         jPanel7.add(jLabel115, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, -1, -1));
 
-        jLabel117.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel117.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel117.setText("Precio:");
         jPanel7.add(jLabel117, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, -1, -1));
 
-        jLabel119.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel119.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel119.setText("Fotografía:");
         jPanel7.add(jLabel119, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, -1, -1));
 
-        jLabel121.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel121.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel121.setText("Nombre:");
         jPanel7.add(jLabel121, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, -1, -1));
+
+        updateSearchProductTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel7.add(updateSearchProductTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 40, 120, -1));
 
-        jLabel122.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel122.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel122.setText("Nuevo nombre:");
         jPanel7.add(jLabel122, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, -1, -1));
+
+        updateNameProductTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel7.add(updateNameProductTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 90, 110, -1));
 
+        updateSearchProductButton.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         updateSearchProductButton.setText("Buscar");
         updateSearchProductButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1516,44 +1401,46 @@ public class Maintenance extends javax.swing.JFrame {
         });
         jPanel7.add(updateSearchProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 40, -1, -1));
 
-        jLabel123.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel123.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel123.setText("Unidad medida:");
         jPanel7.add(jLabel123, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, -1, -1));
 
-        jLabel124.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel124.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel124.setText("Valor unidad:");
         jPanel7.add(jLabel124, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, -1, -1));
 
-        jLabel125.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel125.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel125.setText("Peso total:");
         jPanel7.add(jLabel125, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 200, -1, -1));
 
-        jLabel126.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel126.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel126.setText("Descripción:");
         jPanel7.add(jLabel126, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 240, -1, -1));
 
-        jLabel127.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel127.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel127.setText("Lote:");
         jPanel7.add(jLabel127, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 280, -1, -1));
 
-        jLabel128.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel128.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel128.setText("Categoría:");
         jPanel7.add(jLabel128, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 170, -1, -1));
 
-        jLabel129.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel129.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel129.setText("Precio:");
         jPanel7.add(jLabel129, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 90, -1, 20));
 
-        jLabel130.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel130.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel130.setText("Fotografía:");
         jPanel7.add(jLabel130, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 230, -1, -1));
 
-        jLabel131.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel131.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel131.setText("Nombre:");
         jPanel7.add(jLabel131, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 40, -1, -1));
+
+        deleteProductTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel7.add(deleteProductTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 70, 130, -1));
 
-        deleteProductButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        deleteProductButton.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         deleteProductButton.setText("Borrar");
         deleteProductButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1563,14 +1450,25 @@ public class Maintenance extends javax.swing.JFrame {
         jPanel7.add(deleteProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 100, -1, -1));
 
         updateImageProductTextField.setEditable(false);
+        updateImageProductTextField.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         jPanel7.add(updateImageProductTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 250, 80, -1));
+
+        updateUnitValueTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel7.add(updateUnitValueTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 160, 110, -1));
+
+        updateWeightTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel7.add(updateWeightTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 200, 110, -1));
+
+        updateDescriptionTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel7.add(updateDescriptionTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 240, 110, -1));
+
+        updatePriceTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel7.add(updatePriceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 130, 80, -1));
 
+        updateCategoryComboBox.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jPanel7.add(updateCategoryComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 200, 80, -1));
 
+        updateUnitMeasuredComboBox.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jPanel7.add(updateUnitMeasuredComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 130, 100, -1));
         jPanel7.add(unitMeasuredLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 100, 20));
         jPanel7.add(unitValueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 100, 10));
@@ -1580,11 +1478,15 @@ public class Maintenance extends javax.swing.JFrame {
         jPanel7.add(priceLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, 100, 20));
         jPanel7.add(imageLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, 120, 60));
 
+        batchCodeComboBox.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         jPanel7.add(batchCodeComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 110, -1));
+
+        jLabel36.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel7.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 250, 40));
         jPanel7.add(jLabel110, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, 240, 20));
         jPanel7.add(jLabel132, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 310, 240, 20));
 
+        updateImageProductButton.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         updateImageProductButton.setText("Buscar");
         updateImageProductButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1594,6 +1496,7 @@ public class Maintenance extends javax.swing.JFrame {
         jPanel7.add(updateImageProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 280, -1, -1));
         jPanel7.add(jLabel133, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 160, 240, 20));
 
+        updateProductButton.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         updateProductButton.setText("Actualizar");
         updateProductButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1602,6 +1505,7 @@ public class Maintenance extends javax.swing.JFrame {
         });
         jPanel7.add(updateProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 330, -1, -1));
 
+        updateBatchCodeProduct.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jPanel7.add(updateBatchCodeProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 280, 110, -1));
 
         jTabbedPane1.addTab("Productos", jPanel7);
@@ -1609,19 +1513,19 @@ public class Maintenance extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(153, 204, 153));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel2.setText("Agregar");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 21, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel3.setText("Buscar");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel4.setText("Actualizar");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 10, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel5.setText("Borrar");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 10, -1, -1));
 
@@ -1634,28 +1538,35 @@ public class Maintenance extends javax.swing.JFrame {
         jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 20, -1, 319));
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel6.setText("Nombre:");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 39, -1, -1));
+
+        nameTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel2.add(nameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 64, 170, -1));
 
-        jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel7.setText("Rol:");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 95, -1, -1));
 
+        comboBoxRole.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jPanel2.add(comboBoxRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 127, 160, -1));
 
-        jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel8.setText("Usuario:");
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 165, -1, -1));
+
+        userTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel2.add(userTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 197, 150, -1));
 
-        jLabel9.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel9.setText("Contraseña:");
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 235, -1, -1));
+
+        passwordTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel2.add(passwordTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 260, 150, -1));
 
-        addUserButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        addUserButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         addUserButton.setText("Agregar");
         addUserButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1664,26 +1575,28 @@ public class Maintenance extends javax.swing.JFrame {
         });
         jPanel2.add(addUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(101, 298, -1, -1));
 
-        jLabel10.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel10.setText("Nombre usuario:");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, -1, -1));
 
-        jLabel11.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel11.setText("Rol:");
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, -1, -1));
 
         roleLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanel2.add(roleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, 171, 17));
+
+        serchName.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel2.add(serchName, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 171, -1));
 
-        jLabel12.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel12.setText("Nombre:");
         jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, -1, -1));
 
-        userNameLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        userNameLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel2.add(userNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 171, 23));
 
-        serchUserButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        serchUserButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         serchUserButton.setText("Buscar");
         serchUserButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1692,12 +1605,14 @@ public class Maintenance extends javax.swing.JFrame {
         });
         jPanel2.add(serchUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, -1, -1));
 
-        jLabel13.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel13.setText("Nombre:");
         jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 40, -1, -1));
+
+        updateUserTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel2.add(updateUserTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 40, 175, -1));
 
-        updateSearchUserButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        updateSearchUserButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         updateSearchUserButton.setText("Buscar");
         updateSearchUserButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1706,27 +1621,35 @@ public class Maintenance extends javax.swing.JFrame {
         });
         jPanel2.add(updateSearchUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 80, -1, -1));
 
-        jLabel14.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel14.setText("Nombre:");
         jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 140, -1, -1));
+
+        updateNameUserTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel2.add(updateNameUserTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 130, 156, -1));
 
-        jLabel15.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel15.setText("Rol:");
         jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 180, -1, -1));
 
+        updateRoleUserComboBox.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jPanel2.add(updateRoleUserComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 170, 156, -1));
 
-        jLabel16.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel16.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel16.setText("Usuario:");
         jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, -1, -1));
+
+        updateUserNameTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel2.add(updateUserNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 220, 156, -1));
 
-        jLabel17.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel17.setText("Contraseña:");
         jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 270, -1, -1));
+
+        updatePasswordTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel2.add(updatePasswordTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 270, 156, -1));
 
+        updateUserButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         updateUserButton.setText("Actualizar");
         updateUserButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1735,12 +1658,14 @@ public class Maintenance extends javax.swing.JFrame {
         });
         jPanel2.add(updateUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 300, -1, -1));
 
-        jLabel18.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel18.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel18.setText("Nombre:");
         jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 40, -1, -1));
+
+        deleteUserTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel2.add(deleteUserTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 70, 150, -1));
 
-        deleteUserButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        deleteUserButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         deleteUserButton.setText("Borrar");
         deleteUserButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1755,11 +1680,235 @@ public class Maintenance extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Usuarios", jPanel2);
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jPanel3.setBackground(new java.awt.Color(153, 204, 153));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel19.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel19.setText("Agregar");
+        jPanel3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 22, -1, -1));
+
+        jLabel20.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel20.setText("Buscar");
+        jPanel3.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, -1, -1));
+
+        jLabel21.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel21.setText("Actualizar");
+        jPanel3.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, -1, -1));
+
+        jLabel22.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel22.setText("Borrar");
+        jPanel3.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 10, -1, -1));
+
+        jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel3.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 22, -1, 280));
+
+        jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel3.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(447, 22, -1, 280));
+
+        jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel3.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 20, -1, 280));
+
+        jLabel23.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel23.setText("Nombre:");
+        jPanel3.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 28, -1, -1));
+
+        cellarNameTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel3.add(cellarNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 48, 151, -1));
+
+        jLabel24.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel24.setText("Latitud:");
+        jPanel3.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 79, -1, -1));
+
+        latitudeCellarTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel3.add(latitudeCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 104, 151, -1));
+
+        jLabel25.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel25.setText("Longitud:");
+        jPanel3.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
+
+        LenghtCellarTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel3.add(LenghtCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 155, 151, -1));
+
+        jLabel26.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel26.setText("Distancia:");
+        jPanel3.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 186, -1, -1));
+
+        distanceCellarTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel3.add(distanceCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 218, 151, -1));
+
+        jLabel27.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel27.setText("Fotografía:");
+        jPanel3.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 249, -1, -1));
+
+        imageCellarTextField.setEditable(false);
+        imageCellarTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel3.add(imageCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 275, 62, -1));
+
+        addImageCellarButton.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        addImageCellarButton.setText("Buscar");
+        addImageCellarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addImageCellarButtonActionPerformed(evt);
+            }
+        });
+        jPanel3.add(addImageCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 274, -1, -1));
+
+        jButton3.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        jButton3.setText("Agregar");
+        jPanel3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, -1));
+
+        jLabel28.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel28.setText("Nombre:");
+        jPanel3.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 46, -1, -1));
+
+        searchCellarTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel3.add(searchCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 43, 153, -1));
+
+        jLabel29.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel29.setText("Latitud:");
+        jPanel3.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 100, -1, -1));
+
+        latitudeCellarLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel3.add(latitudeCellarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 100, 114, 14));
+
+        searchCellarButton.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        searchCellarButton.setText("Buscar");
+        searchCellarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchCellarButtonActionPerformed(evt);
+            }
+        });
+        jPanel3.add(searchCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(364, 69, -1, -1));
+
+        jLabel31.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel31.setText("Longitud:");
+        jPanel3.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 143, -1, -1));
+
+        lenghtCellarLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel3.add(lenghtCellarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 138, 114, 19));
+
+        jLabel33.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel33.setText("Distancia:");
+        jPanel3.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 186, -1, -1));
+
+        distanceCellarLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel3.add(distanceCellarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 186, 114, 14));
+
+        jLabel35.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel35.setText("Fotografía:");
+        jPanel3.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 230, -1, -1));
+
+        imageCellarLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel3.add(imageCellarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(236, 255, 140, 56));
+
+        jLabel37.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel37.setText("Nombre:");
+        jPanel3.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 50, -1, -1));
+
+        updateSearchCellarTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel3.add(updateSearchCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 42, 149, -1));
+
+        updateSearchCellarButton.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        updateSearchCellarButton.setText("Buscar");
+        updateSearchCellarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateSearchCellarButtonActionPerformed(evt);
+            }
+        });
+        jPanel3.add(updateSearchCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(632, 68, -1, -1));
+
+        jLabel38.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel38.setText("Nombre:");
+        jPanel3.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 107, -1, -1));
+
+        updateNameCellarTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel3.add(updateNameCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 104, 149, -1));
+
+        jLabel39.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel39.setText("Latitud:");
+        jPanel3.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 145, -1, -1));
+
+        updateLatitudeCellarTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel3.add(updateLatitudeCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 142, 149, -1));
+
+        jLabel40.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel40.setText("Longitud:");
+        jPanel3.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 183, -1, -1));
+
+        updateLenghtTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel3.add(updateLenghtTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 180, 149, -1));
+
+        jLabel41.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel41.setText("Distancia:");
+        jPanel3.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 221, -1, -1));
+
+        updateDistanceTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel3.add(updateDistanceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 218, 149, -1));
+
+        jLabel42.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel42.setText("Fotografía:");
+        jPanel3.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 260, -1, -1));
+
+        updateImageTextField.setEditable(false);
+        updateImageTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel3.add(updateImageTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 257, 65, -1));
+
+        updateImageCellarButton.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        updateImageCellarButton.setText("Buscar");
+        updateImageCellarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateImageCellarButtonActionPerformed(evt);
+            }
+        });
+        jPanel3.add(updateImageCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(623, 256, -1, -1));
+
+        addCellarButton.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        addCellarButton.setText("Agregar");
+        addCellarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addCellarButtonActionPerformed(evt);
+            }
+        });
+        jPanel3.add(addCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, -1, -1));
+
+        updateCellarButton.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        updateCellarButton.setText("Actualizar");
+        updateCellarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateCellarButtonActionPerformed(evt);
+            }
+        });
+        jPanel3.add(updateCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 300, -1, -1));
+
+        jLabel43.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel43.setText("Nombre:");
+        jPanel3.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 40, -1, -1));
+
+        deleteCellarTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel3.add(deleteCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 70, 130, -1));
+
+        deleteCellarButton.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        deleteCellarButton.setText("Borrar");
+        deleteCellarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteCellarButtonActionPerformed(evt);
+            }
+        });
+        jPanel3.add(deleteCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 110, -1, -1));
+        jPanel3.add(jLabel146, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 180, 20));
+        jPanel3.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 200, 20));
+        jPanel3.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 330, 250, 20));
+
+        jLabel34.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jPanel3.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 160, 270, 30));
+
+        jTabbedPane1.addTab("Bodegas", jPanel3);
+
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/tuercas.png"))); // NOI18N
         jLabel1.setText("Mantenimientos");
 
-        returnAdministratorButton.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        returnAdministratorButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         returnAdministratorButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/salir-con-boton-en-esquema.png"))); // NOI18N
         returnAdministratorButton.setText("Salir");
         returnAdministratorButton.setBorderPainted(false);

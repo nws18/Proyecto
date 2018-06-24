@@ -147,6 +147,7 @@ public class Record extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(153, 204, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        table.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -175,7 +176,7 @@ public class Record extends javax.swing.JFrame {
 
         jPanel1.add(chartPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(633, 80, -1, -1));
 
-        returnMaintenanceButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        returnMaintenanceButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         returnMaintenanceButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/salir-con-boton-en-esquema.png"))); // NOI18N
         returnMaintenanceButton.setText("Salir");
         returnMaintenanceButton.setBorderPainted(false);
@@ -209,7 +210,7 @@ public class Record extends javax.swing.JFrame {
         });
         jPanel1.add(userTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, 78, -1));
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/crecimiento.png"))); // NOI18N
         jLabel1.setText("Historial de productos");
@@ -224,26 +225,26 @@ public class Record extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/lupa-para-buscar.png"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 180, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/tareas.png"))); // NOI18N
         jLabel5.setText("Lista de productos entregados");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 25, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jLabel6.setText("Rango de fechas");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, -1));
         jPanel1.add(jXDatePicker1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 140, -1));
         jPanel1.add(jXDatePicker2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 140, -1));
 
-        jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel7.setText("De:");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
 
-        jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel8.setText("a:");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, -1, -1));
 
-        searchButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        searchButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         searchButton.setText("Buscar");
         searchButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

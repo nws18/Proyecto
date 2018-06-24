@@ -55,22 +55,22 @@ public class Login extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 153));
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel1.setText("Usuario:");
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel2.setText("Contraseña:");
 
-        userNameTextField.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        userNameTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         userNameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userNameTextFieldActionPerformed(evt);
             }
         });
 
-        passwordTextField.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        passwordTextField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
-        enterButton.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        enterButton.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         enterButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/iniciar-la-sesion.png"))); // NOI18N
         enterButton.setText("Ingresar");
         enterButton.setBorderPainted(false);
@@ -122,7 +122,7 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(userNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(showPasswordLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(76, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
