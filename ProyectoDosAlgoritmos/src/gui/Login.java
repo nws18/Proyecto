@@ -215,7 +215,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_showPasswordLabelMouseEntered
 
     private void showPasswordLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showPasswordLabelMouseExited
-        passwordTextField.setEchoChar('*');
+        passwordTextField.setEchoChar('•');
     }//GEN-LAST:event_showPasswordLabelMouseExited
 
     private void creditsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_creditsButtonActionPerformed
