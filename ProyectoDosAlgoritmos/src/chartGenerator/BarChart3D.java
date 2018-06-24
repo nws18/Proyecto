@@ -39,8 +39,6 @@ public class BarChart3D {
 
     public void BarChart(JPanel jpanel) throws IOException {
         final DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-
-        ArrayList<String> fillChart = new ArrayList<>();
         String lastMonths[] = getLastMonths();
         for (int i = 0; i < cellarGraph.list().size(); i++) {
             Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
@@ -62,10 +60,6 @@ public class BarChart3D {
         jpanel.setLayout(new java.awt.BorderLayout());
         jpanel.add(chartPanel, BorderLayout.CENTER);
         jpanel.validate();
-      int width = 640; /* Width of the image */              
-      int height = 480; /* Height of the image */                              
-      File barChart3D = new File( "barChart3D.jpeg" );                            
-      ChartUtilities.saveChartAsJPEG( barChart3D, barChart, width, height);
     }
 
     public String getMonthName(int monthNumber) {
@@ -115,9 +109,7 @@ public class BarChart3D {
     public String[] getLastMonths() {
         String lastMonths[] = new String[3];
         java.util.Date actualDate = new java.util.Date();
-
         switch (actualDate.getMonth() + 1) {
-
             case 1:
                 lastMonths[2] = "11";
                 lastMonths[1] = "12";
@@ -178,7 +170,6 @@ public class BarChart3D {
                 lastMonths[1] = "11";
                 lastMonths[0] = "12";
                 break;
-
         }
         return lastMonths;
     }
@@ -188,15 +179,10 @@ public class BarChart3D {
         for (int i = 0; i < distributionOrderList.size(); i++) {
             DistributionOrder tempDistributionOrder = distributionOrderList.get(i);
             String tempMonth = tempDistributionOrder.getOrderDate().substring(3, 5);
-            System.out.println(tempMonth);
             if (tempMonth.equals(month) && tempDistributionOrder.getIdDestinyCellar() == idCellar) {
                 amount = amount + tempDistributionOrder.getTotalAmount();
-                System.out.println("Jejejeje");
             }
         }
-//        System.out.println(amount);
-        
         return amount;
     }
-
 }

@@ -265,42 +265,49 @@ public class Maintenance extends javax.swing.JFrame {
         jTextField15 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel79 = new javax.swing.JLabel();
-        jLabel80 = new javax.swing.JLabel();
-        jLabel81 = new javax.swing.JLabel();
-        jLabel82 = new javax.swing.JLabel();
-        jSeparator13 = new javax.swing.JSeparator();
-        jSeparator14 = new javax.swing.JSeparator();
-        jSeparator15 = new javax.swing.JSeparator();
-        jLabel83 = new javax.swing.JLabel();
-        nameCategoryTextField = new javax.swing.JTextField();
-        jLabel84 = new javax.swing.JLabel();
-        jLabel85 = new javax.swing.JLabel();
-        searchNameCategoryTextField = new javax.swing.JTextField();
-        searchCategoryButton = new javax.swing.JButton();
-        jLabel86 = new javax.swing.JLabel();
-        descriptionCategoryLabel = new javax.swing.JLabel();
-        jLabel88 = new javax.swing.JLabel();
-        updateSearchNameCategoryTextField = new javax.swing.JTextField();
-        updateSearchCategoryButton = new javax.swing.JButton();
-        jLabel89 = new javax.swing.JLabel();
-        updateNameCategoryTextField = new javax.swing.JTextField();
-        jLabel90 = new javax.swing.JLabel();
-        addCategoryButton = new javax.swing.JButton();
-        updateCategoryButton = new javax.swing.JButton();
-        jLabel91 = new javax.swing.JLabel();
-        deleteCategoryTextField = new javax.swing.JTextField();
-        deleteCategoryButton = new javax.swing.JButton();
-        addCategoryLabel = new javax.swing.JLabel();
-        searchCategoryLabel = new javax.swing.JLabel();
-        jLabel87 = new javax.swing.JLabel();
-        jLabel107 = new javax.swing.JLabel();
-        jLabel112 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        updateDescriptionCategoryTextField = new javax.swing.JTextArea();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        descriptionCategoryTextField = new javax.swing.JTextArea();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel6 = new javax.swing.JLabel();
+        nameTextField = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        comboBoxRole = new javax.swing.JComboBox<>();
+        jLabel8 = new javax.swing.JLabel();
+        userTextField = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        passwordTextField = new javax.swing.JPasswordField();
+        addUserButton = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        roleLabel = new javax.swing.JLabel();
+        serchName = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        userNameLabel = new javax.swing.JLabel();
+        serchUserButton = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        updateUserTextField = new javax.swing.JTextField();
+        updateSearchUserButton = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        updateNameUserTextField = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        updateRoleUserComboBox = new javax.swing.JComboBox<>();
+        jLabel16 = new javax.swing.JLabel();
+        updateUserNameTextField = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        updatePasswordTextField = new javax.swing.JPasswordField();
+        updateUserButton = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
+        deleteUserTextField = new javax.swing.JTextField();
+        deleteUserButton = new javax.swing.JButton();
+        jLabel114 = new javax.swing.JLabel();
+        jLabel118 = new javax.swing.JLabel();
+        jLabel116 = new javax.swing.JLabel();
+        jLabel120 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
@@ -387,6 +394,42 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel73 = new javax.swing.JLabel();
         jLabel76 = new javax.swing.JLabel();
         jLabel136 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel79 = new javax.swing.JLabel();
+        jLabel80 = new javax.swing.JLabel();
+        jLabel81 = new javax.swing.JLabel();
+        jLabel82 = new javax.swing.JLabel();
+        jSeparator13 = new javax.swing.JSeparator();
+        jSeparator14 = new javax.swing.JSeparator();
+        jSeparator15 = new javax.swing.JSeparator();
+        jLabel83 = new javax.swing.JLabel();
+        nameCategoryTextField = new javax.swing.JTextField();
+        jLabel84 = new javax.swing.JLabel();
+        jLabel85 = new javax.swing.JLabel();
+        searchNameCategoryTextField = new javax.swing.JTextField();
+        searchCategoryButton = new javax.swing.JButton();
+        jLabel86 = new javax.swing.JLabel();
+        descriptionCategoryLabel = new javax.swing.JLabel();
+        jLabel88 = new javax.swing.JLabel();
+        updateSearchNameCategoryTextField = new javax.swing.JTextField();
+        updateSearchCategoryButton = new javax.swing.JButton();
+        jLabel89 = new javax.swing.JLabel();
+        updateNameCategoryTextField = new javax.swing.JTextField();
+        jLabel90 = new javax.swing.JLabel();
+        addCategoryButton = new javax.swing.JButton();
+        updateCategoryButton = new javax.swing.JButton();
+        jLabel91 = new javax.swing.JLabel();
+        deleteCategoryTextField = new javax.swing.JTextField();
+        deleteCategoryButton = new javax.swing.JButton();
+        addCategoryLabel = new javax.swing.JLabel();
+        searchCategoryLabel = new javax.swing.JLabel();
+        jLabel87 = new javax.swing.JLabel();
+        jLabel107 = new javax.swing.JLabel();
+        jLabel112 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        updateDescriptionCategoryTextField = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        descriptionCategoryTextField = new javax.swing.JTextArea();
         jPanel7 = new javax.swing.JPanel();
         jLabel92 = new javax.swing.JLabel();
         jLabel93 = new javax.swing.JLabel();
@@ -464,49 +507,6 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel133 = new javax.swing.JLabel();
         updateProductButton = new javax.swing.JButton();
         updateBatchCodeProduct = new javax.swing.JComboBox<>();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        jSeparator2 = new javax.swing.JSeparator();
-        jSeparator3 = new javax.swing.JSeparator();
-        jLabel6 = new javax.swing.JLabel();
-        nameTextField = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        comboBoxRole = new javax.swing.JComboBox<>();
-        jLabel8 = new javax.swing.JLabel();
-        userTextField = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        passwordTextField = new javax.swing.JPasswordField();
-        addUserButton = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        roleLabel = new javax.swing.JLabel();
-        serchName = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
-        userNameLabel = new javax.swing.JLabel();
-        serchUserButton = new javax.swing.JButton();
-        jLabel13 = new javax.swing.JLabel();
-        updateUserTextField = new javax.swing.JTextField();
-        updateSearchUserButton = new javax.swing.JButton();
-        jLabel14 = new javax.swing.JLabel();
-        updateNameUserTextField = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
-        updateRoleUserComboBox = new javax.swing.JComboBox<>();
-        jLabel16 = new javax.swing.JLabel();
-        updateUserNameTextField = new javax.swing.JTextField();
-        jLabel17 = new javax.swing.JLabel();
-        updatePasswordTextField = new javax.swing.JPasswordField();
-        updateUserButton = new javax.swing.JButton();
-        jLabel18 = new javax.swing.JLabel();
-        deleteUserTextField = new javax.swing.JTextField();
-        deleteUserButton = new javax.swing.JButton();
-        jLabel114 = new javax.swing.JLabel();
-        jLabel118 = new javax.swing.JLabel();
-        jLabel116 = new javax.swing.JLabel();
-        jLabel120 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
@@ -573,191 +573,217 @@ public class Maintenance extends javax.swing.JFrame {
 
         jTabbedPane1.setBackground(new java.awt.Color(153, 204, 153));
 
-        jPanel6.setBackground(new java.awt.Color(153, 204, 153));
-        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.setBackground(new java.awt.Color(153, 204, 153));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel79.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel79.setText("Agregar");
-        jPanel6.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 20, -1, -1));
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel2.setText("Agregar");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 21, -1, -1));
 
-        jLabel80.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel80.setText("Buscar");
-        jPanel6.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 20, -1, -1));
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel3.setText("Buscar");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, -1));
 
-        jLabel81.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel81.setText("Actualizar");
-        jPanel6.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(555, 20, -1, -1));
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel4.setText("Actualizar");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 10, -1, -1));
 
-        jLabel82.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jLabel82.setText("Borrar");
-        jPanel6.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(972, 20, -1, -1));
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel5.setText("Borrar");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 10, -1, -1));
 
-        jSeparator13.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel6.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(241, 40, -1, 258));
+        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, -1, 303));
 
-        jSeparator14.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel6.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(479, 40, -1, 258));
+        jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 20, -1, 309));
 
-        jSeparator15.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel6.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(857, 40, -1, 258));
+        jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 20, -1, 319));
 
-        jLabel83.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel83.setText("Nombre:");
-        jPanel6.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 52, -1, -1));
+        jLabel6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel6.setText("Nombre:");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 39, -1, -1));
 
-        nameCategoryTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel6.add(nameCategoryTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 165, -1));
+        nameTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel2.add(nameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 64, 160, -1));
 
-        jLabel84.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel84.setText("Descripción:");
-        jPanel6.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
+        jLabel7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel7.setText("Rol:");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 95, -1, -1));
 
-        jLabel85.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel85.setText("Nombre:");
-        jPanel6.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 66, -1, -1));
+        comboBoxRole.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jPanel2.add(comboBoxRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 127, 160, -1));
 
-        searchNameCategoryTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel6.add(searchNameCategoryTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(345, 63, 116, -1));
+        jLabel8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel8.setText("Usuario:");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 165, -1, -1));
 
-        searchCategoryButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        searchCategoryButton.setText("Buscar");
-        searchCategoryButton.addActionListener(new java.awt.event.ActionListener() {
+        userTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel2.add(userTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 197, 160, -1));
+
+        jLabel9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel9.setText("Contraseña:");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 235, -1, -1));
+
+        passwordTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel2.add(passwordTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 260, 160, -1));
+
+        addUserButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        addUserButton.setText("Agregar");
+        addUserButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchCategoryButtonActionPerformed(evt);
+                addUserButtonActionPerformed(evt);
             }
         });
-        jPanel6.add(searchCategoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(396, 101, -1, -1));
+        jPanel2.add(addUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, -1, -1));
 
-        jLabel86.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel86.setText("Descripción:");
-        jPanel6.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 162, -1, -1));
+        jLabel10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel10.setText("Nombre usuario:");
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, -1, -1));
 
-        descriptionCategoryLabel.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jPanel6.add(descriptionCategoryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 194, 222, 79));
+        jLabel11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel11.setText("Rol:");
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, -1, -1));
 
-        jLabel88.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel88.setText("Nombre:");
-        jPanel6.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 60, -1, -1));
+        roleLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jPanel2.add(roleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, 171, 17));
 
-        updateSearchNameCategoryTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel6.add(updateSearchNameCategoryTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 57, 113, -1));
+        serchName.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel2.add(serchName, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 171, -1));
 
-        updateSearchCategoryButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        updateSearchCategoryButton.setText("Buscar");
-        updateSearchCategoryButton.addActionListener(new java.awt.event.ActionListener() {
+        jLabel12.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel12.setText("Nombre:");
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, -1, -1));
+
+        userNameLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel2.add(userNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 171, 23));
+
+        serchUserButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        serchUserButton.setText("Buscar");
+        serchUserButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateSearchCategoryButtonActionPerformed(evt);
+                serchUserButtonActionPerformed(evt);
             }
         });
-        jPanel6.add(updateSearchCategoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(736, 95, -1, -1));
+        jPanel2.add(serchUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, -1, -1));
 
-        jLabel89.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel89.setText("Nombre:");
-        jPanel6.add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 129, -1, -1));
+        jLabel13.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel13.setText("Nombre:");
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 40, -1, -1));
 
-        updateNameCategoryTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel6.add(updateNameCategoryTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 154, 113, -1));
+        updateUserTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel2.add(updateUserTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 40, 175, -1));
 
-        jLabel90.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel90.setText("Descripción:");
-        jPanel6.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 192, -1, -1));
-
-        addCategoryButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        addCategoryButton.setText("Agregar");
-        addCategoryButton.addActionListener(new java.awt.event.ActionListener() {
+        updateSearchUserButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        updateSearchUserButton.setText("Buscar");
+        updateSearchUserButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addCategoryButtonActionPerformed(evt);
+                updateSearchUserButtonActionPerformed(evt);
             }
         });
-        jPanel6.add(addCategoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
+        jPanel2.add(updateSearchUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 90, -1, -1));
 
-        updateCategoryButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        updateCategoryButton.setText("Actualizar");
-        updateCategoryButton.addActionListener(new java.awt.event.ActionListener() {
+        jLabel14.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel14.setText("Nombre:");
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 140, -1, -1));
+
+        updateNameUserTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel2.add(updateNameUserTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 130, 156, -1));
+
+        jLabel15.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel15.setText("Rol:");
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 180, -1, -1));
+
+        updateRoleUserComboBox.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jPanel2.add(updateRoleUserComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 170, 156, -1));
+
+        jLabel16.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel16.setText("Usuario:");
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, -1, -1));
+
+        updateUserNameTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel2.add(updateUserNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 220, 156, -1));
+
+        jLabel17.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel17.setText("Contraseña:");
+        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 270, -1, -1));
+
+        updatePasswordTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel2.add(updatePasswordTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 270, 156, -1));
+
+        updateUserButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        updateUserButton.setText("Actualizar");
+        updateUserButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateCategoryButtonActionPerformed(evt);
+                updateUserButtonActionPerformed(evt);
             }
         });
-        jPanel6.add(updateCategoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 320, -1, -1));
+        jPanel2.add(updateUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 300, -1, -1));
 
-        jLabel91.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel91.setText("Nombre:");
-        jPanel6.add(jLabel91, new org.netbeans.lib.awtextra.AbsoluteConstraints(892, 55, -1, -1));
+        jLabel18.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel18.setText("Nombre:");
+        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 40, -1, -1));
 
-        deleteCategoryTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel6.add(deleteCategoryTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(952, 52, 108, -1));
+        deleteUserTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel2.add(deleteUserTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 70, 150, -1));
 
-        deleteCategoryButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        deleteCategoryButton.setText("Borrar");
-        deleteCategoryButton.addActionListener(new java.awt.event.ActionListener() {
+        deleteUserButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        deleteUserButton.setText("Borrar");
+        deleteUserButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteCategoryButtonActionPerformed(evt);
+                deleteUserButtonActionPerformed(evt);
             }
         });
-        jPanel6.add(deleteCategoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(926, 99, -1, -1));
-        jPanel6.add(addCategoryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 180, 19));
-        jPanel6.add(searchCategoryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(545, 335, 106, 22));
-        jPanel6.add(jLabel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 350, 253, 26));
-        jPanel6.add(jLabel107, new org.netbeans.lib.awtextra.AbsoluteConstraints(252, 316, 287, 19));
-        jPanel6.add(jLabel112, new org.netbeans.lib.awtextra.AbsoluteConstraints(862, 157, 244, 26));
+        jPanel2.add(deleteUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 120, -1, -1));
+        jPanel2.add(jLabel114, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 220, 20));
+        jPanel2.add(jLabel118, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 200, 30));
+        jPanel2.add(jLabel116, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 330, 260, 20));
+        jPanel2.add(jLabel120, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 170, 220, 20));
 
-        updateDescriptionCategoryTextField.setColumns(20);
-        updateDescriptionCategoryTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        updateDescriptionCategoryTextField.setRows(5);
-        jScrollPane1.setViewportView(updateDescriptionCategoryTextField);
-
-        jPanel6.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 220, 190, 100));
-
-        descriptionCategoryTextField.setColumns(20);
-        descriptionCategoryTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        descriptionCategoryTextField.setRows(5);
-        jScrollPane2.setViewportView(descriptionCategoryTextField);
-
-        jPanel6.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 180, 110));
-
-        jTabbedPane1.addTab("Categorías", jPanel6);
+        jTabbedPane1.addTab("Usuarios", jPanel2);
 
         jPanel4.setBackground(new java.awt.Color(153, 204, 153));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel44.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel44.setText("Agregar");
-        jPanel4.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 24, -1, -1));
+        jPanel4.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, -1, -1));
 
         jLabel45.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel45.setText("Buscar");
-        jPanel4.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 24, -1, -1));
+        jPanel4.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, -1, -1));
 
         jLabel46.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel46.setText("Actualizar");
-        jPanel4.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 24, -1, -1));
+        jPanel4.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 30, -1, -1));
 
         jLabel47.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel47.setText("Borrar");
-        jPanel4.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(795, 24, -1, -1));
+        jPanel4.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 30, -1, -1));
 
         jSeparator7.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel4.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 24, -1, 253));
+        jPanel4.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, -1, 253));
 
         jSeparator8.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel4.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 24, -1, 253));
+        jPanel4.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 40, -1, 253));
 
         jSeparator9.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel4.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(717, 24, -1, 253));
+        jPanel4.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 30, -1, 253));
 
         jLabel48.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel48.setText("Placa:");
         jPanel4.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 62, -1, -1));
 
         plateTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel4.add(plateTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 87, 172, -1));
+        jPanel4.add(plateTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 172, -1));
 
         jLabel49.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel49.setText("Capacidad mínima:");
-        jPanel4.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 125, -1, -1));
+        jPanel4.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
 
         MinCapacityComboBox.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jPanel4.add(MinCapacityComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 50, -1));
+        jPanel4.add(MinCapacityComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 50, -1));
 
         jLabel50.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel50.setText("Fotografía:");
@@ -765,7 +791,7 @@ public class Maintenance extends javax.swing.JFrame {
 
         imageTransportUnitTextField.setEditable(false);
         imageTransportUnitTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel4.add(imageTransportUnitTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 72, -1));
+        jPanel4.add(imageTransportUnitTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 72, -1));
 
         searchImageTransportUnit.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         searchImageTransportUnit.setText("Buscar");
@@ -774,7 +800,7 @@ public class Maintenance extends javax.swing.JFrame {
                 searchImageTransportUnitActionPerformed(evt);
             }
         });
-        jPanel4.add(searchImageTransportUnit, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, -1, -1));
+        jPanel4.add(searchImageTransportUnit, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, -1, -1));
 
         addTransportUnitButton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         addTransportUnitButton.setText("Agregar");
@@ -783,33 +809,33 @@ public class Maintenance extends javax.swing.JFrame {
                 addTransportUnitButtonActionPerformed(evt);
             }
         });
-        jPanel4.add(addTransportUnitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
+        jPanel4.add(addTransportUnitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, -1, -1));
 
         jLabel51.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel51.setText("Placa:");
-        jPanel4.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(253, 59, -1, -1));
+        jPanel4.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, -1, -1));
 
         searchPlateTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel4.add(searchPlateTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 56, 129, -1));
+        jPanel4.add(searchPlateTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, 129, -1));
 
         jLabel52.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel52.setText("Capacidad:");
-        jPanel4.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, -1, -1));
+        jPanel4.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, -1, -1));
 
         capacityTransportUnitLabel.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jPanel4.add(capacityTransportUnitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 118, 14));
+        jPanel4.add(capacityTransportUnitLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, 118, 14));
 
         jLabel54.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel54.setText("Fotografía:");
-        jPanel4.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, -1, -1));
-        jPanel4.add(imageTransportUnit, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, 110, 80));
+        jPanel4.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 210, -1, -1));
+        jPanel4.add(imageTransportUnit, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 110, 80));
 
         jLabel56.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel56.setText("Placa:");
-        jPanel4.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 59, -1, -1));
+        jPanel4.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 70, -1, -1));
 
         searchUpdateTransportTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel4.add(searchUpdateTransportTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 56, 132, -1));
+        jPanel4.add(searchUpdateTransportTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 60, 132, -1));
 
         updateSearchPlateButton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         updateSearchPlateButton.setText("Buscar");
@@ -818,29 +844,29 @@ public class Maintenance extends javax.swing.JFrame {
                 updateSearchPlateButtonActionPerformed(evt);
             }
         });
-        jPanel4.add(updateSearchPlateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(634, 87, -1, -1));
+        jPanel4.add(updateSearchPlateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 90, -1, -1));
 
         jLabel57.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel57.setText("Placa:");
-        jPanel4.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(496, 144, -1, -1));
+        jPanel4.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 140, -1, -1));
 
         plateTransportUnitTexField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel4.add(plateTransportUnitTexField, new org.netbeans.lib.awtextra.AbsoluteConstraints(568, 141, 131, -1));
+        jPanel4.add(plateTransportUnitTexField, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 140, 131, -1));
 
         jLabel58.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel58.setText("Capacidad mínima:");
-        jPanel4.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 180, 90, -1));
+        jPanel4.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 180, 120, -1));
 
         updateMinCapacityComboBox.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jPanel4.add(updateMinCapacityComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, 40, -1));
+        jPanel4.add(updateMinCapacityComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 180, 40, -1));
 
         jLabel59.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel59.setText("Fotografía:");
-        jPanel4.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 250, -1, -1));
+        jPanel4.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 260, -1, -1));
 
         updateImageTransport.setEditable(false);
         updateImageTransport.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel4.add(updateImageTransport, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 270, 73, -1));
+        jPanel4.add(updateImageTransport, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 250, 73, -1));
 
         updateImageTransportUnit.setText("Buscar");
         updateImageTransportUnit.addActionListener(new java.awt.event.ActionListener() {
@@ -848,7 +874,7 @@ public class Maintenance extends javax.swing.JFrame {
                 updateImageTransportUnitActionPerformed(evt);
             }
         });
-        jPanel4.add(updateImageTransportUnit, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 270, -1, -1));
+        jPanel4.add(updateImageTransportUnit, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 250, -1, -1));
 
         updateTransportUnitButton.setText("Actualizar");
         updateTransportUnitButton.addActionListener(new java.awt.event.ActionListener() {
@@ -856,14 +882,14 @@ public class Maintenance extends javax.swing.JFrame {
                 updateTransportUnitButtonActionPerformed(evt);
             }
         });
-        jPanel4.add(updateTransportUnitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 300, -1, -1));
+        jPanel4.add(updateTransportUnitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 300, -1, -1));
 
         jLabel60.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel60.setText("Placa:");
-        jPanel4.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(737, 57, -1, -1));
+        jPanel4.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 60, -1, -1));
 
         deleteTransportTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel4.add(deleteTransportTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(737, 89, 150, -1));
+        jPanel4.add(deleteTransportTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 100, 150, -1));
 
         deleteTransportUnitButton.setText("Borrar");
         deleteTransportUnitButton.addActionListener(new java.awt.event.ActionListener() {
@@ -871,7 +897,7 @@ public class Maintenance extends javax.swing.JFrame {
                 deleteTransportUnitButtonActionPerformed(evt);
             }
         });
-        jPanel4.add(deleteTransportUnitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 130, -1, -1));
+        jPanel4.add(deleteTransportUnitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 140, -1, -1));
 
         searchTransportUnitButton.setText("Buscar");
         searchTransportUnitButton.addActionListener(new java.awt.event.ActionListener() {
@@ -879,41 +905,41 @@ public class Maintenance extends javax.swing.JFrame {
                 searchTransportUnitButtonActionPerformed(evt);
             }
         });
-        jPanel4.add(searchTransportUnitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, -1, -1));
-        jPanel4.add(jLabel134, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 210, 20));
+        jPanel4.add(searchTransportUnitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 90, -1, -1));
+        jPanel4.add(jLabel134, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 270, 20));
 
         jLabel140.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel140.setText("Capacidad máxima:");
         jPanel4.add(jLabel140, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
         MaxCapacityComboBox.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jPanel4.add(MaxCapacityComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 50, 20));
+        jPanel4.add(MaxCapacityComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 50, 20));
 
         jLabel141.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel141.setText("toneladas");
-        jPanel4.add(jLabel141, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 154, 70, 20));
+        jPanel4.add(jLabel141, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 70, 20));
 
         jLabel142.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel142.setText("toneladas");
-        jPanel4.add(jLabel142, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 80, -1));
-        jPanel4.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 330, 220, 20));
+        jPanel4.add(jLabel142, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 80, -1));
+        jPanel4.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 340, 280, 20));
 
         jLabel55.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel55.setText("toneladas");
-        jPanel4.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 180, -1, -1));
+        jPanel4.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 180, -1, -1));
 
         jLabel143.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel143.setText("Capacidad máxima");
-        jPanel4.add(jLabel143, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 210, -1, -1));
+        jLabel143.setText("Capacidad máxima:");
+        jPanel4.add(jLabel143, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 210, 110, -1));
 
         updateMaxCapacityComboBox.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jPanel4.add(updateMaxCapacityComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 210, 40, -1));
+        jPanel4.add(updateMaxCapacityComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 210, 40, -1));
 
         jLabel144.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel144.setText("toneladas");
-        jPanel4.add(jLabel144, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 210, -1, -1));
-        jPanel4.add(jLabel145, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 170, 260, 20));
-        jPanel4.add(jLabel135, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, 250, 20));
+        jPanel4.add(jLabel144, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 210, -1, -1));
+        jPanel4.add(jLabel145, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 340, 190, 20));
+        jPanel4.add(jLabel135, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, 270, 20));
 
         jTabbedPane1.addTab("Transporte", jPanel4);
 
@@ -1030,55 +1056,57 @@ public class Maintenance extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(77, 77, 77)
-                                .addComponent(jLabel61))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(25, 25, 25)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel136, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jLabel68)
-                                        .addComponent(jLabel65)
-                                        .addComponent(codeBatchTextField)
-                                        .addComponent(jLabel66)
-                                        .addComponent(jXDatePicker2, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)))))
-                        .addGap(33, 33, 33)
-                        .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(100, 100, 100)
-                                .addComponent(jLabel62))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(expirationDateLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
-                                        .addComponent(packedDateLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel70, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel72, javax.swing.GroupLayout.Alignment.LEADING))
-                                    .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addComponent(jLabel69)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(searchBatchCodeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(searchBatchButton)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33))
+                        .addContainerGap()
+                        .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel71, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(53, 53, 53)
-                                .addComponent(addBatchButton))
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addGap(77, 77, 77)
+                                        .addComponent(jLabel61))
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addGap(25, 25, 25)
+                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel136, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel65)
+                                            .addComponent(codeBatchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel66)))
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addGap(34, 34, 34)
+                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel68)
+                                            .addComponent(jXDatePicker2, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(addBatchButton)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel71, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)))
+                                .addGap(52, 52, 52)
+                                .addComponent(jLabel62)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel70)
+                                        .addGroup(jPanel5Layout.createSequentialGroup()
+                                            .addComponent(jLabel69)
+                                            .addGap(49, 49, 49)
+                                            .addComponent(searchBatchCodeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jLabel72))
+                                    .addComponent(searchBatchButton, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(packedDateLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(expirationDateLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(28, 28, 28)
+                        .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(7, 7, 7)))
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1107,7 +1135,7 @@ public class Maintenance extends javax.swing.JFrame {
                                 .addGap(38, 38, 38))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                                 .addComponent(updateBatchButton)
-                                .addGap(106, 106, 106)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                         .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
@@ -1120,14 +1148,13 @@ public class Maintenance extends javax.swing.JFrame {
                                         .addComponent(jLabel78)))
                                 .addGap(96, 96, 96))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addGap(4, 4, 4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                                         .addComponent(deleteBatchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(75, 75, 75))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(deleteBatchButton)
-                                        .addGap(66, 66, 66))
+                                        .addGap(2, 2, 2))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                                         .addComponent(jLabel76, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addContainerGap())))))
@@ -1142,43 +1169,43 @@ public class Maintenance extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addComponent(jLabel64)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel78)
                                 .addGap(18, 18, 18)
-                                .addComponent(deleteBatchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(32, 32, 32)
-                                .addComponent(deleteBatchButton)
-                                .addGap(13, 13, 13)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(deleteBatchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(deleteBatchButton))
+                                .addGap(67, 67, 67)
                                 .addComponent(jLabel76, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(jPanel5Layout.createSequentialGroup()
-                                    .addComponent(jLabel63)
-                                    .addGap(20, 20, 20)
-                                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(jPanel5Layout.createSequentialGroup()
-                                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                .addComponent(jLabel74)
-                                                .addComponent(updateSearchBatchCodeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(updateSearchBatchButton)
-                                            .addGap(18, 18, 18)
-                                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                .addComponent(jLabel75)
-                                                .addComponent(batchCodeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGap(46, 46, 46)
-                                            .addComponent(jLabel77))
-                                        .addComponent(expirationDatePicker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(updateBatchButton))
-                                .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel63)
+                                .addGap(20, 20, 20)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel74)
+                                            .addComponent(updateSearchBatchCodeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(updateSearchBatchButton)
+                                        .addGap(18, 18, 18)
+                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel75)
+                                            .addComponent(batchCodeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(46, 46, 46)
+                                        .addComponent(jLabel77))
+                                    .addComponent(expirationDatePicker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(updateBatchButton))
+                            .addComponent(jSeparator12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(jLabel73, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addComponent(jLabel62)
@@ -1188,13 +1215,13 @@ public class Maintenance extends javax.swing.JFrame {
                                     .addComponent(searchBatchCodeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(searchBatchButton)
-                                .addGap(32, 32, 32)
+                                .addGap(31, 31, 31)
                                 .addComponent(jLabel70)
                                 .addGap(18, 18, 18)
                                 .addComponent(packedDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel72)
-                                .addGap(28, 28, 28)
+                                .addGap(34, 34, 34)
                                 .addComponent(expirationDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addComponent(jLabel61)
@@ -1210,17 +1237,160 @@ public class Maintenance extends javax.swing.JFrame {
                                 .addComponent(jLabel68)
                                 .addGap(18, 18, 18)
                                 .addComponent(jXDatePicker2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(28, 28, 28)
-                                .addComponent(addBatchButton))
-                            .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(addBatchButton)))
+                        .addGap(33, 33, 33)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel67, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                            .addComponent(jLabel67, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
                             .addComponent(jLabel71, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
 
         jTabbedPane1.addTab("Lotes", jPanel5);
+
+        jPanel6.setBackground(new java.awt.Color(153, 204, 153));
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel79.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel79.setText("Agregar");
+        jPanel6.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 20, -1, -1));
+
+        jLabel80.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel80.setText("Buscar");
+        jPanel6.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, -1, -1));
+
+        jLabel81.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel81.setText("Actualizar");
+        jPanel6.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 20, -1, -1));
+
+        jLabel82.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel82.setText("Borrar");
+        jPanel6.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(972, 20, -1, -1));
+
+        jSeparator13.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel6.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(241, 40, -1, 258));
+
+        jSeparator14.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel6.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, -1, 258));
+
+        jSeparator15.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel6.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(857, 40, -1, 258));
+
+        jLabel83.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel83.setText("Nombre:");
+        jPanel6.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
+
+        nameCategoryTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel6.add(nameCategoryTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 130, -1));
+
+        jLabel84.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel84.setText("Descripción:");
+        jPanel6.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
+
+        jLabel85.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel85.setText("Nombre:");
+        jPanel6.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 66, -1, -1));
+
+        searchNameCategoryTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel6.add(searchNameCategoryTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(345, 63, 116, -1));
+
+        searchCategoryButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        searchCategoryButton.setText("Buscar");
+        searchCategoryButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchCategoryButtonActionPerformed(evt);
+            }
+        });
+        jPanel6.add(searchCategoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, -1, -1));
+
+        jLabel86.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel86.setText("Descripción:");
+        jPanel6.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 162, -1, -1));
+
+        descriptionCategoryLabel.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jPanel6.add(descriptionCategoryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, 210, 110));
+
+        jLabel88.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel88.setText("Nombre:");
+        jPanel6.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 60, -1, -1));
+
+        updateSearchNameCategoryTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel6.add(updateSearchNameCategoryTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 57, 113, -1));
+
+        updateSearchCategoryButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        updateSearchCategoryButton.setText("Buscar");
+        updateSearchCategoryButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateSearchCategoryButtonActionPerformed(evt);
+            }
+        });
+        jPanel6.add(updateSearchCategoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 60, -1, -1));
+
+        jLabel89.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel89.setText("Nombre:");
+        jPanel6.add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 129, -1, -1));
+
+        updateNameCategoryTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel6.add(updateNameCategoryTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 154, 120, -1));
+
+        jLabel90.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel90.setText("Descripción:");
+        jPanel6.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 192, -1, -1));
+
+        addCategoryButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        addCategoryButton.setText("Agregar");
+        addCategoryButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addCategoryButtonActionPerformed(evt);
+            }
+        });
+        jPanel6.add(addCategoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, -1, -1));
+
+        updateCategoryButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        updateCategoryButton.setText("Actualizar");
+        updateCategoryButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateCategoryButtonActionPerformed(evt);
+            }
+        });
+        jPanel6.add(updateCategoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 300, -1, -1));
+
+        jLabel91.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel91.setText("Nombre:");
+        jPanel6.add(jLabel91, new org.netbeans.lib.awtextra.AbsoluteConstraints(892, 55, -1, -1));
+
+        deleteCategoryTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jPanel6.add(deleteCategoryTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(952, 52, 108, -1));
+
+        deleteCategoryButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        deleteCategoryButton.setText("Borrar");
+        deleteCategoryButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteCategoryButtonActionPerformed(evt);
+            }
+        });
+        jPanel6.add(deleteCategoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 110, -1, -1));
+        jPanel6.add(addCategoryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 220, 19));
+        jPanel6.add(searchCategoryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(511, 335, 260, 22));
+        jPanel6.add(jLabel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 350, 253, 26));
+        jPanel6.add(jLabel107, new org.netbeans.lib.awtextra.AbsoluteConstraints(252, 316, 230, 19));
+        jPanel6.add(jLabel112, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 320, 244, 26));
+
+        updateDescriptionCategoryTextField.setColumns(20);
+        updateDescriptionCategoryTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        updateDescriptionCategoryTextField.setRows(5);
+        jScrollPane1.setViewportView(updateDescriptionCategoryTextField);
+
+        jPanel6.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 220, 190, 100));
+
+        descriptionCategoryTextField.setColumns(20);
+        descriptionCategoryTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        descriptionCategoryTextField.setRows(5);
+        jScrollPane2.setViewportView(descriptionCategoryTextField);
+
+        jPanel6.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 180, 110));
+
+        jTabbedPane1.addTab("Categorías", jPanel6);
 
         jPanel7.setBackground(new java.awt.Color(153, 204, 153));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1233,13 +1403,13 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel93.setText("Buscar");
         jPanel7.add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, -1, -1));
 
-        jLabel94.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel94.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel94.setText("Actualizar");
-        jPanel7.add(jLabel94, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 10, -1, -1));
+        jPanel7.add(jLabel94, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, -1, -1));
 
         jLabel95.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel95.setText("Borrar");
-        jPanel7.add(jLabel95, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 10, -1, -1));
+        jPanel7.add(jLabel95, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 10, -1, -1));
 
         jSeparator16.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel7.add(jSeparator16, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 21, -1, 271));
@@ -1248,7 +1418,7 @@ public class Maintenance extends javax.swing.JFrame {
         jPanel7.add(jSeparator17, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 21, -1, 267));
 
         jSeparator18.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel7.add(jSeparator18, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 30, 11, 267));
+        jPanel7.add(jSeparator18, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 30, 11, 267));
 
         jLabel96.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel96.setText("Nombre:");
@@ -1321,7 +1491,7 @@ public class Maintenance extends javax.swing.JFrame {
                 addProductButtonActionPerformed(evt);
             }
         });
-        jPanel7.add(addProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, -1, -1));
+        jPanel7.add(addProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, -1, -1));
 
         jLabel105.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel105.setText("Nombre:");
@@ -1340,7 +1510,7 @@ public class Maintenance extends javax.swing.JFrame {
                 searchProductButtonActionPerformed(evt);
             }
         });
-        jPanel7.add(searchProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, -1, -1));
+        jPanel7.add(searchProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 60, -1, -1));
 
         jLabel106.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel106.setText("Unidad medida:");
@@ -1383,14 +1553,14 @@ public class Maintenance extends javax.swing.JFrame {
         jPanel7.add(jLabel121, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, -1, -1));
 
         updateSearchProductTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel7.add(updateSearchProductTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 40, 120, -1));
+        jPanel7.add(updateSearchProductTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 40, 120, -1));
 
         jLabel122.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel122.setText("Nuevo nombre:");
         jPanel7.add(jLabel122, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, -1, -1));
 
         updateNameProductTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel7.add(updateNameProductTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 90, 110, -1));
+        jPanel7.add(updateNameProductTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 90, 120, -1));
 
         updateSearchProductButton.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         updateSearchProductButton.setText("Buscar");
@@ -1411,34 +1581,34 @@ public class Maintenance extends javax.swing.JFrame {
 
         jLabel125.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel125.setText("Peso total:");
-        jPanel7.add(jLabel125, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 200, -1, -1));
+        jPanel7.add(jLabel125, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 210, -1, -1));
 
         jLabel126.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel126.setText("Descripción:");
-        jPanel7.add(jLabel126, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 240, -1, -1));
+        jPanel7.add(jLabel126, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 250, -1, -1));
 
         jLabel127.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel127.setText("Lote:");
-        jPanel7.add(jLabel127, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 280, -1, -1));
+        jPanel7.add(jLabel127, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, -1, -1));
 
         jLabel128.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel128.setText("Categoría:");
-        jPanel7.add(jLabel128, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 170, -1, -1));
+        jPanel7.add(jLabel128, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 140, -1, -1));
 
         jLabel129.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel129.setText("Precio:");
-        jPanel7.add(jLabel129, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 90, -1, 20));
+        jPanel7.add(jLabel129, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 90, -1, 20));
 
         jLabel130.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel130.setText("Fotografía:");
-        jPanel7.add(jLabel130, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 230, -1, -1));
+        jPanel7.add(jLabel130, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 190, -1, -1));
 
         jLabel131.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel131.setText("Nombre:");
-        jPanel7.add(jLabel131, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 40, -1, -1));
+        jPanel7.add(jLabel131, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 40, -1, -1));
 
         deleteProductTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel7.add(deleteProductTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 70, 130, -1));
+        jPanel7.add(deleteProductTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 60, 130, -1));
 
         deleteProductButton.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         deleteProductButton.setText("Borrar");
@@ -1447,29 +1617,29 @@ public class Maintenance extends javax.swing.JFrame {
                 deleteProductButtonActionPerformed(evt);
             }
         });
-        jPanel7.add(deleteProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 100, -1, -1));
+        jPanel7.add(deleteProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 60, -1, -1));
 
         updateImageProductTextField.setEditable(false);
         updateImageProductTextField.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
-        jPanel7.add(updateImageProductTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 250, 80, -1));
+        jPanel7.add(updateImageProductTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 200, 80, -1));
 
         updateUnitValueTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel7.add(updateUnitValueTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 160, 110, -1));
+        jPanel7.add(updateUnitValueTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 170, 120, -1));
 
         updateWeightTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel7.add(updateWeightTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 200, 110, -1));
+        jPanel7.add(updateWeightTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 210, 110, -1));
 
         updateDescriptionTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel7.add(updateDescriptionTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 240, 110, -1));
+        jPanel7.add(updateDescriptionTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 250, 110, -1));
 
         updatePriceTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel7.add(updatePriceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 130, 80, -1));
+        jPanel7.add(updatePriceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 90, 80, -1));
 
         updateCategoryComboBox.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jPanel7.add(updateCategoryComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 200, 80, -1));
+        jPanel7.add(updateCategoryComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 140, 80, -1));
 
         updateUnitMeasuredComboBox.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jPanel7.add(updateUnitMeasuredComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 130, 100, -1));
+        jPanel7.add(updateUnitMeasuredComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 130, 120, -1));
         jPanel7.add(unitMeasuredLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 100, 20));
         jPanel7.add(unitValueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 100, 10));
         jPanel7.add(descriptionLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, 100, 20));
@@ -1482,9 +1652,9 @@ public class Maintenance extends javax.swing.JFrame {
         jPanel7.add(batchCodeComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 110, -1));
 
         jLabel36.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel7.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 250, 40));
+        jPanel7.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 220, 20));
         jPanel7.add(jLabel110, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, 240, 20));
-        jPanel7.add(jLabel132, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 310, 240, 20));
+        jPanel7.add(jLabel132, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 330, 240, 20));
 
         updateImageProductButton.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         updateImageProductButton.setText("Buscar");
@@ -1493,8 +1663,8 @@ public class Maintenance extends javax.swing.JFrame {
                 updateImageProductButtonActionPerformed(evt);
             }
         });
-        jPanel7.add(updateImageProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 280, -1, -1));
-        jPanel7.add(jLabel133, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 160, 240, 20));
+        jPanel7.add(updateImageProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 230, -1, -1));
+        jPanel7.add(jLabel133, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 150, 190, 20));
 
         updateProductButton.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         updateProductButton.setText("Actualizar");
@@ -1503,182 +1673,12 @@ public class Maintenance extends javax.swing.JFrame {
                 updateProductButtonActionPerformed(evt);
             }
         });
-        jPanel7.add(updateProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 330, -1, -1));
+        jPanel7.add(updateProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 320, -1, -1));
 
         updateBatchCodeProduct.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jPanel7.add(updateBatchCodeProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 280, 110, -1));
+        jPanel7.add(updateBatchCodeProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, 110, -1));
 
         jTabbedPane1.addTab("Productos", jPanel7);
-
-        jPanel2.setBackground(new java.awt.Color(153, 204, 153));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel2.setText("Agregar");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 21, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel3.setText("Buscar");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel4.setText("Actualizar");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 10, -1, -1));
-
-        jLabel5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel5.setText("Borrar");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 10, -1, -1));
-
-        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, -1, 303));
-
-        jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 20, -1, 309));
-
-        jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 20, -1, 319));
-
-        jLabel6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel6.setText("Nombre:");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 39, -1, -1));
-
-        nameTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel2.add(nameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 64, 170, -1));
-
-        jLabel7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel7.setText("Rol:");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 95, -1, -1));
-
-        comboBoxRole.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jPanel2.add(comboBoxRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 127, 160, -1));
-
-        jLabel8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel8.setText("Usuario:");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 165, -1, -1));
-
-        userTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel2.add(userTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 197, 150, -1));
-
-        jLabel9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel9.setText("Contraseña:");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 235, -1, -1));
-
-        passwordTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel2.add(passwordTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 260, 150, -1));
-
-        addUserButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        addUserButton.setText("Agregar");
-        addUserButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addUserButtonActionPerformed(evt);
-            }
-        });
-        jPanel2.add(addUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(101, 298, -1, -1));
-
-        jLabel10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel10.setText("Nombre usuario:");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, -1, -1));
-
-        jLabel11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel11.setText("Rol:");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, -1, -1));
-
-        roleLabel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        jPanel2.add(roleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, 171, 17));
-
-        serchName.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel2.add(serchName, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 171, -1));
-
-        jLabel12.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel12.setText("Nombre:");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, -1, -1));
-
-        userNameLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel2.add(userNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 171, 23));
-
-        serchUserButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        serchUserButton.setText("Buscar");
-        serchUserButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                serchUserButtonActionPerformed(evt);
-            }
-        });
-        jPanel2.add(serchUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, -1, -1));
-
-        jLabel13.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel13.setText("Nombre:");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 40, -1, -1));
-
-        updateUserTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel2.add(updateUserTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 40, 175, -1));
-
-        updateSearchUserButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        updateSearchUserButton.setText("Buscar");
-        updateSearchUserButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateSearchUserButtonActionPerformed(evt);
-            }
-        });
-        jPanel2.add(updateSearchUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 80, -1, -1));
-
-        jLabel14.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel14.setText("Nombre:");
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 140, -1, -1));
-
-        updateNameUserTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel2.add(updateNameUserTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 130, 156, -1));
-
-        jLabel15.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel15.setText("Rol:");
-        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 180, -1, -1));
-
-        updateRoleUserComboBox.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jPanel2.add(updateRoleUserComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 170, 156, -1));
-
-        jLabel16.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel16.setText("Usuario:");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, -1, -1));
-
-        updateUserNameTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel2.add(updateUserNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 220, 156, -1));
-
-        jLabel17.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel17.setText("Contraseña:");
-        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 270, -1, -1));
-
-        updatePasswordTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel2.add(updatePasswordTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 270, 156, -1));
-
-        updateUserButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        updateUserButton.setText("Actualizar");
-        updateUserButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateUserButtonActionPerformed(evt);
-            }
-        });
-        jPanel2.add(updateUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 300, -1, -1));
-
-        jLabel18.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel18.setText("Nombre:");
-        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 40, -1, -1));
-
-        deleteUserTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel2.add(deleteUserTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 70, 150, -1));
-
-        deleteUserButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        deleteUserButton.setText("Borrar");
-        deleteUserButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deleteUserButtonActionPerformed(evt);
-            }
-        });
-        jPanel2.add(deleteUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 120, -1, -1));
-        jPanel2.add(jLabel114, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 220, 20));
-        jPanel2.add(jLabel118, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 200, 30));
-        jPanel2.add(jLabel116, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 330, 260, 20));
-        jPanel2.add(jLabel120, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 170, 220, 20));
-
-        jTabbedPane1.addTab("Usuarios", jPanel2);
 
         jPanel3.setBackground(new java.awt.Color(153, 204, 153));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1693,20 +1693,20 @@ public class Maintenance extends javax.swing.JFrame {
 
         jLabel21.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel21.setText("Actualizar");
-        jPanel3.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, -1, -1));
+        jPanel3.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, -1, -1));
 
         jLabel22.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel22.setText("Borrar");
-        jPanel3.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 10, -1, -1));
+        jPanel3.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 20, -1, -1));
 
         jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel3.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 22, -1, 280));
 
         jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel3.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(447, 22, -1, 280));
+        jPanel3.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 30, -1, 280));
 
         jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel3.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 20, -1, 280));
+        jPanel3.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 20, -1, 280));
 
         jLabel23.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel23.setText("Nombre:");
@@ -1769,7 +1769,7 @@ public class Maintenance extends javax.swing.JFrame {
         jPanel3.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 100, -1, -1));
 
         latitudeCellarLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel3.add(latitudeCellarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 100, 114, 14));
+        jPanel3.add(latitudeCellarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 114, 14));
 
         searchCellarButton.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         searchCellarButton.setText("Buscar");
@@ -1785,28 +1785,28 @@ public class Maintenance extends javax.swing.JFrame {
         jPanel3.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 143, -1, -1));
 
         lenghtCellarLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel3.add(lenghtCellarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 138, 114, 19));
+        jPanel3.add(lenghtCellarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, 114, 19));
 
         jLabel33.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel33.setText("Distancia:");
         jPanel3.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 186, -1, -1));
 
         distanceCellarLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel3.add(distanceCellarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 186, 114, 14));
+        jPanel3.add(distanceCellarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 114, 14));
 
         jLabel35.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel35.setText("Fotografía:");
         jPanel3.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 230, -1, -1));
 
         imageCellarLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel3.add(imageCellarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(236, 255, 140, 56));
+        jPanel3.add(imageCellarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 140, 56));
 
         jLabel37.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel37.setText("Nombre:");
-        jPanel3.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 50, -1, -1));
+        jPanel3.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 40, -1, -1));
 
         updateSearchCellarTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel3.add(updateSearchCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 42, 149, -1));
+        jPanel3.add(updateSearchCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 40, 149, -1));
 
         updateSearchCellarButton.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         updateSearchCellarButton.setText("Buscar");
@@ -1815,43 +1815,43 @@ public class Maintenance extends javax.swing.JFrame {
                 updateSearchCellarButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(updateSearchCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(632, 68, -1, -1));
+        jPanel3.add(updateSearchCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 40, -1, -1));
 
         jLabel38.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel38.setText("Nombre:");
-        jPanel3.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 107, -1, -1));
+        jPanel3.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 100, -1, -1));
 
         updateNameCellarTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel3.add(updateNameCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 104, 149, -1));
+        jPanel3.add(updateNameCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, 149, -1));
 
         jLabel39.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel39.setText("Latitud:");
-        jPanel3.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 145, -1, -1));
+        jPanel3.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 140, -1, -1));
 
         updateLatitudeCellarTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel3.add(updateLatitudeCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 142, 149, -1));
+        jPanel3.add(updateLatitudeCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 140, 149, -1));
 
         jLabel40.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel40.setText("Longitud:");
-        jPanel3.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 183, -1, -1));
+        jPanel3.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 180, -1, -1));
 
         updateLenghtTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel3.add(updateLenghtTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 180, 149, -1));
+        jPanel3.add(updateLenghtTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 180, 149, -1));
 
         jLabel41.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel41.setText("Distancia:");
-        jPanel3.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 221, -1, -1));
+        jPanel3.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 230, -1, -1));
 
         updateDistanceTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel3.add(updateDistanceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 218, 149, -1));
+        jPanel3.add(updateDistanceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 220, 149, -1));
 
         jLabel42.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel42.setText("Fotografía:");
-        jPanel3.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 260, -1, -1));
+        jPanel3.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 260, -1, -1));
 
         updateImageTextField.setEditable(false);
         updateImageTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel3.add(updateImageTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 257, 65, -1));
+        jPanel3.add(updateImageTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 260, 150, -1));
 
         updateImageCellarButton.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         updateImageCellarButton.setText("Buscar");
@@ -1860,7 +1860,7 @@ public class Maintenance extends javax.swing.JFrame {
                 updateImageCellarButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(updateImageCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(623, 256, -1, -1));
+        jPanel3.add(updateImageCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 260, -1, -1));
 
         addCellarButton.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         addCellarButton.setText("Agregar");
@@ -1878,14 +1878,14 @@ public class Maintenance extends javax.swing.JFrame {
                 updateCellarButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(updateCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 300, -1, -1));
+        jPanel3.add(updateCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 310, -1, -1));
 
         jLabel43.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel43.setText("Nombre:");
-        jPanel3.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 40, -1, -1));
+        jPanel3.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 70, -1, -1));
 
         deleteCellarTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel3.add(deleteCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 70, 130, -1));
+        jPanel3.add(deleteCellarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 70, 130, -1));
 
         deleteCellarButton.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         deleteCellarButton.setText("Borrar");
@@ -1894,13 +1894,13 @@ public class Maintenance extends javax.swing.JFrame {
                 deleteCellarButtonActionPerformed(evt);
             }
         });
-        jPanel3.add(deleteCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 110, -1, -1));
+        jPanel3.add(deleteCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 110, -1, -1));
         jPanel3.add(jLabel146, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 180, 20));
         jPanel3.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 200, 20));
-        jPanel3.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 330, 250, 20));
+        jPanel3.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 310, 210, 20));
 
         jLabel34.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jPanel3.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 160, 270, 30));
+        jPanel3.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 170, 230, 20));
 
         jTabbedPane1.addTab("Bodegas", jPanel3);
 
