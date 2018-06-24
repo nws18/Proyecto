@@ -36,51 +36,57 @@ public class NewMain {
         AdministratorFiles administratorFiles = new AdministratorFiles();
 //
         ArrayList<Batch> batchList = new ArrayList();
-//        ArrayList<Category> categoryList = new ArrayList();
+        ArrayList<Category> categoryList = new ArrayList();
         ArrayList<Cellar> cellarList = new ArrayList();
         ArrayList<DistributionOrder> distributionOrderList = new ArrayList();
         ArrayList<Product> productList = new ArrayList();
-//        ArrayList<TransportUnit> transportUnitList = new ArrayList();
-//        ArrayList<User> UserList = new ArrayList();
+        ArrayList<TransportUnit> transportUnitList = new ArrayList();
+        ArrayList<User> UserList = new ArrayList();
 
         Batch batch0 = new Batch(0, "IDRHFU45T45", "01-01-2018 12:30", "13-03-2018");
         Batch batch1 = new Batch(1, "KJBFH45G54G", "08-02-2018 10:25", "01-04-2018");
         Batch batch2 = new Batch(2, "EARGE56YHRT", "05-03-2018 11:45", "23-05-2018");
         Batch batch3 = new Batch(3, "ERGRTERHRHT", "22-04-2018 9:10", "15-06-2018");
         Batch batch4 = new Batch(4, "DFVKNSKJVNJ", "28-05-2018 8:01", "18-10-2018");
+        Batch batch5 = new Batch(5, "AHIR65HEN5N", "23-06-2018 10:01", "25-12-2018");
+        Batch batch6 = new Batch(6, "QJWEHBD76JN", "10-01-2018 11:25", "25-09-2018");
+        Batch batch7 = new Batch(7, "ASCVBRU456R", "22-02-2018 10:04", "11-10-2018");
+        Batch batch8 = new Batch(8, "CVIRH3O0J3N", "01-06-2018 9:01", "01-12-2018");
         batchList.add(batch0);
         batchList.add(batch1);
         batchList.add(batch2);
         batchList.add(batch3);
         batchList.add(batch4);
 //
-//        Category category0 = new Category(0, "Higiene", "Productos para el higiene y ciudado personal");
-//        Category category1 = new Category(1, "Hogar", "Productos de limpieza para el hogar");
-//        Category category2 = new Category(2, "Larga duración", "Productos enlatados de larga duración");
-//        Category category3 = new Category(3, "Bebidas", "Refrescos gaseosos, naturales y bebidas alcoholicas");
-//        Category category4 = new Category(4, "Abarrotes", "Arroz, pastas y legumbres");
-//        categoryList.add(category0);
-//        categoryList.add(category1);
-//        categoryList.add(category2);
-//        categoryList.add(category3);
-//        categoryList.add(category4);
+        Category category0 = new Category(0, "Higiene", "Productos para el higiene y ciudado personal");
+        Category category1 = new Category(1, "Hogar", "Productos de limpieza para el hogar");
+        Category category2 = new Category(2, "Larga duración", "Productos enlatados de larga duración");
+        Category category3 = new Category(3, "Bebidas", "Refrescos gaseosos, naturales y bebidas alcoholicas");
+        Category category4 = new Category(4, "Abarrotes", "Arroz, pastas y legumbres");
+        Category category5 = new Category(5, "Snacks", "Frituras y dulces");
+        categoryList.add(category0);
+        categoryList.add(category1);
+        categoryList.add(category2);
+        categoryList.add(category3);
+        categoryList.add(category4);
+        categoryList.add(category5);
 //
-//        Cellar cellar0 = new Cellar(0, "Caballo Blanco", "9.8465059", "-83.8453388", 6, "images/grocery/paraiso.jpg");
-//        Cellar cellar1 = new Cellar(1, "Curridabat", "9.9104054", "-84.0261615", 7, "images/grocery/san jose.jpg");
-//        Cellar cellar2 = new Cellar(2, "Desamaparados", "9.8962853", "-84.0929378", 8, "images/grocery/desamparados.jpg");
-//        Cellar cellar3 = new Cellar(3, "Lima", "9.8733467", "-83.9445108", 9, "images/grocery/lima.jpg");
-//        Cellar cellar4 = new Cellar(4, "San Sebastian", "9.8962853", "-84.0929378", 10, "images/grocery/liberia.jpg");
-//        cellarList.add(cellar0);
-//        cellarList.add(cellar1);
-//        cellarList.add(cellar2);
-//        cellarList.add(cellar3);
-//        cellarList.add(cellar4);
+        Cellar cellar0 = new Cellar(0, "Caballo Blanco", "9.8465059", "-83.8453388", 6, "images/grocery/paraiso.jpg");
+        Cellar cellar1 = new Cellar(1, "Curridabat", "9.9104054", "-84.0261615", 7, "images/grocery/san jose.jpg");
+        Cellar cellar2 = new Cellar(2, "Desamaparados", "9.8962853", "-84.0929378", 8, "images/grocery/desamparados.jpg");
+        Cellar cellar3 = new Cellar(3, "Lima", "9.8733467", "-83.9445108", 9, "images/grocery/lima.jpg");
+        Cellar cellar4 = new Cellar(4, "San Sebastian", "9.8962853", "-84.0929378", 10, "images/grocery/liberia.jpg");
+        cellarList.add(cellar0);
+        cellarList.add(cellar1);
+        cellarList.add(cellar2);
+        cellarList.add(cellar3);
+        cellarList.add(cellar4);
 
         Product product0 = new Product(0, "Aceite", "Unidades", 20, 1, "Aceite de cocina", 0, 4, 2000, "images/products/aceite.png");
         Product product1 = new Product(1, "Arroz", "Paquetes", 100, 2, "Arroz, 2kg", 1, 1, 12500, "images/products/arroz.png");
         Product product2 = new Product(2, "Cereal", "Cajas", 10, 1, "Cereal", 2, 2, 10500, "images/products/cereal.png");
-        Product product3 = new Product(3, "Gaseosas", "Tarimas", 15, 20, "Refresco gaseoso", 3, 3, 25500, "images/products/");
-        Product product4 = new Product(4, "Cervezas", "Tarimas", 10, 30, "Bebida alcoholica", 4, 4, 40500, "images/products/");
+        Product product3 = new Product(3, "Chocolate", "Paquetes", 15, 10, "Chocolate relleno", 3, 5, 15500, "images/products/chocolate.png");
+        Product product4 = new Product(4, "Coca cola", "Tarimas", 30, 40, "Bebida gaseosa", 4, 3, 40500, "images/products/cocacola.png");
         productList.add(product0);
         productList.add(product1);
         productList.add(product2);
@@ -97,36 +103,36 @@ public class NewMain {
         distributionOrderList.add(distributionOrder2);
         distributionOrderList.add(distributionOrder3);
         distributionOrderList.add(distributionOrder4);
+
+        TransportUnit transportUnit0 = new TransportUnit(0, "646644", 10, 20, "images/transport/camion1.png");
+        TransportUnit transportUnit1 = new TransportUnit(1, "754532", 20, 30, "images/transport/camion2.png");
+        TransportUnit transportUnit2 = new TransportUnit(2, "768923", 5, 10, "images/transport/camion3.png");
+        TransportUnit transportUnit3 = new TransportUnit(3, "856326", 10, 15, "images/transport/camion4.png");
+        transportUnitList.add(transportUnit0);
+        transportUnitList.add(transportUnit1);
+        transportUnitList.add(transportUnit2);
+        transportUnitList.add(transportUnit3);
 //
-//        TransportUnit transportUnit0 = new TransportUnit(0, "646644", 10, 20, "images/transport/camion1.png");
-//        TransportUnit transportUnit1 = new TransportUnit(1, "754532", 20, 30, "images/transport/camion2.png");
-//        TransportUnit transportUnit2 = new TransportUnit(2, "768923", 5, 10, "images/transport/camion3.png");
-//        TransportUnit transportUnit3 = new TransportUnit(3, "856326", 10, 15, "images/transport/camion4.png");
-//        transportUnitList.add(transportUnit0);
-//        transportUnitList.add(transportUnit1);
-//        transportUnitList.add(transportUnit2);
-//        transportUnitList.add(transportUnit3);
-//
-//        String password = DigestUtils.md5Hex("1234");
-//
-//        User user0 = new User(0, "Nicole Fonseca", "Administrador", "nicole98", password);
-//        User user1 = new User(1, "Wilmer Mata", "Operador", "wilmata24", password);
-//        User user2 = new User(2, "Sergio Siles", "Operador", "sfss1997", password);
-//        User user3 = new User(3, "Elva Surita", "Operador", "EV", password);
-//        User user4 = new User(4, "Allan Brito", "Operador", "Nalla", password);
-//        UserList.add(user0);
-//        UserList.add(user1);
-//        UserList.add(user2);
-//        UserList.add(user3);
-//        UserList.add(user4);
-//
-//        administratorFiles.writeBatchFile(batchList);
-//        administratorFiles.writeCategoryFile(categoryList);
-//        administratorFiles.writeCellarFile(cellarList);
+        String password = DigestUtils.md5Hex("1234");
+
+        User user0 = new User(0, "Nicole Fonseca", "Administrador", "nicole98", password);
+        User user1 = new User(1, "Wilmer Mata", "Operador", "wilmata24", password);
+        User user2 = new User(2, "Sergio Siles", "Operador", "sfss1997", password);
+        User user3 = new User(3, "Elva Surita", "Operador", "EV", password);
+        User user4 = new User(4, "Allan Brito", "Operador", "Nalla", password);
+        UserList.add(user0);
+        UserList.add(user1);
+        UserList.add(user2);
+        UserList.add(user3);
+        UserList.add(user4);
+
+        administratorFiles.writeBatchFile(batchList);
+        administratorFiles.writeCategoryFile(categoryList);
+        administratorFiles.writeCellarFile(cellarList);
         administratorFiles.writeDistributionOrderFile(distributionOrderList);
-//        administratorFiles.writeProductFile(productList);
-//        administratorFiles.writeTransportUnitFile(transportUnitList);
-//        administratorFiles.writeUserFile(UserList);
+        administratorFiles.writeProductFile(productList);
+        administratorFiles.writeTransportUnitFile(transportUnitList);
+        administratorFiles.writeUserFile(UserList);
 
         LinkedBinaryTree linkedBinaryTree = new LinkedBinaryTree();
 //        linkedBinaryTree.insert(product0);

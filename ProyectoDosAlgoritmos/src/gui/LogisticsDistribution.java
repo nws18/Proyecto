@@ -248,7 +248,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
             distributionOrder.setIdOriginCellar(0);
             distributionOrder.setOrderDate(orderDate);
             distributionOrderList.add(distributionOrder);
-            System.out.println(distributionOrder.toString());
+            System.out.println(distributionOrderList.toString());
         } catch (TreeException ex) {
             Logger.getLogger(LogisticsDistribution.class.getName()).log(Level.SEVERE, null, ex);
         }
