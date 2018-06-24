@@ -29,16 +29,15 @@ import static tda.LoadTda.distributionOrderList;
  * @author Wilmer Mata Nicole Fonseca Sergio Siles
  */
 public class BarChart3D {
+    JFreeChart barChart;
+    /**
+     * Método que genera charts dependiendo de las ventas de las bodegas en los últimos tres meses.
+     * Mediante un addValue a un dataset definido se ingresan los datos, validando fecha actual y datos almacenados previamente.
+     * @param jpanel
+     * @throws IOException 
+     */
 
     public void BarChart(JPanel jpanel) throws IOException {
-        final String fait = "ENERO";
-        final String audi = "FEBRERO";
-        final String ford = "MARZO";
-        final String speed = "ABRIL";
-        final String popular = "Popular";
-        final String mailage = "Mailage";
-        final String userrating = "User Rating";
-        final String safety = "safety";
         final DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
         ArrayList<String> fillChart = new ArrayList<>();
@@ -50,7 +49,7 @@ public class BarChart3D {
             dataset.addValue(getTotalAmount(lastMonths[2], tempCellar.getIdCellar()), getMonthName(Integer.parseInt(lastMonths[2])), tempCellar.getName());
         }
 
-        JFreeChart barChart = ChartFactory.createBarChart3D(
+       barChart = ChartFactory.createBarChart3D(
                 "Venta por bodega de los últimos tres meses.",
                 "Meses",
                 "Ventas",
@@ -63,10 +62,10 @@ public class BarChart3D {
         jpanel.setLayout(new java.awt.BorderLayout());
         jpanel.add(chartPanel, BorderLayout.CENTER);
         jpanel.validate();
-//      int width = 640; /* Width of the image */              
-//      int height = 480; /* Height of the image */                              
-////      File barChart3D = new File( "barChart3D.jpeg" );                            
-//      ChartUtilities.saveChartAsJPEG( barChart3D, barChart, width, height);
+      int width = 640; /* Width of the image */              
+      int height = 480; /* Height of the image */                              
+      File barChart3D = new File( "barChart3D.jpeg" );                            
+      ChartUtilities.saveChartAsJPEG( barChart3D, barChart, width, height);
     }
 
     public String getMonthName(int monthNumber) {
