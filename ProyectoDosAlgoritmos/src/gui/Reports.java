@@ -1,12 +1,14 @@
 
 package gui;
 
+import LinkedBinaryTree.TreeException;
 import com.mxrck.autocompleter.TextAutoCompleter;
 import domain.Batch;
 import domain.Category;
 import domain.Cellar;
 import domain.DistributionOrder;
 import domain.Product;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -16,6 +18,7 @@ import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import lab_grafos_algoritmos.GraphException;
+import tda.LoadFiles;
 import static tda.LoadTda.batchMap;
 import static tda.LoadTda.categoryMap;
 import static tda.LoadTda.cellarGraph;
@@ -166,6 +169,11 @@ public class Reports extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Reporte de lotes anulados");
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -268,6 +276,21 @@ public class Reports extends javax.swing.JFrame {
             Logger.getLogger(Reports.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_searchButtonActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        try {
+            LoadFiles loadFiles = new LoadFiles();
+            loadFiles.fileProduct();
+            loadFiles.fileCategory();
+            loadFiles.fileBatch();
+            loadFiles.fileTransportUnit();
+            loadFiles.fileCellar();
+            loadFiles.fileDistributionOrder();
+            loadFiles.fileUser();
+        } catch (IOException | TreeException | GraphException ex) {
+            Logger.getLogger(Reports.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
