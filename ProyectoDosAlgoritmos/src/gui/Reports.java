@@ -57,7 +57,7 @@ public class Reports extends javax.swing.JFrame {
         for (int i = 0; i < distributionOrderList.size(); i++) {
             DistributionOrder distributionOrder = distributionOrderList.get(i);
             for (int j = 0; j < distributionOrder.getProductList().size(); j++) {
-                Product tempProduct = (Product) distributionOrder.getProductList().get(i);
+                Product tempProduct = (Product) distributionOrder.getProductList().get(j);
                 if (batchTextField.getText().equals(getBatchCode(tempProduct.getIdBatch()))) {
                     productList.add(tempProduct);
                 }
@@ -105,10 +105,15 @@ public class Reports extends javax.swing.JFrame {
         ArrayList arrayList = new ArrayList();
         for (int i = 0; i < distributionOrderList.size(); i++) {
             DistributionOrder distributionOrder = distributionOrderList.get(i);
-            for (int j = 0; j < cellarGraph.list().size(); j++) {
-                Cellar cellar = (Cellar) cellarGraph.list().get(j);
-                if (distributionOrder.getIdDestinyCellar() == cellar.getIdCellar()) {
-                    arrayList.add(cellar.getName() +" " + distributionOrder.getOrderDate());
+            for (int x = 0; x < distributionOrder.getProductList().size(); x++) {
+                Product product = distributionOrder.getProductList().get(x);
+                if (batchTextField.getText().equals(getBatchCode(product.getIdBatch()))) {
+                    for (int j = 0; j < cellarGraph.list().size(); j++) {
+                        Cellar cellar = (Cellar) cellarGraph.list().get(j);
+                        if (distributionOrder.getIdDestinyCellar() == cellar.getIdCellar()) {
+                            arrayList.add(cellar.getName() + " " + distributionOrder.getOrderDate());
+                        }
+                    }
                 }
             }
             
