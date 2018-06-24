@@ -17,13 +17,13 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import lab_grafos_algoritmos.GraphException;
 import tda.LoadFiles;
 import static tda.LoadTda.batchMap;
 import static tda.LoadTda.categoryMap;
 import static tda.LoadTda.cellarGraph;
 import static tda.LoadTda.distributionOrderList;
-//import static tda.LoadTda.productsBinaryTree;
 
 /**
  * Interfaz reporte de lotes anulados.
@@ -35,6 +35,7 @@ public class Reports extends javax.swing.JFrame {
     
     public Reports() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/icons/truck.png")).getImage());
         
         //Autocompletar buscar lote
         TextAutoCompleter textAutoAcompleterSearchBatch = new TextAutoCompleter(batchTextField);

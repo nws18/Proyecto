@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import lab_grafos_algoritmos.GraphException;
 import tda.LoadFiles;
 
@@ -20,6 +21,7 @@ public class Administrator extends javax.swing.JFrame {
      */
     public Administrator() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/icons/truck.png")).getImage());
     }
 
     /**

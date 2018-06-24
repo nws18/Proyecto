@@ -1,18 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gui;
 
 import LinkedBinaryTree.TreeException;
 import static gui.LogisticsDistribution.confirm;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import lab_grafos_algoritmos.GraphException;
+import tda.LoadFiles;
 
 /**
  *
- * @author Nicole
+ * @author Nicole Fonseca, Wilmer Mata, Sergio Siles.
  */
 public class ConfirmOrder extends javax.swing.JFrame {
    
@@ -23,6 +23,7 @@ public class ConfirmOrder extends javax.swing.JFrame {
      */
     public ConfirmOrder() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/icons/truck.png")).getImage());
     }
 
     /**
@@ -43,6 +44,11 @@ public class ConfirmOrder extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Confirmar Orden");
         setLocation(new java.awt.Point(450, 200));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 153));
 
@@ -116,11 +122,11 @@ public class ConfirmOrder extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -135,6 +141,21 @@ public class ConfirmOrder extends javax.swing.JFrame {
         confirm = false;
         this.setVisible(false);
     }//GEN-LAST:event_continueButtonActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        try {
+            LoadFiles loadFiles = new LoadFiles();
+            loadFiles.fileProduct();
+            loadFiles.fileCategory();
+            loadFiles.fileBatch();
+            loadFiles.fileTransportUnit();
+            loadFiles.fileCellar();
+            loadFiles.fileDistributionOrder();
+            loadFiles.fileUser();
+        } catch (IOException | TreeException | GraphException ex) {
+            Logger.getLogger(ConfirmOrder.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_formWindowClosing
    public boolean booleanConfirmOrder() {
         if (confirm == true) {
             return true;

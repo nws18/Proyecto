@@ -47,7 +47,7 @@ public class Maintenance extends javax.swing.JFrame {
 
     public Maintenance() throws TreeException {
         initComponents();
-        
+        setIconImage(new ImageIcon(getClass().getResource("/icons/truck.png")).getImage());
         //Obtener fecha actual
         Date date = new Date();
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
@@ -527,7 +527,6 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         imageCellarTextField = new javax.swing.JTextField();
         addImageCellarButton = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jLabel28 = new javax.swing.JLabel();
         searchCellarTextField = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
@@ -1759,10 +1758,6 @@ public class Maintenance extends javax.swing.JFrame {
         });
         jPanel3.add(addImageCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 274, -1, -1));
 
-        jButton3.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
-        jButton3.setText("Agregar");
-        jPanel3.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, -1));
-
         jLabel28.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel28.setText("Nombre:");
         jPanel3.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 46, -1, -1));
@@ -1937,7 +1932,7 @@ public class Maintenance extends javax.swing.JFrame {
                 .addComponent(returnAdministratorButton)
                 .addGap(34, 34, 34))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1121, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -2776,7 +2771,6 @@ public class Maintenance extends javax.swing.JFrame {
     private javax.swing.JTextField imageProductTextField;
     private javax.swing.JLabel imageTransportUnit;
     private javax.swing.JTextField imageTransportUnitTextField;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;

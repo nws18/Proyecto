@@ -20,9 +20,12 @@ import static tda.LoadTda.categoryMap;
 import static tda.LoadTda.cellarGraph;
 import static tda.LoadTda.distributionOrderList;
 import java.awt.BorderLayout;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import lab_grafos_algoritmos.GraphException;
+import tda.LoadFiles;
 import static tda.LoadTda.productsBinaryTree;
 
 /**
@@ -43,6 +46,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
 
     public LogisticsDistribution() throws TreeException {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/icons/truck.png")).getImage());
         jPanel3.setLayout(new BorderLayout());
         jPanel3.add(view, BorderLayout.CENTER);
         browser.loadURL("maps.google.es");
@@ -97,6 +101,11 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -232,7 +241,9 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 651, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -436,6 +447,21 @@ public class LogisticsDistribution extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_cellarListMousePressed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        try {
+            LoadFiles loadFiles = new LoadFiles();
+            loadFiles.fileProduct();
+            loadFiles.fileCategory();
+            loadFiles.fileBatch();
+            loadFiles.fileTransportUnit();
+            loadFiles.fileCellar();
+            loadFiles.fileDistributionOrder();
+            loadFiles.fileUser();
+        } catch (IOException | TreeException | GraphException ex) {
+            Logger.getLogger(LogisticsDistribution.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_formWindowClosing
     private int getValue(String name) throws TreeException {
         for (int i = 0; i < productsBinaryTree.getSize(); i++) {
             Product tempProduct = (Product) productsBinaryTree.recorreArbol().get(i);

@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.RowFilter;
 import javax.swing.table.TableRowSorter;
 import lab_grafos_algoritmos.GraphException;
@@ -43,6 +44,7 @@ public class Record extends javax.swing.JFrame {
     
     public Record() throws ParseException {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/icons/truck.png")).getImage());
          BarChart3D barChart3D = new BarChart3D();
         try {
             barChart3D.BarChart(chartPanel);

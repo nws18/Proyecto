@@ -1,28 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gui;
 
 import LinkedBinaryTree.TreeException;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import lab_grafos_algoritmos.GraphException;
 import tda.LoadFiles;
 
 /**
  *
- * @author Nicole
+ * @author Nicole Fonseca, Wilmer Mata, Sergio Siles
  */
 public class Credits extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Credits
-     */
     public Credits() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/icons/truck.png")).getImage());
     }
 
     /**
