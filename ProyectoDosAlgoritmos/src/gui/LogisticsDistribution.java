@@ -36,6 +36,8 @@ import static tda.LoadTda.productsBinaryTree;
 public class LogisticsDistribution extends javax.swing.JFrame {
 
     public static boolean confirm = false;
+    public static ArrayList<DistributionOrder> pruebaList = new ArrayList<DistributionOrder>();
+    public static DistributionOrder distributionOrder = new DistributionOrder();
     static int userId = -1;
     /**
      * Creates new form NewJFrame
@@ -50,7 +52,6 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         jPanel3.setLayout(new BorderLayout());
         jPanel3.add(view, BorderLayout.CENTER);
         browser.loadURL("maps.google.es");
-        
 
 //        
         String[] arrayCellar = new String[cellarGraph.list().size()];
@@ -250,14 +251,15 @@ public class LogisticsDistribution extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
+
         ConfirmOrder confirmOrder = new ConfirmOrder();
         confirmOrder.setVisible(true);
-        if (confirmOrder.booleanConfirmOrder()) {
+     
             Date date = new Date();
             DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
             String orderDate = dateFormat.format(date);
             try {
-                DistributionOrder distributionOrder = new DistributionOrder();
+                
                 distributionOrder.setProductList(getProducts());
                 distributionOrder.setIdDistributionOrder(distributionOrderList.size());
                 distributionOrder.setTotalAmount(Double.parseDouble(String.valueOf(getTotalAmount())));
@@ -266,12 +268,12 @@ public class LogisticsDistribution extends javax.swing.JFrame {
                 distributionOrder.setIdOperator(userId);
                 distributionOrder.setIdOriginCellar(0);
                 distributionOrder.setOrderDate(orderDate);
-                distributionOrderList.add(distributionOrder);
-                System.out.println(distributionOrderList.toString());
+      
+                
+
             } catch (TreeException ex) {
                 Logger.getLogger(LogisticsDistribution.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }
     }//GEN-LAST:event_confirmButtonActionPerformed
 
     private int getTotalAmount() {
@@ -340,7 +342,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
     }//GEN-LAST:event_cellarListMouseClicked
 
     private void cellarListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_cellarListValueChanged
-        
+
     }//GEN-LAST:event_cellarListValueChanged
 
     private void listProductsMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listProductsMousePressed
@@ -481,8 +483,6 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         }
         return 0;
     }
-
-    
 
     public void fillTable() {
         String[][] array = new String[tableList.size()][5];

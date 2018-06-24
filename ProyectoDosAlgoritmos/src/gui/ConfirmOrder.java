@@ -1,27 +1,27 @@
-
 package gui;
 
 import LinkedBinaryTree.TreeException;
 import static gui.LogisticsDistribution.confirm;
+import static gui.LogisticsDistribution.distributionOrder;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import lab_grafos_algoritmos.GraphException;
 import tda.LoadFiles;
+import static tda.LoadTda.distributionOrderList;
 
 /**
  *
  * @author Nicole Fonseca, Wilmer Mata, Sergio Siles.
  */
 public class ConfirmOrder extends javax.swing.JFrame {
-   
-
-
+LogisticsDistribution logisticsDistribution;
     /**
      * Creates new form ConfirmOrder
      */
     public ConfirmOrder() {
+        this.logisticsDistribution = logisticsDistribution;
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("/icons/truck.png")).getImage());
     }
@@ -133,8 +133,10 @@ public class ConfirmOrder extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void confirmOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmOrderButtonActionPerformed
-      confirm = true;
+        distributionOrderList.add(distributionOrder);
+        System.out.println(distributionOrderList.toString());
         this.setVisible(false);
+      logisticsDistribution.setVisible(false);
     }//GEN-LAST:event_confirmOrderButtonActionPerformed
 
     private void continueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continueButtonActionPerformed
@@ -156,11 +158,11 @@ public class ConfirmOrder extends javax.swing.JFrame {
             Logger.getLogger(ConfirmOrder.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_formWindowClosing
-   public boolean booleanConfirmOrder() {
+    public boolean booleanConfirmOrder() {
         if (confirm == true) {
             return true;
         }
-            return false;
+        return false;
     }
 
     /**
