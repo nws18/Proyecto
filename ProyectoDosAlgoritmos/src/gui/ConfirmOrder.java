@@ -16,12 +16,12 @@ import static tda.LoadTda.distributionOrderList;
  * @author Nicole Fonseca, Wilmer Mata, Sergio Siles.
  */
 public class ConfirmOrder extends javax.swing.JFrame {
-LogisticsDistribution logisticsDistribution;
+
     /**
      * Creates new form ConfirmOrder
      */
     public ConfirmOrder() {
-        this.logisticsDistribution = logisticsDistribution;
+        
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("/icons/truck.png")).getImage());
     }
@@ -134,9 +134,10 @@ LogisticsDistribution logisticsDistribution;
 
     private void confirmOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmOrderButtonActionPerformed
         distributionOrderList.add(distributionOrder);
-        System.out.println(distributionOrderList.toString());
+        System.out.println(distributionOrder.toString());
         this.setVisible(false);
-      logisticsDistribution.setVisible(false);
+        
+//      logisticsDistribution.setVisible(false);
     }//GEN-LAST:event_confirmOrderButtonActionPerformed
 
     private void continueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continueButtonActionPerformed

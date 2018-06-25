@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JFrame;
 import lab_grafos_algoritmos.GraphException;
 import tda.LoadFiles;
 import static tda.LoadTda.productsBinaryTree;
@@ -48,6 +49,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
 
     public LogisticsDistribution() throws TreeException {
         initComponents();
+        
         setIconImage(new ImageIcon(getClass().getResource("/icons/truck.png")).getImage());
         jPanel3.setLayout(new BorderLayout());
         jPanel3.add(view, BorderLayout.CENTER);
@@ -69,6 +71,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         listProducts.setListData(arrayProducts);
 
     }
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -100,6 +103,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         labelTruck = new javax.swing.JLabel();
         nameTruck = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -205,7 +209,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
             }
         });
         jPanel1.add(returnLoginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 580, -1, -1));
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 470, 275, 138));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, 275, 138));
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 100, -1, 530));
@@ -225,7 +229,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 110, 686, 439));
-        jPanel1.add(labelTruck, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, 80, 70));
+        jPanel1.add(labelTruck, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 80, 70));
 
         nameTruck.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
         nameTruck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/truck.png"))); // NOI18N
@@ -233,6 +237,17 @@ public class LogisticsDistribution extends javax.swing.JFrame {
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Webp.net-gifmaker (1).gif"))); // NOI18N
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 0, 170, 110));
+
+        jButton1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/escoba.png"))); // NOI18N
+        jButton1.setText("Limpiar orden");
+        jButton1.setOpaque(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 580, 150, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -249,7 +264,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+   
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
 
         ConfirmOrder confirmOrder = new ConfirmOrder();
@@ -308,9 +323,10 @@ public class LogisticsDistribution extends javax.swing.JFrame {
 
             TableProduct tempTableProduct = tableList.get(i);
             for (int j = 0; j < productsBinaryTree.getSize(); j++) {
-                Product tempProduct = (Product) productsBinaryTree.recorreArbol().get(i);
+                Product tempProduct = (Product) productsBinaryTree.recorreArbol().get(j);
+               
                 if (tempProduct.getName().equals(tempTableProduct.getProduct())) {
-                    arrayListProducts.add(tempProduct);
+                    arrayListProducts.add(tempProduct); 
                 }
             }
         }
@@ -321,8 +337,9 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         Login login = new Login();
         login.setVisible(true);
         this.setVisible(false);
+        
     }//GEN-LAST:event_returnLoginButtonActionPerformed
-
+    
     private void listProductsValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listProductsValueChanged
         try {
             for (int i = 0; i < productsBinaryTree.getSize(); i++) {
@@ -464,6 +481,28 @@ public class LogisticsDistribution extends javax.swing.JFrame {
             Logger.getLogger(LogisticsDistribution.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_formWindowClosing
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        labelTruck.setIcon(null);
+        jLabel6.setIcon(null);
+        jLabel2.setIcon(null);
+        progressBar.setValue(0);
+        tableList.removeAll(tableList);
+        fillTable();
+        browser.loadURL("maps.google.es");
+        distributionOrder.setIdDestinyCellar(-1);
+        distributionOrder.setIdDistributionOrder(-1);
+        distributionOrder.setIdOperator(-1);
+        distributionOrder.setIdOriginCellar(-1);
+        distributionOrder.setOrderDate(null);
+        distributionOrder.setProductList(null);
+        distributionOrder.setTotalAmount(0.0);
+        distributionOrder.setWeightTotal(0);
+        
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
     private int getValue(String name) throws TreeException {
         for (int i = 0; i < productsBinaryTree.getSize(); i++) {
             Product tempProduct = (Product) productsBinaryTree.recorreArbol().get(i);
@@ -473,7 +512,6 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         }
         return 0;
     }
-
     private int getWeight(String name) throws TreeException {
         for (int i = 0; i < productsBinaryTree.getSize(); i++) {
             Product tempProduct = (Product) productsBinaryTree.recorreArbol().get(i);
@@ -541,6 +579,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList<String> cellarList;
     private javax.swing.JButton confirmButton;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
