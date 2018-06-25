@@ -48,6 +48,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
     private ArrayList<TableProduct> tableList = new ArrayList<>();
     private boolean cell1 = false;
     private boolean cell2 = false;
+    
 
     public LogisticsDistribution() throws TreeException {
         initComponents();
@@ -237,7 +238,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 110, 686, 439));
         jPanel1.add(labelTruck, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 80, 70));
 
-        nameTruck.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
+        nameTruck.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         nameTruck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/truck.png"))); // NOI18N
         jPanel1.add(nameTruck, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 60, 190, 30));
 
@@ -247,6 +248,8 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/escoba.png"))); // NOI18N
         jButton1.setText("Limpiar orden");
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
         jButton1.setOpaque(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -514,6 +517,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         labelTruck.setIcon(null);
         jLabel6.setIcon(null);
         jLabel2.setIcon(null);
+        jLabel8.setIcon(null);
         progressBar.setValue(0);
         tableList.removeAll(tableList);
         fillTable();
@@ -528,6 +532,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         distributionOrder.setWeightTotal(0);
         cell1=false;
         cell2=false;
+        nameTruck.setText(null);
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -565,21 +570,22 @@ public class LogisticsDistribution extends javax.swing.JFrame {
                     jLabel8.setIcon(imageIcon);
                      array[1]=tempCellar.getLatitude();
                      array[3]=tempCellar.getLength();
-                    System.out.println(tempCellar.getLatitude());
-                    System.out.println(tempCellar.getLength());
+                 
                 }
                 if (tempCellar.getName().equals(jList1.getSelectedValue())) {
                     ImageIcon imageIcon = new ImageIcon(tempCellar.getUrl());
                     jLabel8.setIcon(imageIcon);
                     array[5]=tempCellar.getLatitude();
                     array[7]=tempCellar.getLength();
-                    System.out.println(tempCellar.getLatitude());
-                    System.out.println(tempCellar.getLength());
+                    
                 }
             }
             String url = array[0]+array[1]+array[2]+array[3]+array[4]+array[5]+array[6]+array[7];
             browser.loadURL(url);
-            System.out.println(url);
+           
+        }
+        else{
+            browser.loadURL("maps.google.es");
         }
     }
 
