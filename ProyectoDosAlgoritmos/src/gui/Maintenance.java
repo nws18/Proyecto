@@ -1685,7 +1685,9 @@ public class Maintenance extends javax.swing.JFrame {
             }
         });
         jPanel7.add(updateImageProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 230, -1, -1));
-        jPanel7.add(jLabel133, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 350, 270, 20));
+
+        jLabel133.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel7.add(jLabel133, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 350, 260, 20));
 
         updateProductButton.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         updateProductButton.setText("Actualizar");
@@ -2576,7 +2578,6 @@ public class Maintenance extends javax.swing.JFrame {
         } catch (NullPointerException nullPointerException) {
             jLabel36.setText("Ingrese todos los datos.");
         } catch (NumberFormatException numberFormatException) {
-            jLabel36.setText("<html><p>Valor de unidad, peso y precio debe ser un valor entero.</html></p>");
         }
 
     }//GEN-LAST:event_addProductButtonActionPerformed
@@ -2725,8 +2726,10 @@ public class Maintenance extends javax.swing.JFrame {
                 updateImageProductTextField.setText("");
             } catch (TreeException ex) {
                 Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (NumberFormatException numberFormatException) {
+                System.out.println("hola");
             }
-            }
+        }
     }//GEN-LAST:event_updateProductButtonActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
