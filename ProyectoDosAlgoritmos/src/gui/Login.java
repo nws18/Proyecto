@@ -113,7 +113,8 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(showPasswordLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 33, 33));
 
         creditsButton.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-        creditsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icon.png"))); // NOI18N
+        creditsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Webp.net-gifmaker (1).gif"))); // NOI18N
+        creditsButton.setToolTipText("Créditos");
         creditsButton.setBorderPainted(false);
         creditsButton.setContentAreaFilled(false);
         creditsButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -122,17 +123,17 @@ public class Login extends javax.swing.JFrame {
                 creditsButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(creditsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 11, -1, -1));
+        jPanel1.add(creditsButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 190, 100));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 477, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
