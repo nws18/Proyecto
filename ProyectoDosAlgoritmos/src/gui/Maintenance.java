@@ -2715,7 +2715,7 @@ public class Maintenance extends javax.swing.JFrame {
                 crudMaintenance.updateProduct(updateSearchProductTextField.getText(), updateNameProductTextField.getText(),
                         updateUnitMeasuredComboBox.getSelectedItem().toString(), Integer.parseInt(updateUnitValueTextField.getText()),
                         Integer.parseInt(updateWeightTextField.getText()), updateDescriptionTextField.getText(), idCategory,
-                        Integer.parseInt(updatePriceTextField.getText()), updateImageProductTextField.getText(), idBatch);
+                        Double.parseDouble(updatePriceTextField.getText()), updateImageProductTextField.getText(), idBatch);
                 jLabel32.setText("Información actualizada.");
                 updateSearchProductTextField.setText("");
                 updateNameProductTextField.setText("");
@@ -2726,9 +2726,10 @@ public class Maintenance extends javax.swing.JFrame {
                 updateImageProductTextField.setText("");
             } catch (TreeException ex) {
                 Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (NumberFormatException numberFormatException) {
-                System.out.println("hola");
             }
+//            } catch (NumberFormatException numberFormatException) {
+//                System.out.println("hola");
+//            }
         }
     }//GEN-LAST:event_updateProductButtonActionPerformed
 
