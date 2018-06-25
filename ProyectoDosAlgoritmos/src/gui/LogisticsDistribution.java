@@ -417,7 +417,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
                 for (int i = 0; i < productsBinaryTree.getSize(); i++) {
                     Product tempProduct = (Product) productsBinaryTree.recorreArbol().get(i);
                     if (tempProduct.getName().equals(listProducts.getSelectedValue())) {
-                        tableProduct.setAmount(tempProduct.getPrice());
+                        tableProduct.setAmount((int) tempProduct.getPrice());
                         tableProduct.setProduct(tempProduct.getName());
                         Iterator iterator = categoryMap.keySet().iterator();
 
@@ -593,7 +593,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         for (int i = 0; i < productsBinaryTree.getSize(); i++) {
             Product tempProduct = (Product) productsBinaryTree.recorreArbol().get(i);
             if (tempProduct.getName().equals(name)) {
-                return tempProduct.getPrice();
+                return (int) tempProduct.getPrice();
             }
         }
         return 0;

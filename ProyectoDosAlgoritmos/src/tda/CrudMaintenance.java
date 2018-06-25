@@ -52,7 +52,7 @@ public class CrudMaintenance {
         return -1;
     }
 
-    public void addProduct(String name, String unitMeasured, int unitValue, int totalWeight, String description, int idBatch, int idCategory, int price, String url) throws TreeException {
+    public void addProduct(String name, String unitMeasured, int unitValue, int totalWeight, String description, int idBatch, int idCategory, double price, String url) throws TreeException {
         Product product = new Product(idProduct(), name, unitMeasured, unitValue, totalWeight, description, idBatch, idCategory, price, url);
         productsBinaryTree.insert(product);
     }
@@ -97,7 +97,7 @@ public class CrudMaintenance {
         return false;
     }
 
-    public void updateProduct(String name, String newName,String newUnitMeasured, int newUnitValue, int newTotalWeight, String newDescription, int newIdCategory, int newPrice, String newUrl, int newIdBatch) throws TreeException {
+    public void updateProduct(String name, String newName,String newUnitMeasured, int newUnitValue, int newTotalWeight, String newDescription, int newIdCategory, double newPrice, String newUrl, int newIdBatch) throws TreeException {
         if(existsProduct(name)) {
             Product oldName = getProduct(name);
             Product oldUnitMeasured = getProduct(name);

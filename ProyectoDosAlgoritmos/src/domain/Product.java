@@ -15,13 +15,13 @@ public class Product  implements java.io.Serializable{
     private String description;
     private int idBatch;
     private int idCategory;
-    private int price;
+    private double price;
     private String url;
 
     public Product() {
     }
 
-    public Product(int idProduct, String name, String unitMeasured, int unitValue, int totalWeight, String description, int idLot, int idCategory, int price, String url) {
+    public Product(int idProduct, String name, String unitMeasured, int unitValue, int totalWeight, String description, int idLot, int idCategory, double price, String url) {
         this.idProduct = idProduct;
         this.name = name;
         this.unitMeasured = unitMeasured;
@@ -149,14 +149,14 @@ public class Product  implements java.io.Serializable{
     /**
      * @return the price
      */
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
     /**
      * @param price the price to set
      */
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
