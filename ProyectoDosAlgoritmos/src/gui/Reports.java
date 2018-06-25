@@ -54,6 +54,15 @@ public class Reports extends javax.swing.JFrame {
                 Logger.getLogger(Reports.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        
+        this.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                ConfirmExit confirmExit = new ConfirmExit();
+                confirmExit.setVisible(true);
+            }
+        });
     }
     
     /**

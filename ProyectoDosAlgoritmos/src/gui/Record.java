@@ -51,6 +51,15 @@ public class Record extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(Record.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        this.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                ConfirmExit confirmExit = new ConfirmExit();
+                confirmExit.setVisible(true);
+            }
+        });
     }
     
     /**
@@ -261,6 +270,11 @@ public class Record extends javax.swing.JFrame {
                 searchButtonMouseClicked(evt);
             }
         });
+        searchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchButtonActionPerformed(evt);
+            }
+        });
         jPanel1.add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -339,6 +353,10 @@ public class Record extends javax.swing.JFrame {
             Logger.getLogger(Record.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_formWindowClosing
+
+    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchButtonActionPerformed
 
     /**
      * @param args the command line arguments

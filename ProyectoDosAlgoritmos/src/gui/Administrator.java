@@ -22,6 +22,15 @@ public class Administrator extends javax.swing.JFrame {
     public Administrator() {
         initComponents();
         setIconImage(new ImageIcon(getClass().getResource("/icons/truck.png")).getImage());
+        
+        this.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                ConfirmExit confirmExit = new ConfirmExit();
+                confirmExit.setVisible(true);
+            }
+        });
     }
 
     /**

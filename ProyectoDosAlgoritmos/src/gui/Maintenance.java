@@ -252,6 +252,16 @@ public class Maintenance extends javax.swing.JFrame {
             Product product = (Product) productsBinaryTree.recorreArbol().get(i);
             textAutoCompleterDeleteProduct.addItem(product.getName());
         }
+        
+        this.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+ 
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                ConfirmExit confirmExit = new ConfirmExit();
+                confirmExit.setVisible(true);
+            }
+        });
     }
 
     /**
