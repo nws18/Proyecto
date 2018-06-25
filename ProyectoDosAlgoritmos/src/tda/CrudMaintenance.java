@@ -55,7 +55,6 @@ public class CrudMaintenance {
     public void addProduct(String name, String unitMeasured, int unitValue, int totalWeight, String description, int idBatch, int idCategory, int price, String url) throws TreeException {
         Product product = new Product(idProduct(), name, unitMeasured, unitValue, totalWeight, description, idBatch, idCategory, price, url);
         productsBinaryTree.insert(product);
-        System.out.println(productsBinaryTree.toString());
     }
     
     private int idProduct() throws TreeException{
@@ -196,7 +195,6 @@ public class CrudMaintenance {
     public void addBacth(String batchCode, String packedDate, String expirationDate) {
         Batch batch = new Batch(idBatch(), batchCode, packedDate, expirationDate);
         batchMap.put(idBatch(), batch);
-        System.out.println(batchMap.toString());
     }
     
     private int idBatch() {
@@ -216,7 +214,6 @@ public class CrudMaintenance {
             }
         } catch (Exception e) {
         }
-        System.out.println(batchMap.toString());
     }
     
     public Batch getBatch(String batchCode) {
@@ -256,14 +253,12 @@ public class CrudMaintenance {
             
             oldBatchCode.setBatchCode(newBatchCode);
             oldExpirationDate.setExpirationDate(newExpirationDate);
-            System.out.println(batchMap.toString());
         }
     }
 
     public void addTransportUnit(String plate, int minCapacity, int maxCapacity, String url) {
         TransportUnit transportUnit = new TransportUnit(idTransport(), plate, minCapacity, maxCapacity, url);
         transportUnitMap.put(idTransport(), transportUnit);
-        System.out.println(transportUnitMap.toString());
     }
     
     private int idTransport() {
@@ -283,7 +278,6 @@ public class CrudMaintenance {
             }
         } catch (Exception e) {
         }
-        System.out.println(transportUnitMap.toString());
     }
     
     public TransportUnit getTransportUnit(String plate) {
@@ -320,25 +314,23 @@ public class CrudMaintenance {
         if(existsTransportUnit(plate)) {
             TransportUnit oldPlate  = getTransportUnit(plate);
             TransportUnit oldMinCapacity = getTransportUnit(plate);
-            TransportUnit oldMaxCapacuty = getTransportUnit(plate);
+            TransportUnit oldMaxCapacity = getTransportUnit(plate);
             TransportUnit oldUrl = getTransportUnit(plate);
             
             oldPlate.setPlate(newPlate);
             oldMinCapacity.setMinCapacity(newMinCapacity);
-            oldMaxCapacuty.setMaxCapacity(newMaxCapacity);
-            oldUrl.setUrl(plate);
-            System.out.println(transportUnitMap.toString());
+            oldMaxCapacity.setMaxCapacity(newMaxCapacity);
+            oldUrl.setUrl(newUrl);
         }
     }
     
     public void addCellar(String name, String latitude, String length, float distance, String url) throws GraphException {
         Cellar cellar = new Cellar(idCellar(), name, latitude, length, distance, url);
         cellarGraph.insertVertx(cellar);
-        System.out.println(cellarGraph.toString());
     }
     
     private int idCellar() throws GraphException {
-        Cellar cellar = (Cellar) cellarGraph.list().get(cellarGraph.list().size());
+        Cellar cellar = (Cellar) cellarGraph.list().get(cellarGraph.list().size()-1);
         return cellar.getIdCellar()+1;
     }
 
@@ -349,7 +341,6 @@ public class CrudMaintenance {
                 cellarGraph.deleteVertex(cellar);
             }
         }
-        System.out.println(cellarGraph.toString());
     }
     
     public Cellar getCellar(String name) throws GraphException {
@@ -385,7 +376,6 @@ public class CrudMaintenance {
             oldLenght.setLength(newLength);
             oldDistance.setDistance(newDistance);
             oldUrl.setUrl(url);
-            System.out.println(cellarGraph.toString());
         }
     }
 
@@ -393,7 +383,6 @@ public class CrudMaintenance {
         String verifyMD5 = DigestUtils.md5Hex(password);
         User user = new User(idUser(), name, role, NameUser, verifyMD5);
         userList.add(user);
-        System.out.println(userList.toString());
     }
     
     private int idUser(){
@@ -408,7 +397,6 @@ public class CrudMaintenance {
                 userList.remove(user);
             }
         }
-        System.out.println(userList.toString());
     }
     
     public User getUser(String userName) {
@@ -432,6 +420,7 @@ public class CrudMaintenance {
     }
 
     public void updateUser(String userName, String newName, String newRole, String newUserName, String newPassword) {
+        String verifyMD5 = DigestUtils.md5Hex(newPassword);
         if (existsUser(userName)) {
             User oldName = getUser(userName);
             User oldRole = getUser(userName);
@@ -441,8 +430,7 @@ public class CrudMaintenance {
             oldName.setName(newName);
             oldRole.setRole(newRole);
             oldUserName.setUser(newUserName);
-            oldPassword.setPassword(newPassword);
-            System.out.println(userList.toString());
+            oldPassword.setPassword(verifyMD5);
         }
     }
 }

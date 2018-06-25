@@ -225,20 +225,18 @@ public class NewMain {
         User user0 = new User(0, "Nicole Fonseca", "Administrador", "nicole98", password);
         User user1 = new User(1, "Wilmer Mata", "Operador", "wilmata24", password);
         User user2 = new User(2, "Sergio Siles", "Operador", "sfss1997", password);
-        User user3 = new User(3, "Elva Surita", "Operador", "EV", password);
-        User user4 = new User(4, "Allan Brito", "Operador", "Nalla", password);
+        User user3 = new User(3, "Allan Brito", "Operador", "Nalla", password);
         UserList.add(user0);
         UserList.add(user1);
         UserList.add(user2);
         UserList.add(user3);
-        UserList.add(user4);
 
-        administratorFiles.writeBatchFile(batchList);
-        administratorFiles.writeCategoryFile(categoryList);
-        administratorFiles.writeCellarFile(cellarList);
+//        administratorFiles.writeBatchFile(batchList);
+//        administratorFiles.writeCategoryFile(categoryList);
+//        administratorFiles.writeCellarFile(cellarList);
         administratorFiles.writeDistributionOrderFile(distributionOrderList);
-        administratorFiles.writeProductFile(productList);
-        administratorFiles.writeTransportUnitFile(transportUnitList);
+//        administratorFiles.writeProductFile(productList);
+//        administratorFiles.writeTransportUnitFile(transportUnitList);
         administratorFiles.writeUserFile(UserList);
 
         LinkedBinaryTree linkedBinaryTree = new LinkedBinaryTree();

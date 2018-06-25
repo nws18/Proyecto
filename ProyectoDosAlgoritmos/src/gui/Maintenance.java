@@ -424,7 +424,6 @@ public class Maintenance extends javax.swing.JFrame {
         deleteCategoryButton = new javax.swing.JButton();
         addCategoryLabel = new javax.swing.JLabel();
         searchCategoryLabel = new javax.swing.JLabel();
-        jLabel87 = new javax.swing.JLabel();
         jLabel107 = new javax.swing.JLabel();
         jLabel112 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -741,10 +740,10 @@ public class Maintenance extends javax.swing.JFrame {
             }
         });
         jPanel2.add(deleteUserButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 120, -1, -1));
-        jPanel2.add(jLabel114, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 220, 20));
-        jPanel2.add(jLabel118, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 200, 30));
-        jPanel2.add(jLabel116, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 330, 260, 20));
-        jPanel2.add(jLabel120, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 170, 220, 20));
+        jPanel2.add(jLabel114, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 220, 20));
+        jPanel2.add(jLabel118, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, 250, 30));
+        jPanel2.add(jLabel116, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 350, 260, 20));
+        jPanel2.add(jLabel120, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 350, 220, 20));
 
         jTabbedPane1.addTab("Usuarios", jPanel2);
 
@@ -798,7 +797,7 @@ public class Maintenance extends javax.swing.JFrame {
         imageTransportUnitTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel4.add(imageTransportUnitTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 72, -1));
 
-        searchImageTransportUnit.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        searchImageTransportUnit.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         searchImageTransportUnit.setText("Buscar");
         searchImageTransportUnit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -807,7 +806,7 @@ public class Maintenance extends javax.swing.JFrame {
         });
         jPanel4.add(searchImageTransportUnit, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, -1, -1));
 
-        addTransportUnitButton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        addTransportUnitButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         addTransportUnitButton.setText("Agregar");
         addTransportUnitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -842,7 +841,7 @@ public class Maintenance extends javax.swing.JFrame {
         searchUpdateTransportTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel4.add(searchUpdateTransportTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 60, 132, -1));
 
-        updateSearchPlateButton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        updateSearchPlateButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         updateSearchPlateButton.setText("Buscar");
         updateSearchPlateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -873,6 +872,7 @@ public class Maintenance extends javax.swing.JFrame {
         updateImageTransport.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel4.add(updateImageTransport, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 250, 73, -1));
 
+        updateImageTransportUnit.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         updateImageTransportUnit.setText("Buscar");
         updateImageTransportUnit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -881,6 +881,7 @@ public class Maintenance extends javax.swing.JFrame {
         });
         jPanel4.add(updateImageTransportUnit, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 250, -1, -1));
 
+        updateTransportUnitButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         updateTransportUnitButton.setText("Actualizar");
         updateTransportUnitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -896,6 +897,7 @@ public class Maintenance extends javax.swing.JFrame {
         deleteTransportTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel4.add(deleteTransportTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 100, 150, -1));
 
+        deleteTransportUnitButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         deleteTransportUnitButton.setText("Borrar");
         deleteTransportUnitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -904,6 +906,7 @@ public class Maintenance extends javax.swing.JFrame {
         });
         jPanel4.add(deleteTransportUnitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 140, -1, -1));
 
+        searchTransportUnitButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         searchTransportUnitButton.setText("Buscar");
         searchTransportUnitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -943,7 +946,7 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel144.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel144.setText("toneladas");
         jPanel4.add(jLabel144, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 210, -1, -1));
-        jPanel4.add(jLabel145, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 340, 190, 20));
+        jPanel4.add(jLabel145, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 340, 220, 20));
         jPanel4.add(jLabel135, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, 270, 20));
 
         jTabbedPane1.addTab("Transporte", jPanel4);
@@ -1052,20 +1055,12 @@ public class Maintenance extends javax.swing.JFrame {
             }
         });
 
-        jLabel67.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
-
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel71, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
@@ -1111,7 +1106,12 @@ public class Maintenance extends javax.swing.JFrame {
                                     .addComponent(expirationDateLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(28, 28, 28)
                         .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(7, 7, 7)))
+                        .addGap(14, 14, 14))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel71, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1119,11 +1119,11 @@ public class Maintenance extends javax.swing.JFrame {
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(jPanel5Layout.createSequentialGroup()
-                                            .addGap(102, 102, 102)
+                                            .addGap(95, 95, 95)
                                             .addComponent(jLabel63))
                                         .addComponent(updateSearchBatchButton, javax.swing.GroupLayout.Alignment.TRAILING))
                                     .addGroup(jPanel5Layout.createSequentialGroup()
-                                        .addGap(26, 26, 26)
+                                        .addGap(19, 19, 19)
                                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel74)
                                             .addComponent(jLabel75)
@@ -1164,7 +1164,7 @@ public class Maintenance extends javax.swing.JFrame {
                                         .addComponent(jLabel76, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addContainerGap())))))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
+                        .addGap(48, 48, 48)
                         .addComponent(jLabel73, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
@@ -1205,9 +1205,7 @@ public class Maintenance extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(updateBatchButton))
                             .addComponent(jSeparator12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel73, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -1243,11 +1241,16 @@ public class Maintenance extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jXDatePicker2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(addBatchButton)))
+                                .addComponent(addBatchButton)))))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel73, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(33, 33, 33)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel67, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
-                            .addComponent(jLabel71, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(jLabel71, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel67, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE))))
                 .addContainerGap())
         );
 
@@ -1377,7 +1380,6 @@ public class Maintenance extends javax.swing.JFrame {
         jPanel6.add(deleteCategoryButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 110, -1, -1));
         jPanel6.add(addCategoryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 220, 19));
         jPanel6.add(searchCategoryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(511, 335, 260, 22));
-        jPanel6.add(jLabel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 350, 253, 26));
         jPanel6.add(jLabel107, new org.netbeans.lib.awtextra.AbsoluteConstraints(252, 316, 230, 19));
         jPanel6.add(jLabel112, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 320, 244, 26));
 
@@ -1393,7 +1395,7 @@ public class Maintenance extends javax.swing.JFrame {
         descriptionCategoryTextField.setRows(5);
         jScrollPane2.setViewportView(descriptionCategoryTextField);
 
-        jPanel6.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 180, 110));
+        jPanel6.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 200, 120));
 
         jTabbedPane1.addTab("Categorías", jPanel6);
 
@@ -1531,7 +1533,9 @@ public class Maintenance extends javax.swing.JFrame {
         jLabel109.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel109.setText("Peso total:");
         jPanel7.add(jLabel109, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, -1, -1));
-        jPanel7.add(totalWeightLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 90, 10));
+
+        totalWeightLabel.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        jPanel7.add(totalWeightLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 120, 20));
 
         jLabel111.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel111.setText("Descripción:");
@@ -1640,24 +1644,36 @@ public class Maintenance extends javax.swing.JFrame {
         updatePriceTextField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPanel7.add(updatePriceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 90, 80, -1));
 
-        updateCategoryComboBox.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        updateCategoryComboBox.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         jPanel7.add(updateCategoryComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 140, 80, -1));
 
-        updateUnitMeasuredComboBox.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        updateUnitMeasuredComboBox.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         jPanel7.add(updateUnitMeasuredComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 130, 120, -1));
+
+        unitMeasuredLabel.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         jPanel7.add(unitMeasuredLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 100, 20));
-        jPanel7.add(unitValueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 100, 10));
+
+        unitValueLabel.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        jPanel7.add(unitValueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 120, 20));
+
+        descriptionLabel.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         jPanel7.add(descriptionLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, 100, 20));
+
+        batchLabel.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         jPanel7.add(batchLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, 100, 20));
-        jPanel7.add(categoryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, 100, 10));
-        jPanel7.add(priceLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, 100, 20));
+
+        categoryLabel.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        jPanel7.add(categoryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, 120, 20));
+
+        priceLabel.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        jPanel7.add(priceLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, 120, 20));
         jPanel7.add(imageLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, 120, 60));
 
         batchCodeComboBox.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         jPanel7.add(batchCodeComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 110, -1));
 
         jLabel36.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel7.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 220, 20));
+        jPanel7.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 240, 40));
         jPanel7.add(jLabel110, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, 240, 20));
         jPanel7.add(jLabel132, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 330, 240, 20));
 
@@ -1669,7 +1685,7 @@ public class Maintenance extends javax.swing.JFrame {
             }
         });
         jPanel7.add(updateImageProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 230, -1, -1));
-        jPanel7.add(jLabel133, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 150, 190, 20));
+        jPanel7.add(jLabel133, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 350, 270, 20));
 
         updateProductButton.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         updateProductButton.setText("Actualizar");
@@ -1680,7 +1696,7 @@ public class Maintenance extends javax.swing.JFrame {
         });
         jPanel7.add(updateProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 320, -1, -1));
 
-        updateBatchCodeProduct.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        updateBatchCodeProduct.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         jPanel7.add(updateBatchCodeProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, 110, -1));
 
         jTabbedPane1.addTab("Productos", jPanel7);
@@ -1770,7 +1786,7 @@ public class Maintenance extends javax.swing.JFrame {
         jPanel3.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 100, -1, -1));
 
         latitudeCellarLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel3.add(latitudeCellarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 114, 14));
+        jPanel3.add(latitudeCellarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 140, 20));
 
         searchCellarButton.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
         searchCellarButton.setText("Buscar");
@@ -1786,21 +1802,21 @@ public class Maintenance extends javax.swing.JFrame {
         jPanel3.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 143, -1, -1));
 
         lenghtCellarLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel3.add(lenghtCellarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, 114, 19));
+        jPanel3.add(lenghtCellarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, 140, 20));
 
         jLabel33.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel33.setText("Distancia:");
         jPanel3.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 186, -1, -1));
 
         distanceCellarLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel3.add(distanceCellarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 114, 14));
+        jPanel3.add(distanceCellarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 140, 20));
 
         jLabel35.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel35.setText("Fotografía:");
         jPanel3.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 230, -1, -1));
 
         imageCellarLabel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPanel3.add(imageCellarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 140, 56));
+        jPanel3.add(imageCellarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 140, 90));
 
         jLabel37.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel37.setText("Nombre:");
@@ -1896,9 +1912,9 @@ public class Maintenance extends javax.swing.JFrame {
             }
         });
         jPanel3.add(deleteCellarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 110, -1, -1));
-        jPanel3.add(jLabel146, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 180, 20));
-        jPanel3.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 200, 20));
-        jPanel3.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 310, 210, 20));
+        jPanel3.add(jLabel146, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 300, 20));
+        jPanel3.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 240, 20));
+        jPanel3.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 360, 300, 20));
 
         jLabel34.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jPanel3.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 170, 230, 20));
@@ -1988,7 +2004,7 @@ public class Maintenance extends javax.swing.JFrame {
                 Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
-            jLabel32.setText("Debe seleccionar un archivo");
+            jLabel32.setText("Debe seleccionar un archivo.");
         }
     }//GEN-LAST:event_updateImageCellarButtonActionPerformed
 
@@ -2018,7 +2034,7 @@ public class Maintenance extends javax.swing.JFrame {
     private void deleteTransportUnitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteTransportUnitButtonActionPerformed
         if(crudMaintenance.existsTransportUnit(deleteTransportTextField.getText())) {
             crudMaintenance.deleteTransportUnit(deleteTransportTextField.getText());
-            jLabel145.setText("Unidad eliminada");
+            jLabel145.setText("Unidad eliminada.");
         } else {
             jLabel145.setText("La unidad no se encuentra registrada.");
         }
@@ -2032,10 +2048,13 @@ public class Maintenance extends javax.swing.JFrame {
             expirationDateLabel.setText(batch.getExpirationDate().toString());
         } else {
             jLabel71.setText("El lote no se encuentra registrado.");
+            packedDateLabel.setText("");
+            expirationDateLabel.setText("");
         }
     }//GEN-LAST:event_searchBatchButtonActionPerformed
 
     private void updateSearchBatchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateSearchBatchButtonActionPerformed
+        jLabel73.setText("");
         if(crudMaintenance.existsBatch(updateSearchBatchCodeTextField.getText())) {
             try {
                 DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
@@ -2047,6 +2066,7 @@ public class Maintenance extends javax.swing.JFrame {
             }
        } else {
            jLabel73.setText("El lote no se encuentra registrado");
+           
        }
     }//GEN-LAST:event_updateSearchBatchButtonActionPerformed
 
@@ -2054,8 +2074,10 @@ public class Maintenance extends javax.swing.JFrame {
         if(crudMaintenance.existsBatch(deleteBatchTextField.getText())) {
             crudMaintenance.deleteBacth(deleteBatchTextField.getText());
             jLabel76.setText("Lote eliminado");
+            deleteBatchTextField.setText("");
         } else {
             jLabel76.setText("El lote no se encuentra registrado");
+            
         }
     }//GEN-LAST:event_deleteBatchButtonActionPerformed
 
@@ -2065,7 +2087,7 @@ public class Maintenance extends javax.swing.JFrame {
             if (crudMaintenance.existsProduct(deleteProductTextField.getText())) {
                 try {
                     crudMaintenance.deleteProduct(deleteProductTextField.getText());
-                    jLabel133.setText("Producto eliminado");
+                    jLabel133.setText("Producto eliminado.");
                 } catch (TreeException ex) {
                     Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -2086,7 +2108,7 @@ public class Maintenance extends javax.swing.JFrame {
             jLabel114.setText("Ingrese todos los datos.");
         } else {
             crudMaintenance.addUser(nameTextField.getText(), comboBoxRole.getSelectedItem().toString(), userTextField.getText(), passwordTextField.getText());
-            jLabel114.setText("Usuario agregado");
+            jLabel114.setText("Usuario agregado.");
             nameTextField.setText("");
             userTextField.setText("");
             passwordTextField.setText("");
@@ -2094,11 +2116,10 @@ public class Maintenance extends javax.swing.JFrame {
     }//GEN-LAST:event_addUserButtonActionPerformed
 
     private void addCategoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCategoryButtonActionPerformed
-
         if (crudMaintenance.existsCategory(nameCategoryTextField.getText()) == true) {
             addCategoryLabel.setText("La categoría ya existe.");
         } else if (nameCategoryTextField.getText().equals("") || descriptionCategoryTextField.getText().equals("")) {
-            addCategoryLabel.setText("Ingrese la información.");
+            addCategoryLabel.setText("Ingrese los datos.");
         } else {
             crudMaintenance.addCategory(nameCategoryTextField.getText(), descriptionCategoryTextField.getText());
             addCategoryLabel.setText("Categoría agregada.");
@@ -2108,50 +2129,62 @@ public class Maintenance extends javax.swing.JFrame {
     }//GEN-LAST:event_addCategoryButtonActionPerformed
 
     private void searchCategoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchCategoryButtonActionPerformed
-        Category category = crudMaintenance.getCategory(searchNameCategoryTextField.getText());
-        if (searchNameCategoryTextField.getText().equals(category.getName())) {
-            jLabel107.setText("");
-            descriptionCategoryLabel.setText(category.getDescription());
-        } else {
+        searchCategoryLabel.setText("");
+        try {
+            Category category = crudMaintenance.getCategory(searchNameCategoryTextField.getText());
+            if (searchNameCategoryTextField.getText().equals(category.getName())) {
+                jLabel107.setText("");
+                descriptionCategoryLabel.setText(category.getDescription());
+            } else {
+                jLabel107.setText("La categoría no se encuentra registrada.");
+            }
+        } catch (NullPointerException nullPointerException) {
             jLabel107.setText("La categoría no se encuentra registrada.");
+            descriptionCategoryLabel.setText("");
         }
     }//GEN-LAST:event_searchCategoryButtonActionPerformed
 
     private void updateSearchCategoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateSearchCategoryButtonActionPerformed
+        searchCategoryLabel.setText("");
         if(crudMaintenance.existsCategory(updateSearchNameCategoryTextField.getText())) {
             Category category = crudMaintenance.getCategory(updateSearchNameCategoryTextField.getText());
             updateNameCategoryTextField.setText(category.getName());
             updateDescriptionCategoryTextField.setLineWrap(true);
             updateDescriptionCategoryTextField.setText(category.getDescription());     
         } else {
-            jLabel87.setText("La categoría no se encuentra registrada.");
+            searchCategoryLabel.setText("La categoría no se encuentra registrada.");
+            updateNameCategoryTextField.setText("");
+            updateDescriptionCategoryTextField.setText("");
         }
     }//GEN-LAST:event_updateSearchCategoryButtonActionPerformed
 
     private void updateCategoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateCategoryButtonActionPerformed
         if (updateNameCategoryTextField.getText().equals("") || updateDescriptionCategoryTextField.getText().equals("")) {
-            jLabel87.setText("Debe ingresar todos los datos.");
+            searchCategoryLabel.setText("Ingrese todos los datos.");
         } else if (crudMaintenance.existsCategory(updateSearchNameCategoryTextField.getText())){
             crudMaintenance.updateCategory(updateSearchNameCategoryTextField.getText(), updateNameCategoryTextField.getText(), updateDescriptionCategoryTextField.getText());
-            jLabel87.setText("Información actualizada.");
+            searchCategoryLabel.setText("Información actualizada.");
             updateSearchNameCategoryTextField.setText("");
             updateNameCategoryTextField.setText("");
             updateDescriptionCategoryTextField.setText("");
         } else {
-            jLabel87.setText("La categoría no se encuentra registrada.");
+            searchCategoryLabel.setText("La categoría no se encuentra registrada.");
         }
     }//GEN-LAST:event_updateCategoryButtonActionPerformed
 
     private void deleteCategoryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteCategoryButtonActionPerformed
         if(crudMaintenance.existsCategory(deleteCategoryTextField.getText())) {
             crudMaintenance.deleteCategory(deleteCategoryTextField.getText());
-            jLabel112.setText("Categoría eliminada");
+            jLabel112.setText("Categoría eliminada.");
+            deleteCategoryTextField.setText("");
         } else {
             jLabel112.setText("La categoría no se encuentra registrada.");
         }
     }//GEN-LAST:event_deleteCategoryButtonActionPerformed
 
     private void serchUserButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serchUserButtonActionPerformed
+        jLabel118.setText("");
+        try {
         User user = crudMaintenance.getUser(serchName.getText());
         if(crudMaintenance.existsUser(serchName.getText())) {
             roleLabel.setText(user.getRole());
@@ -2159,27 +2192,32 @@ public class Maintenance extends javax.swing.JFrame {
         } else {
             jLabel118.setText("El usuario no se encuentra registrado.");
         }
+        } catch (NullPointerException nullPointerException) {
+            jLabel118.setText("Ingrese todos los datos.");
+        } 
     }//GEN-LAST:event_serchUserButtonActionPerformed
 
     private void updateSearchUserButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateSearchUserButtonActionPerformed
-       if(crudMaintenance.existsUser(updateUserTextField.getText())) {
+       jLabel116.setText("");
+        if(crudMaintenance.existsUser(updateUserTextField.getText())) {
            User user = crudMaintenance.getUser(updateUserTextField.getText());
            updateNameUserTextField.setText(user.getName());
            updateRoleUserComboBox.setSelectedItem(user.getRole());
            updateUserNameTextField.setText(user.getUser());
        } else {
-           jLabel116.setText("El usuario no se encuentra registrado");
+           jLabel116.setText("El usuario no se encuentra registrado.");
        }
     }//GEN-LAST:event_updateSearchUserButtonActionPerformed
 
     private void updateUserButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateUserButtonActionPerformed
+        jLabel116.setText("");
         if(updateNameUserTextField.getText().equals("") || updateRoleUserComboBox.getSelectedItem().toString().equals("") 
                 || updateUserNameTextField.getText().equals("") || updatePasswordTextField.getText().equals("")) {
-            jLabel116.setText("Debe ingresar todos los datos");
+            jLabel116.setText("Ingrese todos los datos.");
         } else  if(crudMaintenance.existsUser(updateUserTextField.getText())){
             crudMaintenance.updateUser(updateUserTextField.getText(), updateNameUserTextField.getText(), 
                     updateRoleUserComboBox.getSelectedItem().toString(), updateUserNameTextField.getText(), updatePasswordTextField.getText());
-            jLabel116.setText("Información actualizada");
+            jLabel116.setText("Información actualizada.");
             updateUserTextField.setText("");
             updateNameUserTextField.setText("");
             updateUserNameTextField.setText("");
@@ -2192,9 +2230,10 @@ public class Maintenance extends javax.swing.JFrame {
     private void deleteUserButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteUserButtonActionPerformed
         if(crudMaintenance.existsUser(deleteUserTextField.getText())) {
             crudMaintenance.deleteUser(deleteUserTextField.getText());
-            jLabel120.setText("Usuario eliminado");
+            jLabel120.setText("Usuario eliminado.");
+            deleteUserTextField.setText("");
         } else {
-            jLabel120.setText("El usuario no se encuentra registrado");
+            jLabel120.setText("El usuario no se encuentra registrado.");
         }
     }//GEN-LAST:event_deleteUserButtonActionPerformed
 
@@ -2204,10 +2243,14 @@ public class Maintenance extends javax.swing.JFrame {
         } else if(plateTextField.getText().equals("") || MinCapacityComboBox.getSelectedItem().toString().equals("") || imageTransportUnitTextField.getText().equals("")) {
             jLabel134.setText("Ingrese todos los datos.");
         } else {
-            crudMaintenance.addTransportUnit(plateTextField.getText(), Integer.parseInt((String) MinCapacityComboBox.getSelectedItem()), Integer.parseInt((String) MaxCapacityComboBox.getSelectedItem()), imageTransportUnitTextField.getText());
-            jLabel134.setText("Unidad agregada");
-            plateTextField.setText("");
-            imageTransportUnitTextField.setText("");
+            if (Integer.parseInt(MinCapacityComboBox.getSelectedItem().toString()) > Integer.parseInt(MaxCapacityComboBox.getSelectedItem().toString())) {
+                jLabel134.setText("La capacidad es incorrecta.");
+            } else {
+                crudMaintenance.addTransportUnit(plateTextField.getText(), Integer.parseInt((String) MinCapacityComboBox.getSelectedItem()), Integer.parseInt((String) MaxCapacityComboBox.getSelectedItem()), imageTransportUnitTextField.getText());
+                jLabel134.setText("Unidad agregada.");
+                plateTextField.setText("");
+                imageTransportUnitTextField.setText("");
+            }
         }
     }//GEN-LAST:event_addTransportUnitButtonActionPerformed
 
@@ -2242,11 +2285,13 @@ public class Maintenance extends javax.swing.JFrame {
         TransportUnit transportUnit = crudMaintenance.getTransportUnit(searchPlateTextField.getText());
         if(crudMaintenance.existsTransportUnit(searchPlateTextField.getText())) {
             capacityTransportUnitLabel.setText(transportUnit.getMinCapacity() + "-" + transportUnit.getMaxCapacity());
-            System.out.println(transportUnit.getUrl());
             ImageIcon imageIcon = new ImageIcon(transportUnit.getUrl());
             imageTransportUnit.setIcon((Icon)imageIcon);
         } else {
             jLabel135.setText("La unidad no se encuentra registrada.");
+            searchPlateTextField.setText("");
+            capacityTransportUnitLabel.setText("");
+            imageTransportUnit.setIcon(null);
         }
     }//GEN-LAST:event_searchTransportUnitButtonActionPerformed
 
@@ -2289,14 +2334,18 @@ public class Maintenance extends javax.swing.JFrame {
 
     private void updateTransportUnitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateTransportUnitButtonActionPerformed
        if(plateTransportUnitTexField.getText().equals("") || updateImageTransport.getText().equals("")) {
-           jLabel53.setText("Debe ingresar todos los datos");
+           jLabel53.setText("Ingrese todos los datos.");
        } else if(crudMaintenance.existsTransportUnit(searchUpdateTransportTextField.getText())){
-           crudMaintenance.updateTransportUnit(searchUpdateTransportTextField.getText(), plateTransportUnitTexField.getText(), 
-                   Integer.parseInt(updateMinCapacityComboBox.getSelectedItem().toString()), 
-                   Integer.parseInt(updateMaxCapacityComboBox.getSelectedItem().toString()), updateImageTransport.getText());
-           jLabel53.setText("Información actualizada");
-           plateTransportUnitTexField.setText("");
-           updateImageTransport.setText("");
+           if (Integer.parseInt(updateMinCapacityComboBox.getSelectedItem().toString()) > Integer.parseInt(updateMaxCapacityComboBox.getSelectedItem().toString())) {
+                jLabel53.setText("La capacidad es incorrecta.");
+            } else {
+               crudMaintenance.updateTransportUnit(searchUpdateTransportTextField.getText(), plateTransportUnitTexField.getText(),
+                       Integer.parseInt(updateMinCapacityComboBox.getSelectedItem().toString()),
+                       Integer.parseInt(updateMaxCapacityComboBox.getSelectedItem().toString()), updateImageTransport.getText());
+               jLabel53.setText("Información actualizada.");
+               plateTransportUnitTexField.setText("");
+               updateImageTransport.setText("");
+           }
        }
     }//GEN-LAST:event_updateTransportUnitButtonActionPerformed
 
@@ -2377,6 +2426,7 @@ public class Maintenance extends javax.swing.JFrame {
     }//GEN-LAST:event_addImageCellarButtonActionPerformed
 
     private void searchCellarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchCellarButtonActionPerformed
+        jLabel30.setText("");
         try {
             Cellar cellar = crudMaintenance.getCellar(searchCellarTextField.getText());
             if (crudMaintenance.existsCellar(searchCellarTextField.getText())) {
@@ -2387,6 +2437,10 @@ public class Maintenance extends javax.swing.JFrame {
                 imageCellarLabel.setIcon((Icon) imageIcon);
             } else {
                 jLabel30.setText("La bodega no se encuentra registrada.");
+                latitudeCellarLabel.setText("");
+                lenghtCellarLabel.setText("");
+                distanceCellarLabel.setText("");
+                imageCellarLabel.setIcon(null);
             }
         } catch (GraphException ex) {
             Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
@@ -2394,6 +2448,7 @@ public class Maintenance extends javax.swing.JFrame {
     }//GEN-LAST:event_searchCellarButtonActionPerformed
 
     private void updateSearchCellarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateSearchCellarButtonActionPerformed
+        jLabel32.setText("");
         try {
             if(crudMaintenance.existsCellar(updateSearchCellarTextField.getText())) {
                 Cellar cellar = crudMaintenance.getCellar(updateSearchCellarTextField.getText());
@@ -2404,21 +2459,27 @@ public class Maintenance extends javax.swing.JFrame {
                 updateImageTextField.setText(cellar.getUrl());
             } else {
                 jLabel32.setText("La bodega no se encuentra registrada.");
+                updateNameCellarTextField.setText("");
+                updateLatitudeCellarTextField.setText("");
+                updateLenghtTextField.setText("");
+                updateDistanceTextField.setText("");
+                updateImageTextField.setText("");
             }} catch (GraphException ex) {
             Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_updateSearchCellarButtonActionPerformed
 
     private void updateCellarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateCellarButtonActionPerformed
+        jLabel32.setText("");
         try {
             if (updateNameCellarTextField.getText().equals("") || updateLatitudeCellarTextField.getText().equals("")
                     || updateLenghtTextField.getText().equals("") || updateDistanceTextField.getText().equals("") || updateImageTextField.getText().equals("")) {
-                jLabel32.setText("Debe ingresar todos los datos");
+                jLabel32.setText("Ingrese todos los datos.");
             } else if(crudMaintenance.existsCellar(updateSearchCellarTextField.getText())){
                 crudMaintenance.updateCellar(updateSearchCellarTextField.getText(), updateNameCellarTextField.getText(),
                         updateLatitudeCellarTextField.getText(), updateLenghtTextField.getText(), Float.valueOf(updateDistanceTextField.getText()),
                         updateImageTextField.getText());
-                jLabel32.setText("Información actualizada");
+                jLabel32.setText("Información actualizada.");
                 updateSearchCellarTextField.setText("");
                 updateNameCellarTextField.setText("");
                 updateLatitudeCellarTextField.setText("");
@@ -2496,17 +2557,11 @@ public class Maintenance extends javax.swing.JFrame {
                             idCategory = category.getIdCategory();
                         }
                     }
-                    try {
-                        crudMaintenance.addProduct(nameProductTextField.getText(), unitMeasuredComboBox.getSelectedItem().toString(),
-                                Integer.parseInt(unitValueTextField.getText()), 
-                                Integer.parseInt(totalWeightTextField.getText()),
-                                descriptionProductTextField.getText(), idBatch, idCategory, Integer.parseInt(priceTextField.getText()),
-                                imageProductTextField.getText());
-                    } catch (TreeException ex) {
-                        Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
-                    } catch (NumberFormatException numberFormatException) {
-                        jLabel36.setText("<html><p>Valor de unidad, peso y precio debe ser un valor entero.</html></p>");
-                    }
+                    crudMaintenance.addProduct(nameProductTextField.getText(), unitMeasuredComboBox.getSelectedItem().toString(),
+                            Integer.parseInt(unitValueTextField.getText()),
+                            Integer.parseInt(totalWeightTextField.getText()),
+                            descriptionProductTextField.getText(), idBatch, idCategory, Integer.parseInt(priceTextField.getText()),
+                            imageProductTextField.getText());
                     jLabel36.setText("Producto agregado.");
                     nameProductTextField.setText("");
                     unitValueTextField.setText("");
@@ -2518,6 +2573,10 @@ public class Maintenance extends javax.swing.JFrame {
             }
         } catch (TreeException ex) {
             Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NullPointerException nullPointerException) {
+            jLabel36.setText("Ingrese todos los datos.");
+        } catch (NumberFormatException numberFormatException) {
+            jLabel36.setText("<html><p>Valor de unidad, peso y precio debe ser un valor entero.</html></p>");
         }
 
     }//GEN-LAST:event_addProductButtonActionPerformed
@@ -2546,7 +2605,7 @@ public class Maintenance extends javax.swing.JFrame {
                     String key = (String) iterator2.next();
                     Category category = categoryMap.get(key);
                     if(product.getIdCategory() == category.getIdCategory()) {
-                        categoryName = product.getName();
+                        categoryName = category.getName();
                     }
                 }
                 batchLabel.setText(batchCode);
@@ -2594,7 +2653,7 @@ public class Maintenance extends javax.swing.JFrame {
                 updateCategoryComboBox.setSelectedItem(nameCategory);
                 updateImageProductTextField.setText(product.getUrl());
             } else {
-                jLabel32.setText("La bodega no se encuentra registrado");
+                jLabel32.setText("La bodega no se encuentra registrada.");
             }
         } catch (TreeException ex) {
             Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
@@ -2632,7 +2691,7 @@ public class Maintenance extends javax.swing.JFrame {
         if (updateNameProductTextField.getText().equals("") || updatePriceTextField.getText().equals("")
                     || updateUnitValueTextField.getText().equals("") || updateWeightTextField.getText().equals("") || updateDescriptionTextField.getText().equals("")
                     || updateImageProductTextField.getText().equals("")) {
-                jLabel132.setText("Debe ingresar todos los datos");
+                jLabel132.setText("Ingrese todos los datos.");
             } else {
             try {
                 Iterator iterator = categoryMap.keySet().iterator();
@@ -2656,7 +2715,7 @@ public class Maintenance extends javax.swing.JFrame {
                         updateUnitMeasuredComboBox.getSelectedItem().toString(), Integer.parseInt(updateUnitValueTextField.getText()),
                         Integer.parseInt(updateWeightTextField.getText()), updateDescriptionTextField.getText(), idCategory,
                         Integer.parseInt(updatePriceTextField.getText()), updateImageProductTextField.getText(), idBatch);
-                jLabel32.setText("Información actualizada");
+                jLabel32.setText("Información actualizada.");
                 updateSearchProductTextField.setText("");
                 updateNameProductTextField.setText("");
                 updateUnitValueTextField.setText("");
@@ -2900,7 +2959,6 @@ public class Maintenance extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel84;
     private javax.swing.JLabel jLabel85;
     private javax.swing.JLabel jLabel86;
-    private javax.swing.JLabel jLabel87;
     private javax.swing.JLabel jLabel88;
     private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
