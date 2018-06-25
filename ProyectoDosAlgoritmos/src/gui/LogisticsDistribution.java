@@ -46,10 +46,12 @@ public class LogisticsDistribution extends javax.swing.JFrame {
     private Browser browser = new Browser();
     private BrowserView view = new BrowserView(browser);
     private ArrayList<TableProduct> tableList = new ArrayList<>();
+    private boolean cell1 = false;
+    private boolean cell2 = false;
 
     public LogisticsDistribution() throws TreeException {
         initComponents();
-        
+
         setIconImage(new ImageIcon(getClass().getResource("/icons/truck.png")).getImage());
         jPanel3.setLayout(new BorderLayout());
         jPanel3.add(view, BorderLayout.CENTER);
@@ -62,6 +64,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
             arrayCellar[i] = tempCellar.getName();
         }
         cellarList.setListData(arrayCellar);
+        jList1.setListData(arrayCellar);
 
         String[] arrayProducts = new String[productsBinaryTree.getSize()];
         for (int i = 0; i < productsBinaryTree.getSize(); i++) {
@@ -71,7 +74,6 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         listProducts.setListData(arrayProducts);
 
     }
-   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -104,6 +106,11 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         nameTruck = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -118,7 +125,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/carrito.png"))); // NOI18N
         jLabel1.setText("Productos");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
         listProducts.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         listProducts.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -133,7 +140,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(listProducts);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 110, 140, 150));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 140, 150));
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 142, 81));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -149,8 +156,8 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, 88));
-        jPanel1.add(progressBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, 340, 32));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 500, 90));
+        jPanel1.add(progressBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 500, 32));
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/logistica.png"))); // NOI18N
@@ -159,8 +166,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/almacen.png"))); // NOI18N
-        jLabel4.setText("Bodegas");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, -1, -1));
 
         cellarList.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cellarList.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -178,7 +184,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(cellarList);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, 140, 138));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 140, 100));
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/mapas-y-banderas.png"))); // NOI18N
@@ -209,7 +215,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
             }
         });
         jPanel1.add(returnLoginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 580, -1, -1));
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 490, 275, 138));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 390, 200, 100));
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 100, -1, 530));
@@ -233,7 +239,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
 
         nameTruck.setFont(new java.awt.Font("Times New Roman", 0, 15)); // NOI18N
         nameTruck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/truck.png"))); // NOI18N
-        jPanel1.add(nameTruck, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, 190, 30));
+        jPanel1.add(nameTruck, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 60, 190, 30));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Webp.net-gifmaker (1).gif"))); // NOI18N
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 0, 170, 110));
@@ -248,6 +254,24 @@ public class LogisticsDistribution extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 580, 150, 40));
+
+        jList1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jList1MousePressed(evt);
+            }
+        });
+        jScrollPane4.setViewportView(jList1);
+
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 140, 100));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 520, 200, 100));
+
+        jLabel9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel9.setText("Bodega Origen");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 366, 110, 30));
+
+        jLabel10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel10.setText("Bodega destino");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, 140, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -264,31 +288,29 @@ public class LogisticsDistribution extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-   
+
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
 
         ConfirmOrder confirmOrder = new ConfirmOrder();
         confirmOrder.setVisible(true);
-     
-            Date date = new Date();
-            DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-            String orderDate = dateFormat.format(date);
-            try {
-                
-                distributionOrder.setProductList(getProducts());
-                distributionOrder.setIdDistributionOrder(distributionOrderList.size());
-                distributionOrder.setTotalAmount(Double.parseDouble(String.valueOf(getTotalAmount())));
-                distributionOrder.setWeightTotal(Float.parseFloat(String.valueOf(getTotalWeight())));
-                distributionOrder.setIdDestinyCellar(getCellarId());
-                distributionOrder.setIdOperator(userId);
-                distributionOrder.setIdOriginCellar(0);
-                distributionOrder.setOrderDate(orderDate);
-      
-                
 
-            } catch (TreeException ex) {
-                Logger.getLogger(LogisticsDistribution.class.getName()).log(Level.SEVERE, null, ex);
-            }
+        Date date = new Date();
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        String orderDate = dateFormat.format(date);
+        try {
+
+            distributionOrder.setProductList(getProducts());
+            distributionOrder.setIdDistributionOrder(distributionOrderList.size());
+            distributionOrder.setTotalAmount(Double.parseDouble(String.valueOf(getTotalAmount())));
+            distributionOrder.setWeightTotal(Float.parseFloat(String.valueOf(getTotalWeight())));
+            distributionOrder.setIdDestinyCellar(getCellarDestinyId());
+            distributionOrder.setIdOperator(userId);
+            distributionOrder.setIdOriginCellar(getCellarOriginId());
+            distributionOrder.setOrderDate(orderDate);
+
+        } catch (TreeException ex) {
+            Logger.getLogger(LogisticsDistribution.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_confirmButtonActionPerformed
 
     private int getTotalAmount() {
@@ -307,7 +329,17 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         return totalWeight;
     }
 
-    private int getCellarId() {
+    private int getCellarDestinyId() {
+        for (int i = 0; i < cellarGraph.list().size(); i++) {
+            Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
+            if (tempCellar.getName().equals(jList1.getSelectedValue())) {
+                return tempCellar.getIdCellar();
+            }
+        }
+        return -1;
+    }
+    
+    private int getCellarOriginId() {
         for (int i = 0; i < cellarGraph.list().size(); i++) {
             Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
             if (tempCellar.getName().equals(cellarList.getSelectedValue())) {
@@ -324,9 +356,9 @@ public class LogisticsDistribution extends javax.swing.JFrame {
             TableProduct tempTableProduct = tableList.get(i);
             for (int j = 0; j < productsBinaryTree.getSize(); j++) {
                 Product tempProduct = (Product) productsBinaryTree.recorreArbol().get(j);
-               
+
                 if (tempProduct.getName().equals(tempTableProduct.getProduct())) {
-                    arrayListProducts.add(tempProduct); 
+                    arrayListProducts.add(tempProduct);
                 }
             }
         }
@@ -337,9 +369,9 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         Login login = new Login();
         login.setVisible(true);
         this.setVisible(false);
-        
+
     }//GEN-LAST:event_returnLoginButtonActionPerformed
-    
+
     private void listProductsValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listProductsValueChanged
         try {
             for (int i = 0; i < productsBinaryTree.getSize(); i++) {
@@ -450,19 +482,14 @@ public class LogisticsDistribution extends javax.swing.JFrame {
 
     private void cellarListMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cellarListMousePressed
         // TODO add your handling code here:
-        ArrayList<String> array = new ArrayList();
         for (int i = 0; i < cellarGraph.list().size(); i++) {
             Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
             if (tempCellar.getName().equals(cellarList.getSelectedValue())) {
                 ImageIcon imageIcon = new ImageIcon(tempCellar.getUrl());
                 jLabel6.setIcon(imageIcon);
-                array.removeAll(array);
-                array.add(0, "http:/" + "" + "/maps.google.es/?q=loc:");
-                array.add(1, tempCellar.getLatitude());
-                array.add(2, "%20");
-                array.add(3, tempCellar.getLength());
-                browser.loadURL((array.get(0) + array.get(1) + array.get(2) + array.get(3)));
-                System.out.println((array.get(0) + array.get(1) + array.get(2) + array.get(3)));
+                cell1=true;
+                loadMap();
+                
             }
         }
     }//GEN-LAST:event_cellarListMousePressed
@@ -499,10 +526,63 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         distributionOrder.setProductList(null);
         distributionOrder.setTotalAmount(0.0);
         distributionOrder.setWeightTotal(0);
-        
-        
-        
+        cell1=false;
+        cell2=false;
+
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jList1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MousePressed
+        // TODO add your handling code here:
+        for (int i = 0; i < cellarGraph.list().size(); i++) {
+            Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
+            if (tempCellar.getName().equals(jList1.getSelectedValue())) {
+                ImageIcon imageIcon = new ImageIcon(tempCellar.getUrl());
+                jLabel8.setIcon(imageIcon);
+                cell2=true;
+                loadMap();
+                
+            }
+        }
+
+    }//GEN-LAST:event_jList1MousePressed
+    private void loadMap() {
+        if (cell1 == true && cell2 == true && !cellarList.getSelectedValue().equals(jList1.getSelectedValue())) {
+            String[] array = new String[8];
+         
+            array[0]=("https:/"+""+"/www.google.com/maps/dir/");
+            array[1]=("");
+            array[2]=(",");
+            array[3]=("");
+            array[4]=("/");
+            array[5]=("");
+            array[6]=(",");
+            array[7]=("");
+            
+            for (int i = 0; i < cellarGraph.list().size(); i++) {
+                Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
+                if (tempCellar.getName().equals(cellarList.getSelectedValue())) {
+                    ImageIcon imageIcon = new ImageIcon(tempCellar.getUrl());
+                    jLabel8.setIcon(imageIcon);
+                     array[1]=tempCellar.getLatitude();
+                     array[3]=tempCellar.getLength();
+                    System.out.println(tempCellar.getLatitude());
+                    System.out.println(tempCellar.getLength());
+                }
+                if (tempCellar.getName().equals(jList1.getSelectedValue())) {
+                    ImageIcon imageIcon = new ImageIcon(tempCellar.getUrl());
+                    jLabel8.setIcon(imageIcon);
+                    array[5]=tempCellar.getLatitude();
+                    array[7]=tempCellar.getLength();
+                    System.out.println(tempCellar.getLatitude());
+                    System.out.println(tempCellar.getLength());
+                }
+            }
+            String url = array[0]+array[1]+array[2]+array[3]+array[4]+array[5]+array[6]+array[7];
+            browser.loadURL(url);
+            System.out.println(url);
+        }
+    }
+
     private int getValue(String name) throws TreeException {
         for (int i = 0; i < productsBinaryTree.getSize(); i++) {
             Product tempProduct = (Product) productsBinaryTree.recorreArbol().get(i);
@@ -512,6 +592,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         }
         return 0;
     }
+
     private int getWeight(String name) throws TreeException {
         for (int i = 0; i < productsBinaryTree.getSize(); i++) {
             Product tempProduct = (Product) productsBinaryTree.recorreArbol().get(i);
@@ -581,17 +662,22 @@ public class LogisticsDistribution extends javax.swing.JFrame {
     private javax.swing.JButton confirmButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel labelTruck;
