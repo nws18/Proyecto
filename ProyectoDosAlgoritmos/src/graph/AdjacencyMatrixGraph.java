@@ -105,9 +105,16 @@ public class AdjacencyMatrixGraph implements Graph {
     @Override
     public void insertWeight(Object v1, Object v2, int weight) throws GraphException {
         if(!existEdge(v1, v2))
-            throw new GraphException("Alguno o ninguno de los vértices existe");
+            throw new GraphException("Alguno o ninguno de los vértices no existe");
         this.adjacencyMatrix[getPosition(v1)][getPosition(v2)] = weight;
         this.adjacencyMatrix[getPosition(v2)][getPosition(v1)] = weight;
+    }
+    
+    public int getWeigth(Object v1,Object v2 ) throws GraphException{
+        if(!existEdge(v1, v2))
+            throw new GraphException("Alguno o ninguno de los vértices no existe");
+        return (int) adjacencyMatrix[getPosition(v1)][getPosition(v2)]; 
+        
     }
 
     @Override
@@ -141,6 +148,8 @@ public class AdjacencyMatrixGraph implements Graph {
         }
         return arrayList;
     }
+    
+    
 
     @Override
     public void deleteVertex(Object element) throws GraphException {

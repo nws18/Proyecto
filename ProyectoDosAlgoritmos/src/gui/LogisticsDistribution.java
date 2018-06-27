@@ -40,6 +40,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
     public static ArrayList<DistributionOrder> pruebaList = new ArrayList<DistributionOrder>();
     public static DistributionOrder distributionOrder = new DistributionOrder();
     static int userId = -1;
+    static int capacity = 0;
     /**
      * Creates new form NewJFrame
      */
@@ -48,11 +49,10 @@ public class LogisticsDistribution extends javax.swing.JFrame {
     private ArrayList<TableProduct> tableList = new ArrayList<>();
     private boolean cell1 = false;
     private boolean cell2 = false;
-    
 
     public LogisticsDistribution() throws TreeException {
         initComponents();
-
+        jLabel11.setText("Distancia:");
         setIconImage(new ImageIcon(getClass().getResource("/icons/truck.png")).getImage());
         jPanel3.setLayout(new BorderLayout());
         jPanel3.add(view, BorderLayout.CENTER);
@@ -75,7 +75,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         listProducts.setListData(arrayProducts);
 
         this.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
- 
+
         addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -121,6 +121,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -176,7 +177,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/almacen.png"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, -1, -1));
 
         cellarList.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cellarList.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -274,15 +275,18 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         jScrollPane4.setViewportView(jList1);
 
         jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 140, 100));
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 520, 200, 100));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 530, 200, 100));
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel9.setText("Bodega Origen");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 366, 110, 30));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, 110, 30));
 
         jLabel10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel10.setText("Bodega destino");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, 140, 30));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 500, 140, 30));
+
+        jLabel11.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 510, 160, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -347,7 +351,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         }
         return -1;
     }
-    
+
     private int getCellarOriginId() {
         for (int i = 0; i < cellarGraph.list().size(); i++) {
             Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
@@ -382,17 +386,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
     }//GEN-LAST:event_returnLoginButtonActionPerformed
 
     private void listProductsValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listProductsValueChanged
-        try {
-            for (int i = 0; i < productsBinaryTree.getSize(); i++) {
-                Product tempProduct = (Product) productsBinaryTree.recorreArbol().get(i);
-                if (tempProduct.getName().equals(listProducts.getSelectedValue())) {
-                    ImageIcon imageIcon = new ImageIcon(tempProduct.getUrl());
-                    jLabel2.setIcon(imageIcon);
-                }
-            }
-        } catch (TreeException ex) {
-            Logger.getLogger(LogisticsDistribution.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//       
     }//GEN-LAST:event_listProductsValueChanged
 
     private void cellarListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cellarListMouseClicked
@@ -404,18 +398,41 @@ public class LogisticsDistribution extends javax.swing.JFrame {
     }//GEN-LAST:event_cellarListValueChanged
 
     private void listProductsMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listProductsMousePressed
+        try {
+            for (int i = 0; i < productsBinaryTree.getSize(); i++) {
+                Product tempProduct = (Product) productsBinaryTree.recorreArbol().get(i);
+                if (tempProduct.getName().equals(listProducts.getSelectedValue())) {
+                    ImageIcon imageIcon = new ImageIcon(tempProduct.getUrl());
+                    jLabel2.setIcon(imageIcon);
+                }
+            }
+        } catch (TreeException ex) {
+            Logger.getLogger(LogisticsDistribution.class.getName()).log(Level.SEVERE, null, ex);
+        }
         boolean exist = false;
+        int total = 0;
+        for (int i = 0; i < tableList.size(); i++) {
+            TableProduct tempTableProduct = tableList.get(i);
+
+            total += tempTableProduct.getWeight();
+
+        }
+
         TableProduct tableProduct = new TableProduct();
         for (int i = 0; i < tableList.size(); i++) {
-            if (listProducts.getSelectedValue().equals(tableList.get(i).getProduct())) {
-                try {
-                    tableList.get(i).setQuantity(tableList.get(i).getQuantity() + 1);
-                    tableList.get(i).setAmount(tableList.get(i).getAmount() + getValue(listProducts.getSelectedValue()));
-                    tableList.get(i).setWeight(tableList.get(i).getWeight() + getWeight(listProducts.getSelectedValue()));
-                    exist = true;
-                } catch (TreeException ex) {
-                    Logger.getLogger(LogisticsDistribution.class.getName()).log(Level.SEVERE, null, ex);
+            try {
+                if (listProducts.getSelectedValue().equals(tableList.get(i).getProduct()) && total + getWeight(listProducts.getSelectedValue()) < 30001) {
+                    try {
+                        tableList.get(i).setQuantity(tableList.get(i).getQuantity() + 1);
+                        tableList.get(i).setAmount(tableList.get(i).getAmount() + getValue(listProducts.getSelectedValue()));
+                        tableList.get(i).setWeight(tableList.get(i).getWeight() + getWeight(listProducts.getSelectedValue()));
+                        exist = true;
+                    } catch (TreeException ex) {
+                        Logger.getLogger(LogisticsDistribution.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
+            } catch (TreeException ex) {
+                Logger.getLogger(LogisticsDistribution.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         if (!exist) {
@@ -441,64 +458,90 @@ public class LogisticsDistribution extends javax.swing.JFrame {
             } catch (TreeException ex) {
                 Logger.getLogger(LogisticsDistribution.class.getName()).log(Level.SEVERE, null, ex);
             }
-            tableList.add(tableProduct);
+
+            if (total + tableProduct.getWeight() < 30001) {
+                tableList.add(tableProduct);
+            }
         }
-        int total = 0;
-        for (int i = 0; i < tableList.size(); i++) {
-            TableProduct tempTableProduct = tableList.get(i);
-            total += tempTableProduct.getWeight();
-        }
+
         double progress = 0;
-        if (total < 1000) {
-            ImageIcon imageIcon = new ImageIcon("images/transport/small.png");
-            labelTruck.setIcon(imageIcon);
-            nameTruck.setText("Capacidad: 1 tonelada");
-            double totalDouble = (double) total;
-            double hundred = 100.0;
-            double maxWeight = 1000.0;
-            progress = ((total / maxWeight) * hundred);
-        } else if (total >= 1000 && total < 5000) {
-            ImageIcon imageIcon = new ImageIcon("images/transport/medium.png");
-            labelTruck.setIcon(imageIcon);
-            nameTruck.setText("Capacidad: 5 toneladas");
-            double totalDouble = (double) total;
-            double hundred = 100.0;
-            double maxWeight = 5000.0;
-            progress = ((total / maxWeight) * hundred);
-        } else if (total >= 5000 && total < 10000) {
-            ImageIcon imageIcon = new ImageIcon("images/transport/big.png");
-            labelTruck.setIcon(imageIcon);
-            nameTruck.setText("Capacidad: 10 toneladas");
-            double totalDouble = (double) total;
-            double hundred = 100.0;
-            double maxWeight = 10000.0;
-            progress = ((total / maxWeight) * hundred);
-        } else if (total >= 10000 && total <= 30000) {
-            ImageIcon imageIcon = new ImageIcon("images/transport/giant.png");
-            labelTruck.setIcon(imageIcon);
-            nameTruck.setText("Capacidad: 30 toneladas");
-            double totalDouble = (double) total;
-            double hundred = 100.0;
-            double maxWeight = 30000.0;
-            progress = ((total / maxWeight) * hundred);
+        if (total < 30001) {
+            if (total < 1000) {
+                ImageIcon imageIcon = new ImageIcon("images/transport/small.png");
+                labelTruck.setIcon(imageIcon);
+                nameTruck.setText("Capacidad: 1 tonelada");
+                double totalDouble = (double) total;
+                double hundred = 100.0;
+                double maxWeight = 1000.0;
+                progress = ((total / maxWeight) * hundred);
+            } else if (total > 1000 && total < 5000) {
+                ImageIcon imageIcon = new ImageIcon("images/transport/medium.png");
+                labelTruck.setIcon(imageIcon);
+                nameTruck.setText("Capacidad: 5 toneladas");
+                double totalDouble = (double) total;
+                double hundred = 100.0;
+                double maxWeight = 5000.0;
+                progress = ((total / maxWeight) * hundred);
+            } else if (total > 5000 && total < 10000) {
+                ImageIcon imageIcon = new ImageIcon("images/transport/big.png");
+                labelTruck.setIcon(imageIcon);
+                nameTruck.setText("Capacidad: 10 toneladas");
+                double totalDouble = (double) total;
+                double hundred = 100.0;
+                double maxWeight = 10000.0;
+                progress = ((total / maxWeight) * hundred);
+            } else if (total > 10000 && total <= 30000) {
+                ImageIcon imageIcon = new ImageIcon("images/transport/giant.png");
+                labelTruck.setIcon(imageIcon);
+                nameTruck.setText("Capacidad: 30 toneladas");
+                double totalDouble = (double) total;
+                double hundred = 100.0;
+                double maxWeight = 30000.0;
+                progress = ((total / maxWeight) * hundred);
 
+            }
+
+            progressBar.setValue((int) progress);
+            capacity = progressBar.getValue();
+            progressBar.setStringPainted(true);
+            if (total < 30001) {
+                fillTable();
+            }
         }
-
-        progressBar.setValue((int) progress);
-        progressBar.setStringPainted(true);
-        fillTable();
     }//GEN-LAST:event_listProductsMousePressed
 
+    public void setDistance() throws GraphException {
+        Cellar origin = new Cellar();
+        Cellar destiny = new Cellar();
+
+        if (cell1 == true && cell2 == true && !cellarList.getSelectedValue().equals(jList1.getSelectedValue())) {
+            for (int i = 0; i < cellarGraph.getSize(); i++) {
+                Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
+                if (cellarList.getSelectedValue().equals(tempCellar.getName())) {
+                    origin = tempCellar;
+                }
+                if (jList1.getSelectedValue().equals(tempCellar.getName())) {
+                    destiny = tempCellar;
+                }
+            }
+//            jLabel11.setText("Distancia: " + cellarGraph.getWeigth(origin, destiny));
+        }
+    }
     private void cellarListMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cellarListMousePressed
         // TODO add your handling code here:
         for (int i = 0; i < cellarGraph.list().size(); i++) {
             Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
             if (tempCellar.getName().equals(cellarList.getSelectedValue())) {
-                ImageIcon imageIcon = new ImageIcon(tempCellar.getUrl());
-                jLabel6.setIcon(imageIcon);
-                cell1=true;
-                loadMap();
-                
+                try {
+                    ImageIcon imageIcon = new ImageIcon(tempCellar.getUrl());
+                    jLabel6.setIcon(imageIcon);
+                    cell1 = true;
+                    loadMap();
+                    setDistance();
+                } catch (GraphException ex) {
+                    Logger.getLogger(LogisticsDistribution.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
             }
         }
     }//GEN-LAST:event_cellarListMousePressed
@@ -536,8 +579,8 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         distributionOrder.setProductList(null);
         distributionOrder.setTotalAmount(0.0);
         distributionOrder.setWeightTotal(0);
-        cell1=false;
-        cell2=false;
+        cell1 = false;
+        cell2 = false;
         nameTruck.setText(null);
 
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -547,11 +590,15 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         for (int i = 0; i < cellarGraph.list().size(); i++) {
             Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
             if (tempCellar.getName().equals(jList1.getSelectedValue())) {
-                ImageIcon imageIcon = new ImageIcon(tempCellar.getUrl());
-                jLabel8.setIcon(imageIcon);
-                cell2=true;
-                loadMap();
-                
+                try {
+                    ImageIcon imageIcon = new ImageIcon(tempCellar.getUrl());
+                    jLabel8.setIcon(imageIcon);
+                    cell2 = true;
+                    loadMap();
+                    setDistance();
+                } catch (GraphException ex) {
+                    Logger.getLogger(LogisticsDistribution.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         }
 
@@ -559,38 +606,37 @@ public class LogisticsDistribution extends javax.swing.JFrame {
     private void loadMap() {
         if (cell1 == true && cell2 == true && !cellarList.getSelectedValue().equals(jList1.getSelectedValue())) {
             String[] array = new String[8];
-         
-            array[0]=("https:/"+""+"/www.google.com/maps/dir/");
-            array[1]=("");
-            array[2]=(",");
-            array[3]=("");
-            array[4]=("/");
-            array[5]=("");
-            array[6]=(",");
-            array[7]=("");
-            
+
+            array[0] = ("https:/" + "" + "/www.google.com/maps/dir/");
+            array[1] = ("");
+            array[2] = (",");
+            array[3] = ("");
+            array[4] = ("/");
+            array[5] = ("");
+            array[6] = (",");
+            array[7] = ("");
+
             for (int i = 0; i < cellarGraph.list().size(); i++) {
                 Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
                 if (tempCellar.getName().equals(cellarList.getSelectedValue())) {
                     ImageIcon imageIcon = new ImageIcon(tempCellar.getUrl());
                     jLabel8.setIcon(imageIcon);
-                     array[1]=tempCellar.getLatitude();
-                     array[3]=tempCellar.getLength();
-                 
+                    array[1] = tempCellar.getLatitude();
+                    array[3] = tempCellar.getLength();
+
                 }
                 if (tempCellar.getName().equals(jList1.getSelectedValue())) {
                     ImageIcon imageIcon = new ImageIcon(tempCellar.getUrl());
                     jLabel8.setIcon(imageIcon);
-                    array[5]=tempCellar.getLatitude();
-                    array[7]=tempCellar.getLength();
-                    
+                    array[5] = tempCellar.getLatitude();
+                    array[7] = tempCellar.getLength();
+
                 }
             }
-            String url = array[0]+array[1]+array[2]+array[3]+array[4]+array[5]+array[6]+array[7];
+            String url = array[0] + array[1] + array[2] + array[3] + array[4] + array[5] + array[6] + array[7];
             browser.loadURL(url);
-           
-        }
-        else{
+
+        } else {
             browser.loadURL("maps.google.es");
         }
     }
@@ -675,6 +721,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
