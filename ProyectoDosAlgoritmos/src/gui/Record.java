@@ -1,7 +1,6 @@
 
 package gui;
 
-import LinkedBinaryTree.TreeException;
 import chartGenerator.BarChart3D;
 import domain.Batch;
 import domain.Category;
@@ -23,8 +22,6 @@ import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.RowFilter;
 import javax.swing.table.TableRowSorter;
-import lab_grafos_algoritmos.GraphException;
-import tda.LoadFiles;
 import static tda.LoadTda.batchMap;
 import static tda.LoadTda.categoryMap;
 import static tda.LoadTda.cellarGraph;
@@ -157,11 +154,6 @@ public class Record extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Historial de productos");
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowClosing(java.awt.event.WindowEvent evt) {
-                formWindowClosing(evt);
-            }
-        });
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -338,21 +330,6 @@ public class Record extends javax.swing.JFrame {
             Logger.getLogger(Record.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_searchButtonMouseClicked
-
-    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        try {
-            LoadFiles loadFiles = new LoadFiles();
-            loadFiles.fileProduct();
-            loadFiles.fileCategory();
-            loadFiles.fileBatch();
-            loadFiles.fileTransportUnit();
-            loadFiles.fileCellar();
-            loadFiles.fileDistributionOrder();
-            loadFiles.fileUser();
-        } catch (IOException | TreeException | GraphException ex) {
-            Logger.getLogger(Record.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_formWindowClosing
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
         // TODO add your handling code here:

@@ -124,11 +124,6 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowClosing(java.awt.event.WindowEvent evt) {
-                formWindowClosing(evt);
-            }
-        });
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -545,21 +540,6 @@ public class LogisticsDistribution extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_cellarListMousePressed
-
-    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        try {
-            LoadFiles loadFiles = new LoadFiles();
-            loadFiles.fileProduct();
-            loadFiles.fileCategory();
-            loadFiles.fileBatch();
-            loadFiles.fileTransportUnit();
-            loadFiles.fileCellar();
-            loadFiles.fileDistributionOrder();
-            loadFiles.fileUser();
-        } catch (IOException | TreeException | GraphException ex) {
-            Logger.getLogger(LogisticsDistribution.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_formWindowClosing
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:

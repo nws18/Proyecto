@@ -3,14 +3,10 @@ package gui;
 import LinkedBinaryTree.TreeException;
 import domain.User;
 import static gui.LogisticsDistribution.userId;
-import java.awt.Image;
-import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
-import lab_grafos_algoritmos.GraphException;
 import tda.CrudMaintenance;
-import tda.LoadFiles;
 import static tda.LoadTda.userList;
 
 /**

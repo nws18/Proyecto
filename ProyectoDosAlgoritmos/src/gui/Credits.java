@@ -51,11 +51,6 @@ public class Credits extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Créditos");
         setLocation(new java.awt.Point(450, 200));
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowClosing(java.awt.event.WindowEvent evt) {
-                formWindowClosing(evt);
-            }
-        });
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 153));
 
@@ -177,21 +172,6 @@ public class Credits extends javax.swing.JFrame {
         login.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        try {
-            LoadFiles loadFiles = new LoadFiles();
-            loadFiles.fileProduct();
-            loadFiles.fileCategory();
-            loadFiles.fileBatch();
-            loadFiles.fileTransportUnit();
-            loadFiles.fileCellar();
-            loadFiles.fileDistributionOrder();
-            loadFiles.fileUser();
-        } catch (IOException | TreeException | GraphException ex) {
-            Logger.getLogger(Credits.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments

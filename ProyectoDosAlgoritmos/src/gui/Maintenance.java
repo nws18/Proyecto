@@ -73,15 +73,15 @@ public class Maintenance extends javax.swing.JFrame {
         MaxCapacityComboBox.addItem("10");
         MaxCapacityComboBox.addItem("30");
         
-        unitMeasuredComboBox.addItem("Unidad");
-        unitMeasuredComboBox.addItem("Paquete");
-        unitMeasuredComboBox.addItem("Caja");
-        unitMeasuredComboBox.addItem("Tarima");
+        unitMeasuredComboBox.addItem("Unidades");
+        unitMeasuredComboBox.addItem("Paquetes");
+        unitMeasuredComboBox.addItem("Cajas");
+        unitMeasuredComboBox.addItem("Tarimas");
         
-        updateUnitMeasuredComboBox.addItem("Unidad");
-        updateUnitMeasuredComboBox.addItem("Paquete");
-        updateUnitMeasuredComboBox.addItem("Caja");
-        updateUnitMeasuredComboBox.addItem("Tarima");
+        updateUnitMeasuredComboBox.addItem("Unidades");
+        updateUnitMeasuredComboBox.addItem("Paquetes");
+        updateUnitMeasuredComboBox.addItem("Cajas");
+        updateUnitMeasuredComboBox.addItem("Tarimas");
      
         updateMinCapacityComboBox.addItem("0");
         updateMinCapacityComboBox.addItem("1");
@@ -577,11 +577,6 @@ public class Maintenance extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Mantenimiento");
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowClosing(java.awt.event.WindowEvent evt) {
-                formWindowClosing(evt);
-            }
-        });
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 153));
 
@@ -1260,7 +1255,7 @@ public class Maintenance extends javax.swing.JFrame {
                         .addGap(33, 33, 33)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel71, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel67, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE))))
+                            .addComponent(jLabel67, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE))))
                 .addContainerGap())
         );
 
@@ -1956,23 +1951,20 @@ public class Maintenance extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(402, 402, 402)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 478, Short.MAX_VALUE)
                 .addComponent(returnAdministratorButton)
                 .addGap(34, 34, 34))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jTabbedPane1)
-                .addContainerGap())
+            .addComponent(jTabbedPane1)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(returnAdministratorButton, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -2664,7 +2656,7 @@ public class Maintenance extends javax.swing.JFrame {
                 updateCategoryComboBox.setSelectedItem(nameCategory);
                 updateImageProductTextField.setText(product.getUrl());
             } else {
-                jLabel32.setText("La bodega no se encuentra registrada.");
+                jLabel32.setText("El producto no se encuentra registrado.");
             }
         } catch (TreeException ex) {
             Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
@@ -2726,7 +2718,7 @@ public class Maintenance extends javax.swing.JFrame {
                         updateUnitMeasuredComboBox.getSelectedItem().toString(), Integer.parseInt(updateUnitValueTextField.getText()),
                         Integer.parseInt(updateWeightTextField.getText()), updateDescriptionTextField.getText(), idCategory,
                         Double.parseDouble(updatePriceTextField.getText()), updateImageProductTextField.getText(), idBatch);
-                jLabel32.setText("Información actualizada.");
+                jLabel132.setText("Información actualizada.");
                 updateSearchProductTextField.setText("");
                 updateNameProductTextField.setText("");
                 updateUnitValueTextField.setText("");
@@ -2737,26 +2729,8 @@ public class Maintenance extends javax.swing.JFrame {
             } catch (TreeException ex) {
                 Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
             }
-//            } catch (NumberFormatException numberFormatException) {
-//                System.out.println("hola");
-//            }
         }
     }//GEN-LAST:event_updateProductButtonActionPerformed
-
-    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        try {
-            LoadFiles loadFiles = new LoadFiles();
-            loadFiles.fileProduct();
-            loadFiles.fileCategory();
-            loadFiles.fileBatch();
-            loadFiles.fileTransportUnit();
-            loadFiles.fileCellar();
-            loadFiles.fileDistributionOrder();
-            loadFiles.fileUser();
-        } catch (IOException | TreeException | GraphException ex) {
-            Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
