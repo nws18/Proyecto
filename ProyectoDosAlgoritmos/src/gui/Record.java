@@ -71,18 +71,21 @@ public class Record extends javax.swing.JFrame {
             DistributionOrder distributionOrder = distributionOrderList.get(i);
             tableAdministrator.setOperatorName(getUserName(distributionOrder.getIdOperator()));
             tableAdministrator.setCellarName(getCellarName(distributionOrder.getIdDestinyCellar()));
-            
+
             if (dateFormat.parse(distributionOrder.getOrderDate()).after(jXDatePicker1.getDate()) && dateFormat.parse(distributionOrder.getOrderDate()).before(jXDatePicker2.getDate())) {
                 for (int j = 0; j < distributionOrder.getProductList().size(); j++) {
-                    Product product = distributionOrder.getProductList().get(j);                   
-                    tableAdministrator.setProductName(product.getName());    
+                    Product product = distributionOrder.getProductList().get(j);
+                    tableAdministrator.setProductName(product.getName());
                     tableAdministrator.setCategoryName(getCategoryName(product.getIdCategory()));
                     tableAdministrator.setBatchCode(getBatchCode(product.getIdBatch()));
-                    tableList.add(tableAdministrator);
-                }
-            }
-        }
 
+                }
+                tableList.add(tableAdministrator);
+            }
+        
+        }
+        
+        
        String[][] array = new String[tableList.size()][5];
         for (int i = 0; i < tableList.size(); i++) {
             array[i][0] = tableList.get(i).getProductName();
