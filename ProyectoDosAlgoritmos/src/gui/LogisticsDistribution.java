@@ -366,7 +366,9 @@ public class LogisticsDistribution extends javax.swing.JFrame {
                 Product tempProduct = (Product) productsBinaryTree.recorreArbol().get(j);
 
                 if (tempProduct.getName().equals(tempTableProduct.getProduct())) {
-                    arrayListProducts.add(tempProduct);
+                    for (int k = 0; k < tempTableProduct.getQuantity(); k++) {
+                        arrayListProducts.add(tempProduct);
+                    }
                 }
             }
         }
