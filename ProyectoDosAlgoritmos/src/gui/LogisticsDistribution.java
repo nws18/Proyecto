@@ -25,13 +25,13 @@ import static tda.LoadTda.productsBinaryTree;
 
 /**
  * Interfaz módulo Logística de distribución.
+ *
  * @author Nicole Fonseca, Wilmer Mata, Sergio Siles
  */
-
 public class LogisticsDistribution extends javax.swing.JFrame {
 
     public static boolean confirm = false;
-    public static DistributionOrder distributionOrder = new DistributionOrder();
+
     static int userId = -1;
     static int capacity = 0;
 
@@ -48,7 +48,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         jPanel3.setLayout(new BorderLayout());
         jPanel3.add(view, BorderLayout.CENTER);
         browser.loadURL("maps.google.es");
-        
+
         String[] arrayCellar = new String[cellarGraph.list().size()];
         for (int i = 0; i < cellarGraph.list().size(); i++) {
             Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
@@ -275,10 +275,14 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
+    private int getIdOrder() {
+        DistributionOrder tempDistributionOrder = distributionOrderList.get(distributionOrderList.size() - 1);
+        System.out.println(tempDistributionOrder.getIdDistributionOrder() + 1);
+        return tempDistributionOrder.getIdDistributionOrder() + 1;
+    }
 
-        ConfirmOrder confirmOrder = new ConfirmOrder();
-        confirmOrder.setVisible(true);
+    private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
+        DistributionOrder distributionOrder = new DistributionOrder();
 
         Date date = new Date();
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
@@ -286,7 +290,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         try {
 
             distributionOrder.setProductList(getProducts());
-            distributionOrder.setIdDistributionOrder(distributionOrderList.size());
+            distributionOrder.setIdDistributionOrder(getIdOrder());
             distributionOrder.setTotalAmount(Double.parseDouble(String.valueOf(getTotalAmount())));
             distributionOrder.setWeightTotal(Float.parseFloat(String.valueOf(getTotalWeight())));
             distributionOrder.setIdDestinyCellar(getCellarDestinyId());
@@ -297,6 +301,8 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         } catch (TreeException ex) {
             Logger.getLogger(LogisticsDistribution.class.getName()).log(Level.SEVERE, null, ex);
         }
+        ConfirmOrder confirmOrder = new ConfirmOrder(distributionOrder);
+        confirmOrder.setVisible(true);
     }//GEN-LAST:event_confirmButtonActionPerformed
 
     private int getTotalAmount() {
@@ -517,14 +523,14 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         tableList.removeAll(tableList);
         fillTable();
         browser.loadURL("maps.google.es");
-        distributionOrder.setIdDestinyCellar(-1);
-        distributionOrder.setIdDistributionOrder(-1);
-        distributionOrder.setIdOperator(-1);
-        distributionOrder.setIdOriginCellar(-1);
-        distributionOrder.setOrderDate(null);
-        distributionOrder.setProductList(null);
-        distributionOrder.setTotalAmount(0.0);
-        distributionOrder.setWeightTotal(0);
+//        distributionOrder.setIdDestinyCellar(-1);
+////        distributionOrder.setIdDistributionOrder(-1);
+//        distributionOrder.setIdOperator(-1);
+//        distributionOrder.setIdOriginCellar(-1);
+//        distributionOrder.setOrderDate(null);
+//        distributionOrder.setProductList(null);
+//        distributionOrder.setTotalAmount(0.0);
+//        distributionOrder.setWeightTotal(0);
         cell1 = false;
         cell2 = false;
         nameTruck.setText(null);

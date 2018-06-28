@@ -1,8 +1,9 @@
 package gui;
 
+import domain.DistributionOrder;
 import static gui.LogisticsDistribution.capacity;
 import static gui.LogisticsDistribution.confirm;
-import static gui.LogisticsDistribution.distributionOrder;
+//import static gui.LogisticsDistribution.distributionOrder;
 import javax.swing.ImageIcon;
 import static tda.LoadTda.distributionOrderList;
 
@@ -15,17 +16,19 @@ public class ConfirmOrder extends javax.swing.JFrame {
     /**
      * Creates new form ConfirmOrder
      */
-    public ConfirmOrder() {
-        
+
+    private DistributionOrder distributionOrder;
+    public ConfirmOrder(DistributionOrder distributionOrder) {
         initComponents();
+        this.distributionOrder = distributionOrder;
         setIconImage(new ImageIcon(getClass().getResource("/icons/truck.png")).getImage());
         jProgressBar1.setValue(capacity);
-        if(capacity<100){
+        if (capacity < 100) {
             jLabel2.setText("Camión con espacio disponible");
-        }else{
+        } else {
             jLabel2.setText("Camión cargado a máxima capacidad ");
         }
-        
+
         this.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
@@ -34,6 +37,10 @@ public class ConfirmOrder extends javax.swing.JFrame {
                 confirmExit.setVisible(true);
             }
         });
+    }
+
+    private ConfirmOrder() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -173,9 +180,11 @@ public class ConfirmOrder extends javax.swing.JFrame {
 
     private void confirmOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmOrderButtonActionPerformed
         distributionOrderList.add(distributionOrder);
-        System.out.println(distributionOrder.toString());
+        System.out.println("Frase: " + distributionOrder.toString());
         jLabel3.setText("Orden guardada");
-
+        for (int i = 0; i < distributionOrderList.size(); i++) {
+            System.out.println(distributionOrderList.get(i).toString());
+        }
     }//GEN-LAST:event_confirmOrderButtonActionPerformed
 
     private void continueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continueButtonActionPerformed
@@ -185,7 +194,7 @@ public class ConfirmOrder extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.setVisible(false);
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
     public boolean booleanConfirmOrder() {
         if (confirm == true) {

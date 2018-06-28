@@ -38,7 +38,7 @@ public class LoadTda {
     public static Map<Integer, Batch> batchMap = new TreeMap<>();
     public static Map<Integer, TransportUnit> transportUnitMap = new LinkedHashMap<>();
     public static AdjacencyMatrixGraph cellarGraph = new AdjacencyMatrixGraph(50);
-    public static LinkedList<DistributionOrder> distributionOrderList = new LinkedList<>();
+    public static ArrayList<DistributionOrder> distributionOrderList = new ArrayList<>();
     public static LinkedList<User> userList = new LinkedList<>();
     
     AdministratorFiles administratorFiles = new AdministratorFiles();

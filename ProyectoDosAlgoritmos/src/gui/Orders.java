@@ -7,9 +7,12 @@ package gui;
 
 import domain.Cellar;
 import domain.DistributionOrder;
+import domain.Product;
 import domain.TableProduct;
 import domain.User;
 import java.util.ArrayList;
+import java.util.Iterator;
+import static tda.LoadTda.categoryMap;
 import static tda.LoadTda.cellarGraph;
 import static tda.LoadTda.distributionOrderList;
 import static tda.LoadTda.userList;
@@ -25,10 +28,6 @@ public class Orders extends javax.swing.JFrame {
      */
     public Orders() {
         initComponents();
-        fillTable();
-    }
-
-    public void fillTable() {
         String[][] array = new String[distributionOrderList.size()][7];
         for (int i = 0; i < distributionOrderList.size(); i++) {
             DistributionOrder tempDistributionOrder = distributionOrderList.get(i);
@@ -43,7 +42,7 @@ public class Orders extends javax.swing.JFrame {
         }
         jTable1.setModel(new javax.swing.table.DefaultTableModel(array, new String[]{"ID", "Origen", "Destino", "Total", "Peso", "Fecha", "Operador"}));
     }
-
+   
     public String getCellarById(int id) {
         for (int i = 0; i < cellarGraph.list().size(); i++) {
             Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
@@ -194,32 +193,59 @@ public class Orders extends javax.swing.JFrame {
     private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
         // TODO add your handling code here:
         this.setVisible(false);
+        Administrator administrator = new Administrator();
+        administrator.setVisible(true);
     }//GEN-LAST:event_jButton1MousePressed
 
     private void jTable1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MousePressed
         // TODO add your handling code here:
+         ArrayList<TableProduct> tableList = new ArrayList<>();
+
+
         int idOrder = Integer.parseInt(String.valueOf(jTable1.getValueAt(jTable1.getSelectedRow(), 0)));
         DistributionOrder tempDistributionOrder = distributionOrderList.get(idOrder);
-        ArrayList tempListProducts = tempDistributionOrder.getProductList();
-        String[][] array = new String[tempListProducts.size()][5];
-        for (int i = 0; i < tempListProducts.size(); i++) {
-            TableProduct tempTableProduct = (TableProduct) tempListProducts.get(i);
-            array[i][0] = String.valueOf(tempTableProduct.getQuantity());
-            array[i][1] = tempTableProduct.getProduct();
-            array[i][2] = String.valueOf(tempTableProduct.getCategory());
-            array[i][3] = String.valueOf(tempTableProduct.getAmount());
-            array[i][4] = String.valueOf(tempTableProduct.getWeight());
-           
-
+        for (int i = 0; i < tempDistributionOrder.getProductList().size(); i++) {
+            Product tempProduct = tempDistributionOrder.getProductList().get(i);
+            TableProduct tempTableProduct = new TableProduct(); 
+            tempTableProduct.setQuantity(1);
+            tempTableProduct.setProduct(tempProduct.getName());
+            tempTableProduct.setCategory(getCategoryByID(tempProduct.getIdCategory()));
+            tempTableProduct.setAmount((int) tempProduct.getPrice());
+            tempTableProduct.setWeight(tempProduct.getTotalWeight());
+            tableList.add(tempTableProduct);
+            fillTable(tableList);
         }
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(array, new String[]{"Cantidad", "Producto", "Categoria", "Monto", "Peso"}));
-    
+
+
     }//GEN-LAST:event_jTable1MousePressed
 
-/**
- * @param args the command line arguments
- */
-public static void main(String args[]) {
+    private String getCategoryByID(int id) {
+        Iterator iterator = categoryMap.keySet().iterator();
+        while (iterator.hasNext()) {
+            String key = (String) iterator.next();
+            if (id == categoryMap.get(key).getIdCategory()) {
+                return categoryMap.get(key).getName();
+            }
+        }
+        return null;
+    }
+
+    public void fillTable(ArrayList<TableProduct> tableList) {
+        String[][] array = new String[tableList.size()][5];
+        for (int i = 0; i < tableList.size(); i++) {
+            array[i][0] = String.valueOf(tableList.get(i).getQuantity());
+            array[i][1] = tableList.get(i).getProduct();
+            array[i][2] = String.valueOf(tableList.get(i).getAmount());
+            array[i][3] = String.valueOf(tableList.get(i).getWeight());
+            array[i][4] = tableList.get(i).getCategory();
+        }
+          jTable3.setModel(new javax.swing.table.DefaultTableModel(array, new String[]{"Cantidad", "Producto", "Categoria", "Monto", "Peso"}));
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -230,28 +256,24 @@ public static void main(String args[]) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                
 
-}
+                }
             }
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(Orders.class
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-} catch (InstantiationException ex) {
+        } catch (InstantiationException ex) {
             java.util.logging.Logger.getLogger(Orders.class
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-} catch (IllegalAccessException ex) {
+        } catch (IllegalAccessException ex) {
             java.util.logging.Logger.getLogger(Orders.class
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-} catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Orders.class
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
