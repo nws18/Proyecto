@@ -277,7 +277,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
 
     private int getIdOrder() {
         DistributionOrder tempDistributionOrder = distributionOrderList.get(distributionOrderList.size() - 1);
-        System.out.println(tempDistributionOrder.getIdDistributionOrder() + 1);
+       
         return tempDistributionOrder.getIdDistributionOrder() + 1;
     }
 
@@ -346,6 +346,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         for (int i = 0; i < tableList.size(); i++) {
 
             TableProduct tempTableProduct = tableList.get(i);
+           
             for (int j = 0; j < productsBinaryTree.getSize(); j++) {
                 Product tempProduct = (Product) productsBinaryTree.recorreArbol().get(j);
 

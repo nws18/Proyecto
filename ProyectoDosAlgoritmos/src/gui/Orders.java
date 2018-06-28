@@ -200,7 +200,6 @@ public class Orders extends javax.swing.JFrame {
     private void jTable1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MousePressed
         // TODO add your handling code here:
         ArrayList<TableProduct> tableList = new ArrayList<>();
-
         int idOrder = Integer.parseInt(String.valueOf(jTable1.getValueAt(jTable1.getSelectedRow(), 0)));
         DistributionOrder tempDistributionOrder = distributionOrderList.get(idOrder);
         for (int i = 0; i < tempDistributionOrder.getProductList().size(); i++) {
@@ -211,13 +210,10 @@ public class Orders extends javax.swing.JFrame {
                    exists = true;
                    tableList.get(j).setQuantity(tableList.get(j).getQuantity() + 1);
                    tableList.get(j).setAmount((int) (tableList.get(j).getAmount() + tempProduct.getPrice()));
-                   tableList.get(j).setWeight(tableList.get(j).getWeight() + tempProduct.getTotalWeight());
-                   
+                   tableList.get(j).setWeight(tableList.get(j).getWeight() + tempProduct.getTotalWeight());   
                 }
             } 
             if (!exists) {
-
-
                 TableProduct tempTableProduct = new TableProduct();
                 tempTableProduct.setQuantity(1);
                 tempTableProduct.setProduct(tempProduct.getName());
@@ -225,10 +221,10 @@ public class Orders extends javax.swing.JFrame {
                 tempTableProduct.setAmount((int) tempProduct.getPrice());
                 tempTableProduct.setWeight(tempProduct.getTotalWeight());
                 tableList.add(tempTableProduct);
-                fillTable(tableList);
+                
             }
         }
-
+        fillTable(tableList);
     }//GEN-LAST:event_jTable1MousePressed
 
     private String getCategoryByID(int id) {
