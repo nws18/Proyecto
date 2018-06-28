@@ -42,7 +42,7 @@ public class Orders extends javax.swing.JFrame {
         }
         jTable1.setModel(new javax.swing.table.DefaultTableModel(array, new String[]{"ID", "Origen", "Destino", "Total", "Peso", "Fecha", "Operador"}));
     }
-   
+
     public String getCellarById(int id) {
         for (int i = 0; i < cellarGraph.list().size(); i++) {
             Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
@@ -199,23 +199,35 @@ public class Orders extends javax.swing.JFrame {
 
     private void jTable1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MousePressed
         // TODO add your handling code here:
-         ArrayList<TableProduct> tableList = new ArrayList<>();
-
+        ArrayList<TableProduct> tableList = new ArrayList<>();
 
         int idOrder = Integer.parseInt(String.valueOf(jTable1.getValueAt(jTable1.getSelectedRow(), 0)));
         DistributionOrder tempDistributionOrder = distributionOrderList.get(idOrder);
         for (int i = 0; i < tempDistributionOrder.getProductList().size(); i++) {
             Product tempProduct = tempDistributionOrder.getProductList().get(i);
-            TableProduct tempTableProduct = new TableProduct(); 
-            tempTableProduct.setQuantity(1);
-            tempTableProduct.setProduct(tempProduct.getName());
-            tempTableProduct.setCategory(getCategoryByID(tempProduct.getIdCategory()));
-            tempTableProduct.setAmount((int) tempProduct.getPrice());
-            tempTableProduct.setWeight(tempProduct.getTotalWeight());
-            tableList.add(tempTableProduct);
-            fillTable(tableList);
-        }
+            Boolean exists = false;
+            for (int j = 0; j < tableList.size(); j++) {
+                if (tableList.get(j).getProduct().equals(tempProduct.getName())) {
+                   exists = true;
+                   tableList.get(j).setQuantity(tableList.get(j).getQuantity() + 1);
+                   tableList.get(j).setAmount((int) (tableList.get(j).getAmount() + tempProduct.getPrice()));
+                   tableList.get(j).setWeight(tableList.get(j).getWeight() + tempProduct.getTotalWeight());
+                   
+                }
+            } 
+            if (!exists) {
 
+
+                TableProduct tempTableProduct = new TableProduct();
+                tempTableProduct.setQuantity(1);
+                tempTableProduct.setProduct(tempProduct.getName());
+                tempTableProduct.setCategory(getCategoryByID(tempProduct.getIdCategory()));
+                tempTableProduct.setAmount((int) tempProduct.getPrice());
+                tempTableProduct.setWeight(tempProduct.getTotalWeight());
+                tableList.add(tempTableProduct);
+                fillTable(tableList);
+            }
+        }
 
     }//GEN-LAST:event_jTable1MousePressed
 
@@ -235,11 +247,11 @@ public class Orders extends javax.swing.JFrame {
         for (int i = 0; i < tableList.size(); i++) {
             array[i][0] = String.valueOf(tableList.get(i).getQuantity());
             array[i][1] = tableList.get(i).getProduct();
-            array[i][2] = String.valueOf(tableList.get(i).getAmount());
-            array[i][3] = String.valueOf(tableList.get(i).getWeight());
-            array[i][4] = tableList.get(i).getCategory();
+            array[i][2] = tableList.get(i).getCategory();
+            array[i][3] = String.valueOf(tableList.get(i).getAmount());
+            array[i][4] = String.valueOf(tableList.get(i).getWeight());
         }
-          jTable3.setModel(new javax.swing.table.DefaultTableModel(array, new String[]{"Cantidad", "Producto", "Categoria", "Monto", "Peso"}));
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(array, new String[]{"Cantidad", "Producto", "Categoria", "Monto", "Peso"}));
     }
 
     /**
