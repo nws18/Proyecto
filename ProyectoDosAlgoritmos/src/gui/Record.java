@@ -57,7 +57,7 @@ public class Record extends javax.swing.JFrame {
                 confirmExit.setVisible(true);
             }
         });
-    }
+    } 
     
     /**
      * Llena la tabla de productos entregados según un rango de fechas.
@@ -69,23 +69,19 @@ public class Record extends javax.swing.JFrame {
 
         for (int i = 0; i < distributionOrderList.size(); i++) {
             DistributionOrder distributionOrder = distributionOrderList.get(i);
-            tableAdministrator.setOperatorName(getUserName(distributionOrder.getIdOperator()));
-            tableAdministrator.setCellarName(getCellarName(distributionOrder.getIdDestinyCellar()));
-
             if (dateFormat.parse(distributionOrder.getOrderDate()).after(jXDatePicker1.getDate()) && dateFormat.parse(distributionOrder.getOrderDate()).before(jXDatePicker2.getDate())) {
                 for (int j = 0; j < distributionOrder.getProductList().size(); j++) {
+                    tableAdministrator.setOperatorName(getUserName(distributionOrder.getIdOperator()));
+                    tableAdministrator.setCellarName(getCellarName(distributionOrder.getIdDestinyCellar()));
                     Product product = distributionOrder.getProductList().get(j);
                     tableAdministrator.setProductName(product.getName());
                     tableAdministrator.setCategoryName(getCategoryName(product.getIdCategory()));
                     tableAdministrator.setBatchCode(getBatchCode(product.getIdBatch()));
-
+                    tableList.add(tableAdministrator);
                 }
-                tableList.add(tableAdministrator);
             }
-        
-        }
-        
-        
+        }       
+       
        String[][] array = new String[tableList.size()][5];
         for (int i = 0; i < tableList.size(); i++) {
             array[i][0] = tableList.get(i).getProductName();
@@ -95,7 +91,7 @@ public class Record extends javax.swing.JFrame {
             array[i][4] = tableList.get(i).getOperatorName();
             
         }
-        table.setModel(new javax.swing.table.DefaultTableModel(array, new String[]{"Productos", "Bodega", "Categoría", "Lote", "Operador"}));
+        table.setModel(new javax.swing.table.DefaultTableModel(array, new String[]{"Producto", "Bodega", "Categoría", "Lote", "Operador"}));
     }
     
     private String getUserName(int idUser) {
@@ -186,9 +182,17 @@ public class Record extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Productos", "Bodega", "Categoría", "Lote", "Operador"
+                "Producto", "Bodega", "Categoría", "Lote", "Operador"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(table);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 521, 233));
@@ -275,7 +279,11 @@ public class Record extends javax.swing.JFrame {
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, -1, -1));
 
         searchButton.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        searchButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/lupa-para-buscar.png"))); // NOI18N
         searchButton.setText("Buscar");
+        searchButton.setBorderPainted(false);
+        searchButton.setContentAreaFilled(false);
+        searchButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         searchButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 searchButtonMouseClicked(evt);
@@ -286,7 +294,7 @@ public class Record extends javax.swing.JFrame {
                 searchButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, -1, -1));
+        jPanel1.add(searchButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

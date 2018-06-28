@@ -1,7 +1,6 @@
 package gui;
 
 import LinkedBinaryTree.TreeException;
-import com.oracle.jrockit.jfr.Producer;
 import com.teamdev.jxbrowser.chromium.Browser;
 import com.teamdev.jxbrowser.chromium.swing.BrowserView;
 import domain.Category;
@@ -9,41 +8,33 @@ import domain.Cellar;
 import domain.DistributionOrder;
 import domain.Product;
 import domain.TableProduct;
-//import static gui.ConfirmOrder.booleanConfirmOrder;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
-import static tda.LoadTda.batchMap;
 import static tda.LoadTda.categoryMap;
 import static tda.LoadTda.cellarGraph;
 import static tda.LoadTda.distributionOrderList;
 import java.awt.BorderLayout;
-import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import javax.swing.JFrame;
 import lab_grafos_algoritmos.GraphException;
-import tda.LoadFiles;
 import static tda.LoadTda.productsBinaryTree;
 
 /**
  * Interfaz módulo Logística de distribución.
- *
  * @author Nicole Fonseca, Wilmer Mata, Sergio Siles
  */
+
 public class LogisticsDistribution extends javax.swing.JFrame {
 
     public static boolean confirm = false;
-    public static ArrayList<DistributionOrder> pruebaList = new ArrayList<DistributionOrder>();
     public static DistributionOrder distributionOrder = new DistributionOrder();
     static int userId = -1;
     static int capacity = 0;
-    /**
-     * Creates new form NewJFrame
-     */
+
     private Browser browser = new Browser();
     private BrowserView view = new BrowserView(browser);
     private ArrayList<TableProduct> tableList = new ArrayList<>();
@@ -57,8 +48,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         jPanel3.setLayout(new BorderLayout());
         jPanel3.add(view, BorderLayout.CENTER);
         browser.loadURL("maps.google.es");
-
-//        
+        
         String[] arrayCellar = new String[cellarGraph.list().size()];
         for (int i = 0; i < cellarGraph.list().size(); i++) {
             Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
@@ -75,7 +65,6 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         listProducts.setListData(arrayProducts);
 
         this.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
-
         addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -131,7 +120,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/carrito.png"))); // NOI18N
         jLabel1.setText("Productos");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
 
         listProducts.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         listProducts.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -139,14 +128,9 @@ public class LogisticsDistribution extends javax.swing.JFrame {
                 listProductsMousePressed(evt);
             }
         });
-        listProducts.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
-            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-                listProductsValueChanged(evt);
-            }
-        });
         jScrollPane1.setViewportView(listProducts);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 140, 150));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 140, 140));
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 142, 81));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -168,29 +152,21 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/logistica.png"))); // NOI18N
         jLabel3.setText("Logística de distribución");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 20, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 20, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/almacen.png"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, -1, -1));
 
         cellarList.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cellarList.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cellarListMouseClicked(evt);
-            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 cellarListMousePressed(evt);
             }
         });
-        cellarList.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
-            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-                cellarListValueChanged(evt);
-            }
-        });
         jScrollPane3.setViewportView(cellarList);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 140, 100));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 140, 100));
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/mapas-y-banderas.png"))); // NOI18N
@@ -210,6 +186,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         });
         jPanel1.add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 580, -1, -1));
 
+        returnLoginButton.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         returnLoginButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/salir-con-boton-en-esquema.png"))); // NOI18N
         returnLoginButton.setText("Salir");
         returnLoginButton.setBorderPainted(false);
@@ -241,11 +218,11 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 110, 686, 439));
-        jPanel1.add(labelTruck, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 80, 70));
+        jPanel1.add(labelTruck, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, 100, 90));
 
         nameTruck.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         nameTruck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/truck.png"))); // NOI18N
-        jPanel1.add(nameTruck, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 60, 190, 30));
+        jPanel1.add(nameTruck, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 60, 260, 30));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Webp.net-gifmaker (1).gif"))); // NOI18N
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 0, 170, 110));
@@ -255,6 +232,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         jButton1.setText("Limpiar orden");
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -269,16 +247,16 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(jList1);
 
-        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 140, 100));
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 140, 100));
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 530, 200, 100));
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel9.setText("Bodega Origen");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, 110, 30));
+        jLabel9.setText("Bodega origen");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 110, 30));
 
         jLabel10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel10.setText("Bodega destino");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 500, 140, 30));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, 140, 30));
 
         jLabel11.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 510, 160, 20));
@@ -381,18 +359,6 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         this.setVisible(false);
 
     }//GEN-LAST:event_returnLoginButtonActionPerformed
-
-    private void listProductsValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listProductsValueChanged
-//       
-    }//GEN-LAST:event_listProductsValueChanged
-
-    private void cellarListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cellarListMouseClicked
-
-    }//GEN-LAST:event_cellarListMouseClicked
-
-    private void cellarListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_cellarListValueChanged
-
-    }//GEN-LAST:event_cellarListValueChanged
 
     private void listProductsMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listProductsMousePressed
         try {
@@ -525,7 +491,6 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         }
     }
     private void cellarListMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cellarListMousePressed
-        // TODO add your handling code here:
         for (int i = 0; i < cellarGraph.list().size(); i++) {
             Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
             if (tempCellar.getName().equals(cellarList.getSelectedValue())) {
@@ -544,7 +509,6 @@ public class LogisticsDistribution extends javax.swing.JFrame {
     }//GEN-LAST:event_cellarListMousePressed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
         labelTruck.setIcon(null);
         jLabel6.setIcon(null);
         jLabel2.setIcon(null);
@@ -568,7 +532,6 @@ public class LogisticsDistribution extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jList1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MousePressed
-        // TODO add your handling code here:
         for (int i = 0; i < cellarGraph.list().size(); i++) {
             Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
             if (tempCellar.getName().equals(jList1.getSelectedValue())) {
