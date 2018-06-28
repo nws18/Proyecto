@@ -65,23 +65,52 @@ public class Record extends javax.swing.JFrame {
      */
     private void fillTable() throws ParseException {
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-        TableAdministrator tableAdministrator = new TableAdministrator();
-
         for (int i = 0; i < distributionOrderList.size(); i++) {
             DistributionOrder distributionOrder = distributionOrderList.get(i);
-            if (dateFormat.parse(distributionOrder.getOrderDate()).after(jXDatePicker1.getDate()) && dateFormat.parse(distributionOrder.getOrderDate()).before(jXDatePicker2.getDate())) {
+            if (dateFormat.parse(distributionOrder.getOrderDate()).after(jXDatePicker1.getDate())
+                    && dateFormat.parse(distributionOrder.getOrderDate()).before(jXDatePicker2.getDate())) {
                 for (int j = 0; j < distributionOrder.getProductList().size(); j++) {
-                    tableAdministrator.setOperatorName(getUserName(distributionOrder.getIdOperator()));
-                    tableAdministrator.setCellarName(getCellarName(distributionOrder.getIdDestinyCellar()));
                     Product product = distributionOrder.getProductList().get(j);
+                    TableAdministrator tableAdministrator = new TableAdministrator();
                     tableAdministrator.setProductName(product.getName());
-                    tableAdministrator.setCategoryName(getCategoryName(product.getIdCategory()));
-                    tableAdministrator.setBatchCode(getBatchCode(product.getIdBatch()));
+
+                    for (int k = 0; k < cellarGraph.list().size(); k++) {
+                        Cellar cellar = (Cellar) cellarGraph.list().get(k);
+                        if (cellar.getIdCellar() == distributionOrder.getIdDestinyCellar()) {
+                            tableAdministrator.setCellarName(cellar.getName());
+                        }
+                    }
+                
+                Iterator iterator = categoryMap.keySet().iterator();
+                while (iterator.hasNext()) {
+                    String key = (String) iterator.next();
+                    Category category = categoryMap.get(key);
+                    if(category.getIdCategory() == product.getIdCategory()) {
+                        tableAdministrator.setCategoryName(category.getName());
+                    }
+                }
+                
+                Iterator iterator2 = batchMap.keySet().iterator();
+                while (iterator2.hasNext()) {
+                    Integer key = (Integer) iterator2.next();
+                    Batch batch = batchMap.get(key);
+                    if(batch.getIdBatch() == product.getIdBatch()) {
+                            tableAdministrator.setBatchCode(batch.getBatchCode());
+                        }
+                    }
+
+                    for (int a = 0; a < userList.size(); a++) {
+                        User user = userList.get(a);
+                        if (user.getIdUser() == distributionOrder.getIdOperator()) {
+                            tableAdministrator.setOperatorName(user.getName());
+                        }
+                    }
+
                     tableList.add(tableAdministrator);
                 }
             }
-        }       
-       
+        }
+        
        String[][] array = new String[tableList.size()][5];
         for (int i = 0; i < tableList.size(); i++) {
             array[i][0] = tableList.get(i).getProductName();
@@ -92,50 +121,6 @@ public class Record extends javax.swing.JFrame {
             
         }
         table.setModel(new javax.swing.table.DefaultTableModel(array, new String[]{"Producto", "Bodega", "Categoría", "Lote", "Operador"}));
-    }
-    
-    private String getUserName(int idUser) {
-        for (int i = 0; i < userList.size(); i++) {
-            User user = userList.get(i);
-            if (user.getIdUser() == idUser) {
-                return user.getName();
-            }
-        }
-        return null;
-    }
-    
-    private String getCategoryName(int idCategory) {
-        Iterator iterator = categoryMap.keySet().iterator();
-        while (iterator.hasNext()) {
-            String key = (String) iterator.next();
-            Category category = categoryMap.get(key);
-            if (category.getIdCategory() == idCategory) {
-                return category.getName();
-            }
-        }
-        return null;
-    }
-    
-    private String getBatchCode(int idBatch) {
-        Iterator iterator = batchMap.keySet().iterator();
-        while (iterator.hasNext()) {
-            Integer key = (Integer) iterator.next();
-            Batch batch = batchMap.get(key);
-            if (batch.getIdBatch() == idBatch) {
-                return batch.getBatchCode();
-            }
-        }
-        return null;
-    }
-    
-    private String getCellarName(int idCellar) {
-        for (int i = 0; i < cellarGraph.list().size(); i++) {
-            Cellar cellar = (Cellar) cellarGraph.list().get(i);
-            if (cellar.getIdCellar() == idCellar) {
-                return cellar.getName();
-            }
-        }
-        return null;
     }
 
     /**
