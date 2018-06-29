@@ -277,7 +277,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
 
     private int getIdOrder() {
         DistributionOrder tempDistributionOrder = distributionOrderList.get(distributionOrderList.size() - 1);
-       
+
         return tempDistributionOrder.getIdDistributionOrder() + 1;
     }
 
@@ -346,7 +346,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         for (int i = 0; i < tableList.size(); i++) {
 
             TableProduct tempTableProduct = tableList.get(i);
-           
+
             for (int j = 0; j < productsBinaryTree.getSize(); j++) {
                 Product tempProduct = (Product) productsBinaryTree.recorreArbol().get(j);
 
@@ -480,36 +480,33 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_listProductsMousePressed
 
-    public void setDistance() throws GraphException {
-        Cellar origin = new Cellar();
-        Cellar destiny = new Cellar();
+    
 
-        if (cell1 == true && cell2 == true && !cellarList.getSelectedValue().equals(jList1.getSelectedValue())) {
-            for (int i = 0; i < cellarGraph.getSize(); i++) {
-                Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
-                if (cellarList.getSelectedValue().equals(tempCellar.getName())) {
-                    origin = tempCellar;
-                }
-                if (jList1.getSelectedValue().equals(tempCellar.getName())) {
-                    destiny = tempCellar;
-                }
-            }
-//            jLabel11.setText("Distancia: " + cellarGraph.getWeigth(origin, destiny));
-        }
+    public int calculateDistanceInKilometer(double userLat, double userLng,
+            double venueLat, double venueLng) {
+
+        double latDistance = Math.toRadians(userLat - venueLat);
+        double lngDistance = Math.toRadians(userLng - venueLng);
+
+        double a = Math.sin(latDistance / 2) * Math.sin(latDistance / 2)
+                + Math.cos(Math.toRadians(userLat)) * Math.cos(Math.toRadians(venueLat))
+                * Math.sin(lngDistance / 2) * Math.sin(lngDistance / 2);
+
+        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+        return (int) (Math.round(6371 * c));
     }
     private void cellarListMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cellarListMousePressed
         for (int i = 0; i < cellarGraph.list().size(); i++) {
             Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
             if (tempCellar.getName().equals(cellarList.getSelectedValue())) {
-                try {
+                
                     ImageIcon imageIcon = new ImageIcon(tempCellar.getUrl());
                     jLabel6.setIcon(imageIcon);
                     cell1 = true;
                     loadMap();
-                    setDistance();
-                } catch (GraphException ex) {
-                    Logger.getLogger(LogisticsDistribution.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                    
+               
 
             }
         }
@@ -517,6 +514,7 @@ public class LogisticsDistribution extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         labelTruck.setIcon(null);
+        jLabel11.setText("Distancia:");
         jLabel6.setIcon(null);
         jLabel2.setIcon(null);
         jLabel8.setIcon(null);
@@ -542,20 +540,20 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         for (int i = 0; i < cellarGraph.list().size(); i++) {
             Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
             if (tempCellar.getName().equals(jList1.getSelectedValue())) {
-                try {
+               
                     ImageIcon imageIcon = new ImageIcon(tempCellar.getUrl());
                     jLabel8.setIcon(imageIcon);
                     cell2 = true;
                     loadMap();
-                    setDistance();
-                } catch (GraphException ex) {
-                    Logger.getLogger(LogisticsDistribution.class.getName()).log(Level.SEVERE, null, ex);
-                }
+              
             }
         }
 
     }//GEN-LAST:event_jList1MousePressed
     private void loadMap() {
+        jLabel11.setText("Distancia: 0 KM");
+        Cellar origin = new Cellar();
+        Cellar destiny = new Cellar();
         if (cell1 == true && cell2 == true && !cellarList.getSelectedValue().equals(jList1.getSelectedValue())) {
             String[] array = new String[8];
 
@@ -571,22 +569,28 @@ public class LogisticsDistribution extends javax.swing.JFrame {
             for (int i = 0; i < cellarGraph.list().size(); i++) {
                 Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
                 if (tempCellar.getName().equals(cellarList.getSelectedValue())) {
-                    ImageIcon imageIcon = new ImageIcon(tempCellar.getUrl());
-                    jLabel8.setIcon(imageIcon);
+
                     array[1] = tempCellar.getLatitude();
                     array[3] = tempCellar.getLength();
+                    origin=tempCellar;
 
                 }
                 if (tempCellar.getName().equals(jList1.getSelectedValue())) {
-                    ImageIcon imageIcon = new ImageIcon(tempCellar.getUrl());
-                    jLabel8.setIcon(imageIcon);
+
                     array[5] = tempCellar.getLatitude();
                     array[7] = tempCellar.getLength();
+                    destiny= tempCellar;
 
                 }
             }
             String url = array[0] + array[1] + array[2] + array[3] + array[4] + array[5] + array[6] + array[7];
             browser.loadURL(url);
+            if (origin.equals(destiny)) {
+                jLabel11.setText("Distancia: 0 KM");
+            }else{
+                jLabel11.setText("Distancia: " + calculateDistanceInKilometer(Double.parseDouble(origin.getLatitude()), Double.parseDouble(origin.getLength()),
+                Double.parseDouble(destiny.getLatitude()), Double.parseDouble(destiny.getLength()))+" KM");
+            }
 
         } else {
             browser.loadURL("maps.google.es");

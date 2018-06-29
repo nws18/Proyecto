@@ -1,4 +1,3 @@
-
 package tda;
 
 import LinkedBinaryTree.LinkedBinaryTree;
@@ -24,14 +23,14 @@ import lab_grafos_algoritmos.GraphException;
 
 /**
  * Clase para cargar la información de los archivos a las estructuras de datos.
+ *
  * @author Nicole Fonseca, Wilmer Mata, Sergio Siles
  */
-
 public class LoadTda {
-    
+
     /**
-     * Estructuras de datos para el manejo de toda la información durante
-     * la ejecución del programa.
+     * Estructuras de datos para el manejo de toda la información durante la
+     * ejecución del programa.
      */
     public static LinkedBinaryTree productsBinaryTree = new LinkedBinaryTree();
     public static Map<String, Category> categoryMap = new HashMap<>();
@@ -40,15 +39,17 @@ public class LoadTda {
     public static AdjacencyMatrixGraph cellarGraph = new AdjacencyMatrixGraph(50);
     public static ArrayList<DistributionOrder> distributionOrderList = new ArrayList<>();
     public static LinkedList<User> userList = new LinkedList<>();
-    
+
     AdministratorFiles administratorFiles = new AdministratorFiles();
-    
+
     /**
-     * Carga la información de productos desde los archivos hasta las estructuras de datos.
+     * Carga la información de productos desde los archivos hasta las
+     * estructuras de datos.
+     *
      * @throws IOException
      * @throws FileNotFoundException
      * @throws ClassNotFoundException
-     * @throws TreeException 
+     * @throws TreeException
      */
     public void tdaProduct() throws IOException, FileNotFoundException, ClassNotFoundException, TreeException {
         ArrayList<Product> arrayList = administratorFiles.readProductFile();
@@ -57,12 +58,14 @@ public class LoadTda {
             productsBinaryTree.insert(product);
         }
     }
-    
+
     /**
-     * Carga la información de categorías desde los archivos hasta las estructuras de datos.
+     * Carga la información de categorías desde los archivos hasta las
+     * estructuras de datos.
+     *
      * @throws IOException
      * @throws FileNotFoundException
-     * @throws ClassNotFoundException 
+     * @throws ClassNotFoundException
      */
     public void tdaCategory() throws IOException, FileNotFoundException, ClassNotFoundException {
         ArrayList<Category> arrayList = administratorFiles.readCategoryFile();
@@ -71,12 +74,14 @@ public class LoadTda {
             categoryMap.put(category.getName(), category);
         }
     }
-    
+
     /**
-     * Carga la información de códigos de lote desde los archivos hasta las estructuras de datos.
+     * Carga la información de códigos de lote desde los archivos hasta las
+     * estructuras de datos.
+     *
      * @throws IOException
      * @throws FileNotFoundException
-     * @throws ClassNotFoundException 
+     * @throws ClassNotFoundException
      */
     public void tdaBatch() throws IOException, FileNotFoundException, ClassNotFoundException {
         ArrayList<Batch> arrayList = administratorFiles.readBatchFile();
@@ -85,12 +90,14 @@ public class LoadTda {
             batchMap.put(batch.getIdBatch(), batch);
         }
     }
-    
+
     /**
-     * Carga la información de unidades de transporte desde los archivos hasta las estructuras de datos.
+     * Carga la información de unidades de transporte desde los archivos hasta
+     * las estructuras de datos.
+     *
      * @throws IOException
      * @throws FileNotFoundException
-     * @throws ClassNotFoundException 
+     * @throws ClassNotFoundException
      */
     public void tdaTransportUnit() throws IOException, FileNotFoundException, ClassNotFoundException {
         ArrayList<TransportUnit> arrayList = administratorFiles.readTransportUnitFile();
@@ -99,13 +106,15 @@ public class LoadTda {
             transportUnitMap.put(transportUnit.getIdTransportUnit(), transportUnit);
         }
     }
-    
+
     /**
-     * Carga la información de bodegas desde los archivos hasta las estructuras de datos.
+     * Carga la información de bodegas desde los archivos hasta las estructuras
+     * de datos.
+     *
      * @throws IOException
      * @throws FileNotFoundException
      * @throws ClassNotFoundException
-     * @throws GraphException 
+     * @throws GraphException
      */
     public void tdaCellar() throws IOException, FileNotFoundException, ClassNotFoundException, GraphException {
         ArrayList<Cellar> arrayList = administratorFiles.readCellarFile();
@@ -114,12 +123,29 @@ public class LoadTda {
             cellarGraph.insertVertx(cellar);
         }
     }
-    
+
+    public int calculateDistanceInKilometer(double userLat, double userLng,
+            double venueLat, double venueLng) {
+
+        double latDistance = Math.toRadians(userLat - venueLat);
+        double lngDistance = Math.toRadians(userLng - venueLng);
+
+        double a = Math.sin(latDistance / 2) * Math.sin(latDistance / 2)
+                + Math.cos(Math.toRadians(userLat)) * Math.cos(Math.toRadians(venueLat))
+                * Math.sin(lngDistance / 2) * Math.sin(lngDistance / 2);
+
+        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+        return (int) (Math.round(6371 * c));
+    }
+
     /**
-     * Carga la información de orden de distribución desde los archivos hasta las estructuras de datos.
+     * Carga la información de orden de distribución desde los archivos hasta
+     * las estructuras de datos.
+     *
      * @throws IOException
      * @throws FileNotFoundException
-     * @throws ClassNotFoundException 
+     * @throws ClassNotFoundException
      */
     public void tdaDistributionOrder() throws IOException, FileNotFoundException, ClassNotFoundException {
         ArrayList<DistributionOrder> arrayList = administratorFiles.readFile();
@@ -128,12 +154,14 @@ public class LoadTda {
             distributionOrderList.add(distributionOrder);
         }
     }
-    
+
     /**
-     * Carga la información de usuarios desde los archivos hasta las estructuras de datos.
+     * Carga la información de usuarios desde los archivos hasta las estructuras
+     * de datos.
+     *
      * @throws IOException
      * @throws FileNotFoundException
-     * @throws ClassNotFoundException 
+     * @throws ClassNotFoundException
      */
     public void tdaUser() throws IOException, FileNotFoundException, ClassNotFoundException {
         ArrayList<User> arrayList = administratorFiles.readUserFile();
