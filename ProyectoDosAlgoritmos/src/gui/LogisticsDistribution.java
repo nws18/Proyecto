@@ -144,6 +144,11 @@ public class LogisticsDistribution extends javax.swing.JFrame {
                 "Cantidad", "Producto", "Monto", "Peso", "Categoría"
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jTable1MousePressed(evt);
+            }
+        });
         jScrollPane2.setViewportView(jTable1);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 500, 90));
@@ -480,8 +485,6 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_listProductsMousePressed
 
-    
-
     public int calculateDistanceInKilometer(double userLat, double userLng,
             double venueLat, double venueLng) {
 
@@ -500,13 +503,11 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         for (int i = 0; i < cellarGraph.list().size(); i++) {
             Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
             if (tempCellar.getName().equals(cellarList.getSelectedValue())) {
-                
-                    ImageIcon imageIcon = new ImageIcon(tempCellar.getUrl());
-                    jLabel6.setIcon(imageIcon);
-                    cell1 = true;
-                    loadMap();
-                    
-               
+
+                ImageIcon imageIcon = new ImageIcon(tempCellar.getUrl());
+                jLabel6.setIcon(imageIcon);
+                cell1 = true;
+                loadMap();
 
             }
         }
@@ -540,16 +541,88 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         for (int i = 0; i < cellarGraph.list().size(); i++) {
             Cellar tempCellar = (Cellar) cellarGraph.list().get(i);
             if (tempCellar.getName().equals(jList1.getSelectedValue())) {
-               
-                    ImageIcon imageIcon = new ImageIcon(tempCellar.getUrl());
-                    jLabel8.setIcon(imageIcon);
-                    cell2 = true;
-                    loadMap();
-              
+
+                ImageIcon imageIcon = new ImageIcon(tempCellar.getUrl());
+                jLabel8.setIcon(imageIcon);
+                cell2 = true;
+                loadMap();
+
             }
         }
 
     }//GEN-LAST:event_jList1MousePressed
+
+    private void jTable1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MousePressed
+
+        String productName = String.valueOf(jTable1.getValueAt(jTable1.getSelectedRow(), 1));
+        for (int i = 0; i < tableList.size(); i++) {
+            TableProduct tableProduct = tableList.get(i);
+            if (tableProduct.getProduct().equals(productName)) {
+                if (tableProduct.getQuantity() == 1) {
+                    tableList.remove(i);
+                } else {
+                    try {
+                        tableList.get(i).setQuantity(tableList.get(i).getQuantity() - 1);
+                        tableList.get(i).setAmount(tableList.get(i).getAmount() - getValue(tableProduct.getProduct()));
+                        tableList.get(i).setWeight(tableList.get(i).getWeight() - getWeight(tableProduct.getProduct()));
+                    } catch (TreeException ex) {
+                        Logger.getLogger(LogisticsDistribution.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }
+        }
+        int total = 0;
+        for (int i = 0; i < tableList.size(); i++) {
+            TableProduct tempTableProduct = tableList.get(i);
+
+            total += tempTableProduct.getWeight();
+
+        }
+        double progress = 0;
+        if (total < 30001) {
+            if (total < 1000) {
+                ImageIcon imageIcon = new ImageIcon("images/transport/small.png");
+                labelTruck.setIcon(imageIcon);
+                nameTruck.setText("Capacidad: 1 tonelada");
+                double totalDouble = (double) total;
+                double hundred = 100.0;
+                double maxWeight = 1000.0;
+                progress = ((total / maxWeight) * hundred);
+            } else if (total > 1000 && total < 5000) {
+                ImageIcon imageIcon = new ImageIcon("images/transport/medium.png");
+                labelTruck.setIcon(imageIcon);
+                nameTruck.setText("Capacidad: 5 toneladas");
+                double totalDouble = (double) total;
+                double hundred = 100.0;
+                double maxWeight = 5000.0;
+                progress = ((total / maxWeight) * hundred);
+            } else if (total > 5000 && total < 10000) {
+                ImageIcon imageIcon = new ImageIcon("images/transport/big.png");
+                labelTruck.setIcon(imageIcon);
+                nameTruck.setText("Capacidad: 10 toneladas");
+                double totalDouble = (double) total;
+                double hundred = 100.0;
+                double maxWeight = 10000.0;
+                progress = ((total / maxWeight) * hundred);
+            } else if (total > 10000 && total <= 30000) {
+                ImageIcon imageIcon = new ImageIcon("images/transport/giant.png");
+                labelTruck.setIcon(imageIcon);
+                nameTruck.setText("Capacidad: 30 toneladas");
+                double totalDouble = (double) total;
+                double hundred = 100.0;
+                double maxWeight = 30000.0;
+                progress = ((total / maxWeight) * hundred);
+
+            }
+
+            progressBar.setValue((int) progress);
+            capacity = progressBar.getValue();
+            progressBar.setStringPainted(true);
+            fillTable();
+        }
+    }//GEN-LAST:event_jTable1MousePressed
+    
+
     private void loadMap() {
         jLabel11.setText("Distancia: 0 KM");
         Cellar origin = new Cellar();
@@ -572,14 +645,14 @@ public class LogisticsDistribution extends javax.swing.JFrame {
 
                     array[1] = tempCellar.getLatitude();
                     array[3] = tempCellar.getLength();
-                    origin=tempCellar;
+                    origin = tempCellar;
 
                 }
                 if (tempCellar.getName().equals(jList1.getSelectedValue())) {
 
                     array[5] = tempCellar.getLatitude();
                     array[7] = tempCellar.getLength();
-                    destiny= tempCellar;
+                    destiny = tempCellar;
 
                 }
             }
@@ -587,9 +660,9 @@ public class LogisticsDistribution extends javax.swing.JFrame {
             browser.loadURL(url);
             if (origin.equals(destiny)) {
                 jLabel11.setText("Distancia: 0 KM");
-            }else{
+            } else {
                 jLabel11.setText("Distancia: " + calculateDistanceInKilometer(Double.parseDouble(origin.getLatitude()), Double.parseDouble(origin.getLength()),
-                Double.parseDouble(destiny.getLatitude()), Double.parseDouble(destiny.getLength()))+" KM");
+                        Double.parseDouble(destiny.getLatitude()), Double.parseDouble(destiny.getLength())) + " KM");
             }
 
         } else {
