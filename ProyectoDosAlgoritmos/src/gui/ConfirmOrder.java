@@ -180,10 +180,8 @@ public class ConfirmOrder extends javax.swing.JFrame {
 
     private void confirmOrderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmOrderButtonActionPerformed
         distributionOrderList.add(distributionOrder);
-        System.out.println("Frase: " + distributionOrder.toString());
         jLabel3.setText("Orden guardada");
         for (int i = 0; i < distributionOrderList.size(); i++) {
-            System.out.println(distributionOrderList.get(i).toString());
         }
     }//GEN-LAST:event_confirmOrderButtonActionPerformed
 
