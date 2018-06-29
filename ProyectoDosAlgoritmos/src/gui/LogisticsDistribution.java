@@ -522,15 +522,8 @@ public class LogisticsDistribution extends javax.swing.JFrame {
         progressBar.setValue(0);
         tableList.removeAll(tableList);
         fillTable();
+        capacity = 0;
         browser.loadURL("maps.google.es");
-//        distributionOrder.setIdDestinyCellar(-1);
-////        distributionOrder.setIdDistributionOrder(-1);
-//        distributionOrder.setIdOperator(-1);
-//        distributionOrder.setIdOriginCellar(-1);
-//        distributionOrder.setOrderDate(null);
-//        distributionOrder.setProductList(null);
-//        distributionOrder.setTotalAmount(0.0);
-//        distributionOrder.setWeightTotal(0);
         cell1 = false;
         cell2 = false;
         nameTruck.setText(null);
