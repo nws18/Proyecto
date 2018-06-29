@@ -1713,19 +1713,19 @@ public class Maintenance extends javax.swing.JFrame {
 
         jLabel19.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel19.setText("Agregar");
-        jPanel3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 22, -1, -1));
+        jPanel3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, -1, -1));
 
         jLabel20.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel20.setText("Buscar");
-        jPanel3.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, -1, -1));
+        jPanel3.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, -1, -1));
 
         jLabel21.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel21.setText("Actualizar");
-        jPanel3.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, -1, -1));
+        jPanel3.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, -1, -1));
 
         jLabel22.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel22.setText("Borrar");
-        jPanel3.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 20, -1, -1));
+        jPanel3.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 10, -1, -1));
 
         jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel3.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 22, -1, 280));
@@ -2005,7 +2005,6 @@ public class Maintenance extends javax.swing.JFrame {
                 Files.copy(origin, destiny, StandardCopyOption.COPY_ATTRIBUTES);
                 updateImageTextField.setText(destiny.toString());
             } catch (IOException ex) {
-                Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
             jLabel32.setText("Debe seleccionar un archivo.");
@@ -2138,7 +2137,7 @@ public class Maintenance extends javax.swing.JFrame {
             Category category = crudMaintenance.getCategory(searchNameCategoryTextField.getText());
             if (searchNameCategoryTextField.getText().equals(category.getName())) {
                 jLabel107.setText("");
-                descriptionCategoryLabel.setText(category.getDescription());
+                descriptionCategoryLabel.setText("<html><p>" + category.getDescription() +"</html></p>");
             } else {
                 jLabel107.setText("La categoría no se encuentra registrada.");
             }
@@ -2276,7 +2275,6 @@ public class Maintenance extends javax.swing.JFrame {
                     imageTransportUnitTextField.setText(destiny.toString());
                 }
             } catch (IOException ex) {
-                Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
             jLabel70.setText("Debe seleccionar un archivo");
@@ -2317,7 +2315,6 @@ public class Maintenance extends javax.swing.JFrame {
                 Files.copy(origin, destiny, StandardCopyOption.COPY_ATTRIBUTES);
                 updateImageTransport.setText(destiny.toString());
             } catch (IOException ex) {
-                Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
             jLabel53.setText("Debe seleccionar un archivo");
@@ -2422,7 +2419,6 @@ public class Maintenance extends javax.swing.JFrame {
                 Files.copy(origin, destiny, StandardCopyOption.COPY_ATTRIBUTES);
                 imageCellarTextField.setText(destiny.toString());
             } catch (IOException ex) {
-                Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
             jLabel146.setText("Debe seleccionar un archivo");
@@ -2529,7 +2525,6 @@ public class Maintenance extends javax.swing.JFrame {
                 Files.copy(origin, destiny, StandardCopyOption.COPY_ATTRIBUTES);
                 imageProductTextField.setText(destiny.toString());
             } catch (IOException ex) {
-                Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
             jLabel36.setText("Debe seleccionar un archivo.");
@@ -2681,7 +2676,6 @@ public class Maintenance extends javax.swing.JFrame {
                 Files.copy(origin, destiny, StandardCopyOption.COPY_ATTRIBUTES);
                 updateImageProductTextField.setText(destiny.toString());
             } catch (IOException ex) {
-                Logger.getLogger(Maintenance.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
             jLabel132.setText("Debe seleccionar un archivo.");

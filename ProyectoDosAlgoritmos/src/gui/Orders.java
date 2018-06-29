@@ -8,6 +8,7 @@ import domain.TableProduct;
 import domain.User;
 import java.util.ArrayList;
 import java.util.Iterator;
+import javax.swing.ImageIcon;
 import static tda.LoadTda.categoryMap;
 import static tda.LoadTda.cellarGraph;
 import static tda.LoadTda.distributionOrderList;
@@ -24,7 +25,7 @@ public class Orders extends javax.swing.JFrame {
      */
     public Orders() {
         initComponents();
-        
+        setIconImage(new ImageIcon(getClass().getResource("/icons/truck.png")).getImage());
         this.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
